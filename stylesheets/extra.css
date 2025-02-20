@@ -1,0 +1,20 @@
+/* body { */
+    /* font-family: "LXGW WenKai", sans-serif; */
+    /* font-family: "Noto Serif SC", serif; */
+    /* Lite version */
+    /* font-family: "LXGW WenKai Lite", sans-serif; */
+    /* TC version */
+    /* font-family: "LXGW WenKai TC", sans-serif; */
+    /* Screen version */
+    /* font-family: "LXGW WenKai Screen", sans-serif; */
+  /* }  */
+
+/* 定义英文字体，中文字体自动回退到系统默认 */
+:root {
+  --md-text-font: "Ubuntu", "Noto Serif SC";  /* 英文 Roboto，中文用思源黑体 */
+}
+
+/* 设置代码块字体 */ 
+code, pre {
+  font-family: 'Roboto Mono', monospace;
+}
