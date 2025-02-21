@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../Blog/Net/MakeWebsite/">
+        <link rel="prev" href="../Util/util/">
       
-      
-        <link rel="next" href="../Util/util/">
       
       
       <link rel="icon" href="../../img/logo1.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>LLM - Sevenalist</title>
+        <title>Links - Sevenalist</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#title" class="md-skip">
+        <a href="#links" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LLM
+              Links
             
           </span>
         </div>
@@ -206,12 +204,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Blog/blogDes/" class="md-tabs__link">
           
   
@@ -243,9 +239,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../Links/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -395,28 +393,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -428,7 +421,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -530,19 +523,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -552,7 +536,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -590,10 +573,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Links/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -603,6 +595,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -644,7 +637,56 @@
   
 
 
-<h1 id="title">Title<a class="headerlink" href="#title" title="Permanent link">&para;</a></h1>
+<h1 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h1>
+<body>
+<!-- 先定义样式 -->
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* 图片居中对齐 */
+            gap: 20px; /* 图片之间的间距 */
+            padding: 20px;
+        }
+
+        .item {
+            text-align: center; /* 文字居中 */
+            width: 150px; /* 图片宽度 */
+            margin-bottom: 20px;
+        }
+
+        .item img {
+            width: 70%;
+            height: auto;
+            border-radius: 20px; /* 图片圆角 */
+        }
+
+        .item p {
+            margin: 0; /* 移除默认边距 */
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+
+    <!-- 插入友链 -->
+    <div class="container">
+        <!-- 第一个项目 -->
+        <div class="item">
+            <a href="https://dxlcq.cn/">
+                <img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" />
+                <p>戴兴龙</p>
+            </a>
+        </div>
+
+        <!-- 第二个项目 -->
+        <div class="item">
+            <a href="https://www.leeyearn.cn/">
+                <img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" />
+                <p>Lee Yearn</p>
+            </a>
+        </div>
+    </div>
+</body>
 
 
 
