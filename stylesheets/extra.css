@@ -17,4 +17,6 @@
 /* 设置代码块字体 */ 
 code, pre {
   font-family: 'Roboto Mono', monospace;
+  /*  自动换行 */
+  /* white-space: pre-wrap; */
 }
