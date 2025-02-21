@@ -578,7 +578,7 @@
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      服务器安装宝塔
+      在服务器上安装宝塔
     </span>
   </a>
   
@@ -638,7 +638,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      将生成的文件上传宝塔
+      将生成的文件上传服务器
     </span>
   </a>
   
@@ -827,7 +827,7 @@
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      服务器安装宝塔
+      在服务器上安装宝塔
     </span>
   </a>
   
@@ -887,7 +887,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      将生成的文件上传宝塔
+      将生成的文件上传服务器
     </span>
   </a>
   
@@ -954,20 +954,23 @@
 <li>一台服务器</li>
 </ul>
 <blockquote>
-<p>你的网站部署终端，</p>
+<p>你的网站部署的位置。</p>
 </blockquote>
 <h2 id="2">2. 配置服务器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="_1">服务器安装宝塔<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">在服务器上安装宝塔<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>宝塔是一款方便配置站点环境的集成面板工具，对于不熟悉网站相关操作的新手来说比较友好。本文使用宝塔来配置服务器上所需要的相关环境。</p>
 <p>官网说明：<a href="https://www.bt.cn/new/download.html">https://www.bt.cn/new/download.html</a></p>
 <p>Linux安装指令如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">宝塔Linux安装指令</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/usr/bin/curl<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span><span class="w"> </span>curl<span class="w"> </span>-sSO<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">else</span><span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>install_panel.sh<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">fi</span><span class="p">;</span>bash<span class="w"> </span>install_panel.sh<span class="w"> </span>ed8484bec
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Linux安装宝塔指令</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/usr/bin/curl<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span><span class="w"> </span>curl<span class="w"> </span>-sSO<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">else</span><span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>install_panel.sh<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">fi</span><span class="p">;</span>bash<span class="w"> </span>install_panel.sh<span class="w"> </span>ed8484bec
 </code></pre></div></td></tr></table></div>
 <h3 id="_2">在宝塔面板配置服务器环境<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h2 id="3-mkdocs">3. 利用Mkdocs生成网站<a class="headerlink" href="#3-mkdocs" title="Permanent link">&para;</a></h2>
 <h3 id="mkdocs_1">本地安装Mkdocs<a class="headerlink" href="#mkdocs_1" title="Permanent link">&para;</a></h3>
 <h3 id="_3">选择一个主题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <h3 id="mkdocs_2">Mkdocs生成网站文件<a class="headerlink" href="#mkdocs_2" title="Permanent link">&para;</a></h3>
-<h3 id="_4">将生成的文件上传宝塔<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">将生成的文件上传服务器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>生成的文件都在<code>site</code>文件夹内，接下来把文件夹的所有文件上传至<code>/www/wwwroot/[webname]/</code>文件夹内即可。</p>
+<p>这里为了方便，直接通过宝塔上传。其他方案，比如Terminus或者VSCode通过SSH连接上服务器上传也可以，目的是将文件上传。</p>
 <h2 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h2 id="_6">参考链接<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><a href="https://ronaldln.github.io/MyPamphlet-Blog/2023/10/23/mkdocs-material/">[1] 尝试修改 mkdocs-material 网页的字体的过程记录</a>——Ranald Luo</p>

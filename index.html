@@ -623,33 +623,39 @@
 
 <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
     <h1>Chao-Zhong Deng</h1>
-
-    <div style="display: flex; align-items: flex-start; gap: 20px;">
-        <img src="\img\lifephoto.jpg" 
-             alt="照片" 
-             style="max-width: 20%; height: auto; object-fit: cover; border-radius: 5px;" />
-
-        <div style="flex: 1;">
-            <p style="font-weight: bold;">邓朝钟</p>
-            <p style="line-height: 1.5;">
-                Undergraduate. <br />
-                I'm a student majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of 
-                <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>. <br />
-                Currently, I'm a senior exchange student at the College of Excellent Engineers of 
-                <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. <br />
-                My graduation project is about the security of large models. If you have anything you'd like to discuss with me, feel free to reach out.
-            </p>
+    <!-- 修改 1: 增加 flex-wrap 和媒体查询 -->
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+        <!-- 修改 2: 给图片容器增加响应式宽度 -->
+        <img src="\img\lifephoto.jpg"
+            alt="照片"
+            style="max-width: 20%; min-width: 250px; height: auto; object-fit: cover; border-radius: 5px;
+            flex-shrink: 0; /* 禁止缩小 */ 
+            @media (max-width: 768px) { max-width: 100%; }" />
+        <!-- 修改 3: 设置文字区域的基础宽度 -->
+        <div style="flex: 1; min-width: 300px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem;">
+            <span style="font-weight: bold;">邓朝钟</span>
+            <span style="margin-left: auto; padding-right: 10px;">✉️ : dczcq.cn@gmail.com</span>
+        </div>
+        <div style="line-height: 1.5;">
+            Undergraduate. <br />
+            I'm a student majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of 
+            <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>. <br />
+            Currently, I'm a senior exchange student at the College of Excellent Engineers of 
+            <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. <br />
+            My graduation project is about the security of large models. If you have anything you'd like to discuss with me, feel free to reach out.
         </div>
     </div>
+</div>
 
-    <h3>Bio</h3>
+<!-- 以下是保持原有内容 -->
+<h3>Bio</h3>
     <div style="padding-left: 20px;">
         <div style="margin-bottom: 15px;">
             <span style="font-weight: bold; color: #333;">2024.09-2025.06</span><br />
             An undergraduate exchange student at the National Institute for Excellent Engineers, 
             <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>, majoring in Intelligent Connected Vehicles.
         </div>
-
         <div style="margin-bottom: 15px;">
             <span style="font-weight: bold; color: #333;">2021.09-2025.06</span><br />
             An undergraduate student at the Liangjiang Artificial Intelligence College, 
