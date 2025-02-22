@@ -57,7 +57,16 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -607,7 +616,7 @@
         <!-- 第一个项目 -->
         <div class="item">
             <a href="https://dxlcq.cn/">
-                <img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" />
+                <a class="glightbox" href="https://dxlcq.cn/assets/head.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" /></a>
                 <p>戴兴龙</p>
             </a>
         </div>
@@ -615,12 +624,14 @@
         <!-- 第二个项目 -->
         <div class="item">
             <a href="https://www.leeyearn.cn/">
-                <img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" />
+                <a class="glightbox" href="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" /></a>
                 <p>Lee Yearn</p>
             </a>
         </div>
     </div>
-</body>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 
 
 

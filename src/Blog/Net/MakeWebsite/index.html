@@ -59,7 +59,16 @@
     
     
     
-  </head>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -954,8 +963,8 @@
 <p>宝塔是一款方便配置站点环境的集成面板工具，对于不熟悉网站相关操作的新手来说比较友好。本文使用宝塔来配置服务器上所需要的相关环境。</p>
 <p>官网说明：<a href="https://www.bt.cn/new/download.html">https://www.bt.cn/new/download.html</a></p>
 <p>Linux安装指令如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Linux安装宝塔指令</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/usr/bin/curl<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span><span class="w"> </span>curl<span class="w"> </span>-sSO<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">else</span><span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>install_panel.sh<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">fi</span><span class="p">;</span>bash<span class="w"> </span>install_panel.sh<span class="w"> </span>ed8484bec
-</code></pre></div></td></tr></table></div>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/usr/bin/curl<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span><span class="w"> </span>curl<span class="w"> </span>-sSO<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">else</span><span class="w"> </span>wget<span class="w"> </span>-O<span class="w"> </span>install_panel.sh<span class="w"> </span>https://download.bt.cn/install/install_panel.sh<span class="p">;</span><span class="k">fi</span><span class="p">;</span>bash<span class="w"> </span>install_panel.sh<span class="w"> </span>ed8484bec
+</span></code></pre></div>
 <h3 id="_4">在宝塔面板配置服务器环境<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h2 id="_5">参考链接<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><a href="https://ronaldln.github.io/MyPamphlet-Blog/2023/10/23/mkdocs-material/">[1] 尝试修改 mkdocs-material 网页的字体的过程记录</a>——Ranald Luo</p>
@@ -1046,5 +1055,7 @@
       <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

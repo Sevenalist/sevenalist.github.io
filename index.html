@@ -57,7 +57,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -568,81 +577,206 @@
   
 
 
-<div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
-    <h1>Chaozhong Deng</h1>
-    <div class="flex-container">
-        <img src="/img/lifephoto.jpg" alt="照片" class="profile-img" />
-        <div class="content">
-            <!-- 保持原有内容结构不变 -->
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem;">
-                <span style="font-weight: bold;">邓朝钟</span>
-                <span style="margin-left: auto; padding-right: 10px;"><a href="mailto:dengcz.cn@gmail.com">✉️</a> : dengcz.cn@gmail.com</span>
+<main class="profile-container">
+    <header class="profile-header">
+        <h1>Chaozhong Deng</h1>
+    </header>
+    <section class="profile-layout">
+        <!-- 左侧图片容器 -->
+        <div class="photo-container">
+            <img src="/img/lifephoto.jpg" 
+                 alt="Chaozhong Deng's profile photo"
+                 loading="lazy"
+                 class="profile-img">
+        </div>
+        <!-- 右侧内容容器 -->
+        <article class="content-container">
+            <div class="contact-header">
+                <h2 class="chinese-name">邓朝钟</h2>
+                <a href="mailto:dengcz.cn@gmail.com" class="email-link" rel="noopener">
+                    <span class="sr-only">Email</span>✉️
+                    <span class="email-text">dengcz.cn@gmail.com</span>
+                </a>
             </div>
-            <div style="line-height: 1.5;">
-                Undergraduate. <br />
-                I'm a student majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of 
-                <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>. <br />
-                Currently, I'm a senior exchange student at the College of Excellent Engineers of 
-                <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. <br />
-                My graduation project is about the security of large models. If you have anything you'd like to discuss with me, feel free to reach out.
+            <!-- 教育经历 -->
+            <section class="education-section">
+                <p class="education-status">Undergraduate Student</p>
+                <p>
+                    Majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of
+                    <a href="https://www.cqut.edu.cn/" target="_blank" rel="noopener">Chongqing University of Technology</a>.
+                </p>
+                <p>
+                    Currently a senior exchange student at the College of Excellent Engineers, 
+                    <a href="https://www.cqu.edu.cn/" target="_blank" rel="noopener">Chongqing University</a>,
+                    focusing on Intelligent Connected Vehicles.
+                </p>
+                <p class="research-notice">
+                    My graduation project focuses on large model security. 
+                    Open to academic discussions and collaborations.
+                </p>
+            </section>
+        </article>
+    </section>
+    <!-- 时间轴 -->
+    <section class="timeline-section">
+        <h2>Bio</h2>
+        <dl class="timeline-list">
+            <div class="timeline-item">
+                <dt class="timeline-date">2024.09 - 2025.06</dt>
+                <dd class="timeline-content">
+                    As an exchange student in National Institute for Excellent Engineers, 
+                    <a href="https://www.cqu.edu.cn/" target="_blank" rel="noopener">Chongqing University</a>
+                    <br><b>Major</b>: Intelligent Connected Vehicles
+                </dd>
             </div>
-        </div>
-    </div>
-
-<!-- 个人经历 -->
-<h3>Bio</h3>
-    <div style="padding-left: 20px;">
-        <div style="margin-bottom: 15px;">
-            <span style="font-weight: bold; color: #333;">2024.09-2025.06</span><br />
-            An undergraduate exchange student at the National Institute for Excellent Engineers, 
-            <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>, majoring in Intelligent Connected Vehicles.
-        </div>
-        <div style="margin-bottom: 15px;">
-            <span style="font-weight: bold; color: #333;">2021.09-2025.06</span><br />
-            An undergraduate student at the Liangjiang Artificial Intelligence College, 
-            <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>, majoring in Intelligent Science and Technology.
-        </div>
-    </div>
-</div>
+            <div class="timeline-item">
+                <dt class="timeline-date">2021.09 - 2025.06</dt>
+                <dd class="timeline-content">
+                    Pursue a bachelor's degree from Liangjiang Artificial Intelligence College, 
+                    <a href="https://www.cqut.edu.cn/" target="_blank" rel="noopener">Chongqing University of Technology</a>
+                    <br><b>Major</b>: Intelligent Science and Technology
+                </dd>
+            </div>
+        </dl>
+    </section>
+</main>
 
 <style>
-.flex-container {
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* 个人信息布局 */
+.profile-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+/* 新增布局容器 */
+.profile-layout {
+    display: flex;
+    gap: 2rem;
     align-items: flex-start;
 }
 
-.profile-img {
-    width: 30%;      /* 修改默认宽度为35% */
+.photo-container {
+    flex-shrink: 0;  /* 禁止缩小 */
+    width: 30%;
+    max-width: 300px;
     min-width: 250px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    flex-shrink: 0;
 }
 
-.content {
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.profile-info {
     flex: 1;
     min-width: 300px;
 }
 
-@media (max-width: 700px) { /* 调整为标准移动断点 */
-    .flex-container {
-        justify-content: center; 
-        flex-direction: column; /* 纵向排列 */
-        align-items: center;    /* 交叉轴居中 */
+.content-container {
+    flex: 1;  /* 占据剩余空间 */
+}
+
+/* 联系信息 */
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* 时间轴样式 */
+.timeline-section {
+    margin-top: 2rem;
+}
+
+.timeline-list {
+    padding-left: 1rem;
+    border-left: 2px solid #eee;
+}
+
+.timeline-item {
+    margin: 1.5rem 0;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .profile-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
 
+    .photo-container {
+        width: 100%;
+        max-width: 350px;
+        min-width: auto;
+        margin: 0 auto;
+    }
+
+    .profile-header {
+        text-align: center;
+    }
+
+    .contact-header {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .email-link {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
     .profile-img {
-        width: 60%; /* 覆盖默认宽度 */
-        max-width: 350px;      /* 防止极端大屏幕过宽 */
-        min-width: 200px;      /* 更灵活的最小宽度 */
+        transition: transform 0.3s ease;
     }
 
-    .content {
-        width: 100%;           /* 继承容器宽度 */
-        min-width: auto;       /* 移除旧有限制 */
+    .profile-img:hover {
+        transform: scale(1.02);
     }
 }
 </style>
@@ -735,5 +869,7 @@
       <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
