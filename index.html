@@ -18,7 +18,7 @@
     
     
       
-        <title>Me - Sevenalist</title>
+        <title>Sevenalist</title>
       
     
     
@@ -184,17 +184,16 @@
     
   
   
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="." class="md-tabs__link">
-          
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
   
-  Home
-
-        </a>
-      </li>
     
+  
+  Me
+
+      </a>
+    </li>
   
 
       
@@ -304,50 +303,6 @@
   
   
   
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            Home
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -364,14 +319,6 @@
   
 
       </a>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -622,33 +569,27 @@
 
 
 <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
-    <h1>Chao-Zhong Deng</h1>
-    <!-- 修改 1: 增加 flex-wrap 和媒体查询 -->
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
-        <!-- 修改 2: 给图片容器增加响应式宽度 -->
-        <img src="\img\lifephoto.jpg"
-            alt="照片"
-            style="max-width: 20%; min-width: 250px; height: auto; object-fit: cover; border-radius: 5px;
-            flex-shrink: 0; /* 禁止缩小 */ 
-            @media (max-width: 768px) { max-width: 100%; }" />
-        <!-- 修改 3: 设置文字区域的基础宽度 -->
-        <div style="flex: 1; min-width: 300px;">
+    <h1>Chaozhong Deng</h1>
+    <div class="flex-container">
+        <img src="/img/lifephoto.jpg" alt="照片" class="profile-img" />
+        <div class="content">
+            <!-- 保持原有内容结构不变 -->
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem;">
-            <span style="font-weight: bold;">邓朝钟</span>
-            <span style="margin-left: auto; padding-right: 10px;">✉️ : dczcq.cn@gmail.com</span>
-        </div>
-        <div style="line-height: 1.5;">
-            Undergraduate. <br />
-            I'm a student majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of 
-            <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>. <br />
-            Currently, I'm a senior exchange student at the College of Excellent Engineers of 
-            <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. <br />
-            My graduation project is about the security of large models. If you have anything you'd like to discuss with me, feel free to reach out.
+                <span style="font-weight: bold;">邓朝钟</span>
+                <span style="margin-left: auto; padding-right: 10px;">✉️ : dczcq.cn@gmail.com</span>
+            </div>
+            <div style="line-height: 1.5;">
+                Undergraduate. <br />
+                I'm a student majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College of 
+                <a href="https://www.cqut.edu.cn/" target="_blank">Chongqing University of Technology</a>. <br />
+                Currently, I'm a senior exchange student at the College of Excellent Engineers of 
+                <a href="https://www.cqu.edu.cn/" target="_blank">Chongqing University</a>. <br />
+                My graduation project is about the security of large models. If you have anything you'd like to discuss with me, feel free to reach out.
+            </div>
         </div>
     </div>
-</div>
 
-<!-- 以下是保持原有内容 -->
+<!-- 个人经历 -->
 <h3>Bio</h3>
     <div style="padding-left: 20px;">
         <div style="margin-bottom: 15px;">
@@ -663,6 +604,48 @@
         </div>
     </div>
 </div>
+
+<style>
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.profile-img {
+    width: 35%;      /* 修改默认宽度为35% */
+    min-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px;
+}
+
+@media (max-width: 767px) { /* 调整为标准移动断点 */
+    .flex-container {
+        justify-content: center; 
+        flex-direction: column; /* 纵向排列 */
+        align-items: center;    /* 交叉轴居中 */
+    }
+
+    .profile-img {
+        width: 35%; /* 覆盖默认宽度 */
+        max-width: 350px;      /* 防止极端大屏幕过宽 */
+        min-width: 200px;      /* 更灵活的最小宽度 */
+    }
+
+    .content {
+        width: 100%;           /* 继承容器宽度 */
+        min-width: auto;       /* 移除旧有限制 */
+    }
+}
+</style>
 
 
 
@@ -703,7 +686,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 Chao-Zhong Deng
+      Copyright &copy; 2025 Chaozhong Deng
     </div>
   
   
