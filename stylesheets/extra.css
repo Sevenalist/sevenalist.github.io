@@ -20,3 +20,8 @@ code, pre {
   /*  自动换行 */
   /* white-space: pre-wrap; */
 }
+
+/* 使所有二级标题加粗 */
+.md-typeset h2 {
+  font-weight: bold;
+}
