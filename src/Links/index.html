@@ -57,16 +57,7 @@
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  </head>
   
   
     
@@ -673,59 +664,115 @@
 <h1 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>My Friends!</p>
 </div>
+<p>My Friends!</p>
 <body>
 <!-- 先定义样式 -->
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* 图片居中对齐 */
-            gap: 20px; /* 图片之间的间距 */
-            padding: 20px;
-        }
+<style>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    justify-content: flex-start;
+}
 
-        .item {
-            text-align: center; /* 文字居中 */
-            width: 150px; /* 图片宽度 */
-            margin-bottom: 20px;
-        }
+.link-card {
+    flex: 1 1 calc(50% - 30px);
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    min-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        .item img {
-            width: 50%;
-            height: auto;
-            border-radius: 20px; /* 图片圆角 */
-        }
+.link-card:hover {
+    transform: scale(1.05);
+    background: #f0f7ff;
+    z-index: 1;
+}
 
-        .item p {
-            margin: 0; /* 移除默认边距 */
-            font-size: 16px;
-            color: #333;
-        }
-    </style>
+.link-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
 
-    <!-- 插入友链 -->
-    <div class="container">
-        <!-- 第一个项目 -->
-        <div class="item">
-            <a href="https://dxlcq.cn/">
-                <a class="glightbox" href="https://dxlcq.cn/assets/head.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" /></a>
+.content-a {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.signature {
+    flex: 1;
+    padding-left: 20px;
+    font-style: italic;
+    color: #666;
+    border-left: 2px solid #eee;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px
+}
+
+@media (max-width: 768px) {
+    .link-card {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    .signature {
+        font-size: 13px;
+    }
+}
+</style>
+
+<!-- 插入友链 -->
+<div class="container">
+    <!-- 第一个项目 -->
+    <div class="link-card">
+        <a href="https://dxlcq.cn/" class="link-content">
+            <div class="content-a item">
+                <img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" />
                 <p>戴兴龙</p>
-            </a>
-        </div>
-
-        <!-- 第二个项目 -->
-        <div class="item">
-            <a href="https://www.leeyearn.cn/">
-                <a class="glightbox" href="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" /></a>
-                <p>Lee Yearn</p>
-            </a>
-        </div>
+            </div>
+            <p class="signature">问君何能尔，心远地自偏</p>
+        </a>
     </div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
+
+    <!-- 第二个项目 -->
+    <div class="link-card">
+        <a href="https://www.leeyearn.cn/" class="link-content">
+            <div class="content-a item">
+                <img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" />
+                <p>Lee Yearn</p>
+            </div>
+            <p class="signature">问君何能尔，心远地自偏</p>
+        </a>
+    </div>
+</div>
+</body>
 
 
 
