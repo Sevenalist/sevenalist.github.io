@@ -17,4 +17,10 @@ code, pre {
 /* 使所有二级标题加粗 */
 .md-typeset h2 {
   font-weight: bold;
+  margin-top: 30px;
+}
+
+.md-typeset h1 {
+  font-weight: bold;
+  margin-bottom: 30px;
 }

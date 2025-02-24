@@ -10,11 +10,11 @@
       
       
       
-        <link rel="next" href="src/Blog/">
+        <link rel="next" href="Blog/">
       
       
-      <link rel="icon" href="img/logo1.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <link rel="icon" href="img/logo/icon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
       
@@ -57,7 +57,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -204,7 +213,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="src/Blog/" class="md-tabs__link">
+        <a href="Blog/" class="md-tabs__link">
           
   
     
@@ -222,7 +231,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="src/Utils/utils/" class="md-tabs__link">
+      <a href="utils/" class="md-tabs__link">
         
   
     
@@ -239,7 +248,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="src/Links/" class="md-tabs__link">
+      <a href="links/" class="md-tabs__link">
         
   
     
@@ -343,8 +352,6 @@
       
         
       
-        
-      
     
     
       
@@ -362,7 +369,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="src/Blog/" class="md-nav__link ">
+            <a href="Blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -419,7 +426,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="src/Linux/" class="md-nav__link ">
+            <a href="Blog/Linux/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -503,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="src/Blog/Website/MakeWebsite/" class="md-nav__link">
+      <a href="Blog/Website/MakeWebsite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="src/Blog/Website/MaterialWrite/" class="md-nav__link">
+      <a href="Blog/Website/MaterialWrite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,28 +555,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="src/test/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LLM
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -584,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="src/Utils/utils/" class="md-nav__link">
+      <a href="utils/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="src/Links/" class="md-nav__link">
+      <a href="links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,7 +658,7 @@
         <!-- 右侧内容容器 -->
         <article class="content-container">
             <div class="contact-header">
-                <h2 style="line-height:1;margin:1em 0 .64em;">邓朝钟</h2>
+                <h2 style="line-height:1;margin:0.4em 0 .64em;">邓朝钟</h2>
                 <a href="mailto:dengcz.cn@gmail.com" class="email-link" rel="noopener">
                     <span class="sr-only">Email</span>✉️
                     <span class="email-text">dengcz.cn@gmail.com</span>
@@ -705,7 +690,7 @@
             <div class="timeline-item">
                 <dt class="timeline-date">2024.09 - 2025.06</dt>
                 <dd class="timeline-content">
-                    As an exchange student in National Institute for Excellent Engineers, 
+                    Study as an exchange student in National Institute for Excellent Engineers, 
                     <a href="https://www.cqu.edu.cn/" target="_blank" rel="noopener">Chongqing University</a>
                     <br><b>Major</b>: Intelligent Connected Vehicles
                 </dd>
@@ -730,7 +715,7 @@
 }
 
 .profile-header {
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
     text-align: left;
 }
 
@@ -746,11 +731,14 @@
 /* 新增布局容器 */
 .profile-layout {
     display: flex;
+    justify-content: center; /* 垂直居中 */
     gap: 2rem;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 }
 
 .photo-container {
+    display: flex;
+    justify-content: center; /* 垂直居中 */
     flex-shrink: 0;  /* 禁止缩小 */
     width: 30%;
     max-width: 300px;
@@ -758,10 +746,10 @@
 }
 
 .profile-img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 15px;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/4; /* 长宽比 */
     object-fit: cover;
 }
 
@@ -780,7 +768,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0px;
     gap: 1rem;
 }
 
@@ -951,5 +939,7 @@
       <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
