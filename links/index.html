@@ -652,7 +652,34 @@
 <p>My Friends!</p>
 </div>
 <body>
-<!-- 先定义样式 -->
+<!-- 插入友链 -->
+    <div class="container">
+        <!-- 第一个项目 -->
+        <div class="link-card">
+            <a href="https://dxlcq.cn/" class="link-content">
+                <div class="content-a item">
+                    <img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" />
+                    <p>戴兴龙</p>
+                </div>
+                <p class="signature">骄骄乃骄傲的骄骄</p>
+            </a>
+        </div>
+        <!-- 第二个项目 -->
+        <div class="link-card">
+            <a href="https://www.leeyearn.cn/" class="link-content">
+                <div class="content-a item">
+                    <img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" />
+                    <p>Lee Yearn</p>
+                </div>
+                <p class="signature">问君何能尔，心远地自偏</p>
+            </a>
+        </div>
+    </div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+
+<!-- 定义样式 -->
 <style>
     .container {
         display: flex;
@@ -723,33 +750,6 @@
         }
     }
 </style>
-
-<!-- 插入友链 -->
-<div class="container">
-    <!-- 第一个项目 -->
-    <div class="link-card">
-        <a href="https://dxlcq.cn/" class="link-content">
-            <div class="content-a item">
-                <img src="https://dxlcq.cn/assets/head.png" alt="戴兴龙头像" />
-                <p>戴兴龙</p>
-            </div>
-            <p class="signature">骄骄是骄傲的骄骄</p>
-        </a>
-    </div>
-    <!-- 第二个项目 -->
-    <div class="link-card">
-        <a href="https://www.leeyearn.cn/" class="link-content">
-            <div class="content-a item">
-                <img src="https://www.leeyearn.cn/static/userAvatar/LeeYearn11729748231056641.jpg" alt="Lee Yearn头像" />
-                <p>Lee Yearn</p>
-            </div>
-            <p class="signature">问君何能尔，心远地自偏</p>
-        </a>
-    </div>
-</div>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
 
 
 
