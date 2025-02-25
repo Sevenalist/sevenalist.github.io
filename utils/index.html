@@ -640,6 +640,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Others
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -717,6 +726,15 @@
   <a href="#networks" class="md-nav__link">
     <span class="md-ellipsis">
       Networks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Others
     </span>
   </a>
   
@@ -817,13 +835,28 @@ document$.subscribe(() => { lightbox.reload() });
 document$.subscribe(() => { lightbox.reload() });
 </script></body>
 
+<h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h2>
+<body>
+    <!-- 插入图标链接 -->
+    <div class="container">
+        <div class="item">
+            <a href="https://earth.google.com/web/">
+                <img src="/img/logo/googleearth.ico" />
+                <p>Google Earth</p>
+            </a>
+        </div>
+    </div>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+
 <!-- 定义图标样式 -->
 <style>
     .container {
         display: flex;
         flex-wrap: wrap;
         justify-content: left; /* 图片居左对齐，中心对齐是center */
-        gap: 20px; /* 图片之间的间距 */
+        gap: 40px; /* 图片之间的间距 */
         padding: 20px;
     }
     .item {
