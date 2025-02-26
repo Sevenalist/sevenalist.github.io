@@ -24,3 +24,12 @@ code, pre {
   font-weight: bold;
   margin-bottom: 30px;
 }
+
+/* 自定义 bash 高亮样式 */
+code.language-bash .hljs-comment {
+  color: #6a9955;
+}
+
+code.language-bash .hljs-built_in {
+  color: #4EC9B0;
+}
