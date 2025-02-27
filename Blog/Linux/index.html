@@ -673,6 +673,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="修改">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      移动文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改文件名
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       3 创建
@@ -683,7 +716,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       创建单个文件：
     </span>
@@ -691,8 +724,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建文件夹
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看
+    </span>
+  </a>
   
 </li>
       
@@ -707,7 +758,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       切换模式
     </span>
@@ -716,7 +767,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       普通模式下快捷键
     </span>
@@ -725,16 +776,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      命令行模式指令
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       保存和退出
     </span>
@@ -758,7 +800,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       查看存储空间
     </span>
@@ -824,27 +866,63 @@
 </div>
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>rm<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>dirName<span class="o">]</span>
 </span></code></pre></div>
+<h2 id="_2">修改<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">移动文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>mv<span class="w"> </span>/<span class="o">[</span>fileName<span class="o">]</span><span class="w"> </span>/dir/<span class="o">[</span>fileName<span class="o">]</span>
+</span></code></pre></div>
+<h3 id="_4">修改文件名<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>mv [fileName1] [fileName2]</p>
 <h2 id="3">3 创建<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<h3 id="_2">创建单个文件：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_5">创建单个文件：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>使用echo</li>
 </ul>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
 </span></code></pre></div>
 <ul>
 <li>使用touch</li>
 </ul>
 <p>如果文件不存在，它会创建一个空文件；如果文件已存在，它会更新文件的时间戳。</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>touch<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>touch<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
 </span></code></pre></div>
 <ul>
 <li>使用vim</li>
 </ul>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>vim<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>vim<span class="w"> </span><span class="o">[</span>fileName<span class="o">]</span>
 </span></code></pre></div>
 <p>如果没有该文件，会直接创建一个文件，并在vim中打开</p>
+<h3 id="_6">创建文件夹<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h2 id="_7">查看<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>查看当前所在路径</li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">pwd</span>
+</span></code></pre></div>
+<ul>
+<li>简单查看当前路径内容</li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>ls
+</span></code></pre></div>
+<ul>
+<li>简单查看当前路径全部文件</li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a>la
+</span></code></pre></div>
+<ul>
+<li>查看当前路径内所有文件详细信息</li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>ll
+</span></code></pre></div>
+<p>举例</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a>total 20
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><a href="#__codelineno-14-2"><span class="linenos" data-linenos="2 "></span></a>drwxrwxr-x  3 ubuntu ubuntu 4096  2月 27 11:44 ./
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><a href="#__codelineno-14-3"><span class="linenos" data-linenos="3 "></span></a>drwxr-xr-x 29 ubuntu ubuntu 4096  2月 27 11:31 ../
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><a href="#__codelineno-14-4"><span class="linenos" data-linenos="4 "></span></a>drwxrwxr-x  7 ubuntu ubuntu 4096 10月 19 14:38 EIE/
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><a href="#__codelineno-14-5"><span class="linenos" data-linenos="5 "></span></a>-rw-rw-r--  1 ubuntu ubuntu    5  2月 27 11:44 .file
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><a href="#__codelineno-14-6"><span class="linenos" data-linenos="6 "></span></a>-rw-rw-r--  1 ubuntu ubuntu  110  2月 27 11:31 file1.txt
+</span></code></pre></div>
 <h2 id="4-vim">4 vim快速指南<a class="headerlink" href="#4-vim" title="Permanent link">&para;</a></h2>
-<h3 id="_3">切换模式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_8">切换模式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>进入普通模式：<span class="keys"><kbd class="key-escape">Esc</kbd></span></p>
@@ -856,7 +934,7 @@
 <p>进入命令行模式：在普通模式下输入<code>:</code></p>
 </li>
 </ul>
-<h3 id="_4">普通模式下快捷键<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_9">普通模式下快捷键<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>撤销：<code>u</code></p>
@@ -865,7 +943,13 @@
 <p>重做：<code>ctrl</code>+<code>r</code></p>
 </li>
 <li>
+<p>到文本首行：<code>gg</code></p>
+</li>
+<li>
 <p>删除一行：<code>dd</code></p>
+</li>
+<li>
+<p>删除光标后所有内容：<code>dG</code>，结合<code>ggdG</code>可以实现删除文本全部内容。</p>
 </li>
 <li>
 <p>查找：<code>/</code>+<code>[查找内容]</code>  </p>
@@ -890,11 +974,7 @@
 <p>跳转指定行：<code>nG</code>，其中<code>n</code>表示要跳转到的行数，如<code>10G</code>表示跳转到第10行。</p>
 </li>
 </ul>
-<h3 id="_5">命令行模式指令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li></li>
-</ul>
-<h3 id="_6">保存和退出<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_10">保存和退出<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>以下内容均在<code>:</code>命令行模式下输入：</p>
 <ul>
 <li>
@@ -907,12 +987,12 @@
 <p>保存并退出：<code>:wq</code> + <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
 </li>
 <li>
-<p>强制符号：<code>!</code>，例如<code>:!q</code> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> 是不保存退出</p>
+<p>强制符号：<code>!</code>，例如<code>:q!</code> + <span class="keys"><kbd class="key-enter">Enter</kbd></span> 是不保存退出</p>
 </li>
 </ul>
 <h2 id="5">5 其他<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<h3 id="_7">查看存储空间<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>df<span class="w"> </span>-h
+<h3 id="_11">查看存储空间<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a>df<span class="w"> </span>-h
 </span></code></pre></div>
 
 
