@@ -36,14 +36,7 @@ code.language-bash .hljs-built_in {
 
 /* 设置md文档中图片居中样式 */
 /* 使用方式为![](){: .center}, 且在mkdocs.yml中添加`- attr_list` */
-
-/* .center { */
-  /* display: block; */
-  /* margin: 0 auto; */
-/* } */
-
-/* 全局设置图片居中 */
-.md-content img {
+.center {
   display: block;
   margin: 0 auto;
 }
