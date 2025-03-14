@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../img/logo/icon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
@@ -961,6 +961,8 @@
       
         
       
+        
+      
     
     
       
@@ -1007,6 +1009,28 @@
   
   <span class="md-ellipsis">
     Ollama部署本地大模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Blog/LLM/RAGflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAGflow构建大模型知识库
     
   </span>
   
@@ -1338,10 +1362,11 @@
   
 
 
-<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h1 id="docker">Docker笔记<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p><a href="https://yeasy.gitbook.io/docker_practice">Docker中文教程</a>。</p>
 <h2 id="1">1 简介<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>Docker是一种容器技术，是轻量级的“虚拟机”，可以为每个应用配置隔离的环境。</p>
+<hr />
 <h2 id="2">2 下载<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.docker.com/engine/install/">官方下载指南</a>。</p>
 <div class="admonition note">
@@ -1357,6 +1382,7 @@
 </div>
 </div>
 </div>
+<hr />
 <h2 id="3">3 重要概念<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Dockerfile</label><label for="__tabbed_2_2">Image</label><label for="__tabbed_2_3">Container</label></div>
@@ -1379,22 +1405,18 @@
 </div>
 </div>
 </div>
+<hr />
 <h2 id="4">4 常用指令<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_1">启动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>run<span class="w"> </span>&lt;container&gt;<span class="w"> </span>-d
 </span></code></pre></div>
 <blockquote>
 <p>此处的<code>-d</code>表示在后台运行。</p>
 </blockquote>
-</div>
 <h3 id="_2">停止<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>stop
 </span></code></pre></div>
-</div>
 <h3 id="_3">删除<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">删除单个处于停止状态的容器</label><label for="__tabbed_3_2">删除所有处于终止状态的容器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1407,13 +1429,13 @@
 </div>
 </div>
 </div>
-</div>
 <h3 id="containers">查看Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>ps
 </span></code></pre></div>
 <h3 id="images">查看Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>images
 </span></code></pre></div>
+<hr />
 <h2 id="5-docker-compose">5 Docker Compose<a class="headerlink" href="#5-docker-compose" title="Permanent link">&para;</a></h2>
 <p>Docker Compose可以让多个Container进行交互。</p>
 <div class="admonition success">
@@ -1442,6 +1464,7 @@
 </div>
 </div>
 </div>
+<p>stop之后可以通过start重新启动。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">停止Docker Compose创建的容器</p>
@@ -1461,6 +1484,7 @@
 </div>
 </div>
 </div>
+<p>stop是暂停，修改过的的数据依然在。</p>
 </div>
 <div class="admonition failure">
 <p class="admonition-title">删除Docker Compose创建的容器</p>
@@ -1480,6 +1504,7 @@
 </div>
 </div>
 </div>
+<p>down是删除容器，所有的数据都会被清除。</p>
 </div>
 
 
@@ -1503,7 +1528,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 12, 2025 12:58:47">March 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 14, 2025 03:15:20">March 14, 2025</span>
   </span>
 
     
