@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../vim/">
       
       
-        <link rel="next" href="../../LLM/Ollama/">
+        <link rel="next" href="../../git/">
       
       
       <link rel="icon" href="../../../img/logo/icon.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>双系统设置开机默认OS - Sevenalist</title>
+        <title>tmux使用 - Sevenalist</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntuwindowsos" class="md-skip">
+        <a href="#tmux" class="md-skip">
           跳转至
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              双系统设置开机默认OS
+              tmux使用
             
           </span>
         </div>
@@ -222,11 +222,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../note/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -244,13 +246,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../Blog/" class="md-tabs__link">
           
   
   
@@ -375,6 +375,8 @@
       
   
   
+    
+  
   
   
     
@@ -400,20 +402,21 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../note/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -426,13 +429,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             📓Note
@@ -445,6 +448,8 @@
                 
   
   
+    
+  
   
   
     
@@ -465,17 +470,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../note/linux/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -494,7 +497,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -510,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/linux/vim/" class="md-nav__link">
+      <a href="../vim/" class="md-nav__link">
         
   
   
@@ -530,10 +533,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../note/linux/tmux/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    tmux使用
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -544,6 +569,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 安装tmux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 创建tmux会话
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 接入tmux终端
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 退出tmux终端
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 删除tmux会话
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -564,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/git/" class="md-nav__link">
+      <a href="../../git/" class="md-nav__link">
         
   
   
@@ -587,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/terminals/" class="md-nav__link">
+      <a href="../../terminals/" class="md-nav__link">
         
   
   
@@ -633,7 +723,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../note/cpp/" class="md-nav__link ">
+            <a href="../../cpp/" class="md-nav__link ">
               
   
   
@@ -671,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/docker/" class="md-nav__link">
+      <a href="../../docker/" class="md-nav__link">
         
   
   
@@ -741,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../note/others/MkMaterial/" class="md-nav__link">
+      <a href="../../others/MkMaterial/" class="md-nav__link">
         
   
   
@@ -776,8 +866,6 @@
       
   
   
-    
-  
   
   
     
@@ -797,21 +885,20 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../Blog/" class="md-nav__link ">
               
   
   
@@ -824,13 +911,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             📜 Blog
@@ -843,8 +930,6 @@
                 
   
   
-    
-  
   
   
     
@@ -859,11 +944,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -879,7 +966,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -890,32 +977,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    双系统设置开机默认OS
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Blog/Linux/defaultOS/" class="md-nav__link">
         
   
   
@@ -926,35 +991,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ubuntu端的解决方案
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1024,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/Ollama/" class="md-nav__link">
+      <a href="../../../Blog/LLM/Ollama/" class="md-nav__link">
         
   
   
@@ -1047,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/RAGflow/" class="md-nav__link">
+      <a href="../../../Blog/LLM/RAGflow/" class="md-nav__link">
         
   
   
@@ -1129,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/tr3000/" class="md-nav__link">
+      <a href="../../../Blog/Internet/tr3000/" class="md-nav__link">
         
   
   
@@ -1152,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/MakeWebsite/" class="md-nav__link">
+      <a href="../../../Blog/Internet/MakeWebsite/" class="md-nav__link">
         
   
   
@@ -1175,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/userProxy/" class="md-nav__link">
+      <a href="../../../Blog/Internet/userProxy/" class="md-nav__link">
         
   
   
@@ -1345,9 +1381,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
+  <a href="#1-tmux" class="md-nav__link">
     <span class="md-ellipsis">
-      Ubuntu端的解决方案
+      1 安装tmux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 创建tmux会话
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 接入tmux终端
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 退出tmux终端
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tmux" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 删除tmux会话
     </span>
   </a>
   
@@ -1372,17 +1444,22 @@
   
 
 
-<h1 id="ubuntuwindowsos">Ubuntu和Windows双系统设置开机默认OS<a class="headerlink" href="#ubuntuwindowsos" title="Permanent link">&para;</a></h1>
-<p><strong>目的</strong>：Ubuntu和Windows双系统下，想修改默认启动的操作系统为Windows或Ubuntu系统。</p>
-<h2 id="ubuntu">Ubuntu端的解决方案<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
-<p>1. 进入设置默认启动的文件<code>grub.cfg</code></p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>sudo<span class="w"> </span>vim<span class="w"> </span>/boot/grub/grub.cfg
+<h1 id="tmux">tmux快速指南<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
+<p>Tmux（terminal multiplexer，终端复用器）是一个可以长期在后台运行的终端管理器，在SSH等场景下即使终端被关闭之后也能够正常运行，而且在之后还可以重复接入终端界面查看输出情况，在网络状态不稳定或者不想用终端的的场景贼好用。</p>
+<h2 id="1-tmux">1 安装tmux<a class="headerlink" href="#1-tmux" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>apt<span class="w"> </span>install<span class="w"> </span>tmux
 </span></code></pre></div>
-<p>2. 找到下面这一段代码：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<h2 id="2-tmux">2 创建tmux会话<a class="headerlink" href="#2-tmux" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>&lt;name&gt;
 </span></code></pre></div>
-<p>3. 将<code>0</code>修改为Windows在开机时的启动序列，比如我的Windows在开机时处于第五位，那就<code>0</code>修改为<code>4</code>，即：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;4&quot;</span>
+<p>这里的<code>-s</code>指代session，表示会话，<code>name</code>为会话名。</p>
+<h2 id="3-tmux">3 接入tmux终端<a class="headerlink" href="#3-tmux" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>&lt;name&gt;
+</span></code></pre></div>
+<h2 id="4-tmux">4 退出tmux终端<a class="headerlink" href="#4-tmux" title="Permanent link">&para;</a></h2>
+<p><span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-b">B</kbd></span>  ，松手， <span class="keys"><kbd class="key-d">D</kbd></span></p>
+<h2 id="5-tmux">5 删除tmux会话<a class="headerlink" href="#5-tmux" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">exit</span>
 </span></code></pre></div>
 
 
@@ -1406,7 +1483,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 27, 2025 10:54:28">February 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 6, 2025 05:06:13">May 6, 2025</span>
   </span>
 
     
@@ -1416,7 +1493,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 27, 2025 10:54:28">February 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 6, 2025 05:06:13">May 6, 2025</span>
   </span>
 
     
