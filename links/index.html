@@ -1365,7 +1365,7 @@ document$.subscribe(() => { lightbox.reload() });
         padding: 15px;
         transition: all 0.3s ease;
         position: relative;
-        min-width: 300px;
+        /* min-width: 300px; */
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .link-card:hover {
@@ -1397,8 +1397,9 @@ document$.subscribe(() => { lightbox.reload() });
         font-size: 16px;
     }
     .item img {
-        width: 60px;
-        height: 60px;
+        width: 100%;
+        max-width: 60px;
+        height: auto; /* 高度自动，保持比例 */
         border-radius: 20px;
         margin-bottom: 10px;
     }
@@ -1411,7 +1412,7 @@ document$.subscribe(() => { lightbox.reload() });
     @media (max-width: 768px) {
         .link-card {
             flex-basis: 100%;
-            margin: 10px 0;
+            margin: 10px 10px;
         }
         .signature {
             font-size: 13px;
