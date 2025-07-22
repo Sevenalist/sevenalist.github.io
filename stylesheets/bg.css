@@ -57,3 +57,11 @@
     padding: 3rem;
   }
   
+  /* 调整移动端 */
+@media (max-width: 768px) { /* You can adjust this breakpoint as needed */
+    .md-content > .md-typeset {
+        background-color: transparent;
+        border-radius: 0;
+        padding: 1rem; /* Reduced padding for smaller screens */
+    }
+  }
