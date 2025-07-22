@@ -1,0 +1,59 @@
+#box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10; /* 保证始终在底层 */
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+  
+
+  /* 去除左侧栏的白色渐变框 */
+  .md-nav__link--active,
+  .md-nav__link:focus,
+  .md-nav__item--active > .md-nav__link {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* 去掉 TOC 中的选中/hover/聚焦样式 */
+  .md-nav--secondary .md-nav__title,
+  .md-nav--secondary .md-nav__titlek:focus,
+  .md-nav--secondary .md-nav__title:hover,
+  .md-nav--secondary .md-nav__title--active {
+  background: transparent;
+  box-shadow: none;
+  }
+  
+  /* 顶栏 */
+  .md-header {
+    background-color: rgba(89, 108, 119, 0.7); /* 半透明白色背景 */
+    backdrop-filter: blur(8px); /* 可选：模糊后面内容，提升可读性 */
+    -webkit-backdrop-filter: blur(8px); /* Safari 支持 */
+    box-shadow: none; /* 去掉顶部阴影（可选） */
+  }
+  
+  /* 导航栏 */
+  .md-tabs {
+    background-color: rgba(89, 108, 119, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: none;
+  }
+  
+  /* 页脚 */
+  .md-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: none;
+  }
+
+  /* 内容白色蒙版 */
+  .md-content > .md-typeset {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 3rem;
+  }
+  

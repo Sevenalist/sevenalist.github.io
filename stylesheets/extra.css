@@ -14,6 +14,18 @@ code, pre {
   /* white-space: pre-wrap; */
 }
 
+.hightlight {
+  background-color: rgba(30, 30, 30, 0.9); /* 深色背景 */
+  color: #f8f8f2; /* 浅色字体 */
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  padding: 1rem;
+  display: block;
+  overflow-x: auto;
+}
+
 /* 使所有二级标题加粗 */
 .md-typeset h2 {
   font-weight: bold;
