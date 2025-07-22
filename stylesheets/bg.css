@@ -49,12 +49,12 @@
     -webkit-backdrop-filter: blur(8px);
     box-shadow: none;
   }
-
+  
   /* 内容白色蒙版 */
   .md-content > .md-typeset {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2.5rem;
   }
   
   /* 调整移动端 */

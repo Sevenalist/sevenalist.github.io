@@ -1353,7 +1353,7 @@ document$.subscribe(() => { lightbox.reload() });
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
-        padding: 20px;
+        padding: 0px;
         justify-content: flex-start;
     }
     .link-card {
@@ -1362,7 +1362,7 @@ document$.subscribe(() => { lightbox.reload() });
         align-items: center;
         background: rgba(255,255,255,0.8);
         border-radius: 20px;
-        padding: 15px;
+        padding: 10px;
         transition: all 0.3s ease;
         position: relative;
         /* min-width: 300px; */
@@ -1398,11 +1398,14 @@ document$.subscribe(() => { lightbox.reload() });
     }
     .item img {
         width: 100%;
-        max-width: 60px;
-        height: auto; /* 高度自动，保持比例 */
+        height: auto;
+        aspect-ratio: 1 / 1;           /* 保证是正方形 */
+        max-width: 50px;               /* 限制最大宽度 */
         border-radius: 20px;
         margin-bottom: 10px;
+        object-fit: cover;             /* 让图片内容更自然 */
     }
+
     .item p {
         margin: 0;
         font-weight: 500;
