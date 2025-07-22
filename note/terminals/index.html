@@ -1562,24 +1562,24 @@
 <h3 id="11-powershell">1.1 取消PowerShell执行脚本限制<a class="headerlink" href="#11-powershell" title="Permanent link">&para;</a></h3>
 <p>有时候无法执行如conda初始化等脚本命令，这是因为PowerShell对执行脚本有限制。</p>
 <p>以管理员权限打开Powershell并执行以下命令：</p>
-<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+</code></pre></div>
 <h3 id="12-windows11">1.2 <a href="https://www.bilibili.com/opus/950298536863334437">激活Windows11</a><a class="headerlink" href="#12-windows11" title="Permanent link">&para;</a></h3>
 <p>以管理员身份运行PowerShell，执行以下命令：</p>
-<p><div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">irm </span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
-</span></code></pre></div>
+<p><div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">irm </span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+</code></pre></div>
 在随后的命令提示符中输入<code>1</code>即可永久激活。</p>
 <h2 id="2-cmd">2 CMD<a class="headerlink" href="#2-cmd" title="Permanent link">&para;</a></h2>
 <h3 id="21-windows10">2.1 <a href="https://www.bilibili.com/opus/950298536863334437">激活Windows10</a><a class="headerlink" href="#21-windows10" title="Permanent link">&para;</a></h3>
 <p>以管理员身份运行CMD，以此执行以下命令：</p>
-<div class="language-text highlight"><span class="filename">输入产品密钥</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-</span></code></pre></div>
+<div class="highlight"><span class="filename">输入产品密钥</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+</code></pre></div>
 <p>等待弹出提示窗口，点击「确定」。</p>
-<div class="language-text highlight"><span class="filename">设置KMS服务器</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /skms kms.loli.best
-</span></code></pre></div>
+<div class="highlight"><span class="filename">设置KMS服务器</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /skms kms.loli.best
+</code></pre></div>
 <p>再次等待弹出提示窗口，点击「确定」。</p>
-<div class="language-text highlight"><span class="filename">激活系统</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /ato
-</span></code></pre></div>
+<div class="highlight"><span class="filename">激活系统</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>slmgr /ato
+</code></pre></div>
 <p>等待弹出提示窗口，显示成功激活的提示即表示激活成功。</p>
 <h2 id="3-conda">3 Conda<a class="headerlink" href="#3-conda" title="Permanent link">&para;</a></h2>
 <h3 id="31-conda">3.1 设置conda终端初始化<a class="headerlink" href="#31-conda" title="Permanent link">&para;</a></h3>
@@ -1587,19 +1587,19 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">取消激活</label><label for="__tabbed_1_2">激活</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><span class="filename">conda</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>conda config --set auto_activate_base false
-</span></code></pre></div>
+<div class="highlight"><span class="filename">conda</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>conda config --set auto_activate_base false
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><span class="filename">conda</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>conda config --set auto_activate_base true
-</span></code></pre></div>
+<div class="highlight"><span class="filename">conda</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>conda config --set auto_activate_base true
+</code></pre></div>
 </div>
 </div>
 </div>
 </div>
 <h3 id="32-pip">3.2 更换pip源<a class="headerlink" href="#32-pip" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><span class="filename">清华源</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-</span></code></pre></div>
+<div class="highlight"><span class="filename">清华源</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></div>
 <blockquote>
 <p>conda安装用得少，推荐使用pip，所以这里不提供conda换源。</p>
 </blockquote>

@@ -1433,15 +1433,15 @@
 <p>这是一个提示框案例。</p>
 </div>
 <p>首先需要在mkdocs.yaml文件中添加以下参数：</p>
-<p><div class="language-yaml highlight"><span class="filename">YAML</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w">              </span><span class="c1"># 提示框功能</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w">        </span><span class="c1"># 提示框折叠功能</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w">    </span><span class="c1"># 提示框中添加代码</span>
-</span></code></pre></div>
+<p><div class="highlight"><span class="filename">YAML</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">markdown_extensions</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w">              </span><span class="c1"># 提示框功能</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w">        </span><span class="c1"># 提示框折叠功能</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w">    </span><span class="c1"># 提示框中添加代码</span>
+</code></pre></div>
 使用方法为：</p>
-<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>!!! note &quot;普通提示框&quot;
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>    这是一个提示框案例。
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>!!! note &quot;普通提示框&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>    这是一个提示框案例。
+</code></pre></div>
 <h3 id="12">1.2 折叠提示框<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <details class="note">
 <summary>折叠提示框</summary>
@@ -1449,9 +1449,9 @@
 </details>
 <p>如果想要创建折叠提示框，只需要将开头的感叹号<code>!</code>替换为问号<code>?</code>即可。</p>
 <p>实现代码如下：</p>
-<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>??? note &quot;折叠提示框&quot;
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>    这是一个提示框案例。
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>??? note &quot;折叠提示框&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>    这是一个提示框案例。
+</code></pre></div>
 <p>除了<code>note</code>类型的提示框，官网还提供了诸多其他种类，详情可查阅<a href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types">官方文档</a>。</p>
 
 

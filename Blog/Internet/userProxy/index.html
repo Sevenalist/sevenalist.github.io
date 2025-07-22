@@ -1528,29 +1528,29 @@
 <p>至此完成上网设备配置。</p>
 <h2 id="4">4 服务器设置<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>先测试从服务器能否ping通可上网设备。</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>ping<span class="w"> </span><span class="o">[</span>上网设备ip地址<span class="o">]</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>ping<span class="w"> </span><span class="o">[</span>上网设备ip地址<span class="o">]</span>
+</code></pre></div>
 <p>如果没有问题，进行如下设置。</p>
 <h3 id="41-bashrc">4.1 进入<code>.bashrc</code>文件<a class="headerlink" href="#41-bashrc" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>vim<span class="w"> </span>~/.bashrc
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>vim<span class="w"> </span>~/.bashrc
+</code></pre></div>
 <h3 id="42">4.2 为终端设置代理<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p>在<code>.bashrc</code>文件的最后添加如下内容</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">export</span> <span class="n">http_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">export</span> <span class="n">https_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">export</span> <span class="n">ftp_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">export</span> <span class="n">HTTP_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">export</span> <span class="n">HTTPS_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">export</span> <span class="n">FTP_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">export</span> <span class="n">http_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">export</span> <span class="n">https_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">export</span> <span class="n">ftp_proxy</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">export</span> <span class="n">HTTP_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">export</span> <span class="n">HTTPS_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">export</span> <span class="n">FTP_PROXY</span><span class="o">=</span><span class="s2">&quot;http://[上网设备的ip地址]:[开放的端口号]/&quot;</span>
+</code></pre></div>
 <h3 id="43-bashrc">4.3 更新<code>.bashrc</code>文件<a class="headerlink" href="#43-bashrc" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
 <h2 id="5">5 验证服务器网络连通性<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>在服务器终端输入以下内容进行测试：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>curl<span class="w"> </span>https://www.baidu.com
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>curl<span class="w"> </span>https://www.baidu.com
+</code></pre></div>
 <p>如果有返回内容则说明成功代理成功。</p>
 <p><a class="glightbox" href="../../../img/Blog/usrProxy/3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="验证代理" src="../../../img/Blog/usrProxy/3.png" /></a></p>
 

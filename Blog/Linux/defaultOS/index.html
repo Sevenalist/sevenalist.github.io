@@ -1381,14 +1381,14 @@
 <p><strong>目的</strong>：Ubuntu和Windows双系统下，想修改默认启动的操作系统为Windows或Ubuntu系统。</p>
 <h2 id="ubuntu">Ubuntu端的解决方案<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
 <p>1. 进入设置默认启动的文件<code>grub.cfg</code></p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>sudo<span class="w"> </span>vim<span class="w"> </span>/boot/grub/grub.cfg
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>sudo<span class="w"> </span>vim<span class="w"> </span>/boot/grub/grub.cfg
+</code></pre></div>
 <p>2. 找到下面这一段代码：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+</code></pre></div>
 <p>3. 将<code>0</code>修改为Windows在开机时的启动序列，比如我的Windows在开机时处于第五位，那就<code>0</code>修改为<code>4</code>，即：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;4&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="s2">&quot;4&quot;</span>
+</code></pre></div>
 
 
 

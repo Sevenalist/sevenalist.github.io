@@ -57,6 +57,41 @@
     padding: 2.5rem;
   }
   
+/* 设置代码块背景为半透明白色 */
+.md-typeset pre > code {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  color: #000; /* 字体颜色改为黑色以适配浅背景 */
+}
+
+/* 行号的背景颜色 */
+span.linenos::before {
+  background-color: transparent !important;
+  /* color: 是行号的颜色 */
+}
+
+/* 设置整段代码块区域的背景（含滚动条区域） */
+.md-typeset pre {
+  background-color: rgba(152, 156, 160, 0.4) !important;
+
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* 设置代码块语言标题栏（顶部小标签）的背景 */
+.highlight > .filename {
+  background-color: rgba(152, 156, 160, 0.4) !important;
+  /* color: #000; */
+  font-weight: bold;
+  padding: 0.3em 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 防止代码行号遮挡内容（如果开启了） */
+.highlighttable pre {
+  background-color: transparent !important;
+}
+
+
   /* 调整移动端 */
 @media (max-width: 768px) { /* You can adjust this breakpoint as needed */
     .md-content > .md-typeset {

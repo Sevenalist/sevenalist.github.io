@@ -1470,23 +1470,23 @@
 <h1 id="tmux">tmux快速指南<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
 <p>Tmux（terminal multiplexer，终端复用器）是一个可以长期在后台运行的终端管理器，在SSH等场景下即使终端被关闭之后也能够正常运行，而且在之后还可以重复接入终端界面查看输出情况，在网络状态不稳定或者不想用终端的的场景贼好用。</p>
 <h2 id="1-tmux">1 安装tmux<a class="headerlink" href="#1-tmux" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>apt<span class="w"> </span>install<span class="w"> </span>tmux
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>apt<span class="w"> </span>install<span class="w"> </span>tmux
+</code></pre></div>
 <h2 id="2-tmux">2 创建tmux会话<a class="headerlink" href="#2-tmux" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>&lt;name&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>&lt;name&gt;
+</code></pre></div>
 <p>这里的<code>-s</code>指代session，表示会话，<code>name</code>为会话名。</p>
 <h2 id="3-tmux">3 接入tmux终端<a class="headerlink" href="#3-tmux" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>&lt;name&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>&lt;name&gt;
+</code></pre></div>
 <h2 id="4-tmux">4 退出tmux终端<a class="headerlink" href="#4-tmux" title="Permanent link">&para;</a></h2>
 <p><span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-b">B</kbd></span>  ，松手， <span class="keys"><kbd class="key-d">D</kbd></span></p>
 <h2 id="5-tmux">5 删除tmux会话<a class="headerlink" href="#5-tmux" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">exit</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">exit</span>
+</code></pre></div>
 <h2 id="6">6 设置滚轮翻页<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>set-option<span class="w"> </span>-g<span class="w"> </span>mouse<span class="w"> </span>on
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>set-option<span class="w"> </span>-g<span class="w"> </span>mouse<span class="w"> </span>on
+</code></pre></div>
 
 
 

@@ -1441,10 +1441,11 @@ document$.subscribe(() => { lightbox.reload() });
 <!-- 定义图标样式 -->
 <style>
     .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left; /* 图片居左对齐，中心对齐是center */
-        gap: 40px; /* 图片之间的间距 */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 40px;
+        justify-content: center;   /* 整体居中 */
+        justify-items: center;      /* 每个 item 靠左 */
         padding: 20px;
     }
     .item {

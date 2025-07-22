@@ -1542,17 +1542,17 @@
 <h2 id="3-ragflow">3 安装RAGflow<a class="headerlink" href="#3-ragflow" title="Permanent link">&para;</a></h2>
 <p>可参考RAGflow的<a href="https://github.com/infiniflow/ragflow/blob/main/README_zh.md#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B" target="_blank">官网安装指南</a>，简单总结如下。</p>
 <h3 id="31">3.1 拉取镜像仓库<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/infiniflow/ragflow.git
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/infiniflow/ragflow.git
+</code></pre></div>
 <h3 id="32-env">3.2 修改<code>.env</code>文件<a class="headerlink" href="#32-env" title="Permanent link">&para;</a></h3>
 <p>打开 <strong>ragflow/docker/.env</strong> 文件，注释掉第84行的代码，并将第87行的代码取消注释，如下所示。</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82"></a><a href="#__codelineno-1-82"><span class="linenos" data-linenos="82 "></span></a><span class="c1"># The RAGFlow Docker image to download.</span>
-</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83"></a><a href="#__codelineno-1-83"><span class="linenos" data-linenos="83 "></span></a><span class="c1"># Defaults to the v0.17.1-slim edition, which is the RAGFlow Docker image without embedding models.</span>
-</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="hll"><a href="#__codelineno-1-84"><span class="linenos" data-linenos="84 "></span></a><span class="c1"># RAGFLOW_IMAGE=infiniflow/ragflow:v0.17.1-slim</span>
-</span></span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a><a href="#__codelineno-1-85"><span class="linenos" data-linenos="85 "></span></a><span class="c1">#</span>
-</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a><a href="#__codelineno-1-86"><span class="linenos" data-linenos="86 "></span></a><span class="c1"># To download the RAGFlow Docker image with embedding models, uncomment the following line instead:</span>
-</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="hll"><a href="#__codelineno-1-87"><span class="linenos" data-linenos="87 "></span></a><span class="n">RAGFLOW_IMAGE</span><span class="o">=</span><span class="n">infiniflow</span><span class="o">/</span><span class="n">ragflow</span><span class="p">:</span><span class="n">v0</span><span class="mf">.17.1</span>
-</span></span></code></pre></div>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-82" name="__codelineno-1-82"></a><a href="#__codelineno-1-82"><span class="linenos" data-linenos="82 "></span></a><span class="c1"># The RAGFlow Docker image to download.</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83"></a><a href="#__codelineno-1-83"><span class="linenos" data-linenos="83 "></span></a><span class="c1"># Defaults to the v0.17.1-slim edition, which is the RAGFlow Docker image without embedding models.</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="hll"><a href="#__codelineno-1-84"><span class="linenos" data-linenos="84 "></span></a><span class="c1"># RAGFLOW_IMAGE=infiniflow/ragflow:v0.17.1-slim</span>
+</span><a id="__codelineno-1-85" name="__codelineno-1-85"></a><a href="#__codelineno-1-85"><span class="linenos" data-linenos="85 "></span></a><span class="c1">#</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86"></a><a href="#__codelineno-1-86"><span class="linenos" data-linenos="86 "></span></a><span class="c1"># To download the RAGFlow Docker image with embedding models, uncomment the following line instead:</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="hll"><a href="#__codelineno-1-87"><span class="linenos" data-linenos="87 "></span></a><span class="n">RAGFLOW_IMAGE</span><span class="o">=</span><span class="n">infiniflow</span><span class="o">/</span><span class="n">ragflow</span><span class="p">:</span><span class="n">v0</span><span class="mf">.17.1</span>
+</span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">说明</p>
 <p>84行中的slim是精简版的rag，这里注释掉精简版选择下载87行完整版的ragflow。完整版包含了embedding模型，可以将知识库的内容转化为大模型可以理解的编码模式。</p>
@@ -1562,9 +1562,9 @@
 <p class="admonition-title">注意</p>
 <p>如果是Windows Docker Desktop，需要先启动Docker Desktop再执行下面的指令。</p>
 </div>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">cd</span><span class="w"> </span>ragflow/docker
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">cd</span><span class="w"> </span>ragflow/docker
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>如果你遇到 Docker 镜像拉不下来的问题，可以在 docker/.env 文件内根据变量 RAGFLOW_IMAGE 的注释提示选择华为云或者阿里云的相应镜像。</p>
@@ -1575,17 +1575,17 @@
 </div>
 <h3 id="34">3.4 检查是否安装成功<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <p>输入以下指令：</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>ragflow-server
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>ragflow-server
+</code></pre></div>
 <p>如果出现下面界面提示说明启动成功：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>     ____   ___    ______ ______ __
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>    / __ \ /   |  / ____// ____// /____  _      __
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>   / /_/ // /| | / / __ / /_   / // __ \| | /| / /
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>  / _, _// ___ |/ /_/ // __/  / // /_/ /| |/ |/ /
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a> /_/ |_|/_/  |_|\____//_/    /_/ \____/ |__/|__/
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos="6 "></span></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos="7 "></span></a> * Running on all addresses (0.0.0.0)
-</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>     ____   ___    ______ ______ __
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>    / __ \ /   |  / ____// ____// /____  _      __
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>   / /_/ // /| | / / __ / /_   / // __ \| | /| / /
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>  / _, _// ___ |/ /_/ // __/  / // /_/ /| |/ |/ /
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a> /_/ |_|/_/  |_|\____//_/    /_/ \____/ |__/|__/
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos="7 "></span></a> * Running on all addresses (0.0.0.0)
+</code></pre></div>
 <h2 id="4-ragflow">4 在RAGflow中配置知识库<a class="headerlink" href="#4-ragflow" title="Permanent link">&para;</a></h2>
 <p><a href="http://127.0.0.1" target="_blank">打开链接</a>。在浏览器输入<code>127.0.0.1</code>或者<code>localhost</code>也可进入RAGflow网站。</p>
 <p>在<strong>模型提供商</strong>中选择需要使用的Chat模型，可以是API，也可以是本地部署的模型。如果对隐私保护有需求，需要本地部署模型，请参考<a href="../Ollama/" target="_blank">这篇文章</a>。</p>

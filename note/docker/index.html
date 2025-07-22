@@ -1562,8 +1562,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ubuntu</label><label for="__tabbed_1_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
+</code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>Docker用于Linux系统，Windows无法直接安装使用，需要安装Docker Desktop之后才能运行，下载链接见<a href="https://docs.docker.com/desktop/setup/install/windows-install/">官网</a>。</p>
@@ -1597,40 +1597,40 @@
 <hr />
 <h2 id="4">4 常用指令<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_1">启动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>run<span class="w"> </span>&lt;container&gt;<span class="w"> </span>-d
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>run<span class="w"> </span>&lt;container&gt;<span class="w"> </span>-d
+</code></pre></div>
 <blockquote>
 <p>此处的<code>-d</code>表示在后台运行。</p>
 </blockquote>
 <h3 id="_2">停止<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>stop
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>stop
+</code></pre></div>
 <h3 id="_3">删除<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">删除单个处于停止状态的容器</label><label for="__tabbed_3_2">删除所有处于终止状态的容器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span>&lt;container_name&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>rm<span class="w"> </span>&lt;container_name&gt;
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>prune
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>container<span class="w"> </span>prune
+</code></pre></div>
 </div>
 </div>
 </div>
 <h3 id="containers">查看Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>ps
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>ps
+</code></pre></div>
 <h3 id="images">查看Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>images
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>images
+</code></pre></div>
 <hr />
 <h2 id="5-docker-compose">5 Docker Compose<a class="headerlink" href="#5-docker-compose" title="Permanent link">&para;</a></h2>
 <p>Docker Compose可以让多个Container进行交互。</p>
 <div class="admonition success">
 <p class="admonition-title">创建一个Compose容器</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>up<span class="w"> </span>-d
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
 <blockquote>
 <p>这里的<code>-d</code>表示deamon，守护进程，后台运行</p>
 </blockquote>
@@ -1640,16 +1640,16 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">启动单个容器</label><label for="__tabbed_4_2">根据yaml文件启动容器</label><label for="__tabbed_4_3">启动所有容器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>start<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>start<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>start
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>start
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>start
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>start
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -1660,16 +1660,16 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">停止单个容器</label><label for="__tabbed_5_2">根据yaml文件停止容器</label><label for="__tabbed_5_3">停止所有容器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>stop
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>stop
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>stop
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>stop
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -1680,16 +1680,16 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">删除单个容器</label><label for="__tabbed_6_2">根据yaml文件删除容器</label><label for="__tabbed_6_3">删除所有容器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>&lt;single<span class="w"> </span>container<span class="w"> </span>id&gt;
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>down
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>-f<span class="w"> </span>../config.yaml<span class="w"> </span>down
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>down
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
 </div>
 </div>
 </div>
