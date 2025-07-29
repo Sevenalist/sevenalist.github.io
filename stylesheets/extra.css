@@ -52,3 +52,22 @@ code.language-bash .hljs-built_in {
   display: block;
   margin: 0 auto;
 }
+
+/* 所有类型的Admonition提示框都变成透明背景 */
+.md-typeset .admonition,
+.md-typeset details {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  /* box-shadow: none; */
+  /* border: none; */
+}
+
+/* 设置内容宽度 */
+.md-grid {
+  max-width: 66rem; /* 改成你想要的 */
+}
+
+.md-content {
+  max-width: 100%;
+}

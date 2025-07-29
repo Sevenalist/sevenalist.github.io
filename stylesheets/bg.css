@@ -60,14 +60,20 @@
 /* 设置代码块背景为半透明白色 */
 .md-typeset pre > code {
   background-color: rgba(255, 255, 255, 0.7) !important;
+  /* background-color: rgba(235,236,238, 1) !important; */
   color: #000; /* 字体颜色改为黑色以适配浅背景 */
 }
 
 /* 行号的背景颜色 */
 span.linenos::before {
-  background-color: transparent !important;
-  /* color: 是行号的颜色 */
+  background-color: rgba(235, 236, 238, 0.5) !important; /* 半透明背景 */
+  backdrop-filter: blur(6px); /* 毛玻璃模糊效果 */
+  -webkit-backdrop-filter: blur(6px); /* 兼容 Safari */
+  
+  /* 可选：增加圆角和边框来更像毛玻璃 */
+  /* border-radius: 4px; */
 }
+
 
 /* 设置整段代码块区域的背景（含滚动条区域） */
 .md-typeset pre {
@@ -94,6 +100,7 @@ span.linenos::before {
 
   /* 调整移动端 */
 @media (max-width: 768px) { /* You can adjust this breakpoint as needed */
+  /* 删除移动端的白色蒙版 */
     .md-content > .md-typeset {
         background-color: transparent;
         border-radius: 0;
