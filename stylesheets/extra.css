@@ -71,3 +71,29 @@ code.language-bash .hljs-built_in {
 .md-content {
   max-width: 100%;
 }
+
+/* 设置表格透明度 */
+.md-typeset table:not([class]) {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 表格行透明度 */
+.md-typeset table:not([class]) tr {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 表格头部透明度 */
+.md-typeset table:not([class]) th {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 表格悬停效果 */
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
