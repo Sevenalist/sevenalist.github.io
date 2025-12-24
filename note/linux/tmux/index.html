@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../img/logo/icon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -699,7 +699,7 @@
   <a href="#5-tmux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5 删除tmux会话
+        5 查看当前所有的tmux会话
       
     </span>
   </a>
@@ -707,10 +707,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-tmux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6 设置滚轮翻页
+        6 删除tmux会话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 设置滚轮翻页
       
     </span>
   </a>
@@ -1757,7 +1768,7 @@
   <a href="#5-tmux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5 删除tmux会话
+        5 查看当前所有的tmux会话
       
     </span>
   </a>
@@ -1765,10 +1776,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-tmux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6 设置滚轮翻页
+        6 删除tmux会话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 设置滚轮翻页
       
     </span>
   </a>
@@ -1799,7 +1821,7 @@
 
 
 <h1 id="tmux">tmux快速指南<a class="headerlink" href="#tmux" title="Permanent link">¶</a></h1>
-<p>Tmux（terminal multiplexer，终端复用器）是一个可以长期在后台运行的终端管理器，在SSH等场景下即使终端被关闭之后也能够正常运行，而且在之后还可以重复接入终端界面查看输出情况，在网络状态不稳定或者不想用终端的的场景贼好用。</p>
+<p>Tmux（terminal multiplexer，终端复用器）是一个可以长期在Linux系统后台运行的终端管理器。在主机使用终端SSH远程连接服务器等场景下，即使终端被关闭，tmux也能够正常运行，后续仍可以重新接入tmux终端查看输出日志。在网络状态不稳定、或者不想长期在主机维持一个终端界面的场景下贼好用。</p>
 <h2 id="1-tmux">1 安装tmux<a class="headerlink" href="#1-tmux" title="Permanent link">¶</a></h2>
 <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>apt<span class="w"> </span>install<span class="w"> </span>tmux
 </code></pre></div>
@@ -1810,13 +1832,17 @@
 <h2 id="3-tmux">3 接入tmux终端<a class="headerlink" href="#3-tmux" title="Permanent link">¶</a></h2>
 <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>&lt;name&gt;
 </code></pre></div>
+<p>这里的<code>-t</code>指代terminal,一个会话可以同时被多个终端接入。</p>
 <h2 id="4-tmux">4 退出tmux终端<a class="headerlink" href="#4-tmux" title="Permanent link">¶</a></h2>
 <p><span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-b">B</kbd></span>  ，松手， <span class="keys"><kbd class="key-d">D</kbd></span></p>
-<h2 id="5-tmux">5 删除tmux会话<a class="headerlink" href="#5-tmux" title="Permanent link">¶</a></h2>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">exit</span>
+<h2 id="5-tmux">5 查看当前所有的tmux会话<a class="headerlink" href="#5-tmux" title="Permanent link">¶</a></h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>ls
 </code></pre></div>
-<h2 id="6">6 设置滚轮翻页<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>set-option<span class="w"> </span>-g<span class="w"> </span>mouse<span class="w"> </span>on
+<h2 id="6-tmux">6 删除tmux会话<a class="headerlink" href="#6-tmux" title="Permanent link">¶</a></h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">exit</span>
+</code></pre></div>
+<h2 id="7">7 设置滚轮翻页<a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>tmux<span class="w"> </span>set-option<span class="w"> </span>-g<span class="w"> </span>mouse<span class="w"> </span>on
 </code></pre></div>
 
 
@@ -1840,7 +1866,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 8, 2025 02:53:53 UTC">May 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 24, 2025 09:04:08 UTC">December 24, 2025</span>
   </span>
 
     
@@ -1941,11 +1967,11 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
   
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../js/bg.js"></script>
       
