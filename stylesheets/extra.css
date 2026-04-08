@@ -72,6 +72,17 @@ code.language-bash .hljs-built_in {
   max-width: 100%;
 }
 
+/* 选项卡内容区增加浅黑色底色，帮助区分内容边界 */
+.md-typeset .tabbed-set > .tabbed-content {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.04));
+  border-radius: 0 0 10px 10px;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.md-typeset .tabbed-set > .tabbed-content > .tabbed-block {
+  margin-top: 0;
+}
+
 /* 设置表格透明度 */
 .md-typeset table:not([class]) {
   background-color: rgba(255, 255, 255, 0.3);
