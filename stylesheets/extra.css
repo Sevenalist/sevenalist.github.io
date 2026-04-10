@@ -108,3 +108,63 @@ code.language-bash .hljs-built_in {
 .md-typeset table:not([class]) tr:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+/* 统一nav的svg大小，(not wrapped in .md-icon). */
+.md-tabs__link > svg,
+.md-nav__link > svg,
+.md-nav__title > svg,
+.md-ellipsis > svg {
+  width: 1.05em !important;
+  height: 1.05em !important;
+  min-width: 1.05em;
+  min-height: 1.05em;
+  margin-right: 0.35em;
+  vertical-align: -0.14em;
+  display: inline-block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Let inline SVG icons follow surrounding text color. */
+.md-tabs__link > svg,
+.md-nav__link > svg,
+.md-nav__title > svg,
+.md-ellipsis > svg {
+  color: inherit;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.md-tabs__link > svg path,
+.md-tabs__link > svg circle,
+.md-tabs__link > svg rect,
+.md-tabs__link > svg polygon,
+.md-tabs__link > svg polyline,
+.md-tabs__link > svg line,
+.md-nav__link > svg path,
+.md-nav__link > svg circle,
+.md-nav__link > svg rect,
+.md-nav__link > svg polygon,
+.md-nav__link > svg polyline,
+.md-nav__link > svg line,
+.md-nav__title > svg path,
+.md-nav__title > svg circle,
+.md-nav__title > svg rect,
+.md-nav__title > svg polygon,
+.md-nav__title > svg polyline,
+.md-nav__title > svg line,
+.md-ellipsis > svg path,
+.md-ellipsis > svg circle,
+.md-ellipsis > svg rect,
+.md-ellipsis > svg polygon,
+.md-ellipsis > svg polyline,
+.md-ellipsis > svg line {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* Some third-party icon SVGs include fixed width/height attributes and class="icon". */
+svg.icon {
+  width: 1.05em !important;
+  height: 1.05em !important;
+}
