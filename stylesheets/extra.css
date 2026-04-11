@@ -72,6 +72,20 @@ code.language-bash .hljs-built_in {
   max-width: 100%;
 }
 
+/* 设置links的最大宽度 */
+
+body:has(.links-page-shell) .md-main__inner {
+  max-width: 43rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links-page-shell {
+  max-width: 43rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* 选项卡内容区增加浅黑色底色，帮助区分内容边界 */
 .md-typeset .tabbed-set > .tabbed-content {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.04));
