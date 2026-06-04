@@ -1957,8 +1957,29 @@
 }
 
 .timeline-list {
+    padding-top: 1px;
     padding-left: 1rem;
-    border-left: 2px solid rgba(168, 180, 191, 0.7);
+    position: relative;
+    border-left: none;
+    z-index: 0;
+}
+
+.timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(
+        90deg,
+        rgba(168, 180, 191, 0.22) 0%,
+        rgba(168, 180, 191, 0.12) 60%,
+        rgba(168, 180, 191, 0) 100%
+    );
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .timeline-item {
