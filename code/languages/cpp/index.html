@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Never Stop Thking.">
+        <meta name="description" content="Never Stop Thinking.">
       
       
       
@@ -2678,7 +2678,7 @@
 <h2 id="c">一、C基本输入输出<a class="headerlink" href="#c" title="Permanent link">¶</a></h2>
 <h3 id="1putchar">1.<code>putchar()</code><a class="headerlink" href="#1putchar" title="Permanent link">¶</a></h3>
 <p><strong>putchar函数</strong>是<strong>字符输出函数</strong>，其功能是在终端（显示器）输出单个字符。其函数原型为：</p>
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">int</span><span class="w"> </span><span class="n">putchar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">int</span><span class="w"> </span><span class="nf">putchar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
 </code></pre></div>
 <p>ch表示要输出的字符内容，返回值作用为：如果输出成功返回一个字符的ASC码，失败则返回EOF即-1，如代码：</p>
 <div class="highlight"><span class="filename">C</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">putchar</span><span class="p">(</span><span class="sc">'A'</span><span class="p">);</span><span class="w"> </span><span class="cm">/*输出大写字母A */</span>
@@ -2755,9 +2755,9 @@
 <p>其中，<strong>格式控制字符串</strong>的作用与printf函数相同，但不能显示非格式字符串，也就是不能显示提示字符串。地址表项中的地址给出各变量的地址，地址是由地址运算符“&amp;”后跟变量名组成的。</p>
 <p>scanf函数中格式字符串的构成与printf函数基本相同，但使用时有几点不同。
 (1)格式说明符中，可以指定数据的宽度，但不能指定数据的精度。例：</p>
-<div class="highlight"><span class="filename">C</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="err">；</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">scanf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="mf">10f</span><span class="err">”，</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">//正确</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">scanf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="mf">10.2f</span><span class="err">”</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">//错误</span>
+<div class="highlight"><span class="filename">C</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">scanf</span><span class="p">(</span><span class="s">"%10f"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">//正确</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">scanf</span><span class="p">(</span><span class="s">"%10.2f"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">  </span><span class="c1">//错误</span>
 </code></pre></div>
 <p>(2)输入long类型数据时必须使用%ld，输入double数据必须使用%lf或%le</p>
 <p>scanf()函数所用的转换说明符与printf()所用的几乎完全相同。主要区别在于printf()把%f、%e、%E、%g、%G同时用于float类型和double类型，而scanf()只是把他们用于float类型，而用于double类型时要求使用l(字母l)修饰符</p>
@@ -3018,7 +3018,7 @@
 <p>请注意，<code>gcd</code> 函数仅在 C++17 及以上版本的标准中可用。</p>
 <h4 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">¶</a></h4>
 <p>对序列进行翻转</p>
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><a href="#__codelineno-29-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">reverse</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span><span class="n">end</span><span class="p">)</span>
+<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><a href="#__codelineno-29-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">reverse</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span><span class="n">end</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="2_1">2.基本容器<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h3>
 <h4 id="vector">vector<a class="headerlink" href="#vector" title="Permanent link">¶</a></h4>
@@ -3033,11 +3033,11 @@
 <tbody>
 <tr>
 <td><code>v.front</code></td>
-<td>返回第一个数据$<span class="arithmatex">\(O(1)\)</span>$</td>
+<td>返回第一个数据 <span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td><code>v.back</code></td>
-<td>返回数组中的最后一个数据 $<span class="arithmatex">\(O(1)\)</span>$</td>
+<td>返回数组中的最后一个数据 <span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td></td>
@@ -3060,7 +3060,7 @@
 </li>
 </ul>
 <p>在向量末尾添加 <code>push_back()</code></p>
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><a href="#__codelineno-31-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="err">``</span><span class="c1">//插入一个数据10</span>
+<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><a href="#__codelineno-31-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">//插入一个数据10</span>
 </code></pre></div>
 <p>在向量末尾删除 <code>pop_back</code></p>
 <div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><a href="#__codelineno-32-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
@@ -3069,8 +3069,8 @@
 <ul>
 <li>删除元素<code>erase()</code></li>
 </ul>
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><a href="#__codelineno-33-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="w">   </span><span class="err">``</span><span class="c1">//删除第一个元素</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2"></a><a href="#__codelineno-33-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="err">``</span><span class="c1">//删除从第一个开始后4个元素（包括第一个）</span>
+<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><a href="#__codelineno-33-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="w"> </span><span class="c1">//删除第一个元素</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><a href="#__codelineno-33-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">//删除从第一个开始后4个元素（包括第一个）</span>
 </code></pre></div>
 <ul>
 <li>获取大小<code>size()</code></li>
@@ -3090,7 +3090,7 @@
 <div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><a href="#__codelineno-35-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">Student</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2"></a><a href="#__codelineno-35-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">Student</span><span class="w"> </span><span class="n">stu</span><span class="p">;</span>
 <a id="__codelineno-35-3" name="__codelineno-35-3"></a><a href="#__codelineno-35-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">stu</span><span class="p">;</span>
-<a id="__codelineno-35-4" name="__codelineno-35-4"></a><a href="#__codelineno-35-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">ptr</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="c1">// 对象指针调用函数的方法</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4"></a><a href="#__codelineno-35-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">();</span><span class="w"> </span><span class="c1">// 对象指针调用函数的方法</span>
 </code></pre></div>
 <h3 id="2_2">2. 虚函数<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h3>
 <p>就是Java中的抽象函数，在Java里面为abstract，C++中声明关键词为virtual</p>
@@ -3100,7 +3100,7 @@
 <h3 id="4">4. 类内的赋值<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
 <p>在C++中，，可以使用<code>this</code>指针来调用本对象中的变量或者函数，例如<code>this -&gt; R</code></p>
 <p>也可以像这样赋值：</p>
-<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><a href="#__codelineno-36-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span>
+<div class="highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><a href="#__codelineno-36-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="5">5. 友元函数<a class="headerlink" href="#5" title="Permanent link">¶</a></h3>
 <p>给外部函数访问私有变量的权限，这个外部函数就成了<strong>友元函数</strong>。</p>
@@ -3135,7 +3135,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 28, 2025 03:03:16 UTC">February 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2026 16:41:26 UTC">July 10, 2026</span>
   </span>
 
     
