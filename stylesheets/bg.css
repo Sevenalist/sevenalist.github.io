@@ -2,26 +2,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0; /* 保证在页面底层，但仍高于 body 背景 */
+    z-index: -1; /* 保证在页面底层，不参与 Material 组件层级 */
     width: 100vw;
     height: 100vh;
     pointer-events: none;
   }
 
-  .md-main,
-  .md-footer {
-    position: relative;
-    z-index: 1;
-  }
-
-  .md-tabs {
-    position: relative;
-    z-index: 3;
-  }
-
-  .md-header {
-    position: relative;
-    z-index: 4;
+  body {
+    background: transparent;
+    isolation: isolate;
   }
   
 

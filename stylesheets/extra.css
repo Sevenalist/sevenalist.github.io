@@ -84,7 +84,6 @@ code.language-bash .hljs-built_in {
     opacity var(--site-transition-duration) var(--site-transition-ease),
     transform var(--site-transition-duration) var(--site-transition-ease),
     filter var(--site-transition-duration) var(--site-transition-ease);
-  will-change: opacity, transform, filter;
 }
 
 .page-transition-overlay {
