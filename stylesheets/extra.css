@@ -630,10 +630,13 @@ body:has(.home-shell) .md-main__inner {
 
 .home-hero h1 {
   margin: 0;
-  max-width: 16ch;
   font-size: clamp(2.4rem, 5vw, 4.3rem);
   line-height: 1.02;
   letter-spacing: 0.015em;
+}
+
+.home-title-line {
+  display: block;
 }
 
 .home-lead {

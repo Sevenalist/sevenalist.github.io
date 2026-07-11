@@ -8,12 +8,20 @@
     pointer-events: none;
   }
 
-  .md-header,
-  .md-tabs,
   .md-main,
   .md-footer {
     position: relative;
     z-index: 1;
+  }
+
+  .md-tabs {
+    position: relative;
+    z-index: 3;
+  }
+
+  .md-header {
+    position: relative;
+    z-index: 4;
   }
   
 
