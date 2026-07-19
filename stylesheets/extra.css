@@ -14,6 +14,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 藏书楼：仅文章阅读区域使用霞鹜文楷，代码仍使用下方的等宽字体。 */
+body:has(.library-post-marker) .md-content__inner {
+  font-family: "LXGW WenKai", "Noto Serif SC", serif;
+}
+
+.library-post-marker {
+  display: none;
+}
+
 /* 设置代码块字体 */ 
 code, pre {
   font-family: 'Roboto Mono', monospace;
@@ -430,6 +439,16 @@ svg.icon {
 .tags-shell {
   max-width: 72rem;
   margin: 0 auto;
+}
+
+/* Let the animated page background show through on the tag index. */
+body:has(.tags-shell) .md-content > .md-typeset {
+  padding: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .tags-hero {
@@ -1756,5 +1775,39 @@ body:has(.home-shell) .md-main__inner {
 
   .world-card {
     min-height: auto;
+  }
+}
+
+/* Blog post metadata: keep Material's desktop sidebar and use a compact row on phones. */
+.sevenalist-post-meta-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sevenalist-post-meta-mobile {
+    display: block;
+    margin: -0.35rem 0 1.25rem;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.68rem;
+    line-height: 1.6;
+  }
+
+  .sevenalist-post-meta-mobile .md-meta__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 0;
+    margin: 0;
+  }
+
+  .sevenalist-post-meta-mobile .md-meta__link {
+    color: inherit;
+  }
+
+  .sevenalist-post-meta-mobile .md-meta__link:hover {
+    color: var(--md-accent-fg-color);
+  }
+
+  .md-sidebar--post .md-nav--primary > ul.md-post__meta:first-of-type {
+    display: none;
   }
 }
