@@ -22,6 +22,27 @@
     box-shadow: none !important;
   }
 
+  /* 博客文章页的返回入口：覆盖 Material 默认的纯白背景和白色外发光 */
+  .md-sidebar--post .md-post__back .md-nav__title {
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
+    padding: 0.48rem 0.78rem;
+    border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--md-default-bg-color) 42%, transparent) !important;
+    box-shadow: 0 5px 16px color-mix(in srgb, var(--md-default-fg-color) 7%, transparent) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .md-sidebar--post .md-post__back .md-nav__title:hover {
+    border-color: color-mix(in srgb, var(--md-accent-fg-color) 34%, transparent);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--md-default-fg-color) 11%, transparent) !important;
+    transform: translateY(-1px);
+  }
+
   /* 去掉 TOC 中的选中/hover/聚焦样式 */
   .md-nav--secondary .md-nav__title,
   .md-nav--secondary .md-nav__titlek:focus,
