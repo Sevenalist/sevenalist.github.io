@@ -8,6 +8,17 @@
   --site-transition-duration: 500ms;
   --site-transition-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --home-page-width: 60rem;
+
+  /* World 卡片高度：只需修改下面 6 个值。可用 px/rem，设为 auto 则由内容撑开。 */
+  /* 电脑端（宽度大于 600px） */
+  --world-tags-card-height-desktop: 7rem;       /* world/tags 标签卡片 */
+  --world-blog-card-height-desktop: 8rem;         /* Archive / Category 文章卡片 */
+  --world-tag-post-card-height-desktop: 8rem;     /* 点击标签后的文章卡片 */
+
+  /* 手机端（宽度不大于 600px） */
+  --world-tags-card-height-mobile: 7rem;        /* world/tags 标签卡片 */
+  --world-blog-card-height-mobile: 8rem;          /* Archive / Category 文章卡片 */
+  --world-tag-post-card-height-mobile: 9rem;      /* 点击标签后的文章卡片 */
 }
 
 html {
@@ -354,7 +365,7 @@ svg.icon {
   overflow: hidden;
   box-sizing: border-box;
   width: min(100%, 54rem);
-  height: 10rem;
+  height: var(--world-blog-card-height-desktop);
   max-width: 54rem;
   padding: 1.15rem 1.25rem 1.2rem;
   margin: 0 auto 1rem;
@@ -431,7 +442,7 @@ svg.icon {
 
 @media (max-width: 600px) {
   .md-content__inner > .md-post--excerpt {
-    height: 15rem;
+    height: var(--world-blog-card-height-mobile);
   }
 }
 
@@ -541,7 +552,8 @@ body:has(.tags-shell) .md-content > .md-typeset {
   --tag-y: 50%;
   position: relative;
   overflow: hidden;
-  min-height: 10.5rem;
+  box-sizing: border-box;
+  height: var(--world-tags-card-height-desktop);
   padding: 1.05rem 1.1rem 1rem;
   border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 13%, transparent);
   border-radius: 18px;
@@ -862,12 +874,14 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   grid-template-columns: 4.4rem minmax(0, 1fr);
   gap: 1.1rem;
   overflow: hidden;
+  box-sizing: border-box;
+  height: var(--world-tag-post-card-height-desktop);
   padding: 1.15rem 1.25rem 1.2rem 1.1rem;
   border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
   border-radius: 16px;
   background:
     radial-gradient(circle at 100% 0, color-mix(in srgb, var(--md-accent-fg-color) 9%, transparent), transparent 34%),
-    linear-gradient(155deg, color-mix(in srgb, var(--md-default-bg-color) 91%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent));
+    linear-gradient(155deg, color-mix(in srgb, var(--md-default-bg-color) 50%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent));
   box-shadow: 0 7px 20px color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
   animation: tag-post-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   animation-delay: calc(var(--post-order) * 55ms);
@@ -979,27 +993,6 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   line-height: 1.7;
 }
 
-.tag-post-read {
-  display: inline-flex;
-  gap: 0.3rem;
-  align-items: center;
-  margin-top: 0.75rem;
-  font-size: 0.82rem;
-  text-decoration: none !important;
-}
-
-.tag-post-read span {
-  transition: transform 160ms ease;
-}
-
-.tag-post-read:hover span {
-  transform: translateX(0.22rem);
-}
-
-.tag-post-card:hover .tag-post-read span {
-  transform: translate(0.16rem, -0.12rem);
-}
-
 @keyframes tag-post-enter {
   from {
     opacity: 0;
@@ -1020,6 +1013,10 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
     grid-template-columns: 1fr;
   }
 
+  .tag-card {
+    height: var(--world-tags-card-height-mobile);
+  }
+
   .tag-detail-hero {
     border-radius: 18px;
   }
@@ -1036,6 +1033,7 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   .tag-post-card {
     grid-template-columns: 3.65rem minmax(0, 1fr);
     gap: 0.8rem;
+    height: var(--world-tag-post-card-height-mobile);
     padding: 1rem 1rem 1.05rem 0.85rem;
   }
 
@@ -1795,8 +1793,12 @@ body:has(.home-shell) .md-main__inner {
   .sevenalist-post-meta-mobile .md-meta__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem 0;
+    gap: 0.2rem 0.65rem;
     margin: 0;
+  }
+
+  .sevenalist-post-meta-mobile .md-meta__item:not(:last-child)::after {
+    content: none;
   }
 
   .sevenalist-post-meta-mobile .md-meta__link {
