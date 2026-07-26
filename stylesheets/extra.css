@@ -17,7 +17,7 @@
 
   /* 手机端（宽度不大于 600px） */
   --world-tags-card-height-mobile: 7rem;        /* world/tags 标签卡片 */
-  --world-blog-card-height-mobile: 8rem;          /* Archive / Category 文章卡片 */
+  --world-blog-card-height-mobile: 8.5rem;          /* Archive / Category 文章卡片 */
   --world-tag-post-card-height-mobile: 9rem;      /* 点击标签后的文章卡片 */
 }
 

@@ -7,11 +7,11 @@
       
       
       
-        <link rel="canonical" href="https://dengcz.cn/world/2020/02/%E7%A9%BA%E6%98%8E/">
+        <link rel="canonical" href="https://dengcz.cn/world/2026/07/%E4%BB%80%E4%B9%88%E6%98%AF-agent-skills%E4%BB%8E-promptagent-%E5%88%B0-mcp-%E7%9A%84%E4%B8%80%E6%AC%A1%E8%83%BD%E5%8A%9B%E5%8D%87%E7%BA%A7/">
       
       
+        <link rel="prev" href="../%E6%B0%B4%E4%BA%95/">
       
-        <link rel="next" href="../../../2023/08/%E6%98%9F%E6%98%9F%E7%9A%84%E8%91%AC%E7%A4%BC/">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>空明 - Sevenalist</title>
+        <title>什么是 Agent Skills？从 Prompt、Agent 到 MCP 的一次能力升级 - Sevenalist</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#agent-skills-promptagent-mcp" class="md-skip">
           跳转至
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              空明
+              什么是 Agent Skills？从 Prompt、Agent 到 MCP 的一次能力升级
             
           </span>
         </div>
@@ -2298,10 +2298,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#agent-skills" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.“争”
+        一、Agent Skills 并不是凭空诞生的
       
     </span>
   </a>
@@ -2309,10 +2309,60 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prompt-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、第一阶段：我们主要依靠 Prompt 指挥 AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、第一阶段：我们主要依靠 Prompt 指挥 AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prompt 很容易变得越来越长
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.“凶”
+        2. 很多要求并不是每次都需要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prompt 主要告诉模型“怎么回答”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、第二阶段：从聊天模型走向 Agent
       
     </span>
   </a>
@@ -2320,21 +2370,187 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#agent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、Agent 遇到的第一个问题：工具连接过于混乱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、Agent 遇到的第二个问题：它有工具，却不一定会正确工作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-skills_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、Agent Skills 的正式诞生
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-skills_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、Agent Skills 诞生之初，用在哪里？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、一个 Agent Skill 里面有什么？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="九、一个 Agent Skill 里面有什么？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 参考资料
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.“离”
+        3. 脚本
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.“命”
+        第一层：只读取名称和描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skillmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二层：加载完整的 SKILL.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三层：按需读取资料和运行脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十二、Prompt 和 Skill 有什么区别？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十二、Prompt 和 Skill 有什么区别？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt 通常面向当前对话
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill 面向一类可重复任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-prompt-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill 可以包含 Prompt，但不只是 Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-skill_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十三、Agent 和 Skill 有什么区别？
       
     </span>
   </a>
@@ -2342,10 +2558,265 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mcp-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十四、MCP 和 Skill 有什么区别？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十四、MCP 和 Skill 有什么区别？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP 解决“怎样连接”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill 解决“连接之后怎样工作”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十五、为什么 MCP 中也有 Prompt？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十六、用一个完整例子理解四者关系
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十六、用一个完整例子理解四者关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：Prompt 提出目标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：Agent 规划任务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-skills_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：Agent 加载 Skills
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：Agent 通过 MCP 连接服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五步：工具实际执行操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六步：Agent 检查结果
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skill_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十七、Skill 和模型训练有什么区别？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skill-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        十八、Skill 会让 Agent 变成真正的专家吗？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="十八、Skill 会让 Agent 变成真正的专家吗？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill 的主要风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP 的主要风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skill_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二十、怎样判断一个 Skill 是否值得使用？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二十、怎样判断一个 Skill 是否值得使用？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 任务范围是否明确
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 是否包含真正有价值的专业经验
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 是否有可验证的完成标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 是否允许 Agent 根据情况调整
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.“空”
+        5. 是否经过真实任务测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-skills_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二十一、Agent Skills 真正改变了什么？
       
     </span>
   </a>
@@ -2353,10 +2824,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#skill-agent_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.“明”
+        结语：Skill 是写给 Agent 的工作手册
       
     </span>
   </a>
@@ -2400,7 +2871,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
-                        <time datetime="2020-02-05 00:00:00+00:00" class="md-ellipsis">2020年2月5日</time>
+                        <time datetime="2026-07-24 00:00:00+00:00" class="md-ellipsis">2026年7月24日</time>
                       </div>
                     </li>
                     
@@ -2411,7 +2882,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../topic/%E8%97%8F%E4%B9%A6%E6%A5%BC/">藏书楼</a></span>
+                              <a href="../../../topic/ai/">AI</a></span>
                         </div>
                       </li>
                     
@@ -2422,7 +2893,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 7 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2450,14 +2921,14 @@
       
       
       
-        <a href="../../../tags/#tag:狂想曲" class="md-tag">狂想曲</a>
+        <a href="../../../tags/#tag:llm" class="md-tag">LLM</a>
       
     
       
       
       
       
-        <a href="../../../tags/#tag:童话" class="md-tag">童话</a>
+        <a href="../../../tags/#tag:科学技术" class="md-tag">科学技术</a>
       
     
   </nav>
@@ -2471,20 +2942,20 @@
   <div class="sevenalist-post-meta-mobile md-post__meta md-meta" aria-label="元数据">
   <ul class="md-meta__list">
     <li class="md-meta__item">
-      <time datetime="2020-02-05 00:00:00+00:00">2020年2月5日</time>
+      <time datetime="2026-07-24 00:00:00+00:00">2026年7月24日</time>
     </li>
     
     
       <li class="md-meta__item">
         分类于
         
-          <a href="../../../topic/%E8%97%8F%E4%B9%A6%E6%A5%BC/" class="md-meta__link">藏书楼</a></li>
+          <a href="../../../topic/ai/" class="md-meta__link">AI</a></li>
     
     
       
       <li class="md-meta__item">
         
-          需要 1 分钟阅读时间
+          需要 7 分钟阅读时间
         
       </li>
     
@@ -2492,34 +2963,1001 @@
 </div>
 
 
-  
-  <span class="library-post-marker" aria-hidden="true"></span>
-
-<h1 id="_1">空明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h1 id="agent-skills-promptagent-mcp">什么是 Agent Skills？从 Prompt、Agent 到 MCP 的一次能力升级<a class="headerlink" href="#agent-skills-promptagent-mcp" title="Permanent link">¶</a></h1>
+<p>pilot 等 AI 工具，正在从“能够回答问题的聊天机器人”逐渐变成“能够完成任务的智能体”。<!-- more --></p>
+<p>与此同时，一个新的概念开始频繁出现：</p>
 <blockquote>
-<p>在人生的岔路口上，你会如何选择？</p>
+<p>Agent Skills，智能体技能。</p>
 </blockquote>
-<!-- more -->
-
-<h2 id="1">1.“争”<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<p>男孩儿走在幽暗的小路上，深蓝的星光照在地上，如同一片破碎的水光。嘶哑的猫叫声从漆黑的草丛中传来。男孩停下脚步，拉开杂草，好奇地盯着躺在草坪上奄奄一息的小猫。</p>
-<h2 id="2">2.“凶”<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
-<p>男孩把小猫抱回了家，帮小猫处理好了伤口。小猫很快好了起来，总是黏着男孩儿。他们一起玩耍，一起睡觉，一起在月光下散步。小猫和小男孩过得很幸福。</p>
-<h2 id="3">3.“离”<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
-<p>有一天，夕阳已落下，但男孩迟迟没有回家。小猫在门口等待了很久，最终决定沿着小路寻找男孩。</p>
-<p>天已经黑了，小猫嗅着地面，突然向一处草丛奔去。男孩倒在红色的地上，浑身是血。小猫使劲舔着男孩儿的脸颊，试图舔干净血迹。小男孩虚弱地睁开了眼，难过地说：“对不起啊，不能再陪你玩了……”小男孩闭上了眼，再不睁开。</p>
-<p>冷月下，回荡着小猫凄凉的叫声。</p>
-<h2 id="4">4.“命”<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
-<p>男孩睁开眼，看着面前陌生的大叔，疑惑道：“你是谁？”</p>
-<p>“我是来接你的人。”大叔说，“走吧，时候到了。”</p>
-<p>大叔的声音仿佛有一种魔力，让小男孩情不自禁地跟着离开。突然间，他看见脚下跟着一只小猫，它眼里仿佛噙着泪水。小男孩觉得这只小猫很熟悉，但却想不起在哪里见过。</p>
-<p>“喵。”猫叫着，跟着男孩儿一块离开。</p>
-<h2 id="5">5.“空”<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
-<p>深蓝的星光照在地上，如同一片破碎的水光。空旷的草地中漆黑一片，里面躺着一只奄奄一息的小猫。它死死咬住自己的嘴，不让自己因为疼痛叫出声。</p>
-<h2 id="6">6.“明”<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
-<p>看着小男孩儿跟着大叔离去，小猫安心地闭上了眼。</p>
-<p>“爸，今晚吃什么？”小男孩问。</p>
-<p>九次，终于找到救你的方法。</p>
+<p>在 GitHub 上，我们也能看到越来越多类似的项目：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>pdf-processing
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>frontend-design
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>code-review
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>data-analysis
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>spreadsheet
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>presentation
+</code></pre></div>
+<p>这些名字看起来很像游戏里的“技能树”：安装一个 PDF Skill，AI 就学会了处理 PDF；安装一个表格 Skill，AI 就学会了制作 Excel。</p>
+<p>但这种理解并不完全准确。</p>
+<p>Agent Skills 并不会直接修改模型，也不会像重新训练模型一样，把某种知识永久写进 AI 的“大脑”。</p>
+<p>更准确地说：</p>
+<blockquote>
+<p><strong>Agent Skill 是一套可以被 AI 智能体按需发现、加载和执行的专业工作手册。</strong></p>
+</blockquote>
+<p>它通常以文件夹的形式存在，其中可以包含工作说明、参考资料、模板以及可执行脚本。它的作用，是告诉一个通用智能体：</p>
+<ul>
+<li>什么情况下应该使用这项技能；</li>
+<li>完成任务时应该遵循什么流程；</li>
+<li>应该调用哪些工具；</li>
+<li>哪些错误需要特别检查；</li>
+<li>输出结果必须符合什么标准。</li>
+</ul>
+<p>要真正理解 Agent Skills，还需要先弄清楚它为什么会出现。</p>
+<hr>
+<h2 id="agent-skills">一、Agent Skills 并不是凭空诞生的<a class="headerlink" href="#agent-skills" title="Permanent link">¶</a></h2>
+<p>Agent Skills 的出现，是 AI 使用方式不断演变的结果。</p>
+<p>大致来说，这个过程可以分为四个阶段：</p>
+<ol>
+<li>直接向模型提问；</li>
+<li>使用 Prompt 约束模型；</li>
+<li>让 Agent 调用工具执行任务；</li>
+<li>使用 Skill 为 Agent 提供专业工作流程。</li>
+</ol>
+<p>它们并不是简单的替代关系，而是一层一层叠加起来的。</p>
+<hr>
+<h2 id="prompt-ai">二、第一阶段：我们主要依靠 Prompt 指挥 AI<a class="headerlink" href="#prompt-ai" title="Permanent link">¶</a></h2>
+<p>早期使用大语言模型时，人们主要通过 Prompt，也就是提示词，来告诉模型自己想要什么。</p>
+<p>例如：</p>
+<blockquote>
+<p>请帮我分析这份销售数据，找出销售额下降的原因，并按照“结论、证据、建议”的结构输出。</p>
+</blockquote>
+<p>这条 Prompt 同时告诉了模型三件事：</p>
+<ul>
+<li>要做什么：分析销售数据；</li>
+<li>要关注什么：销售额下降的原因；</li>
+<li>怎样输出：结论、证据和建议。</li>
+</ul>
+<p>如果提示词写得更加详细，模型通常也会表现得更加稳定。</p>
+<p>于是，人们开始研究提示词工程，例如：</p>
+<ul>
+<li>怎样描述角色；</li>
+<li>怎样拆解任务；</li>
+<li>怎样给出示例；</li>
+<li>怎样规定输出格式；</li>
+<li>怎样要求模型进行检查；</li>
+<li>怎样减少模型产生幻觉。</li>
+</ul>
+<p>后来，很多产品又加入了系统提示词、自定义指令、项目说明和 Prompt 模板。用户可以把经常使用的要求提前保存下来，不必在每次对话中重复输入。</p>
+<p>但是，单纯依赖 Prompt 存在几个明显问题。</p>
+<h3 id="1-prompt">1. Prompt 很容易变得越来越长<a class="headerlink" href="#1-prompt" title="Permanent link">¶</a></h3>
+<p>假设一家公司希望 AI 按照内部规范制作报告，就可能需要在提示词里写明：</p>
+<ul>
+<li>使用什么字体；</li>
+<li>标题应该怎样编号；</li>
+<li>哪些数据必须核验；</li>
+<li>图表应该采用什么格式；</li>
+<li>哪些术语不能使用；</li>
+<li>报告需要经过哪些检查；</li>
+<li>输出文件应该如何命名。</li>
+</ul>
+<p>如果所有要求都直接塞进 Prompt，提示词很快就会变成一份几千字甚至几万字的说明书。</p>
+<h3 id="2">2. 很多要求并不是每次都需要<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>例如，一份完整的文档处理规范中，可能同时包含：</p>
+<ul>
+<li>Word 排版规范；</li>
+<li>Excel 公式规范；</li>
+<li>PowerPoint 设计规范；</li>
+<li>PDF 表单填写规范。</li>
+</ul>
+<p>但用户这一次只想制作一张表格。</p>
+<p>如果系统把所有规范都提前交给模型，不仅浪费上下文空间，还可能让模型受到无关信息干扰。</p>
+<h3 id="3-prompt">3. Prompt 主要告诉模型“怎么回答”<a class="headerlink" href="#3-prompt" title="Permanent link">¶</a></h3>
+<p>传统 Prompt 最擅长控制的是语言输出。</p>
+<p>但是，当任务从“回答一个问题”变成下面这些事情时，仅靠提示词就不够了：</p>
+<ul>
+<li>读取电脑上的文件；</li>
+<li>修改一份 Excel 表格；</li>
+<li>运行测试；</li>
+<li>操作 Git 仓库；</li>
+<li>查询数据库；</li>
+<li>填写 PDF 表单；</li>
+<li>上传生成的文件；</li>
+<li>根据执行结果反复修改。</li>
+</ul>
+<p>模型需要的不再只是一段说明，而是能够真正采取行动的环境。</p>
+<p>于是，Agent 开始出现。</p>
+<hr>
+<h2 id="agent">三、第二阶段：从聊天模型走向 Agent<a class="headerlink" href="#agent" title="Permanent link">¶</a></h2>
+<p>“Agent”通常被翻译为“智能体”或“代理”。</p>
+<p>在不同研究和产品中，Agent 的定义并不完全相同。但在实际应用中，可以把它理解为：</p>
+<blockquote>
+<p><strong>一个能够围绕目标进行判断、调用工具、观察结果并继续行动的 AI 系统。</strong></p>
+</blockquote>
+<p>普通聊天模型的工作过程大致是：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>用户提问
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>   ↓
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>模型生成回答
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>   ↓
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>任务结束
+</code></pre></div>
+<p>而 Agent 的工作过程更像一个循环：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>接收目标
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>   ↓
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>分析当前情况
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>   ↓
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>选择下一步行动
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>   ↓
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>调用工具
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>   ↓
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>观察工具返回的结果
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>   ↓
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>判断任务是否完成
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>   ↓
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>没有完成则继续行动
+</code></pre></div>
+<p>Anthropic 在介绍智能体时，将其概括为“大语言模型根据环境反馈，在循环中使用工具”。这种循环结构使模型不再只是生成文字，而是能够根据执行结果不断调整下一步行动。编程 Agent 说：</p>
+<blockquote>
+<p>修复这个项目中登录页面偶尔白屏的问题。</p>
+</blockquote>
+<p>Agent 可能会自行完成以下步骤：</p>
+<ol>
+<li>搜索与登录页面有关的代码；</li>
+<li>阅读错误日志；</li>
+<li>找出可能的异步加载问题；</li>
+<li>修改代码；</li>
+<li>运行测试；</li>
+<li>查看测试结果；</li>
+<li>如果测试失败，继续修改；</li>
+<li>最后生成修改说明。</li>
+</ol>
+<p>这里真正执行任务的是 Agent，而不只是底层的大语言模型。</p>
+<p>可以把它们简单地区分为：</p>
+<ul>
+<li><strong>模型</strong>负责理解、推理和生成；</li>
+<li><strong>Agent</strong>负责组织模型、工具和执行循环。</li>
+</ul>
+<p>不过，Agent 很快又遇到了两个新的问题。</p>
+<hr>
+<h2 id="agent_1">四、Agent 遇到的第一个问题：工具连接过于混乱<a class="headerlink" href="#agent_1" title="Permanent link">¶</a></h2>
+<p>一个 Agent 如果想完成现实中的工作，就需要访问外部系统。</p>
+<p>例如：</p>
+<ul>
+<li>读取本地文件；</li>
+<li>查询 GitHub 仓库；</li>
+<li>查看 Google Drive；</li>
+<li>访问公司数据库；</li>
+<li>读取 Slack 消息；</li>
+<li>操作浏览器；</li>
+<li>查询日历；</li>
+<li>调用内部业务系统。</li>
+</ul>
+<p>在 MCP 出现之前，每个 AI 产品通常都要为每一个外部系统单独编写连接方式。</p>
+<p>例如，同样是连接 GitHub：</p>
+<ul>
+<li>Claude 可能需要一套 GitHub 集成；</li>
+<li>ChatGPT 可能需要另一套；</li>
+<li>某个 IDE Agent 又需要重新实现一套；</li>
+<li>企业自己的 AI 系统还需要再开发一遍。</li>
+</ul>
+<p>这就像每一台电脑都使用不同形状的接口，每连接一个新设备，都要重新制作一根专用数据线。</p>
+<p>为了解决这个问题，Anthropic 在 <strong>2024 年 11 月 25 日</strong>开源了 Model Context Protocol，也就是 MCP。它的目标是提供一种统一标准，让 AI 应用能够连接外部数据源和工具。五、MCP 是什么？</p>
+<p>MCP 的全称是：</p>
+<blockquote>
+<p>Model Context Protocol，模型上下文协议。</p>
+</blockquote>
+<p>官方经常把 MCP 比作 AI 世界中的 USB-C 接口。</p>
+<p>USB-C 本身不是鼠标、键盘或者硬盘，它只规定设备应该怎样连接和通信。</p>
+<p>同样：</p>
+<blockquote>
+<p><strong>MCP 本身不是某个具体工具，而是一套让 AI 应用连接工具、数据和外部系统的通信标准。</strong></p>
+</blockquote>
+<p>通过 MCP，服务器可以向 AI 应用提供几类能力：</p>
+<ul>
+<li><strong>Tools</strong>：可以执行的操作；</li>
+<li><strong>Resources</strong>：可以读取的数据和资料；</li>
+<li><strong>Prompts</strong>：可以调用的预设提示模板。</li>
+</ul>
+<p>例如，一个 GitHub MCP Server 可以向 Agent 提供：</p>
+<ul>
+<li>读取仓库文件；</li>
+<li>搜索代码；</li>
+<li>查看 Issue；</li>
+<li>创建分支；</li>
+<li>提交修改；</li>
+<li>创建 Pull Request。</li>
+</ul>
+<p>一个数据库 MCP Server 则可以提供：</p>
+<ul>
+<li>查看数据表结构；</li>
+<li>执行查询；</li>
+<li>获取查询结果；</li>
+<li>调用预先定义的业务接口。</li>
+</ul>
+<p>因此，MCP 解决的是：</p>
+<blockquote>
+<p><strong>Agent 如何以统一方式连接外部世界。</strong></p>
+</blockquote>
+<p>官方文档将 MCP 定义为连接 AI 应用与外部系统的开放标准，并明确指出，MCP 可以连接本地文件、数据库、搜索工具和各种业务工作流。以后，新的问题又出现了。</p>
+<hr>
+<h2 id="agent_2">六、Agent 遇到的第二个问题：它有工具，却不一定会正确工作<a class="headerlink" href="#agent_2" title="Permanent link">¶</a></h2>
+<p>假设我们给一个刚入职的员工提供了：</p>
+<ul>
+<li>一台电脑；</li>
+<li>公司数据库权限；</li>
+<li>Excel；</li>
+<li>PowerPoint；</li>
+<li>PDF 编辑器；</li>
+<li>公司共享文件夹。</li>
+</ul>
+<p>这个员工现在已经拥有了完成工作的工具。</p>
+<p>但是，他仍然不一定知道：</p>
+<ul>
+<li>应该先查哪张表；</li>
+<li>哪些数据必须交叉核对；</li>
+<li>公司报告使用什么模板；</li>
+<li>图表中哪些颜色不能使用；</li>
+<li>哪些内容属于内部信息；</li>
+<li>提交报告前需要进行什么检查；</li>
+<li>什么情况下必须请示负责人。</li>
+</ul>
+<p>Agent 也面临同样的问题。</p>
+<p>MCP 可以让 Agent 访问数据库，但不会自动告诉它应该查询哪张表。</p>
+<p>工具可以让 Agent 修改 Excel，但不会自动告诉它公司要求怎样设置公式。</p>
+<p>浏览器可以让 Agent 打开网页，但不会自动告诉它完成某项业务时应该遵循什么顺序。</p>
+<p>这说明，真实工作不仅需要知识和工具，还需要另一种东西：</p>
+<blockquote>
+<p><strong>程序性知识。</strong></p>
+</blockquote>
+<p>所谓程序性知识，就是“怎样把一件事情做好”的经验，例如：</p>
+<ul>
+<li>工作步骤；</li>
+<li>判断标准；</li>
+<li>行业惯例；</li>
+<li>项目规范；</li>
+<li>常见错误；</li>
+<li>检查方法；</li>
+<li>特殊情况下的处理方式。</li>
+</ul>
+<p>过去，这些内容通常被写进很长的系统提示词、项目说明或者内部文档中。</p>
+<p>但随着 Agent 能够完成的任务越来越多，把所有说明都塞进系统提示词已经不可行。</p>
+<p>于是，Agent Skills 应运而生。</p>
+<hr>
+<h2 id="agent-skills_1">七、Agent Skills 的正式诞生<a class="headerlink" href="#agent-skills_1" title="Permanent link">¶</a></h2>
+<p>需要说明的是，“技能”“工具包”“工作流”等概念，在 Agent Skills 这个名称出现以前就已经存在。</p>
+<p>人们早已在使用：</p>
+<ul>
+<li>可复用 Prompt；</li>
+<li>自定义指令；</li>
+<li>工作流模板；</li>
+<li>插件；</li>
+<li>函数调用；</li>
+<li>项目说明文件；</li>
+<li>自动化脚本。</li>
+</ul>
+<p>因此，Agent Skills 并不是突然发明了“给 AI 写说明书”这件事。</p>
+<p>它真正的新意，是把这些内容整理成一种：</p>
+<ul>
+<li>基于文件夹；</li>
+<li>可以自动发现；</li>
+<li>可以按需加载；</li>
+<li>可以携带脚本和资料；</li>
+<li>可以组合使用；</li>
+<li>可以跨不同 Agent 移植</li>
+</ul>
+<p>的标准化技能包。</p>
+<p><strong>2025 年 10 月 16 日，Anthropic 正式发布 Agent Skills。</strong></p>
+<p>Anthropic 将其定义为由指令、脚本和资源组成的文件夹，Agent 可以发现这些文件夹，并在遇到相关任务时动态加载。月 18 日**，Agent Skills 被进一步发布为开放标准，使同一份 Skill 可以在不同兼容产品之间移植，而不再局限于单一 AI 产品。b Copilot、OpenAI Codex 等产品也陆续支持这一格式。GitHub 将 Agent Skills 描述为一种开放标准；OpenAI 的官方文档也说明，Codex 和 ChatGPT 的 Skills 建立在开放的 Agent Skills 标准之上。Agent Skills 的发展列一条简化时间线，可以写成：</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>发展</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>早期</td>
+<td>用户主要通过 Prompt 和系统指令约束模型</td>
+</tr>
+<tr>
+<td>2024 年</td>
+<td>能够读写文件、运行命令的 Agent 快速发展</td>
+</tr>
+<tr>
+<td>2024 年 11 月</td>
+<td>MCP 发布，开始标准化 AI 与外部工具之间的连接</td>
+</tr>
+<tr>
+<td>2025 年 10 月</td>
+<td>Anthropic 正式发布 Agent Skills</td>
+</tr>
+<tr>
+<td>2025 年 12 月</td>
+<td>Agent Skills 成为开放标准</td>
+</tr>
+<tr>
+<td>此后</td>
+<td>GitHub Copilot、Codex 等智能体陆续支持这一格式</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="agent-skills_2">八、Agent Skills 诞生之初，用在哪里？<a class="headerlink" href="#agent-skills_2" title="Permanent link">¶</a></h2>
+<p>Agent Skills 最初最有代表性、也是最早被官方重点展示的应用场景之一，是：</p>
+<blockquote>
+<p><strong>办公文档的读取、生成和修改。</strong></p>
+</blockquote>
+<p>Anthropic 在介绍 Agent Skills 时，重点展示了 Word、Excel、PowerPoint 和 PDF 等文档处理能力。</p>
+<p>其中一个典型例子是 PDF Skill。</p>
+<p>大语言模型本来就知道 PDF 是什么，也能够理解从 PDF 中提取出来的文字，但这并不意味着它天然会：</p>
+<ul>
+<li>准确读取复杂 PDF；</li>
+<li>识别表单字段；</li>
+<li>修改 PDF 页面；</li>
+<li>填写可交互表单；</li>
+<li>合并多个 PDF；</li>
+<li>保留原有版式；</li>
+<li>生成可以正常打开的文件。</li>
+</ul>
+<p>为了可靠地处理 PDF，Agent 还需要知道：</p>
+<ul>
+<li>使用什么程序库；</li>
+<li>遇到扫描件怎么办；</li>
+<li>表单字段怎样识别；</li>
+<li>哪些情况下需要渲染页面检查；</li>
+<li>修改后怎样验证文件没有损坏；</li>
+<li>输出文件应该保存在哪里。</li>
+</ul>
+<p>Anthropic 官方在解释 Agent Skills 架构时，使用的正是 PDF Skill，并说明该 Skill 用来支持 Claude 的文档编辑能力。首批官方 Skill 也主要覆盖 PowerPoint、Excel、Word 和 PDF。期 Agent Skills，原因在于：</p>
+<ol>
+<li>工作流程相对明确；</li>
+<li>可以通过程序检查结果；</li>
+<li>经常需要使用固定模板；</li>
+<li>需要调用文件系统和代码执行工具；</li>
+<li>仅靠自然语言生成很难保证文件正确；</li>
+<li>大量操作可以重复使用。</li>
+</ol>
+<p>因此，下面可以用一个常见任务来理解 Skill 的作用：</p>
+<blockquote>
+<p>用户提供一份 Excel 销售数据，要求 AI 按照公司模板制作一份 PowerPoint 汇报。</p>
+</blockquote>
+<p>Agent 可能需要完成：</p>
+<ol>
+<li>读取 Excel；</li>
+<li>检查缺失值；</li>
+<li>计算增长率；</li>
+<li>生成图表；</li>
+<li>套用公司 PowerPoint 模板；</li>
+<li>编写结论；</li>
+<li>检查文字是否超出页面；</li>
+<li>导出并重新打开文件进行验证。</li>
+</ol>
+<p>这显然已经不是一条简单 Prompt 可以稳定完成的事情。</p>
+<hr>
+<h2 id="agent-skill">九、一个 Agent Skill 里面有什么？<a class="headerlink" href="#agent-skill" title="Permanent link">¶</a></h2>
+<p>一个最基础的 Skill，通常是一个文件夹。</p>
+<p>例如：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>sales-presentation/
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>├── SKILL.md
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>├── references/
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>│   ├── company-style-guide.md
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>│   └── chart-rules.md
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>├── scripts/
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>│   ├── validate_excel.py
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>│   └── check_slides.py
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>└── assets/
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>    └── company-template.pptx
+</code></pre></div>
+<p>其中最重要的文件是：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>SKILL.md
+</code></pre></div>
+<p>它通常由两个部分组成：</p>
+<ol>
+<li>元数据；</li>
+<li>工作指令。</li>
+</ol>
+<p>一个简化后的 <code>SKILL.md</code> 可能是：</p>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a>---
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a>name: sales-presentation
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="gu">description: 根据销售数据制作公司标准汇报。用户要求分析销售数据、制作季度汇报或生成销售演示文稿时使用。</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="gu">---</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="gh"># 工作流程</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="k">1.</span> 检查输入文件是否包含日期、地区、产品和销售额字段。
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="k">2.</span> 不得直接删除缺失数据，先在报告中标记。
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><a href="#__codelineno-5-10"><span class="linenos" data-linenos="10 "></span></a><span class="k">3.</span> 同比增长率至少保留一位小数。
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><a href="#__codelineno-5-11"><span class="linenos" data-linenos="11 "></span></a><span class="k">4.</span> 使用 assets/company-template.pptx 作为模板。
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><a href="#__codelineno-5-12"><span class="linenos" data-linenos="12 "></span></a><span class="k">5.</span> 图表规则参见 references/chart-rules.md。
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><a href="#__codelineno-5-13"><span class="linenos" data-linenos="13 "></span></a><span class="k">6.</span> 生成后运行 scripts/check_slides.py。
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><a href="#__codelineno-5-14"><span class="linenos" data-linenos="14 "></span></a><span class="k">7.</span> 如果检查失败，修复后重新运行。
+</code></pre></div>
+<p>这个文件并没有重新训练模型。</p>
+<p>它只是把一名有经验的员工可能掌握的工作方法，整理成 Agent 可以读取的形式。</p>
+<p>除 <code>SKILL.md</code> 外，Skill 还可以携带：</p>
+<h3 id="1">1. 参考资料<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>公司术语表；</li>
+<li>代码规范；</li>
+<li>API 文档；</li>
+<li>品牌设计规范；</li>
+<li>数据库结构说明；</li>
+<li>常见问题处理方法。</li>
+</ul>
+<h3 id="2_1">2. 模板<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>PowerPoint 模板；</li>
+<li>Word 报告模板；</li>
+<li>Excel 表格模板；</li>
+<li>合同模板；</li>
+<li>项目目录模板。</li>
+</ul>
+<h3 id="3">3. 脚本<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>检查文件格式；</li>
+<li>统计数据；</li>
+<li>生成图表；</li>
+<li>转换文件；</li>
+<li>运行自动测试；</li>
+<li>验证输出是否合格。</li>
+</ul>
+<p>Agent Skills 的开放规范规定，一个 Skill 至少包含 <code>SKILL.md</code>，还可以包含 <code>scripts</code>、<code>references</code>、<code>assets</code> 等目录。十、Skill 为什么不会把上下文撑爆？</p>
+<p>Agent Skills 的核心设计之一，叫作：</p>
+<blockquote>
+<p>Progressive Disclosure，渐进式披露。</p>
+</blockquote>
+<p>意思是，Agent 不会在一开始就读取所有 Skill 的全部内容，而是按照任务需要逐层加载。</p>
+<p>整个过程通常分为三个层级。</p>
+<h3 id="_1">第一层：只读取名称和描述<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p>Agent 启动时，可能只会看到：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>name: sales-presentation
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a>description: 根据销售数据制作标准汇报。
+</code></pre></div>
+<p>这点信息很短，只用于让 Agent 判断：</p>
+<blockquote>
+<p>当前任务是否可能需要这个 Skill？</p>
+</blockquote>
+<h3 id="skillmd">第二层：加载完整的 SKILL.md<a class="headerlink" href="#skillmd" title="Permanent link">¶</a></h3>
+<p>当用户要求制作销售汇报时，Agent 判断该 Skill 与任务相关，于是读取完整工作流程。</p>
+<h3 id="_2">第三层：按需读取资料和运行脚本<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>如果任务需要制作图表，Agent才读取：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>references/chart-rules.md
+</code></pre></div>
+<p>如果任务已经生成完成，Agent 再运行：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>scripts/check_slides.py
+</code></pre></div>
+<p>如果用户只要求查看数据，并不要求制作幻灯片，那么公司模板和幻灯片检查脚本可能始终不会被加载。</p>
+<p>这类似于一本工作手册：</p>
+<ul>
+<li>目录一直可见；</li>
+<li>相关章节按需翻开；</li>
+<li>附录只在必要时查阅；</li>
+<li>工具只在需要时使用。</li>
+</ul>
+<p>Anthropic 将渐进式披露视为 Agent Skills 的核心设计原则：Agent 平时只保留少量发现信息，任务匹配后才读取完整指令，其他参考文件则继续按需加载。十一、Prompt、Agent、MCP 和 Skill 到底是什么关系？</p>
+<p>这四个概念经常同时出现，但它们并不处于同一个层级。</p>
+<p>最简单的关系是：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a>用户通过 Prompt 提出目标
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos=" 2 "></span></a>            ↓
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos=" 3 "></span></a>Agent 判断并组织任务
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos=" 4 "></span></a>            ↓
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos=" 5 "></span></a>Agent 加载相关 Skill
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos=" 6 "></span></a>            ↓
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a>Skill 告诉 Agent 应该怎样做
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a>            ↓
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos=" 9 "></span></a>Agent 通过 MCP 或其他接口调用工具
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><a href="#__codelineno-9-10"><span class="linenos" data-linenos="10 "></span></a>            ↓
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><a href="#__codelineno-9-11"><span class="linenos" data-linenos="11 "></span></a>工具读取数据、修改文件或执行操作
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><a href="#__codelineno-9-12"><span class="linenos" data-linenos="12 "></span></a>            ↓
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><a href="#__codelineno-9-13"><span class="linenos" data-linenos="13 "></span></a>Agent 检查结果并继续行动
+</code></pre></div>
+<p>可以把它们比作一家公司的工作过程。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>类比</th>
+<th>核心作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt</td>
+<td>用户下达的任务</td>
+<td>说明这一次要做什么</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>执行任务的员工</td>
+<td>判断、规划、行动和检查</td>
+</tr>
+<tr>
+<td>Skill</td>
+<td>岗位操作手册</td>
+<td>说明这类任务应该怎样做</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>通用连接接口</td>
+<td>让员工连接外部系统和设备</td>
+</tr>
+<tr>
+<td>Tool</td>
+<td>具体设备或操作</td>
+<td>真正读取、计算、修改或提交</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="prompt-skill">十二、Prompt 和 Skill 有什么区别？<a class="headerlink" href="#prompt-skill" title="Permanent link">¶</a></h2>
+<p>Prompt 是用户或系统向模型提供的指令。</p>
+<p>例如：</p>
+<blockquote>
+<p>把这份销售数据做成一份十页以内的季度汇报。</p>
+</blockquote>
+<p>它主要描述当前任务。</p>
+<p>Skill 则是可复用的专业流程，例如：</p>
+<ul>
+<li>怎样验证销售数据；</li>
+<li>怎样计算增长率；</li>
+<li>怎样选择图表；</li>
+<li>怎样套用模板；</li>
+<li>怎样检查幻灯片；</li>
+<li>怎样处理异常数据。</li>
+</ul>
+<p>二者最重要的区别，不只是“一个短、一个长”。</p>
+<h3 id="prompt">Prompt 通常面向当前对话<a class="headerlink" href="#prompt" title="Permanent link">¶</a></h3>
+<p>它回答的是：</p>
+<blockquote>
+<p>这一次要做什么？</p>
+</blockquote>
+<h3 id="skill">Skill 面向一类可重复任务<a class="headerlink" href="#skill" title="Permanent link">¶</a></h3>
+<p>它回答的是：</p>
+<blockquote>
+<p>每次遇到这类任务，通常应该怎样完成？</p>
+</blockquote>
+<h3 id="skill-prompt-prompt">Skill 可以包含 Prompt，但不只是 Prompt<a class="headerlink" href="#skill-prompt-prompt" title="Permanent link">¶</a></h3>
+<p><code>SKILL.md</code> 中的说明本质上仍然会以文本形式进入模型上下文，因此从底层来看，它也会影响模型的提示环境。</p>
+<p>但一个完整 Skill 还增加了：</p>
+<ul>
+<li>名称和描述；</li>
+<li>自动发现机制；</li>
+<li>按需加载机制；</li>
+<li>文件夹结构；</li>
+<li>参考资料；</li>
+<li>模板；</li>
+<li>可执行脚本；</li>
+<li>可移植和可版本管理的封装。</li>
+</ul>
+<p>因此可以说：</p>
+<blockquote>
+<p><strong>Prompt 是一段指令，而 Skill 是围绕某类任务组织起来的一整套可复用资源。</strong></p>
+</blockquote>
+<p>把 Skill 简单理解为“高级 Prompt”并非完全错误，但会忽略它的文件组织、动态加载和脚本执行能力。</p>
+<hr>
+<h2 id="agent-skill_1">十三、Agent 和 Skill 有什么区别？<a class="headerlink" href="#agent-skill_1" title="Permanent link">¶</a></h2>
+<p>Agent 是任务的执行主体，Skill 是 Agent 可以调用的能力模块。</p>
+<p>一个 Agent 可以拥有很多 Skills，例如：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>Agent
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a>├── PDF 处理 Skill
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a>├── Excel 分析 Skill
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a>├── PowerPoint 制作 Skill
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos="5 "></span></a>├── 代码审查 Skill
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><a href="#__codelineno-10-6"><span class="linenos" data-linenos="6 "></span></a>└── 数据库迁移 Skill
+</code></pre></div>
+<p>同一个 Skill 也可以被不同 Agent 使用。</p>
+<p>例如，一份符合开放标准的 PDF Skill，理论上可以被多个兼容的 AI 产品加载。</p>
+<p>因此：</p>
+<blockquote>
+<p><strong>Agent 是“谁在工作”，Skill 是“它掌握了哪套工作方法”。</strong></p>
+</blockquote>
+<p>Skill 不能脱离 Agent 自己完成任务。</p>
+<p>一个放在硬盘上的 <code>SKILL.md</code> 文件不会自动执行。必须有支持 Skills 的 Agent：</p>
+<ol>
+<li>找到它；</li>
+<li>判断是否相关；</li>
+<li>读取其中的说明；</li>
+<li>调用相应工具；</li>
+<li>执行工作流程。</li>
+</ol>
+<p>另一方面，Agent 没有 Skill 也可以工作，只是更依赖模型临场发挥。</p>
+<hr>
+<h2 id="mcp-skill">十四、MCP 和 Skill 有什么区别？<a class="headerlink" href="#mcp-skill" title="Permanent link">¶</a></h2>
+<p>MCP 与 Skill 最容易混淆，因为两者都在“扩展 Agent 能力”。</p>
+<p>但它们解决的是两个不同问题。</p>
+<h3 id="mcp">MCP 解决“怎样连接”<a class="headerlink" href="#mcp" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>怎样连接 GitHub；</li>
+<li>怎样连接数据库；</li>
+<li>怎样读取 Google Drive；</li>
+<li>怎样调用企业内部服务；</li>
+<li>怎样让不同 AI 产品复用同一个工具接口。</li>
+</ul>
+<h3 id="skill_1">Skill 解决“连接之后怎样工作”<a class="headerlink" href="#skill_1" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>从 GitHub 中先查看哪些文件；</li>
+<li>修改代码后必须运行哪些测试；</li>
+<li>数据库迁移需要遵守什么步骤；</li>
+<li>从 Google Drive 中读取资料后怎样整理；</li>
+<li>生成报告时必须采用什么格式。</li>
+</ul>
+<p>可以用一句话概括：</p>
+<blockquote>
+<p><strong>MCP 提供能力入口，Skill 提供能力使用方法。</strong></p>
+</blockquote>
+<p>例如，一个数据库 MCP Server 向 Agent 提供了查询数据库的能力。</p>
+<p>而一个“销售分析 Skill”会告诉 Agent：</p>
+<ol>
+<li>查询哪几张表；</li>
+<li>使用哪些字段；</li>
+<li>怎样处理退款；</li>
+<li>怎样计算季度增长率；</li>
+<li>哪些结果需要人工确认；</li>
+<li>最终怎样生成报告。</li>
+</ol>
+<p>Skill 可以调用 MCP 提供的工具，但 Skill 并不依赖 MCP 才能存在。</p>
+<p>它也可以：</p>
+<ul>
+<li>运行本地脚本；</li>
+<li>使用 Agent 自带的工具；</li>
+<li>读取本地文件；</li>
+<li>只提供分析流程；</li>
+<li>调用普通 API。</li>
+</ul>
+<p>同样，MCP Server 也不一定需要 Skill。</p>
+<p>一个天气 MCP Server 可以只提供“查询天气”工具，Agent 根据当前 Prompt 自行决定怎样使用。</p>
+<hr>
+<h2 id="mcp-prompt">十五、为什么 MCP 中也有 Prompt？<a class="headerlink" href="#mcp-prompt" title="Permanent link">¶</a></h2>
+<p>MCP Server 除了提供 Tools 和 Resources，还可以提供预设 Prompts。</p>
+<p>这可能让人更加困惑：</p>
+<blockquote>
+<p>既然 MCP 也能提供 Prompt，那它和 Skill 还有什么区别？</p>
+</blockquote>
+<p>MCP Prompt 通常是一种通过服务器提供的预设提示模板。</p>
+<p>例如，一个代码管理 MCP Server 可以提供：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>review-pull-request
+</code></pre></div>
+<p>用户调用后，系统得到一段预先写好的代码审查提示。</p>
+<p>它仍然主要是一份提示模板。</p>
+<p>而 Skill 更强调：</p>
+<ul>
+<li>自动发现；</li>
+<li>动态加载；</li>
+<li>完整工作流程；</li>
+<li>多份参考资料；</li>
+<li>文件模板；</li>
+<li>可执行脚本；</li>
+<li>针对一类任务的持续复用。</li>
+</ul>
+<p>因此：</p>
+<blockquote>
+<p>MCP Prompt 是 MCP 可以传递的一类内容；MCP 是通信协议；Skill 则是面向 Agent 的专业能力包。</p>
+</blockquote>
+<p>它们可以互相配合，但不能互相替代。</p>
+<hr>
+<h2 id="_3">十六、用一个完整例子理解四者关系<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>假设用户提出：</p>
+<blockquote>
+<p>读取 Google Drive 中的第二季度销售表，制作一份符合公司模板的销售汇报，并把结论发到 Slack。</p>
+</blockquote>
+<h3 id="prompt_1">第一步：Prompt 提出目标<a class="headerlink" href="#prompt_1" title="Permanent link">¶</a></h3>
+<p>用户的这句话就是当前任务的 Prompt。</p>
+<p>它告诉 Agent：</p>
+<ul>
+<li>数据在哪里；</li>
+<li>要生成什么；</li>
+<li>结果发送到哪里。</li>
+</ul>
+<h3 id="agent_3">第二步：Agent 规划任务<a class="headerlink" href="#agent_3" title="Permanent link">¶</a></h3>
+<p>Agent 将任务拆成：</p>
+<ol>
+<li>读取销售表；</li>
+<li>检查数据；</li>
+<li>分析销售趋势；</li>
+<li>生成 PowerPoint；</li>
+<li>检查文件；</li>
+<li>提炼结论；</li>
+<li>发送到 Slack。</li>
+</ol>
+<h3 id="agent-skills_3">第三步：Agent 加载 Skills<a class="headerlink" href="#agent-skills_3" title="Permanent link">¶</a></h3>
+<p>Agent 可能加载：</p>
+<ul>
+<li>spreadsheet-analysis Skill；</li>
+<li>sales-report Skill；</li>
+<li>presentation Skill。</li>
+</ul>
+<p>这些 Skills 告诉 Agent：</p>
+<ul>
+<li>缺失数据怎样处理；</li>
+<li>销售额怎样计算；</li>
+<li>公司使用什么模板；</li>
+<li>每页允许放多少内容；</li>
+<li>图表如何配色；</li>
+<li>输出前如何检查。</li>
+</ul>
+<h3 id="agent-mcp">第四步：Agent 通过 MCP 连接服务<a class="headerlink" href="#agent-mcp" title="Permanent link">¶</a></h3>
+<p>Agent 使用：</p>
+<ul>
+<li>Google Drive MCP Server 读取文件；</li>
+<li>Slack MCP Server 发送消息。</li>
+</ul>
+<p>MCP 负责标准化连接方式。</p>
+<h3 id="_4">第五步：工具实际执行操作<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>具体工具负责：</p>
+<ul>
+<li>下载 Excel；</li>
+<li>读取单元格；</li>
+<li>运行计算；</li>
+<li>创建 PowerPoint；</li>
+<li>上传文件；</li>
+<li>发送 Slack 消息。</li>
+</ul>
+<h3 id="agent_4">第六步：Agent 检查结果<a class="headerlink" href="#agent_4" title="Permanent link">¶</a></h3>
+<p>Agent 根据 Skill 中的要求运行检查脚本。</p>
+<p>如果发现：</p>
+<ul>
+<li>某页文字溢出；</li>
+<li>增长率计算错误；</li>
+<li>图表缺少单位；</li>
+<li>模板使用不正确；</li>
+</ul>
+<p>Agent 就继续修改，直到满足要求。</p>
+<p>在整个过程中：</p>
+<ul>
+<li>Prompt 提出目标；</li>
+<li>Agent 组织行动；</li>
+<li>Skill提供方法；</li>
+<li>MCP 提供连接；</li>
+<li>Tool 完成操作。</li>
+</ul>
+<hr>
+<h2 id="skill_2">十七、Skill 和模型训练有什么区别？<a class="headerlink" href="#skill_2" title="Permanent link">¶</a></h2>
+<p>Skill 不等于训练，也不等于微调。</p>
+<p>模型训练或微调，通常会修改模型参数。</p>
+<p>训练完成后，模型的行为和知识会以某种方式写入模型权重。</p>
+<p>而 Skill 通常只是外部文件。</p>
+<p>当 Skill 没有被加载时，它不会影响模型。</p>
+<p>当 Skill 被删除后，模型也不会永久记住里面的内容。</p>
+<p>因此：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">是否修改模型参数</th>
+<th style="text-align: right;">是否按需加载</th>
+<th style="text-align: right;">是否容易修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">当前对话加载</td>
+<td style="text-align: right;">很容易</td>
+</tr>
+<tr>
+<td>Skill</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">容易</td>
+</tr>
+<tr>
+<td>微调</td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">成本较高</td>
+</tr>
+<tr>
+<td>重新训练</td>
+<td style="text-align: right;">是</td>
+<td style="text-align: right;">否</td>
+<td style="text-align: right;">成本很高</td>
+</tr>
+</tbody>
+</table>
+<p>Skill 的优势在于：</p>
+<ul>
+<li>制作成本较低；</li>
+<li>可以快速修改；</li>
+<li>可以放入版本控制；</li>
+<li>可以针对不同项目切换；</li>
+<li>不需要重新训练模型；</li>
+<li>可以在不同兼容 Agent 之间共享。</li>
+</ul>
+<p>但它也无法完全替代训练。</p>
+<p>如果模型本身无法理解某个复杂问题，仅靠 Skill 并不能凭空创造足够的推理能力。</p>
+<hr>
+<h2 id="skill-agent">十八、Skill 会让 Agent 变成真正的专家吗？<a class="headerlink" href="#skill-agent" title="Permanent link">¶</a></h2>
+<p>不一定。</p>
+<p>Skill 可以给 Agent 提供专业流程，但最终执行者仍然是大语言模型。</p>
+<p>它仍然可能：</p>
+<ul>
+<li>错误理解说明；</li>
+<li>选择了不合适的 Skill；</li>
+<li>漏掉某个步骤；</li>
+<li>错误调用工具；</li>
+<li>对结果作出错误判断；</li>
+<li>生成看似正确但实际错误的文件。</li>
+</ul>
+<p>Skill 更像一张地图或者一本操作手册。</p>
+<p>一张好地图可以让人少走弯路，却不能保证驾驶者绝不出错。</p>
+<p>而且，一份低质量 Skill 还可能让 Agent 表现得更差，例如：</p>
+<ul>
+<li>指令过于宽泛；</li>
+<li>工作流程本身存在错误；</li>
+<li>不同规则互相矛盾；</li>
+<li>引用了已经过期的资料；</li>
+<li>强制 Agent 执行不必要的步骤；</li>
+<li>把大量无关内容塞进上下文；</li>
+<li>在脚本中执行不安全操作。</li>
+</ul>
+<p>Agent Skills 官方的编写建议也强调，真正有效的 Skill 应该来自实际工作经验，而不是让模型凭空生成一些“遵循最佳实践”“妥善处理错误”之类的空泛要求。十九、安装 Skill 时需要注意什么？</p>
+<p>Skill 不一定只是静态文字，它还可能携带可执行脚本。</p>
+<p>因此，安装来历不明的 Skill，类似于安装一个来历不明的软件包。</p>
+<p>需要特别检查：</p>
+<ul>
+<li><code>SKILL.md</code> 要求 Agent 做什么；</li>
+<li><code>scripts</code> 目录里有什么程序；</li>
+<li>是否会读取隐私文件；</li>
+<li>是否会访问网络；</li>
+<li>是否会修改或删除数据；</li>
+<li>是否要求调用高权限工具；</li>
+<li>是否会上传本地信息；</li>
+<li>是否引用不可信的外部内容。</li>
+</ul>
+<p>Skill 和 MCP 的安全风险也不相同。</p>
+<h3 id="skill_3">Skill 的主要风险<a class="headerlink" href="#skill_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>恶意工作指令；</li>
+<li>隐藏的脚本；</li>
+<li>错误的专业流程；</li>
+<li>Prompt 注入；</li>
+<li>过期或有偏见的资料。</li>
+</ul>
+<h3 id="mcp_1">MCP 的主要风险<a class="headerlink" href="#mcp_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>外部服务权限过大；</li>
+<li>身份认证配置错误；</li>
+<li>工具暴露敏感数据；</li>
+<li>Agent 执行了高风险操作；</li>
+<li>不可信 MCP Server 返回恶意内容。</li>
+</ul>
+<p>一个 Skill 可能告诉 Agent“该怎样做”，一个 MCP Server 则可能真的赋予 Agent“做这件事的权限”。</p>
+<p>因此，二者都需要进行权限控制和来源审查。</p>
+<hr>
+<h2 id="skill_4">二十、怎样判断一个 Skill 是否值得使用？<a class="headerlink" href="#skill_4" title="Permanent link">¶</a></h2>
+<p>可以从几个方面判断。</p>
+<h3 id="1_1">1. 任务范围是否明确<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h3>
+<p>好的描述通常会说：</p>
+<blockquote>
+<p>根据销售数据生成符合公司规范的季度汇报。</p>
+</blockquote>
+<p>而不是：</p>
+<blockquote>
+<p>帮助 Agent 完成所有商业工作。</p>
+</blockquote>
+<p>Skill 范围过宽时，Agent 很难判断什么时候应该加载，也容易受到大量无关规则影响。</p>
+<h3 id="2_2">2. 是否包含真正有价值的专业经验<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h3>
+<p>好的 Skill 会告诉 Agent：</p>
+<ul>
+<li>应该使用哪张数据表；</li>
+<li>某个字段有什么特殊含义；</li>
+<li>哪种错误最常见；</li>
+<li>什么情况下必须停止；</li>
+<li>怎样验证结果。</li>
+</ul>
+<p>低质量 Skill 往往只会写：</p>
+<ul>
+<li>保持专业；</li>
+<li>深入分析；</li>
+<li>遵循最佳实践；</li>
+<li>注意准确性；</li>
+<li>妥善处理异常。</li>
+</ul>
+<p>这些要求听起来正确，却没有提供模型原本不知道的信息。</p>
+<h3 id="3_1">3. 是否有可验证的完成标准<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h3>
+<p>例如：</p>
+<ul>
+<li>所有公式必须经过重新计算；</li>
+<li>所有页面不得出现文字溢出；</li>
+<li>代码必须通过测试；</li>
+<li>输出文件必须能够重新打开；</li>
+<li>报告中的数字必须可以追溯到原始数据。</li>
+</ul>
+<p>只有“生成一份高质量报告”，很难真正检查。</p>
+<h3 id="4-agent">4. 是否允许 Agent 根据情况调整<a class="headerlink" href="#4-agent" title="Permanent link">¶</a></h3>
+<p>Skill 应该提供可靠流程，但不应该把所有任务都机械地套进同一个模板。</p>
+<p>优秀 Skill 通常会明确：</p>
+<ul>
+<li>哪些步骤必须执行；</li>
+<li>哪些步骤可以选择；</li>
+<li>遇到异常时怎样处理；</li>
+<li>什么时候需要向用户确认；</li>
+<li>什么时候应当停止自动操作。</li>
+</ul>
+<h3 id="5">5. 是否经过真实任务测试<a class="headerlink" href="#5" title="Permanent link">¶</a></h3>
+<p>一份 Skill 能够正常被加载，不等于它真的有效。</p>
+<p>更可靠的方法是比较：</p>
+<ul>
+<li>不使用 Skill 时的结果；</li>
+<li>使用 Skill 后的结果；</li>
+<li>是否减少错误；</li>
+<li>是否增加不必要步骤；</li>
+<li>是否显著消耗更多时间和上下文。</li>
+</ul>
+<p>Skill 本身也需要像软件一样经过测试、迭代和版本管理。</p>
+<hr>
+<h2 id="agent-skills_4">二十一、Agent Skills 真正改变了什么？<a class="headerlink" href="#agent-skills_4" title="Permanent link">¶</a></h2>
+<p>Agent Skills 并没有发明提示词，也没有让模型突然获得新的智慧。</p>
+<p>它真正改变的是：</p>
+<blockquote>
+<p><strong>人类经验向 AI Agent 传递的方式。</strong></p>
+</blockquote>
+<p>过去，我们通常把经验散落在：</p>
+<ul>
+<li>对话记录；</li>
+<li>Prompt 文档；</li>
+<li>员工手册；</li>
+<li>项目 Wiki；</li>
+<li>脚本；</li>
+<li>代码注释；</li>
+<li>模板文件；</li>
+<li>某个熟练员工的脑海中。</li>
+</ul>
+<p>Agent Skills 尝试把这些内容整理成一个统一的能力单元：</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos=" 1 "></span></a>一项技能
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos=" 2 "></span></a>=
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos=" 3 "></span></a>触发条件
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos=" 4 "></span></a>+
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos=" 5 "></span></a>工作流程
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><a href="#__codelineno-12-6"><span class="linenos" data-linenos=" 6 "></span></a>+
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><a href="#__codelineno-12-7"><span class="linenos" data-linenos=" 7 "></span></a>专业知识
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><a href="#__codelineno-12-8"><span class="linenos" data-linenos=" 8 "></span></a>+
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><a href="#__codelineno-12-9"><span class="linenos" data-linenos=" 9 "></span></a>参考资料
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><a href="#__codelineno-12-10"><span class="linenos" data-linenos="10 "></span></a>+
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><a href="#__codelineno-12-11"><span class="linenos" data-linenos="11 "></span></a>文件模板
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><a href="#__codelineno-12-12"><span class="linenos" data-linenos="12 "></span></a>+
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><a href="#__codelineno-12-13"><span class="linenos" data-linenos="13 "></span></a>可执行脚本
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><a href="#__codelineno-12-14"><span class="linenos" data-linenos="14 "></span></a>+
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><a href="#__codelineno-12-15"><span class="linenos" data-linenos="15 "></span></a>检查标准
+</code></pre></div>
+<p>它让一个通用 Agent 可以根据任务，临时加载某一套专业工作方法。</p>
+<p>这也意味着，未来决定 Agent 工作质量的，可能不只是“它使用了什么模型”，还包括：</p>
+<ul>
+<li>它拥有哪些工具；</li>
+<li>它连接了哪些 MCP Server；</li>
+<li>它安装了哪些 Skills；</li>
+<li>这些 Skills 是否来自真正的专业经验；</li>
+<li>它是否能够正确选择并组合这些能力。</li>
+</ul>
+<hr>
+<h2 id="skill-agent_1">结语：Skill 是写给 Agent 的工作手册<a class="headerlink" href="#skill-agent_1" title="Permanent link">¶</a></h2>
+<p>现在可以用几句话概括这些概念：</p>
+<blockquote>
+<p><strong>Prompt 告诉 AI，这一次要做什么。</strong></p>
+<p><strong>Agent 是能够围绕目标持续判断和行动的执行者。</strong></p>
+<p><strong>MCP 让 Agent 能够以统一方式连接数据、工具和外部系统。</strong></p>
+<p><strong>Skill 告诉 Agent，面对某一类任务时，应该怎样专业、稳定地完成。</strong></p>
+</blockquote>
+<p>如果把 Agent 看作一名数字员工，那么：</p>
+<ul>
+<li>模型是它的大脑；</li>
+<li>Prompt 是用户下达的任务；</li>
+<li>Agent 系统是它的工作机制；</li>
+<li>MCP 是连接公司系统的通用接口；</li>
+<li>Tools 是它可以使用的具体设备；</li>
+<li>Skills 是公司为它准备的岗位手册和标准作业流程。</li>
+</ul>
+<p>因此，对 Agent Skills 最通俗的解释仍然是：</p>
+<blockquote>
+<p><strong>Agent Skill，就是一份能够被 AI 智能体自动发现、按需加载并重复使用的专业工作手册。</strong></p>
+</blockquote>
+<p>它不负责赋予模型无限智慧，却可以把人类在真实工作中积累的流程、规范和经验，变成 Agent 能够实际执行的能力。</p>
 
 
 
