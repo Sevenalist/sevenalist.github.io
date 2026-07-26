@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sevenalist</title>
+    <link>https://dengcz.cn/</link>
+    <description>Never Stop Thinking.</description>
+    <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <lastBuildDate>Mon, 27 Jul 2026 02:46:18 +0800</lastBuildDate>
+    <generator>mkdocs-feed</generator>
+    <image>
+      <url>https://dengcz.cn/img/logo_w.png</url>
+      <title>Sevenalist</title>
+      <link>https://dengcz.cn/</link>
+    </image>
+    <item>
+      <title>水井</title>
+      <link>https://dengcz.cn/world/2026/well/</link>
+      <guid isPermaLink="false">b2785becae0d6e4c881b760cdde4e4abc7d6d008</guid>
+      <description>水井，是一种人工挖掘或钻凿的取水设施</description>
+      <category>地理</category>
+      <category>水资源</category>
+      <category>水利工程</category>
+      <category>工程技术</category>
+      <category>建筑</category>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Solutions</title>
+      <link>https://dengcz.cn/code/solutions/</link>
+      <guid isPermaLink="false">ab750a0a9629c96501c2505bc25bc94690d3c7d5</guid>
+      <description>这里是实践区。这针对某一特定的需求或者问题穿插起来，运用到了比较广的知识，是一道“综合题”。</description>
+      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>Languages</title>
+      <link>https://dengcz.cn/code/languages/</link>
+      <guid isPermaLink="false">ee8f1b73ab509c391af251524bb94b775c4ad074</guid>
+      <description>这里是我的编程语言笔记区，记录了结构化的编程指令、代码，是我的知识库索引区。 这里的东西可能并不全面，但留下来的都是我经常用到的内容。</description>
+      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>Code</title>
+      <link>https://dengcz.cn/code/</link>
+      <guid isPermaLink="false">6e518c9d0dde2e68a2b681c0c8c830e324973ded</guid>
+      <description>这里是我的技术区，主要分为两类。 这里是编程语言笔记区。记录了结构化的编程指令、代码，是我的知识库索引区。 这里的东西可能并不全面，但留下来的都是我经常用到的内容。 这里是实践区。这针对某一特定的需求或者问题穿插起来，运用到了比较广的知识，是一道“综合题”。</description>
+      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>https://dengcz.cn/about/</link>
+      <guid isPermaLink="false">9438b586b14e375152471b77b46539050f0d69d1</guid>
+      <description>College Graduate Graduated from Chongqing University of Technology, majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College. Completed an exchange program at the National Institute for Excellent Engineers, Chongqing University, with a graduation project…</description>
+      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://dengcz.cn/code/languages/python/</link>
+      <guid isPermaLink="false">93fa3911b335994cdfd90a6eace7458b8fe7ce7e</guid>
+      <description>Python常用包 os Python 函数 说明 os.getcwd() 获取当前工作目录 os.chdir(path) 改变当前工作目录 os.listdir(path=&#39;.&#39;) 列出目录下的文件和子目录名 os.mkdir(path, mode=0o777) 创建单级目录（父目录必须存在） os.makedirs(path, exist_ok=False) 递归创建多级目录，类似 mkdir -p os.rmdir(path) 删除空目录 os.removedirs(path) 递归删除空目录链 os.walk(top) 遍历目录树，生成 (dirpath, dirnames,…</description>
+      <pubDate>Fri, 10 Apr 2026 17:19:52 +0800</pubDate>
+    </item>
+    <item>
+      <title>离线安装torch</title>
+      <link>https://dengcz.cn/code/solutions/AI/install_torch_offline/</link>
+      <guid isPermaLink="false">fce9784462897e358b05db6fbdb8450a6ff338f5</guid>
+      <description>适用于Ubuntu、麒麟系统等Linux操作系统。 尽管我个人非常推荐使用Anaconda管理Python环境，但在实际的应用环境中，仍不可避免地存在需要用的原生Python的情况。但Anaconda的优越性实在是太强，非常方便，我也更推荐这种方案。尽管原生Python的编译非常命苦，但仍旧有一定的应用环境，同时，对于理解离线安装Python是很好的实践教材。因此，我们会先用Python的传统方案演示安装过程，历经千帆后再用Anaconda秒杀比赛。 如果你只是想快点安装完成，并不想知道Anaconda有多方便，可以直接跳过Python部分。…</description>
+      <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
+    </item>
+    <item>
+      <title>Index</title>
+      <link>https://dengcz.cn/code/languages/dl/</link>
+      <guid isPermaLink="false">e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</guid>
+      <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
+    </item>
+    <item>
+      <title>Conda</title>
+      <link>https://dengcz.cn/code/languages/conda/</link>
+      <guid isPermaLink="false">4d448c3c0cf6de8eceed2cb0fcfc56b686ed0533</guid>
+      <description>Anaconda下载地址：https://www.anaconda.com/download 安装好Anaconda后，进入conda prompt终端，输入以下指令完成初始化。 初始化后，在CMD/Bash终端即可使用conda activate [env_name]指令直接激活conda环境 使用conda init指令之后，打开终端会自动激活conda环境。若不想终端默认激活conda环境，可在终端输入指令进行设置，关闭/打开指令如下： .condarc文件位于anaconda的安装目录中，对应字段添加/替换为如下内容。 查看当前配置…</description>
+      <pubDate>Mon, 30 Mar 2026 10:08:06 +0800</pubDate>
+    </item>
+    <item>
+      <title>Trigonometry</title>
+      <link>https://dengcz.cn/math/trigonometry/</link>
+      <guid isPermaLink="false">f2a42dd3033816ae7e18bdfe706b195875631cf0</guid>
+      <description>\(\sin\theta=\dfrac{y}{r}\)，正弦：sine / saɪn / \(\cos\theta=\dfrac{x}{r}\)，余弦：cosine / ˈkoʊsaɪn / \(\tan\theta=\dfrac{y}{x}\)，正切：tangent / ˈtændʒənt / \(\cot\theta=\dfrac{x}{y}\)，余切：cotangent / koʊˈtændʒənt / \(\sec\theta=\dfrac{r}{x}\)，正割：secant / ˈsiːkənt / \(\csc\theta=\dfrac{r}{y}\)，余割：cosecant /…</description>
+      <pubDate>Fri, 15 Aug 2025 20:19:24 +0800</pubDate>
+    </item>
+    <item>
+      <title>Latex</title>
+      <link>https://dengcz.cn/code/languages/latex/</link>
+      <guid isPermaLink="false">6d43a1a45705326af9bb8957962da4cc0e0c5e13</guid>
+      <description>使用符号^，后面接上标。 花括号用来表明里面的内容为一个整体。 例如，如果上标是一个比较长的表达式，可以使用花括号{}表示整体： a^x的表达式为 \frac{分子}{分母} 在行间使用分式时不对分式进行缩小。 \dfrac{分子}{分母} \dfrac与\frac对比 当\frac作为行内公式使用时会对字母进行缩小，例如\(f(x)=\frac{e^x+e^{-x}}{2}\)，此时，如果想要得到行间公式的不缩小效果，可以使用\dfrac进行放大，效果为\(f(x)=\dfrac{e^x+e^{-x}}{2}\) 与\dfrac的功能刚好相反，在行间公式中使用缩小版的分式。…</description>
+      <pubDate>Sat, 09 Aug 2025 11:02:44 +0800</pubDate>
+    </item>
+    <item>
+      <title>Tmux</title>
+      <link>https://dengcz.cn/code/languages/linux/tmux/</link>
+      <guid isPermaLink="false">544c3588f066c945c912d18eb63198de3ec7d173</guid>
+      <description>Tmux（terminal multiplexer，终端复用器）是一个可以长期在Linux系统后台运行的终端管理器。在主机使用终端SSH远程连接服务器等场景下，即使终端被关闭，tmux也能够正常运行，后续仍可以重新接入tmux终端查看输出日志。在网络状态不稳定、或者不想长期在主机维持一个终端界面的场景下贼好用。 这里的-s指代session，表示会话，name为会话名。 这里的-t指代terminal,一个会话可以同时被多个终端接入。 Ctrl + B ，松手， D</description>
+      <pubDate>Tue, 06 May 2025 13:06:13 +0800</pubDate>
+    </item>
+    <item>
+      <title>ENT</title>
+      <link>https://dengcz.cn/utils/ent/</link>
+      <guid isPermaLink="false">47c4ae601d9a38483c261fccae646dcc747b8f1a</guid>
+      <description>IMDb 厂长资源 Discord Reddit</description>
+      <pubDate>Mon, 07 Apr 2025 13:22:46 +0800</pubDate>
+    </item>
+    <item>
+      <title>Terminals</title>
+      <link>https://dengcz.cn/code/languages/terminals/</link>
+      <guid isPermaLink="false">81daefa394be95600496426a2cf7d3704d979a47</guid>
+      <description>有时候无法执行如conda初始化等脚本命令，这是因为PowerShell对执行脚本有限制。 以管理员权限打开Powershell并执行以下命令： 以管理员身份运行PowerShell，执行以下命令： 以管理员身份运行CMD，以此执行以下命令： 等待弹出提示窗口，点击「确定」。 再次等待弹出提示窗口，点击「确定」。 等待弹出提示窗口，显示成功激活的提示即表示激活成功。 详见Linux指南。</description>
+      <pubDate>Fri, 04 Apr 2025 18:54:58 +0800</pubDate>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://dengcz.cn/code/languages/git/</link>
+      <guid isPermaLink="false">afb5cf3393ba4b2a071002dfe1ef4584492627b6</guid>
+      <description>添加某个文件到暂存区 添加所有文件到暂存区 提交暂存区所有文件到仓库 提交暂存区中指定文件到仓库 在一些特定的场景下，例如宝塔的服务器中，git pull可能会出现没有权限的情况，这种时候可以尝试把--globle修改为--system并设置安全组。原理暂时还不清楚。 用户名 邮箱 用户名 邮箱 克隆（含根文件夹）： 克隆到当前文件夹（不含根文件夹）：</description>
+      <pubDate>Thu, 27 Mar 2025 15:52:25 +0800</pubDate>
+    </item>
+    <item>
+      <title>RAGflow构建大模型知识库</title>
+      <link>https://dengcz.cn/code/solutions/LLM/RAGflow/</link>
+      <guid isPermaLink="false">4a5308370511aeba4bb161c89be89de0f3c7c8e8</guid>
+      <description>利用RAGflow构建个人知识库，为大模型提供上下文基础/专业知识，减轻Prompt的提词负担，提升大模型回答的准确性。 Tip RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合检索技术与生成模型的技术，旨在通过外部知识库为生成模型提供实时、准确的背景信息，从而提升大模型的输出质量和准确性。 参考这篇文章或者官方下载指南。 可参考RAGflow的官网安装指南，简单总结如下。 打开 ragflow/docker/.env 文件，注释掉第84行的代码，并将第87行的代码取消注释，如下所示。 说明…</description>
+      <pubDate>Fri, 14 Mar 2025 11:15:20 +0800</pubDate>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://dengcz.cn/code/languages/docker/</link>
+      <guid isPermaLink="false">8295fd483817afc0f9c2290617cf1108424a16b7</guid>
+      <description>Docker中文教程。 Docker是一种容器技术，是轻量级的“虚拟机”，可以为每个应用配置隔离的环境。 官方下载指南。 Docker用于Linux系统，Windows无法直接安装使用，需要安装Docker Desktop之后才能运行，下载链接见官网。 此处的-d表示在后台运行。 Docker Compose可以让多个Container进行交互。 创建一个Compose容器 这里的-d表示deamon，守护进程，后台运行 启动Docker Compose创建的容器 stop之后可以通过start重新启动。 停止Docker Compose创建的容器 stop是暂停，修改过的的数据依然在。…</description>
+      <pubDate>Wed, 12 Mar 2025 20:58:47 +0800</pubDate>
+    </item>
+    <item>
+      <title>Ollama部署本地大模型</title>
+      <link>https://dengcz.cn/code/solutions/LLM/Ollama/</link>
+      <guid isPermaLink="false">21423debb6dd35fa44b81c4180b9670fd2853326</guid>
+      <description>利用Ollama实现如Deepseek-R1等大模型的本地部署，并在局域网内实现大模型的接入使用、保存历史记录等功能。 必要性 第一，使用网页版的大语言模型具有隐私泄露的风险，本地部署能够让数据全部保存在本地。 第二，网页交互的大语言模型对于语境简单的问答具有非常好的表现，但是对于某些需要专业知识的场景下表现并不算好。为了解决这类问题，可以使用RAG（Retrieval-Augmented Generation）技术，自己构建知识库，为大模型提供需要的语境，而无需使用非常长的context来给大模型提示。虽然API也可以使用RAG技术，但是对于一些需要保密的知识库，仍旧需要本地部署大模型。…</description>
+      <pubDate>Mon, 10 Mar 2025 13:58:06 +0800</pubDate>
+    </item>
+    <item>
+      <title>Cudy TR3000刷机指南</title>
+      <link>https://dengcz.cn/code/solutions/Internet/tr3000/</link>
+      <guid isPermaLink="false">5e84b634e36f8e192721f45a4649b4c8d7090ee9</guid>
+      <description>为Cudy TR3000路由器刷机ImmortalWrt，安装Homeproxy插件，实现在局域网内科学且优雅地上网。 ImmortalWrt是一个基于OpenWrt的开源路由器固件，提供了非常丰富的插件以满足各种需求。ImmortalWrt相比OpenWrt的更新频率更高，同时也提供了更多的软件包插件选择，方便个性化定制。 对于本文，ImmortalWrt提供了Homeproxy代理插件，能够非常优雅地实现上网需求。 踩坑提醒…</description>
+      <pubDate>Sat, 08 Mar 2025 16:16:08 +0800</pubDate>
+    </item>
+    <item>
+      <title>Ubuntu用户级终端代理</title>
+      <link>https://dengcz.cn/code/solutions/Internet/userProxy/</link>
+      <guid isPermaLink="false">12821249322589162a102f2ffade69eb4828fe20</guid>
+      <description>无sudo权限下，实现Ubuntu用户级终端代理，使无网络服务器通过代理上网。 1) 一台需要上网的服务器。 2) 和服务器处于同一局域网络下（如校园网）的可上网设备。 此处以 clash-verge 为例设置代理。 下载好clash-verge之后按照如下步骤进行配置： Note 如果有节点可以不选择直连模式，规则代理同样可以使用。 至此完成上网设备配置。 先测试从服务器能否ping通可上网设备。 如果没有问题，进行如下设置。 在.bashrc文件的最后添加如下内容 在服务器终端输入以下内容进行测试： 如果有返回内容则说明成功代理成功。</description>
+      <pubDate>Mon, 03 Mar 2025 17:25:01 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
