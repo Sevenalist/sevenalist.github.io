@@ -6,7 +6,7 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Mon, 27 Jul 2026 03:40:55 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 21:59:28 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/img/avatar.png</url>
@@ -68,12 +68,6 @@
       <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
     </item>
     <item>
-      <title>Index</title>
-      <link>https://dengcz.cn/code/languages/dl/</link>
-      <guid isPermaLink="false">e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</guid>
-      <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
-    </item>
-    <item>
       <title>Conda</title>
       <link>https://dengcz.cn/code/languages/conda/</link>
       <guid isPermaLink="false">4d448c3c0cf6de8eceed2cb0fcfc56b686ed0533</guid>
@@ -86,6 +80,13 @@
       <guid isPermaLink="false">f2a42dd3033816ae7e18bdfe706b195875631cf0</guid>
       <description>\(\sin\theta=\dfrac{y}{r}\)，正弦：sine / saɪn / \(\cos\theta=\dfrac{x}{r}\)，余弦：cosine / ˈkoʊsaɪn / \(\tan\theta=\dfrac{y}{x}\)，正切：tangent / ˈtændʒənt / \(\cot\theta=\dfrac{x}{y}\)，余切：cotangent / koʊˈtændʒənt / \(\sec\theta=\dfrac{r}{x}\)，正割：secant / ˈsiːkənt / \(\csc\theta=\dfrac{r}{y}\)，余割：cosecant /…</description>
       <pubDate>Fri, 15 Aug 2025 20:19:24 +0800</pubDate>
+    </item>
+    <item>
+      <title>Latex</title>
+      <link>https://dengcz.cn/code/languages/latex/</link>
+      <guid isPermaLink="false">6d43a1a45705326af9bb8957962da4cc0e0c5e13</guid>
+      <description>使用符号^，后面接上标。 花括号用来表明里面的内容为一个整体。 例如，如果上标是一个比较长的表达式，可以使用花括号{}表示整体： a^x的表达式为 \frac{分子}{分母} 在行间使用分式时不对分式进行缩小。 \dfrac{分子}{分母} \dfrac与\frac对比 当\frac作为行内公式使用时会对字母进行缩小，例如\(f(x)=\frac{e^x+e^{-x}}{2}\)，此时，如果想要得到行间公式的不缩小效果，可以使用\dfrac进行放大，效果为\(f(x)=\dfrac{e^x+e^{-x}}{2}\) 与\dfrac的功能刚好相反，在行间公式中使用缩小版的分式。…</description>
+      <pubDate>Sat, 09 Aug 2025 11:02:44 +0800</pubDate>
     </item>
   </channel>
 </rss>
