@@ -6,7 +6,7 @@
   window.__sevenalistPageTransitionsBound = true;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const transitionDuration = 500;
+  const transitionDuration = 420;
   const transitionClassEntering = 'page-transition-entering';
   const transitionClassLeaving = 'page-transition-leaving';
   const overlayId = 'page-transition-overlay';
