@@ -1,17 +1,6 @@
-#box {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1; /* 保证在页面底层，不参与 Material 组件层级 */
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-  }
-
-  body {
-    background: transparent;
-    isolation: isolate;
-  }
+body {
+  background-color: #d2dadd;
+}
   
 
   /* 去除左侧栏的白色渐变框 */

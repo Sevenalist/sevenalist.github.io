@@ -1,7 +1,3 @@
-/* body { */
-    /* font-family: "LXGW WenKai", sans-serif; */
-  /* }  */
-
 /* 定义字体 */
 :root {
   --md-text-font: "Ubuntu", "Noto Serif SC";  /* 英文 Roboto，中文用思源黑体 */
@@ -25,9 +21,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 藏书楼：仅文章阅读区域使用霞鹜文楷，代码仍使用下方的等宽字体。 */
+/* 藏书楼：正文使用思源宋体并稍微加粗，代码仍使用下方的等宽字体。 */
 body:has(.library-post-marker) .md-content__inner {
-  font-family: "LXGW WenKai", "Noto Serif SC", serif;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 500;
 }
 
 .library-post-marker {
