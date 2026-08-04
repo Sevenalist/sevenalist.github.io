@@ -6,7 +6,7 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Tue, 04 Aug 2026 23:15:21 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 03:26:55 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/img/avatar.png</url>
@@ -14,10 +14,17 @@
       <link>https://dengcz.cn/</link>
     </image>
     <item>
+      <title>Cognition</title>
+      <link>https://dengcz.cn/code/cognition/</link>
+      <guid isPermaLink="false">1f9122cf665119fae81fafa2daa00e9dce131fa8</guid>
+      <description>这里是我的认知笔记。</description>
+      <pubDate>Wed, 05 Aug 2026 03:26:13 +0800</pubDate>
+    </item>
+    <item>
       <title>西方哲学</title>
       <link>https://dengcz.cn/lines/western-philosophy/</link>
       <guid isPermaLink="false">476edaf0870dd722eb27a5b66cacd517f9c1f463</guid>
-      <description>本时间线依据赵敦华的《西方哲学简史（修订版）》，并由ChatGPT提炼整理。 未标注年代（不在时间轴中）的哲学家包括：留基波（生卒年代不详）；斯拉西马库（书中未注明）；希庇阿斯（书中未注明）；安提丰（书中未注明）；塞克斯都·恩披里克（书中未注明）；高尼罗（书中未注明）；托麦达（书中未注明）；詹姆斯·奥斯瓦尔德（？—1793年）；大卫·弗里德里希·斯特劳斯（书中未注明）；阿诺德·卢格（书中未注明）；布鲁诺·鲍威尔（书中未注明）；马克斯·施蒂纳（书中未注明）。…</description>
+      <description>本时间线参考赵敦华的《西方哲学简史（修订版）》，并由ChatGPT 5.6 Sol 提炼整理知识，DeepSeek对知识文件进行时间线格式适配。 未标注年代（不在时间轴中）的哲学家包括：留基波（生卒年代不详）；斯拉西马库（书中未注明）；希庇阿斯（书中未注明）；安提丰（书中未注明）；塞克斯都·恩披里克（书中未注明）；高尼罗（书中未注明）；托麦达（书中未注明）；詹姆斯·奥斯瓦尔德（？—1793年）；大卫·弗里德里希·斯特劳斯（书中未注明）；阿诺德·卢格（书中未注明）；布鲁诺·鲍威尔（书中未注明）；马克斯·施蒂纳（书中未注明）。…</description>
       <category>西方哲学</category>
       <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
     </item>
@@ -80,15 +87,8 @@
       <title>Python</title>
       <link>https://dengcz.cn/code/languages/python/</link>
       <guid isPermaLink="false">93fa3911b335994cdfd90a6eace7458b8fe7ce7e</guid>
-      <description>Python常用包 os Python 函数 说明 os.getcwd() 获取当前工作目录 os.chdir(path) 改变当前工作目录 os.listdir(path=&#39;.&#39;) 列出目录下的文件和子目录名 os.mkdir(path, mode=0o777) 创建单级目录（父目录必须存在） os.makedirs(path, exist_ok=False) 递归创建多级目录，类似 mkdir -p os.rmdir(path) 删除空目录 os.removedirs(path) 递归删除空目录链 os.walk(top) 遍历目录树，生成 (dirpath, dirnames,…</description>
+      <description>Python常用包 2026-07-102026-07-10 os Python 函数 说明 os.getcwd() 获取当前工作目录 os.chdir(path) 改变当前工作目录 os.listdir(path=&#39;.&#39;) 列出目录下的文件和子目录名 os.mkdir(path, mode=0o777) 创建单级目录（父目录必须存在） os.makedirs(path, exist_ok=False) 递归创建多级目录，类似 mkdir -p os.rmdir(path) 删除空目录 os.removedirs(path) 递归删除空目录链 os.walk(top) 遍历目录树，生成…</description>
       <pubDate>Fri, 10 Apr 2026 17:19:52 +0800</pubDate>
-    </item>
-    <item>
-      <title>离线安装torch</title>
-      <link>https://dengcz.cn/code/solutions/AI/install_torch_offline/</link>
-      <guid isPermaLink="false">fce9784462897e358b05db6fbdb8450a6ff338f5</guid>
-      <description>适用于Ubuntu、麒麟系统等Linux操作系统。 尽管我个人非常推荐使用Anaconda管理Python环境，但在实际的应用环境中，仍不可避免地存在需要用的原生Python的情况。但Anaconda的优越性实在是太强，非常方便，我也更推荐这种方案。尽管原生Python的编译非常命苦，但仍旧有一定的应用环境，同时，对于理解离线安装Python是很好的实践教材。因此，我们会先用Python的传统方案演示安装过程，历经千帆后再用Anaconda秒杀比赛。 如果你只是想快点安装完成，并不想知道Anaconda有多方便，可以直接跳过Python部分。…</description>
-      <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
     </item>
   </channel>
 </rss>

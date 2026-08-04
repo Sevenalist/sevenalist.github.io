@@ -1,6 +1,75 @@
+/* ============ 字体 ============ */
+/* Ubuntu 自托管（docs/fonts/ubuntu/）：只覆盖拉丁字母、数字与常用符号。
+   U+2000-206F 通用标点（引号 “ ” ‘ ’、破折号 —、省略号 … 等）不归 Ubuntu，
+   会回退到 Noto Serif SC，保证中文引号与正文中文字体一致。 */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-500.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-400-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-500-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-ext-400.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-ext-500.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-ext-400-italic.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ubuntu/ubuntu-latin-ext-500-italic.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 /* 定义字体 */
 :root {
-  --md-text-font: "Ubuntu", "Noto Serif SC";  /* 英文 Roboto，中文用思源黑体 */
+  --md-text-font: "Ubuntu", "Noto Serif SC";  /* 英文 Ubuntu，中文用思源宋体 */
   --site-transition-duration: 420ms;
   --site-transition-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --site-selection-bg: #536f82;
@@ -1850,4 +1919,76 @@ body:has(.home-shell) .md-main__inner {
   .md-sidebar--post .md-nav--primary > ul.md-post__meta:first-of-type {
     display: none;
   }
+}
+
+/* ===== MaterialX 兼容：恢复原版 Material 按钮样式（透明底 + hover 填充色） ===== */
+.md-typeset .md-button {
+  border: .1rem solid var(--md-primary-fg-color);
+  background-color: transparent;
+  color: var(--md-primary-fg-color);
+  padding: .625em 2em;
+  transition: color 125ms, background-color 125ms, border-color 125ms, opacity 125ms;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  opacity: 1;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  opacity: 1;
+}
+
+/* ===== MaterialX 兼容：恢复原版左侧导航（md-nav）的紧凑间距 ===== */
+.md-nav--primary {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.md-nav__list > li + li {
+  margin-top: 0;               /* 原版无列表项间距；MaterialX 默认 0.2rem */
+}
+
+.md-nav--primary .md-nav__link {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 容器型链接（带子菜单的 section，如 Code > Languages > Linux）保持 MaterialX 的 padding:0 结构，
+   避免外层容器与内层链接双重内边距导致文字右偏、行高不统一 */
+.md-nav--primary .md-nav__link:not(.md-nav__container) {
+  padding: .25rem .4rem;        /* 原版垂直内边距 0.6rem；MaterialX 默认 0.35rem */
+}
+
+/* 空子导航（如 C/C++）会因 MaterialX 的 :before/:after 间距产生多余空隙，归零以恢复原版间距 */
+.md-nav__item--nested .md-nav__list:before,
+.md-nav__item--nested .md-nav__list:after {
+  margin: 0;
+}
+
+/* 空子导航（如 C/C++ 只有 index 页）不占高度：indeterminate 展开态会给空列表保留 0.4rem 最小行高，
+   导致 C/C++ 与 Docker 之间出现多余空隙 */
+.md-nav__item--nested .md-nav:has(> .md-nav__list:empty) {
+  display: none;
+}
+
+/* MaterialX 兼容：展开态子导航的最小行高归零（MaterialX 默认 minmax(.4rem, 1fr)，
+   空子导航如 C/C++ 会因此保留 0.4rem 空白） */
+.md-nav__toggle.md-toggle--indeterminate~.md-nav,
+.md-nav__toggle:checked~.md-nav {
+  grid-template-rows: minmax(0, 1fr);
 }

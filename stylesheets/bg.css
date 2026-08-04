@@ -49,11 +49,23 @@ body {
     box-shadow: none; /* 去掉顶部阴影（可选） */
   }
   
-  /* 导航栏 */
-  .md-tabs {
+  /* 导航栏（MaterialX 在 topbar_style 非 glass 时用更高优先级规则设为纯色，需同优先级选择器覆盖） */
+  [data-mx-topbar]:not([data-mx-topbar=glass]) .md-tabs {
     background-color: rgba(89, 108, 119, 0.7);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    box-shadow: none;
+  }
+
+  /* MaterialX 兼容：顶栏恢复毛玻璃模糊（MaterialX 对非 glass 顶栏会移除 backdrop-filter） */
+  [data-mx-topbar]:not([data-mx-topbar=glass]) .md-header {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  /* MaterialX 兼容：TOC 标题恢复透明（MaterialX 会给非 glass 顶栏的 TOC 标题加纯色背景） */
+  [data-mx-topbar]:not([data-mx-topbar=glass]) .md-nav--secondary .md-nav__title {
+    background: transparent;
     box-shadow: none;
   }
   
@@ -63,6 +75,22 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: none;
+  }
+
+  /* MaterialX 兼容：页脚恢复原版配色的亮度层级（MaterialX 默认把页脚改为浅色深字，与上面的半透明黑底冲突） */
+  .md-footer {
+    color: #fff;
+    border-top: none;
+    --md-default-fg-color: #ffffffb3;            /* 静态链接/图标/高亮（原 --md-footer-fg-color--light） */
+    --md-default-fg-color--light: #ffffff73;     /* 版权小字（原 --md-footer-fg-color--lighter） */
+    --md-default-fg-color--lighter: #ffffff4d;   /* 更弱的次级文字 */
+    --md-default-fg-color--lightest: #00000052;  /* 页脚 meta 行底色（原 --md-footer-bg-color--dark） */
+  }
+
+  /* MaterialX 兼容：页脚链接 hover 恢复亮白色（MaterialX 删除了原版规则，hover 会落回蓝色 accent 链接色） */
+  .md-footer-meta.md-typeset a:focus,
+  html .md-footer-meta.md-typeset a:hover {
+    color: #fff;
   }
   
   /* 内容白色蒙版 */

@@ -1,0 +1,14 @@
+authors:
+  sevenalist: &sevenalist
+    name: Sevenalist
+    avatar: img/s.png
+    url: https://github.com/Sevenalist
+  Douglas: *sevenalist
+  gpt: 
+    name: ChatGPT
+    avatar: img/authors/chatgpt.png
+    url: https://openai.com/
+  ds:
+    name: DeepSeek
+    avatar: img/authors/ds.png
+    url: https://www.deepseek.com/
