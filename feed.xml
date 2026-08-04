@@ -6,13 +6,36 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Tue, 28 Jul 2026 17:02:51 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 23:15:21 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/img/avatar.png</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>西方哲学</title>
+      <link>https://dengcz.cn/lines/western-philosophy/</link>
+      <guid isPermaLink="false">476edaf0870dd722eb27a5b66cacd517f9c1f463</guid>
+      <description>本时间线依据赵敦华的《西方哲学简史（修订版）》，并由ChatGPT提炼整理。 未标注年代（不在时间轴中）的哲学家包括：留基波（生卒年代不详）；斯拉西马库（书中未注明）；希庇阿斯（书中未注明）；安提丰（书中未注明）；塞克斯都·恩披里克（书中未注明）；高尼罗（书中未注明）；托麦达（书中未注明）；詹姆斯·奥斯瓦尔德（？—1793年）；大卫·弗里德里希·斯特劳斯（书中未注明）；阿诺德·卢格（书中未注明）；布鲁诺·鲍威尔（书中未注明）；马克斯·施蒂纳（书中未注明）。…</description>
+      <category>西方哲学</category>
+      <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
+    </item>
+    <item>
+      <title>中国朝代</title>
+      <link>https://dengcz.cn/lines/chinese-dynasties/</link>
+      <guid isPermaLink="false">b1dcd641ed79f4a3fb66dde5fd3df886e05104a1</guid>
+      <description>本时间线的朝代和对应时间由ChatGPT生成，仅供参考。</description>
+      <category>中国朝代</category>
+      <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
+    </item>
+    <item>
+      <title>Index</title>
+      <link>https://dengcz.cn/lines/</link>
+      <guid isPermaLink="false">2fdd82255526797706a1e23105912d4587343399</guid>
+      <description>Timelines · Connect · Review 这里的每一篇文档都是一条时间线：朝代更迭、思想流派、个人轨迹……并且全部时间线在此处汇总在同一根轴上，点击标签即可筛选想要查看的线条，点击条目可以展开它的起止跨度。 本栏目灵感来源于fuXes的个人博客网站。</description>
+      <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
+    </item>
     <item>
       <title>水井</title>
       <link>https://dengcz.cn/world/2026/well/</link>
@@ -66,27 +89,6 @@
       <guid isPermaLink="false">fce9784462897e358b05db6fbdb8450a6ff338f5</guid>
       <description>适用于Ubuntu、麒麟系统等Linux操作系统。 尽管我个人非常推荐使用Anaconda管理Python环境，但在实际的应用环境中，仍不可避免地存在需要用的原生Python的情况。但Anaconda的优越性实在是太强，非常方便，我也更推荐这种方案。尽管原生Python的编译非常命苦，但仍旧有一定的应用环境，同时，对于理解离线安装Python是很好的实践教材。因此，我们会先用Python的传统方案演示安装过程，历经千帆后再用Anaconda秒杀比赛。 如果你只是想快点安装完成，并不想知道Anaconda有多方便，可以直接跳过Python部分。…</description>
       <pubDate>Wed, 08 Apr 2026 15:40:51 +0800</pubDate>
-    </item>
-    <item>
-      <title>Conda</title>
-      <link>https://dengcz.cn/code/languages/conda/</link>
-      <guid isPermaLink="false">4d448c3c0cf6de8eceed2cb0fcfc56b686ed0533</guid>
-      <description>Anaconda下载地址：https://www.anaconda.com/download 安装好Anaconda后，进入conda prompt终端，输入以下指令完成初始化。 初始化后，在CMD/Bash终端即可使用conda activate [env_name]指令直接激活conda环境 使用conda init指令之后，打开终端会自动激活conda环境。若不想终端默认激活conda环境，可在终端输入指令进行设置，关闭/打开指令如下： .condarc文件位于anaconda的安装目录中，对应字段添加/替换为如下内容。 查看当前配置…</description>
-      <pubDate>Mon, 30 Mar 2026 10:08:06 +0800</pubDate>
-    </item>
-    <item>
-      <title>Trigonometry</title>
-      <link>https://dengcz.cn/math/trigonometry/</link>
-      <guid isPermaLink="false">f2a42dd3033816ae7e18bdfe706b195875631cf0</guid>
-      <description>\(\sin\theta=\dfrac{y}{r}\)，正弦：sine / saɪn / \(\cos\theta=\dfrac{x}{r}\)，余弦：cosine / ˈkoʊsaɪn / \(\tan\theta=\dfrac{y}{x}\)，正切：tangent / ˈtændʒənt / \(\cot\theta=\dfrac{x}{y}\)，余切：cotangent / koʊˈtændʒənt / \(\sec\theta=\dfrac{r}{x}\)，正割：secant / ˈsiːkənt / \(\csc\theta=\dfrac{r}{y}\)，余割：cosecant /…</description>
-      <pubDate>Fri, 15 Aug 2025 20:19:24 +0800</pubDate>
-    </item>
-    <item>
-      <title>Latex</title>
-      <link>https://dengcz.cn/code/languages/latex/</link>
-      <guid isPermaLink="false">6d43a1a45705326af9bb8957962da4cc0e0c5e13</guid>
-      <description>使用符号^，后面接上标。 花括号用来表明里面的内容为一个整体。 例如，如果上标是一个比较长的表达式，可以使用花括号{}表示整体： a^x的表达式为 \frac{分子}{分母} 在行间使用分式时不对分式进行缩小。 \dfrac{分子}{分母} \dfrac与\frac对比 当\frac作为行内公式使用时会对字母进行缩小，例如\(f(x)=\frac{e^x+e^{-x}}{2}\)，此时，如果想要得到行间公式的不缩小效果，可以使用\dfrac进行放大，效果为\(f(x)=\dfrac{e^x+e^{-x}}{2}\) 与\dfrac的功能刚好相反，在行间公式中使用缩小版的分式。…</description>
-      <pubDate>Sat, 09 Aug 2025 11:02:44 +0800</pubDate>
     </item>
   </channel>
 </rss>

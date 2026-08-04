@@ -1,0 +1,362 @@
+/* ============ Lines 时间线（hooks/timeline_pages.py + js/timeline.js） ============ */
+
+/* ---------- 聚合页 Hero（与 world/tags 页同一设计语言） ---------- */
+.tl-shell {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.tl-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 2.7rem);
+  margin: 1.25rem 0 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 86% 16%, color-mix(in srgb, var(--md-accent-fg-color) 16%, transparent), transparent 35%),
+    linear-gradient(135deg, color-mix(in srgb, var(--md-default-bg-color) 72%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent));
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--md-default-fg-color) 9%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.tl-hero::after {
+  content: "线";
+  position: absolute;
+  right: clamp(1rem, 5vw, 3rem);
+  top: 50%;
+  color: color-mix(in srgb, var(--md-accent-fg-color) 13%, transparent);
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-50%) rotate(8deg);
+  pointer-events: none;
+}
+
+.tl-eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.65rem;
+  color: color-mix(in srgb, var(--md-default-fg-color) 66%, transparent);
+  font-size: 0.76rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.tl-hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+.tl-hero > p:not(.tl-eyebrow) {
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+  margin: 0.9rem 0 0;
+  color: color-mix(in srgb, var(--md-default-fg-color) 78%, transparent);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ---------- 时间线应用容器 ---------- */
+.tl-app {
+  position: relative;
+  margin: 0.6rem 0 2rem;
+}
+
+/* ---------- 标签筛选栏 ---------- */
+.tl-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.9rem;
+}
+
+.tl-badge {
+  padding: 0.32rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
+  color: var(--md-default-fg-color);
+  font-family: inherit;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 180ms ease, border-color 180ms ease,
+    background-color 180ms ease, transform 180ms ease;
+}
+
+.tl-badge:hover {
+  border-color: color-mix(in srgb, var(--md-accent-fg-color) 45%, transparent);
+  transform: translateY(-1px);
+}
+
+.tl-badge:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+.tl-badge.is-off {
+  background: transparent;
+  opacity: 0.45;
+}
+
+.tl-badge--invert {
+  border-style: dashed;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ---------- 时间线图例 ---------- */
+.tl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.tl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--md-default-fg-color--light) !important;
+  font-size: 0.74rem;
+  text-decoration: none !important;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.tl-chip:hover {
+  color: var(--md-default-fg-color) !important;
+}
+
+.tl-chip.is-off {
+  opacity: 0.4;
+  text-decoration: line-through !important;
+}
+
+.tl-chip-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--tl-chip-color, var(--md-primary-fg-color));
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--tl-chip-color, var(--md-primary-fg-color)) 22%, transparent);
+}
+
+/* ---------- 时间线主体 ---------- */
+.tl-stage {
+  position: relative;
+}
+
+.tl-track {
+  position: relative;
+  padding: 0.8rem 0 1rem;
+}
+
+/* 中央竖线 */
+.tl-track::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: calc(50% - 1px);
+  width: 2px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--md-default-fg-color) 18%, transparent);
+}
+
+.tl-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4.8rem minmax(0, 1fr);
+  align-items: start;
+  padding: 0.3rem 0;
+}
+
+.tl-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0 0.7rem;
+}
+
+.tl-side:empty {
+  display: none;
+}
+
+.tl-side--left {
+  grid-column: 1;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.tl-side--right {
+  grid-column: 3;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 年份节点 */
+.tl-point {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  padding-top: 0.14rem;
+}
+
+.tl-point-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--tl-dot-color, var(--tl-color, var(--md-primary-fg-color)));
+  box-shadow: 0 0 0 3px color-mix(
+    in srgb,
+    var(--tl-dot-color, var(--tl-color, var(--md-primary-fg-color))) 25%,
+    transparent
+  );
+}
+
+.tl-point-year {
+  padding: 0.02rem 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--md-default-bg-color) 82%, transparent);
+  backdrop-filter: blur(6px);
+  font-family: "Ubuntu", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ---------- 条目卡片 ---------- */
+.tl-card {
+  max-width: 100%;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.tl-card:hover {
+  border-color: color-mix(in srgb, var(--tl-card-color) 30%, transparent);
+  background: color-mix(in srgb, var(--tl-card-color) 5%, transparent);
+}
+
+.tl-card.is-active {
+  border-color: color-mix(in srgb, var(--tl-card-color) 42%, transparent);
+  background: color-mix(in srgb, var(--tl-card-color) 9%, transparent);
+}
+
+.tl-card-name {
+  display: inline;
+  margin: 0;
+  padding: 0 0 1px;
+  border: none;
+  border-bottom: 1px dashed color-mix(in srgb, var(--tl-card-color) 55%, transparent);
+  background: none;
+  color: var(--tl-card-color);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: border-color 180ms ease;
+}
+
+.tl-card-name:hover,
+.tl-card.is-active .tl-card-name {
+  border-bottom-style: solid;
+}
+
+.tl-card-name:focus-visible {
+  outline: 2px solid var(--tl-card-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.tl-card-range {
+  margin-left: 0.3rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.tl-card-content {
+  margin-top: 0.12rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.68rem;
+  line-height: 1.65;
+}
+
+.tl-card-content a {
+  color: var(--tl-card-color);
+  white-space: nowrap;
+}
+
+/* ---------- 起止点连接线 ---------- */
+.tl-connector {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tl-connector line {
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+/* ---------- 空状态 ---------- */
+.tl-empty {
+  margin: 2rem 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ---------- 移动端：全部卡片收到轴线右侧 ---------- */
+@media (max-width: 768px) {
+  .tl-track::before {
+    left: calc(1.7rem - 1px);
+  }
+
+  .tl-row {
+    grid-template-columns: 3.4rem minmax(0, 1fr);
+  }
+
+  .tl-point {
+    grid-column: 1;
+  }
+
+  .tl-side--left,
+  .tl-side--right {
+    grid-column: 2;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0.2rem 0 0.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-badge,
+  .tl-chip,
+  .tl-card,
+  .tl-card-name {
+    transition: none;
+  }
+}
