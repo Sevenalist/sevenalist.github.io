@@ -6,13 +6,20 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Wed, 05 Aug 2026 03:26:55 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 02:00:08 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/img/avatar.png</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>Me</title>
+      <link>https://dengcz.cn/about/me/</link>
+      <guid isPermaLink="false">3af55290ff461aa8eec550c62d25bae5921dc0fc</guid>
+      <description>College Graduate Graduated from Chongqing University of Technology, majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College. Completed an exchange program at the National Institute for Excellent Engineers, Chongqing University, with a graduation project…</description>
+      <pubDate>Thu, 06 Aug 2026 01:59:36 +0800</pubDate>
+    </item>
     <item>
       <title>Cognition</title>
       <link>https://dengcz.cn/code/cognition/</link>
@@ -40,7 +47,7 @@
       <title>Index</title>
       <link>https://dengcz.cn/lines/</link>
       <guid isPermaLink="false">2fdd82255526797706a1e23105912d4587343399</guid>
-      <description>Timelines · Connect · Review 这里的每一篇文档都是一条时间线：朝代更迭、思想流派、个人轨迹……并且全部时间线在此处汇总在同一根轴上，点击标签即可筛选想要查看的线条，点击条目可以展开它的起止跨度。 本栏目灵感来源于fuXes的个人博客网站。</description>
+      <description>Timelines 这里的每一篇文档都是一条时间线：朝代更迭、思想流派、个人轨迹……并且全部时间线在此处汇总在同一根轴上，点击标签即可筛选想要查看的线条，点击条目可以展开它的起止跨度。 本栏目灵感来源于fuXes的个人博客网站。</description>
       <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
     </item>
     <item>
@@ -77,18 +84,11 @@
       <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
     </item>
     <item>
-      <title>About Me</title>
+      <title>About This Site</title>
       <link>https://dengcz.cn/about/</link>
       <guid isPermaLink="false">9438b586b14e375152471b77b46539050f0d69d1</guid>
-      <description>College Graduate Graduated from Chongqing University of Technology, majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College. Completed an exchange program at the National Institute for Excellent Engineers, Chongqing University, with a graduation project…</description>
+      <description>Basic Information 网站架构 本站基于materialX架构搭建。 网站部署 本站部署在Github Pages上。 隐私政策 本站为纯静态网站，不采集任何信息。 联系方式 Why this site exists 本站建立的初衷，是想要当做技术笔记，因为反复查找一些重复性问题是一个很麻烦的过程。 主要是方便自己。如果能给别人帮助，当然更好。 但随着大语言模型的发展，AI越来越智能，记录一份这样的技术笔记似乎变得不那么有必要了——遇到问题问AI就好。 所以本站的定位也逐渐发生了变化。 人很容易忘记一些事情。 我想在忘记之前，把它们记下来。…</description>
       <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://dengcz.cn/code/languages/python/</link>
-      <guid isPermaLink="false">93fa3911b335994cdfd90a6eace7458b8fe7ce7e</guid>
-      <description>Python常用包 2026-07-102026-07-10 os Python 函数 说明 os.getcwd() 获取当前工作目录 os.chdir(path) 改变当前工作目录 os.listdir(path=&#39;.&#39;) 列出目录下的文件和子目录名 os.mkdir(path, mode=0o777) 创建单级目录（父目录必须存在） os.makedirs(path, exist_ok=False) 递归创建多级目录，类似 mkdir -p os.rmdir(path) 删除空目录 os.removedirs(path) 递归删除空目录链 os.walk(top) 遍历目录树，生成…</description>
-      <pubDate>Fri, 10 Apr 2026 17:19:52 +0800</pubDate>
     </item>
   </channel>
 </rss>
