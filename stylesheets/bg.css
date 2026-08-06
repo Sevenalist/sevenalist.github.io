@@ -1,5 +1,5 @@
 body {
-  background-color: #d2dadd;
+  background-color: #e0e3e6;
 }
   
 
@@ -91,13 +91,6 @@ body {
   .md-footer-meta.md-typeset a:focus,
   html .md-footer-meta.md-typeset a:hover {
     color: #fff;
-  }
-  
-  /* 内容白色蒙版 */
-  .md-content > .md-typeset {
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    padding: 2.5rem;
   }
   
 /* 设置代码块背景为半透明白色 */

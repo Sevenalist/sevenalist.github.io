@@ -387,58 +387,111 @@ svg.icon {
   height: 1.05em !important;
 }
 
-/* World portal layout */
-.world-shell {
-  max-width: 54rem;
-  margin: 0 auto;
-}
-
-.world-hero {
+/* ============ 栏目页 Hero（所有栏目共用的标签卡） ============
+   用法：
+   <section class="page-hero" data-deco="线">   <!-- data-deco 可选：右侧装饰大字，缺省为柔光斑 -->
+     <p class="page-hero__eyebrow">Timelines</p>
+     <h1>时间线</h1>
+     <p class="page-hero__lead">栏目简介……</p>
+   </section>
+   次级页面可追加 .page-hero--compact 使用紧凑尺寸。 */
+.page-hero {
   position: relative;
   overflow: hidden;
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   margin: 1.25rem 0 1.5rem;
-  border: 1px solid rgba(120, 140, 160, 0.18);
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
   border-radius: 24px;
   background:
-    linear-gradient(135deg, rgba(11, 18, 32, 0.08), rgba(255, 255, 255, 0.18)),
-    radial-gradient(circle at top right, rgba(88, 140, 255, 0.14), transparent 34%),
-    radial-gradient(circle at left bottom, rgba(0, 210, 255, 0.10), transparent 28%);
-  box-shadow: 0 18px 48px rgba(12, 18, 28, 0.08);
+    /* 右上角主题光晕 */
+    radial-gradient(circle at 86% 16%, color-mix(in srgb, var(--md-accent-fg-color) 9%, transparent), transparent 35%),
+    /* 背景底色 */
+    linear-gradient(135deg, color-mix(in srgb, var(--md-default-bg-color) 10%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent));
+  /* 阴影透明度 */
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-.world-hero::after {
+.page-hero::after {
   content: "";
   position: absolute;
   inset: auto -8rem -8rem auto;
   width: 18rem;
   height: 18rem;
-  background: radial-gradient(circle, rgba(89, 108, 119, 0.15), transparent 68%);
-  filter: blur(6px);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--md-accent-fg-color) 13%, transparent), transparent 68%);
+  filter: blur(8px);
   pointer-events: none;
 }
 
-.world-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(80, 90, 100, 0.82);
+/* 右装饰大字 颜色：13% 透明度 */
+.page-hero[data-deco]::after {
+  content: attr(data-deco);
+  inset: 50% clamp(1rem, 5vw, 3rem) auto auto;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  filter: none;
+  color: color-mix(in srgb, var(--md-accent-fg-color) 13%, transparent);
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-50%) rotate(8deg);
 }
 
-.world-hero h1 {
+.page-hero__eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.7rem;
+  color: color-mix(in srgb, var(--md-default-fg-color) 66%, transparent);
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 4rem);
+  font-size: clamp(2.25rem, 5vw, 4rem);
   line-height: 1.05;
   letter-spacing: 0.02em;
 }
 
-.world-lead {
+.page-hero__lead {
+  position: relative;
+  z-index: 1;
   max-width: 46rem;
   margin: 1rem 0 0;
-  font-size: 1.03rem;
+  color: color-mix(in srgb, var(--md-default-fg-color) 78%, transparent);
+  font-size: 1.02rem;
   line-height: 1.8;
-  color: rgba(55, 65, 75, 0.92);
+}
+
+.page-hero--compact {
+  padding: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.page-hero--compact h1 {
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+}
+
+.page-hero--compact .page-hero__lead {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    border-radius: 18px;
+  }
+}
+
+/* World portal layout */
+.world-shell {
+  max-width: 54rem;
+  margin: 0 auto;
 }
 
 .world-actions {
@@ -567,62 +620,6 @@ body:has(.tags-shell) .md-content > .md-typeset {
   box-shadow: none !important;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-}
-
-.tags-hero {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(1.5rem, 4vw, 2.7rem);
-  margin: 1.25rem 0 1.4rem;
-  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 86% 16%, color-mix(in srgb, var(--md-accent-fg-color) 16%, transparent), transparent 35%),
-    linear-gradient(135deg, color-mix(in srgb, var(--md-default-bg-color) 72%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent));
-  box-shadow: 0 18px 48px color-mix(in srgb, var(--md-default-fg-color) 9%, transparent);
-  backdrop-filter: blur(14px);
-}
-
-.tags-hero::after {
-  content: "#";
-  position: absolute;
-  right: clamp(1rem, 5vw, 3rem);
-  top: 50%;
-  color: color-mix(in srgb, var(--md-accent-fg-color) 13%, transparent);
-  font-family: "Ubuntu", monospace;
-  font-size: clamp(7rem, 18vw, 12rem);
-  font-weight: 700;
-  line-height: 1;
-  transform: translateY(-50%) rotate(8deg);
-  pointer-events: none;
-}
-
-.tags-eyebrow {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 0.65rem;
-  color: color-mix(in srgb, var(--md-default-fg-color) 66%, transparent);
-  font-size: 0.76rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.tags-hero h1 {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: clamp(2.25rem, 6vw, 4rem);
-  line-height: 1.05;
-}
-
-.tags-hero > p:not(.tags-eyebrow) {
-  position: relative;
-  z-index: 1;
-  max-width: 40rem;
-  margin: 0.9rem 0 0;
-  color: color-mix(in srgb, var(--md-default-fg-color) 78%, transparent);
-  font-size: 1rem;
-  line-height: 1.8;
 }
 
 .tags-summary {
@@ -933,41 +930,15 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   outline-offset: 3px;
 }
 
-.tag-detail-hero {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(1.3rem, 4vw, 2rem);
-  margin-bottom: 1.2rem;
-  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 13%, transparent);
-  border-radius: 22px;
-  background:
-    radial-gradient(circle at 88% 22%, color-mix(in srgb, var(--md-accent-fg-color) 15%, transparent), transparent 34%),
-    linear-gradient(145deg, color-mix(in srgb, var(--md-default-bg-color) 82%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 7%, transparent));
-  box-shadow: 0 16px 42px color-mix(in srgb, var(--md-default-fg-color) 8%, transparent);
-}
-
-.tag-detail-eyebrow {
-  margin: 0 0 0.55rem !important;
-  color: color-mix(in srgb, var(--md-default-fg-color) 58%, transparent);
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.tag-detail-hero h1 {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
+/* 标签归档页在 page-hero--compact 基础上保留标题中 # 的强调色；
+   hero 紧跟返回链接，无需额外的顶部间距 */
+.tag-detail-back + .page-hero {
+  margin-top: 0;
 }
 
 .tag-detail-hero h1 span {
   margin-right: 0.2rem;
   color: var(--md-accent-fg-color);
-}
-
-.tag-detail-hero > p:last-child {
-  margin: 0.75rem 0 0;
-  color: color-mix(in srgb, var(--md-default-fg-color) 68%, transparent);
 }
 
 .tag-post-grid {
@@ -1112,20 +1083,12 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
 }
 
 @media (max-width: 600px) {
-  .tags-hero {
-    border-radius: 18px;
-  }
-
   .tag-card-grid {
     grid-template-columns: 1fr;
   }
 
   .tag-card {
     height: var(--world-tags-card-height-mobile);
-  }
-
-  .tag-detail-hero {
-    border-radius: 18px;
   }
 
   .tag-post-card-meta {
@@ -1442,58 +1405,6 @@ body:has(.home-shell) .md-main__inner {
   padding: 0.5rem 0 1.25rem;
 }
 
-.home-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 2.5rem;
-  border: 1px solid rgba(120, 140, 160, 0.18);
-  border-radius: 28px;
-  background:
-    linear-gradient(135deg, rgba(8, 15, 28, 0.08), rgba(255, 255, 255, 0.18)),
-    radial-gradient(circle at top right, rgba(88, 140, 255, 0.16), transparent 32%),
-    radial-gradient(circle at left bottom, rgba(0, 210, 255, 0.10), transparent 28%);
-  box-shadow: 0 18px 48px rgba(12, 18, 28, 0.08);
-}
-
-.home-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto -8rem -8rem auto;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(89, 108, 119, 0.14), transparent 68%);
-  filter: blur(8px);
-  pointer-events: none;
-}
-
-.home-eyebrow {
-  margin: 0 0 0.8rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(80, 90, 100, 0.8);
-}
-
-.home-hero h1 {
-  margin: 0;
-  font-size: clamp(2.4rem, 5vw, 4.3rem);
-  line-height: 1.02;
-  letter-spacing: 0.015em;
-}
-
-.home-title-line {
-  display: block;
-}
-
-.home-lead {
-  max-width: 48rem;
-  margin: 1.1rem 0 0;
-  font-size: 1.03rem;
-  line-height: 1.85;
-  color: rgba(55, 65, 75, 0.92);
-}
-
 .home-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1641,11 +1552,6 @@ body:has(.home-shell) .md-main__inner {
     padding-top: 0;
   }
 
-  .home-hero {
-    padding: 1.45rem;
-    border-radius: 22px;
-  }
-
   .home-stats {
     grid-template-columns: 1fr;
   }
@@ -1659,20 +1565,6 @@ body:has(.home-shell) .md-main__inner {
 .world-detail {
   max-width: 72rem;
   margin: 0 auto;
-}
-
-.world-hero--compact {
-  padding: 1.6rem 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.world-hero--compact h1 {
-  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
-}
-
-.world-hero--compact .world-lead {
-  margin-top: 0.7rem;
-  max-width: 52rem;
 }
 
 .world-panel {
@@ -1728,21 +1620,12 @@ body:has(.home-shell) .md-main__inner {
     grid-template-columns: 1fr;
   }
 
-  .world-hero--compact {
-    padding: 1.2rem 1.2rem;
-  }
-
   .world-panel {
     padding: 1rem 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .world-hero {
-    padding: 1.4rem;
-    border-radius: 18px;
-  }
-
   .world-filters {
     padding: 0.95rem 1rem;
     border-radius: 18px;
