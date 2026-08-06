@@ -16,6 +16,7 @@ body {
     display: inline-flex;
     width: auto;
     max-width: 100%;
+    position: relative;
     padding: 0.48rem 0.78rem;
     border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
     border-radius: 999px;
@@ -30,6 +31,26 @@ body {
     border-color: color-mix(in srgb, var(--md-accent-fg-color) 34%, transparent);
     box-shadow: 0 8px 20px color-mix(in srgb, var(--md-default-fg-color) 11%, transparent) !important;
     transform: translateY(-1px);
+  }
+
+  /* 返回按钮的链接只覆盖文字本身，悬停时 Material 会给它加一层黑底；
+     这里去掉黑底，并用伪元素把链接铺满整个胶囊按钮 */
+  .md-sidebar--post .md-post__back .md-nav__link {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  .md-sidebar--post .md-post__back .md-nav__link:hover,
+  .md-sidebar--post .md-post__back .md-nav__link:focus {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+
+  .md-sidebar--post .md-post__back .md-nav__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   /* 去掉 TOC 中的选中/hover/聚焦样式 */

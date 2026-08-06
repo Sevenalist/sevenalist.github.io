@@ -7,8 +7,7 @@
 
   const storageKey = 'sevenalist:post-source';
   const postLinkSelector = [
-    '.md-post--excerpt .md-post__content h2 a[href]',
-    '.tag-post-card h2 a[href]'
+    '.md-post--excerpt .md-post__content h2 a[href]'
   ].join(', ');
 
   const normalizeUrl = (value) => {

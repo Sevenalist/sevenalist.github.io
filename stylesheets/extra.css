@@ -76,16 +76,28 @@
   --site-selection-fg: #eef2f3;
   --home-page-width: 60rem;
 
-  /* World 卡片高度：只需修改下面 6 个值。可用 px/rem，设为 auto 则由内容撑开。 */
+  /* Apple 毛玻璃卡片参数：grid-button 与文章卡片共用 */
+  --apple-glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.16));
+  --apple-glass-blur: blur(18px) saturate(180%);
+  --apple-glass-border: rgba(255, 255, 255, 0.28);
+  --apple-glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 32px rgba(31, 38, 135, 0.12);
+  --apple-glass-hover-border: rgba(255, 255, 255, 0.48);
+  --apple-glass-hover-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    0 20px 40px rgba(31, 38, 135, 0.18);
+
+  /* World 卡片高度：只需修改下面 4 个值。可用 px/rem，设为 auto 则由内容撑开。 */
   /* 电脑端（宽度大于 600px） */
   --world-tags-card-height-desktop: 7rem;       /* world/tags 标签卡片 */
-  --world-blog-card-height-desktop: 8rem;         /* Archive / Category 文章卡片 */
-  --world-tag-post-card-height-desktop: 8rem;     /* 点击标签后的文章卡片 */
+  --world-blog-card-height-desktop: 8rem;         /* Archive / Category / Tag 文章卡片 */
 
   /* 手机端（宽度不大于 600px） */
   --world-tags-card-height-mobile: 7rem;        /* world/tags 标签卡片 */
-  --world-blog-card-height-mobile: 8.5rem;          /* Archive / Category 文章卡片 */
-  --world-tag-post-card-height-mobile: 9rem;      /* 点击标签后的文章卡片 */
+  --world-blog-card-height-mobile: 8.5rem;          /* Archive / Category / Tag 文章卡片 */
 }
 
 ::selection {
@@ -445,8 +457,19 @@ svg.icon {
 
 @media (max-width: 768px) {
   .page-hero {
+    margin-top: 0.75rem;
     border-radius: 18px;
   }
+}
+
+/* Hero 顶部间距统一：去掉容器默认的 padding-top 与占位伪元素，
+   避免 blog 索引页把容器变成 grid 后，在 hero 上方多出 1rem 的 gap */
+body:has(.page-hero) .md-content__inner {
+  padding-top: 0;
+}
+
+body:has(.page-hero) .md-content__inner::before {
+  display: none;
 }
 
 /* World portal layout */
@@ -480,90 +503,118 @@ svg.icon {
   margin-top: 0.25rem;
 }
 
-/* Material blog excerpts on the World index, archive and category pages */
-.md-content__inner > .md-post--excerpt {
+/* Material blog excerpts on World index, archive, category and tag pages */
+.md-content__inner .md-post--excerpt {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  width: min(100%, 54rem);
-  height: var(--world-blog-card-height-desktop);
-  max-width: 54rem;
+  width: auto;
+  min-height: var(--world-blog-card-height-desktop);
+  max-width: none;
   padding: 1.15rem 1.25rem 1.2rem;
-  margin: 0 auto 1rem;
-  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+  margin: 0;
+  border: 1px solid var(--apple-glass-border);
   border-radius: 18px;
-  background:
-    linear-gradient(155deg, color-mix(in srgb, var(--md-default-bg-color) 50%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 5%, transparent));
-  box-shadow: 0 8px 22px color-mix(in srgb, var(--md-default-fg-color) 15%, transparent);
+  background: var(--apple-glass-bg);
+  -webkit-backdrop-filter: var(--apple-glass-blur);
+  backdrop-filter: var(--apple-glass-blur);
+  box-shadow: var(--apple-glass-shadow);
   transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
   cursor: pointer;
 }
 
 /* Stretch the title link across the card while keeping metadata links usable. */
-.md-content__inner > .md-post--excerpt .md-post__content h2 a::after {
+.md-content__inner .md-post--excerpt .md-post__content h2 a::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.md-content__inner > .md-post--excerpt .md-post__header a,
-.md-content__inner > .md-post--excerpt .md-post__content p a {
+.md-content__inner .md-post--excerpt .md-post__header a,
+.md-content__inner .md-post--excerpt .md-post__content p a {
   position: relative;
   z-index: 2;
 }
 
-.md-content__inner > .md-post--excerpt:has(.md-post__content h2 a:focus-visible) {
+.md-content__inner .md-post--excerpt:has(.md-post__content h2 a:focus-visible) {
   outline: 2px solid var(--md-accent-fg-color);
   outline-offset: 3px;
 }
 
-.md-content__inner > .md-post--excerpt::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
-  opacity: 0.52;
-  transition: opacity 200ms ease, width 200ms ease;
-}
-
-.md-content__inner > .md-post--excerpt:hover {
-  border-color: color-mix(in srgb, var(--md-accent-fg-color) 30%, transparent);
-  box-shadow: 0 14px 30px color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+.md-content__inner .md-post--excerpt:hover {
+  border-color: var(--apple-glass-hover-border);
+  box-shadow: var(--apple-glass-hover-shadow);
   transform: translateY(-2px);
 }
 
-.md-content__inner > .md-post--excerpt:hover::before {
-  width: 4px;
-  opacity: 0.9;
-}
-
-.md-content__inner > .md-post--excerpt + .md-post--excerpt {
-  padding-top: 1.15rem;
-  margin-top: 0;
-}
-
-.md-content__inner > .md-post--excerpt .md-post__header {
+.md-content__inner .md-post--excerpt .md-post__header {
   margin-bottom: 0.35rem;
 }
 
-.md-content__inner > .md-post--excerpt .md-post__content h2 {
+.md-content__inner .md-post--excerpt .md-meta__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-content__inner .md-post--excerpt .md-meta__item {
+  margin: 0;
+}
+
+.md-content__inner .md-post--excerpt .md-post__content h2 {
   margin-top: 0.2rem;
 }
 
-.md-content__inner > .md-post--excerpt .md-post__content p:last-child {
+.md-content__inner .md-post--excerpt .md-post__content p:last-of-type {
   margin-bottom: 0;
 }
 
+.md-content__inner .md-post--excerpt .md-post__content > :last-child,
+.md-content__inner .md-post--excerpt .md-post__content > :last-child :last-child {
+  margin-bottom: 0;
+}
+
+.md-content__inner .md-post--excerpt .md-post__content blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.md-content__inner .md-post--excerpt .md-post__content blockquote p {
+  margin: 1em 0 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 /* The whole card already links to the post, so Material's extra CTA is redundant. */
-.md-content__inner > .md-post--excerpt .md-post__action {
+.md-content__inner .md-post--excerpt .md-post__action {
   display: none;
 }
 
+/* World / archive / category pages: two article cards per row */
+.md-content__inner:has(> .md-post--excerpt) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.md-content__inner:has(> .md-post--excerpt) > :not(.md-post--excerpt) {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 600px) {
-  .md-content__inner > .md-post--excerpt {
-    height: var(--world-blog-card-height-mobile);
+  .md-content__inner:has(> .md-post--excerpt) {
+    grid-template-columns: 1fr;
+  }
+
+  .md-content__inner .md-post--excerpt {
+    min-height: var(--world-blog-card-height-mobile);
   }
 }
 
@@ -797,7 +848,7 @@ body:has(.tags-shell) .md-content > .md-typeset {
 
 /* Individual tag archive */
 .tag-detail-shell {
-  max-width: 48rem;
+  max-width: 54rem;
   margin: 0 auto 2.5rem;
   padding-inline: clamp(0rem, 1.5vw, 0.6rem);
 }
@@ -902,174 +953,23 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   color: var(--md-accent-fg-color);
 }
 
-.tag-post-grid {
+.tag-post-list {
   display: grid;
-  gap: 0.95rem;
-}
-
-.tag-post-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 4.4rem minmax(0, 1fr);
-  gap: 1.1rem;
-  overflow: hidden;
-  box-sizing: border-box;
-  height: var(--world-tag-post-card-height-desktop);
-  padding: 1.15rem 1.25rem 1.2rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
-  border-radius: 16px;
-  background:
-    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--md-accent-fg-color) 9%, transparent), transparent 34%),
-    linear-gradient(155deg, color-mix(in srgb, var(--md-default-bg-color) 50%, transparent), color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent));
-  box-shadow: 0 7px 20px color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
-  animation: tag-post-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--post-order) * 55ms);
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
-}
-
-.tag-post-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
-  opacity: 0.5;
-  transition: opacity 220ms ease, width 220ms ease;
-}
-
-.tag-post-card:hover {
-  border-color: color-mix(in srgb, var(--md-accent-fg-color) 34%, transparent);
-  box-shadow: 0 16px 34px color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
-  transform: translateY(-3px);
-}
-
-.tag-post-card:hover::before {
-  width: 4px;
-  opacity: 1;
-}
-
-.tag-post-date {
-  display: flex;
-  align-self: start;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 4.2rem;
-  border-right: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
-  color: color-mix(in srgb, var(--md-default-fg-color) 55%, transparent);
-  font-family: "Ubuntu", sans-serif;
-  text-align: center;
-}
-
-.tag-post-date strong {
-  color: var(--md-default-fg-color);
-  font-size: 1.55rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.tag-post-date span {
-  margin-top: 0.35rem;
-  font-size: 0.66rem;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-.tag-post-body {
-  min-width: 0;
-}
-
-.tag-post-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  color: color-mix(in srgb, var(--md-default-fg-color) 56%, transparent);
-  font-family: "Ubuntu", sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0.02em;
-}
-
-.tag-post-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.35rem;
-}
-
-.tag-post-categories span {
-  padding: 0.2rem 0.5rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--md-primary-fg-color) 9%, transparent);
-  color: color-mix(in srgb, var(--md-default-fg-color) 68%, transparent);
-}
-
-.tag-post-card h2 {
-  margin: 0.65rem 0 0.4rem;
-  font-size: clamp(1.12rem, 3vw, 1.38rem);
-  line-height: 1.4;
-}
-
-.tag-post-card h2 a {
-  color: var(--md-default-fg-color) !important;
-  text-decoration: none !important;
-}
-
-.tag-post-card h2 a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.tag-post-card h2 a:hover {
-  color: var(--md-accent-fg-color) !important;
-}
-
-.tag-post-body > p {
-  margin: 0;
-  color: color-mix(in srgb, var(--md-default-fg-color) 70%, transparent);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-@keyframes tag-post-enter {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 @media (max-width: 600px) {
+  .tag-post-list {
+    grid-template-columns: 1fr;
+  }
+
   .tag-card-grid {
     grid-template-columns: 1fr;
   }
 
   .tag-card {
     height: var(--world-tags-card-height-mobile);
-  }
-
-  .tag-post-card-meta {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .tag-post-categories {
-    justify-content: flex-start;
-  }
-
-  .tag-post-card {
-    grid-template-columns: 3.65rem minmax(0, 1fr);
-    gap: 0.8rem;
-    height: var(--world-tag-post-card-height-mobile);
-    padding: 1rem 1rem 1.05rem 0.85rem;
-  }
-
-  .tag-post-date strong {
-    font-size: 1.3rem;
   }
 }
 
@@ -1078,11 +978,6 @@ body:has(.tag-detail-shell) .md-content > .md-typeset {
   .tag-card-progress span,
   .tag-card-posts a,
   .tag-card-title .headerlink {
-    transition: none !important;
-  }
-
-  .tag-post-card {
-    animation: none !important;
     transition: none !important;
   }
 
@@ -1426,24 +1321,27 @@ body:has(.home-shell) .md-main__inner {
   font-size: 1.45rem;
 }
 
-.home-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+/* Grid button: Apple-style frosted glass tiles extending MaterialX's grid cards */
+.md-typeset .grid.buttons {
   gap: 1rem;
 }
 
-.md-typeset a.home-card {
+.md-typeset .grid.buttons > ol > li,
+.md-typeset .grid.buttons > ul > li,
+.md-typeset .grid.buttons > a.card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 6rem;
   padding: 1.15rem 1.2rem;
-  border: 1px solid rgba(120, 140, 160, 0.18);
+  border: 1px solid var(--apple-glass-border);
   border-radius: 20px;
-  text-decoration: none;
   color: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.46));
-  box-shadow: 0 12px 30px rgba(12, 18, 28, 0.06);
-  position: relative;
+  text-decoration: none;
+  background: var(--apple-glass-bg);
+  -webkit-backdrop-filter: var(--apple-glass-blur);
+  backdrop-filter: var(--apple-glass-blur);
+  box-shadow: var(--apple-glass-shadow);
   overflow: hidden;
   isolation: isolate;
   transform-origin: center center;
@@ -1454,58 +1352,109 @@ body:has(.home-shell) .md-main__inner {
     border-color 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.md-typeset a.home-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: rgba(120, 140, 160, 0.32);
-  box-shadow: 0 18px 36px rgba(12, 18, 28, 0.1);
-}
-
-.md-typeset a.home-card::before {
+.md-typeset .grid.buttons > ol > li::before,
+.md-typeset .grid.buttons > ul > li::before,
+.md-typeset .grid.buttons > a.card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(89, 108, 119, 0.00), rgba(89, 108, 119, 0.12));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 55%);
   opacity: 0;
   transition: opacity 320ms ease;
   pointer-events: none;
   z-index: 0;
 }
 
-.md-typeset a.home-card:hover::before {
-  opacity: 1;
+.md-typeset .grid.buttons > ol > li:hover,
+.md-typeset .grid.buttons > ul > li:hover,
+.md-typeset .grid.buttons > a.card:hover,
+.md-typeset .grid.buttons > a.card:focus-visible {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--apple-glass-hover-border);
+  box-shadow: var(--apple-glass-hover-shadow);
 }
 
-.md-typeset a.home-card > * {
+.md-typeset .grid.buttons > ol > li:hover::before,
+.md-typeset .grid.buttons > ul > li:hover::before,
+.md-typeset .grid.buttons > a.card:hover::before,
+.md-typeset .grid.buttons > a.card:focus-visible::before {
+  opacity: 0.7;
+}
+
+.md-typeset .grid.buttons > ol > li::after,
+.md-typeset .grid.buttons > ul > li::after,
+.md-typeset .grid.buttons > a.card::after {
+  content: "→";
+  position: absolute;
+  top: 1.05rem;
+  right: 1.1rem;
+  z-index: 1;
+  font-size: 1.05rem;
+  line-height: 1;
+  opacity: 0.35;
+  transform: translateX(0);
+  transition: opacity 260ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.md-typeset .grid.buttons > ol > li:hover::after,
+.md-typeset .grid.buttons > ul > li:hover::after,
+.md-typeset .grid.buttons > a.card:hover::after,
+.md-typeset .grid.buttons > a.card:focus-visible::after {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.md-typeset .grid.buttons > ol > li > *,
+.md-typeset .grid.buttons > ul > li > *,
+.md-typeset .grid.buttons > a.card > * {
   position: relative;
   z-index: 1;
 }
 
-.home-card-kicker {
-  display: inline-flex;
+.md-typeset .grid.buttons > ol > li > a.grid-button,
+.md-typeset .grid.buttons > ul > li > a.grid-button {
+  position: static;
+  display: inline-block;
   align-self: flex-start;
-  margin-bottom: 0.7rem;
-  padding: 0.24rem 0.68rem;
-  border-radius: 999px;
-  background: rgba(89, 108, 119, 0.1);
-  color: rgba(35, 45, 55, 0.88);
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.92);
+  text-decoration: none;
 }
 
-.home-card h3 {
+.md-typeset .grid.buttons > ol > li > a.grid-button:hover,
+.md-typeset .grid.buttons > ul > li > a.grid-button:hover,
+.md-typeset .grid.buttons > ol > li > a.grid-button:focus-visible,
+.md-typeset .grid.buttons > ul > li > a.grid-button:focus-visible {
+  color: rgba(0, 0, 0, 0.92);
+}
+
+.md-typeset .grid.buttons h3 {
   display: block;
   margin: 0 0 0.45rem;
+  padding-right: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.35;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.92);
 }
 
-.home-card p {
+.md-typeset .grid.buttons p {
   margin: 0;
   color: rgba(60, 70, 80, 0.9);
   line-height: 1.72;
+}
+
+/* Make a link inside a Markdown list card cover the whole card */
+.md-typeset .grid.buttons > ol > li > a.grid-button::after,
+.md-typeset .grid.buttons > ul > li > a.grid-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -1723,4 +1672,25 @@ body:has(.home-shell) .md-main__inner {
   border: .05rem solid rgba(120, 140, 160, 0.35);
   border-radius: .4rem;
   padding: 0 1em;
+}
+
+/* ===== 首页“大语言模型”板块：AI Release Tracker Top 3 ===== */
+.ai-releases {
+  margin: .6rem 0 1.2rem;
+}
+
+.md-typeset .ai-release-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ai-releases .ai-releases-meta {
+  margin: .6rem 0 0;
+  font-size: .75rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+@media (max-width: 768px) {
+  .md-typeset .ai-release-grid {
+    grid-template-columns: 1fr;
+  }
 }
