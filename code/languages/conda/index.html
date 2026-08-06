@@ -2936,7 +2936,7 @@
 
 
 <h1 id="conda">Conda笔记<a class="headerlink" href="#conda" title="Permanent link">¶</a></h1>
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../img/s.png" data-email=""></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-06"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-06T05:30:37+00:00">2026-08-06</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../img/s.png" data-email=""></div></div></div></div></div>
 
 <p>Anaconda下载地址：<a href="https://www.anaconda.com/download/success?reg=skipped">https://www.anaconda.com/download</a></p>
 <h2 id="1-conda">1 conda初始化<a class="headerlink" href="#1-conda" title="Permanent link">¶</a></h2>
@@ -2982,7 +2982,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>.condarc</code>文件位于anaconda的安装目录中，对应字段添加/替换为如下内容。</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>channels:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>channels:
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>  - defaults
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a>show_channel_urls: true
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>default_channels:
@@ -2991,18 +2991,18 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 </code></pre></div>
 <p>查看当前配置</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>conda config --show channels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>conda config --show channels
 </code></pre></div>
 <p>如果想恢复默认源，直接删除channels即可，命令如下：</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>conda config --remove-key channels
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>conda config --remove-key channels
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>运行下列命令进入<code>.condarc</code>文件进行编辑：</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>vim ~/.condarc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>vim ~/.condarc
 </code></pre></div>
 <p>对应字段添加/替换为如下内容。Vim编辑文档的操作详见<a href="../linux/vim/" target="_blank">这篇文章</a>。</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a>channels:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a>channels:
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a>  - defaults
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a>show_channel_urls: true
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a>default_channels:
@@ -3021,11 +3021,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">pip</label><label for="__tabbed_3_2">conda</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>pip install [package]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>pip install [package]
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a>conda install [package]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a>conda install [package]
 </code></pre></div>
 </div>
 </div>
@@ -3048,12 +3048,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">联网安装</label><label for="__tabbed_4_2">离线安装</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a>pip install conda-pack
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a>pip install conda-pack
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>下载conda-pack及依赖</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos="1 "></span></a>pip download conda-pack -d conda_pack_offline
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos="1 "></span></a>pip download conda-pack -d conda_pack_offline
 </code></pre></div>
 <p>执行后会得到一个conda_pack_offline文件夹，将整个文件夹复制到离线环境中，conda环境中执行指令：</p>
 <div class="highlight"><span class="filename">conda</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><a href="#__codelineno-18-1"><span class="linenos" data-linenos="1 "></span></a>pip install --no-index --find-links=. conda-pack
@@ -3069,11 +3069,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">服务器为Windows</label><label for="__tabbed_5_2">服务器为Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a>conda-pack -n [env_name] -o [env_name].zip
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a>conda-pack -n [env_name] -o [env_name].zip
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos="1 "></span></a>conda-pack -n [env_name] -o [env_name].tar.gz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos="1 "></span></a>conda-pack -n [env_name] -o [env_name].tar.gz
 </code></pre></div>
 </div>
 </div>
@@ -3081,14 +3081,16 @@
 <p>此包即需要迁移的环境。</p>
 <h3 id="43">4.3 在服务器上解包<a class="headerlink" href="#43" title="Permanent link">¶</a></h3>
 <p>将该环境压缩包复制到服务器上，解压到anaconda的安装路径下即可，即<code>../anaconda3/envs/</code>。</p>
+<div class="result">
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">服务器为Windows</label><label for="__tabbed_6_2">服务器为Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>手动解压即可。</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><a href="#__codelineno-21-1"><span class="linenos" data-linenos="1 "></span></a>tar -xzf [env_name].tar.gz -C [env_name]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><a href="#__codelineno-21-1"><span class="linenos" data-linenos="1 "></span></a>tar -xzf [env_name].tar.gz -C [env_name]
 </code></pre></div>
+</div>
 </div>
 </div>
 </div>

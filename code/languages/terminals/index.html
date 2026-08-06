@@ -2642,11 +2642,11 @@
 <h3 id="11-powershell">1.1 取消PowerShell执行脚本限制<a class="headerlink" href="#11-powershell" title="Permanent link">¶</a></h3>
 <p>有时候无法执行如conda初始化等脚本命令，这是因为PowerShell对执行脚本有限制。</p>
 <p>以管理员权限打开Powershell并执行以下命令：</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
 </code></pre></div>
 <h3 id="12-windows11">1.2 <a href="https://www.bilibili.com/opus/950298536863334437">激活Windows11</a><a class="headerlink" href="#12-windows11" title="Permanent link">¶</a></h3>
 <p>以管理员身份运行PowerShell，执行以下命令：</p>
-<p></p><div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">irm </span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">irm </span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
 </code></pre></div>
 在随后的命令提示符中输入<code>1</code>即可永久激活。<p></p>
 <h2 id="2-cmd">2 CMD<a class="headerlink" href="#2-cmd" title="Permanent link">¶</a></h2>

@@ -2685,7 +2685,7 @@
 
 
 
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../../img/s.png" data-email=""></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-06"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-06T05:30:37+00:00">2026-08-06</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../../img/s.png" data-email=""></div></div></div></div></div>
 <!-- # RAGflow构建大模型知识库 -->
 
 <h2 id="1">1 摘要<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
@@ -2699,11 +2699,11 @@
 <h2 id="3-ragflow">3 安装RAGflow<a class="headerlink" href="#3-ragflow" title="Permanent link">¶</a></h2>
 <p>可参考RAGflow的<a href="https://github.com/infiniflow/ragflow/blob/main/README_zh.md#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B" target="_blank">官网安装指南</a>，简单总结如下。</p>
 <h3 id="31">3.1 拉取镜像仓库<a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/infiniflow/ragflow.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/infiniflow/ragflow.git
 </code></pre></div>
 <h3 id="32-env">3.2 修改<code>.env</code>文件<a class="headerlink" href="#32-env" title="Permanent link">¶</a></h3>
 <p>打开 <strong>ragflow/docker/.env</strong> 文件，注释掉第84行的代码，并将第87行的代码取消注释，如下所示。</p>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-82" name="__codelineno-1-82"></a><a href="#__codelineno-1-82"><span class="linenos" data-linenos="82 "></span></a><span class="c1"># The RAGFlow Docker image to download.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-82" name="__codelineno-1-82"></a><a href="#__codelineno-1-82"><span class="linenos" data-linenos="82 "></span></a><span class="c1"># The RAGFlow Docker image to download.</span>
 <a id="__codelineno-1-83" name="__codelineno-1-83"></a><a href="#__codelineno-1-83"><span class="linenos" data-linenos="83 "></span></a><span class="c1"># Defaults to the v0.17.1-slim edition, which is the RAGFlow Docker image without embedding models.</span>
 <a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="hll"><a href="#__codelineno-1-84"><span class="linenos" data-linenos="84 "></span></a><span class="c1"># RAGFLOW_IMAGE=infiniflow/ragflow:v0.17.1-slim</span>
 </span><a id="__codelineno-1-85" name="__codelineno-1-85"></a><a href="#__codelineno-1-85"><span class="linenos" data-linenos="85 "></span></a><span class="c1">#</span>
@@ -2719,7 +2719,7 @@
 <p class="admonition-title">注意</p>
 <p>如果是Windows Docker Desktop，需要先启动Docker Desktop再执行下面的指令。</p>
 </div>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">cd</span><span class="w"> </span>ragflow/docker
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">cd</span><span class="w"> </span>ragflow/docker
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <div class="admonition tip">
@@ -2732,7 +2732,7 @@
 </div>
 <h3 id="34">3.4 检查是否安装成功<a class="headerlink" href="#34" title="Permanent link">¶</a></h3>
 <p>输入以下指令：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>ragflow-server
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>ragflow-server
 </code></pre></div>
 <p>如果出现下面界面提示说明启动成功：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>     ____   ___    ______ ______ __

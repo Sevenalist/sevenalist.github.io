@@ -93,47 +93,6 @@ body {
     color: #fff;
   }
   
-/* 设置代码块背景为半透明白色 */
-.md-typeset pre > code {
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  /* background-color: rgba(235,236,238, 1) !important; */
-  color: #000; /* 字体颜色改为黑色以适配浅背景 */
-}
-
-/* 行号的背景颜色 */
-span.linenos::before {
-  background-color: rgba(235, 236, 238, 0.5) !important; /* 半透明背景 */
-  backdrop-filter: blur(6px); /* 毛玻璃模糊效果 */
-  -webkit-backdrop-filter: blur(6px); /* 兼容 Safari */
-  
-  /* 可选：增加圆角和边框来更像毛玻璃 */
-  /* border-radius: 4px; */
-}
-
-
-/* 设置整段代码块区域的背景（含滚动条区域） */
-.md-typeset pre {
-  background-color: rgba(152, 156, 160, 0.4) !important;
-
-  padding: 1em;
-  overflow-x: auto;
-}
-
-/* 设置代码块语言标题栏（顶部小标签）的背景 */
-.highlight > .filename {
-  background-color: rgba(152, 156, 160, 0.4) !important;
-  /* color: #000; */
-  font-weight: bold;
-  padding: 0.3em 1em;
-  border-bottom: 1px solid #ddd;
-}
-
-/* 防止代码行号遮挡内容（如果开启了） */
-.highlighttable pre {
-  background-color: transparent !important;
-}
-
-
   /* 调整移动端 */
 @media (max-width: 768px) { /* You can adjust this breakpoint as needed */
   /* 删除移动端的白色蒙版 */

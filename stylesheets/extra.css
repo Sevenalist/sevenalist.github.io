@@ -114,25 +114,6 @@ body:has(.library-post-marker) .md-content__inner {
   display: none;
 }
 
-/* 设置代码块字体 */ 
-code, pre {
-  font-family: 'Roboto Mono', monospace;
-  /*  自动适应屏幕换行 */
-  /* white-space: pre-wrap; */
-}
-
-.hightlight {
-  background-color: rgba(30, 30, 30, 0.9); /* 深色背景 */
-  color: #f8f8f2; /* 浅色字体 */
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  border-radius: 8px;
-  padding: 1rem;
-  display: block;
-  overflow-x: auto;
-}
-
 /* 使所有二级标题加粗 */
 .md-typeset h2 {
   font-weight: bold;
@@ -142,15 +123,6 @@ code, pre {
 .md-typeset h1 {
   font-weight: bold;
   margin-bottom: 30px;
-}
-
-/* 自定义 bash 高亮样式 */
-code.language-bash .hljs-comment {
-  color: #6a9955;
-}
-
-code.language-bash .hljs-built_in {
-  color: #4EC9B0;
 }
 
 /* 设置md文档中图片居中样式 */
@@ -288,17 +260,6 @@ body:has(.links-page-shell) .md-main__inner {
   max-width: 66rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* 选项卡内容区增加浅黑色底色，帮助区分内容边界 */
-.md-typeset .tabbed-set > .tabbed-content {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.04));
-  border-radius: 0 0 10px 10px;
-  padding: 0.75rem 1rem 1rem;
-}
-
-.md-typeset .tabbed-set > .tabbed-content > .tabbed-block {
-  margin-top: 0;
 }
 
 /* 设置表格透明度 */
@@ -1753,4 +1714,13 @@ body:has(.home-shell) .md-main__inner {
 .md-nav__toggle.md-toggle--indeterminate~.md-nav,
 .md-nav__toggle:checked~.md-nav {
   grid-template-rows: minmax(0, 1fr);
+}
+
+/* 让 .result 包裹盒在独立使用时也有浅灰色边框和 padding，
+   可用于 content tabs 示例框，避免文字贴边；
+   颜色不用 --md-code-bg-color，因为本站背景不是纯白，浅灰更协调 */
+.md-typeset .result {
+  border: .05rem solid rgba(120, 140, 160, 0.35);
+  border-radius: .4rem;
+  padding: 0 1em;
 }

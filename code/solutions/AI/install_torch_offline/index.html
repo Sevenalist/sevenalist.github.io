@@ -2830,7 +2830,7 @@
 <p>首先需要在<a href="https://www.python.org/downloads/source/">Python官网</a>下载需要版本的Python源码压缩包，推荐下载Gzipped source tarball压缩格式，方便Linux系统解压，后续我们会在服务器上解压并编译。</p>
 <h4 id="212-python">2.1.2 编译Python<a class="headerlink" href="#212-python" title="Permanent link">¶</a></h4>
 <p>首先将压缩包放置到服务器上。压缩包的位置没有特定要求，自己能够找到就行。接下来在服务器上解压，例如：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>tar<span class="w"> </span>-xzf<span class="w"> </span>Python-3.9.18.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>tar<span class="w"> </span>-xzf<span class="w"> </span>Python-3.9.18.tgz
 </code></pre></div>
 <details class="note">
 <summary>解压参数说明</summary>
@@ -2915,7 +2915,7 @@
 </code></pre></div>
 <p><code>altinstall</code>：alternative install，“替代安装”的意思。它非常“克制”，不会安装名为 python 或 python3 的通用链接。它只会安装带有具体版本号的命令，例如 python3.11、pip3.11 等</p>
 <p>安装完成后，可以使用在<code>--prefix</code>中设置的python文件夹名称激活Python环境。比如我在<code>--prefix</code>中指定的python3.9，所以我激活对应Python环境的指令为<code>python3.9</code>。查看是否安装成功：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>python3.9<span class="w"> </span>-V
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>python3.9<span class="w"> </span>-V
 </code></pre></div>
 <p>如果有版本号即为安装完成。</p>
 <div class="admonition note">
@@ -2933,12 +2933,12 @@
 <p>选择对应<strong>系统架构</strong>和<strong>操作系统</strong>的安装版本（Linux通常是<code>xxx.sh</code>的安装包），下载即可。</p>
 <h4 id="222-anaconda">2.2.2 安装Anaconda<a class="headerlink" href="#222-anaconda" title="Permanent link">¶</a></h4>
 <p>把安装包放到服务器上自己找得到的位置，进入安装包所在的文件夹内，通过以下指令进行安装：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>bash<span class="w"> </span>anaconda.xxx.xxx.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>bash<span class="w"> </span>anaconda.xxx.xxx.sh
 </code></pre></div>
 <p>此时进入安装界面，根据指引安装即可。</p>
 <p>在最后询问是否初始化init的时候选择yes，等到安装完成。</p>
 <p>安装完成之后，更新一下终端：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h4 id="223">2.2.3 检查安装是否完成<a class="headerlink" href="#223" title="Permanent link">¶</a></h4>
 <p>完成安装之后，可以通过<code>conda activate</code>激活conda环境，此时在终端的用户名左侧会出现字样<code>(base)</code>，表明已经激活了conda环境。</p>
@@ -3026,11 +3026,11 @@
 <p>这里我使用的--index-url即官方提供的安装指令中的url。需要注意的是，有时候官方提供的最新url链接不一定会有我们想要的架构和操作系统，可以在后缀中添加<code>/torch</code>进入网址<span class="keys"><kbd class="key-control">Ctrl</kbd></span> + ++F++搜索检查一下有没有自己想要的版本。比如<a href="https://download.pytorch.org/whl/cu124/torch">https://download.pytorch.org/whl/cu124/torch</a>。</p>
 <h3 id="32-pytorch">3.2 目标服务器上安装Pytorch<a class="headerlink" href="#32-pytorch" title="Permanent link">¶</a></h3>
 <p>下载好之后，把所有文件打包到目标服务器上，进入文件夹内，安装所有的<code>.whl</code>即可：</p>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>python3.9<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>./*.whl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>python3.9<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>./*.whl
 </code></pre></div>
 <h3 id="33-pytorch">3.3 检查是否安装好Pytorch<a class="headerlink" href="#33-pytorch" title="Permanent link">¶</a></h3>
 <p>进入Python环境，依次执行以下指令：</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>import torch
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>import torch
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a>torch.cuda.is_available()
 </code></pre></div>
