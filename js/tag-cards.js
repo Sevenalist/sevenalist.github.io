@@ -37,12 +37,30 @@ const initTagCards = () => {
   grid.className = 'tag-card-grid';
   grid.setAttribute('aria-label', '标签索引');
 
+  const labelsBySlug = new Map();
+  items.forEach(({ heading }) => {
+    const label = heading.querySelector('.md-tag')?.textContent?.trim()
+      || heading.textContent.replace('¶', '').trim();
+    const slug = heading.id.replace(/^tag:/, '') || 'tag';
+    if (!labelsBySlug.has(slug)) labelsBySlug.set(slug, new Set());
+    labelsBySlug.get(slug).add(label);
+  });
+
+  const tagPageSlug = (label, fallback) => {
+    const base = fallback || 'tag';
+    if ((labelsBySlug.get(base)?.size || 0) <= 1) return base;
+    const token = Array.from(new TextEncoder().encode(label), (byte) =>
+      byte.toString(16).padStart(2, '0')
+    ).join('');
+    return `${base}--${token}`;
+  };
+
   items.forEach(({ heading, list, links }, index) => {
     const card = document.createElement('article');
     const count = links.length;
     const tagName = heading.querySelector('.md-tag')?.textContent?.trim()
       || heading.textContent.replace('¶', '').trim();
-    const tagSlug = heading.id.replace(/^tag:/, '');
+    const tagSlug = tagPageSlug(tagName, heading.id.replace(/^tag:/, ''));
     const tagLink = document.createElement('a');
     const tagLabel = document.createElement('span');
     const tagArrow = document.createElement('span');
@@ -55,6 +73,7 @@ const initTagCards = () => {
     card.style.setProperty('--tag-weight', `${Math.max((count / maxCount) * 100, 8)}%`);
 
     heading.classList.add('tag-card-title');
+    heading.id = `tag:${tagSlug}`;
     tagLink.className = 'tag-card-link';
     tagLink.href = `${encodeURIComponent(tagSlug)}/`;
     tagLink.setAttribute('aria-label', `查看标签 ${tagName} 下的全部文章`);

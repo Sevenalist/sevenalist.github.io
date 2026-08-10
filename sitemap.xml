@@ -7,7 +7,7 @@
     </url>
     <url>
         <loc>https://dengcz.cn/about/</loc>
-        <lastmod>2026-08-06</lastmod>
+        <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -82,7 +82,7 @@
     </url>
     <url>
         <loc>https://dengcz.cn/world/2024/fisher/</loc>
-        <lastmod>2026-07-20</lastmod>
+        <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -261,7 +261,12 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/tags/c/</loc>
+        <loc>https://dengcz.cn/world/tags/c--43/</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://dengcz.cn/world/tags/c--432b2b/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -282,11 +287,6 @@
     </url>
     <url>
         <loc>https://dengcz.cn/world/tags/windows/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/grub/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -326,11 +326,6 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/tags/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://dengcz.cn/world/tags/latex/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
@@ -342,21 +337,6 @@
     </url>
     <url>
         <loc>https://dengcz.cn/world/tags/mkdocs/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/github-pages/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -376,22 +356,7 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/%E6%A0%87%E5%87%86%E5%BA%93/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://dengcz.cn/world/tags/rag/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/ragflow/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -421,11 +386,6 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/tags/openwrt/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://dengcz.cn/world/tags/homeproxy/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
@@ -436,12 +396,7 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/tags/%E4%BB%A3%E7%90%86/</loc>
-        <lastmod>2026-08-10</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://dengcz.cn/world/tags/clash-verge/</loc>
+        <loc>https://dengcz.cn/world/tags/clash/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>daily</changefreq>
     </url>

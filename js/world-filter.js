@@ -168,7 +168,7 @@ const initWorldTagFilter = () => {
     dateItem.className = 'md-meta__item';
     time.dateTime = post.date;
     time.textContent = formatDate(post.date);
-    dateItem.append(time);
+    dateItem.append('发布于 ', time);
     metaList.append(dateItem);
 
     if (Array.isArray(post.categories) && post.categories.length > 0) {
