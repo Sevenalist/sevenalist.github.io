@@ -6,7 +6,7 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Tue, 11 Aug 2026 00:59:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 02:40:09 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/avatar.png</url>
@@ -14,18 +14,33 @@
       <link>https://dengcz.cn/</link>
     </image>
     <item>
+      <title>大语言模型概念速览</title>
+      <link>https://dengcz.cn/world/2026/ai/</link>
+      <guid isPermaLink="false">dd922c8a6cba86096f49a2eaa248b534589801c2</guid>
+      <description>Token、RAG、Agent、Skill、Harness……</description>
+      <category>人工智能</category>
+      <category>概念</category>
+      <category>LLM</category>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>MaterialX for MkDocs 使用笔记</title>
+      <link>https://dengcz.cn/world/2026/materialx/</link>
+      <guid isPermaLink="false">53afe8596377ac1a11303407c6df09f0255fba38</guid>
+      <description>MaterialX 的安装、核心配置、内容组织、常用组件与部署速查。</description>
+      <category>编程</category>
+      <category>编程语法</category>
+      <category>MaterialX</category>
+      <category>MkDocs</category>
+      <category>静态网站</category>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
       <title>Me</title>
       <link>https://dengcz.cn/about/me/</link>
       <guid isPermaLink="false">3af55290ff461aa8eec550c62d25bae5921dc0fc</guid>
       <description>College Graduate Graduated from Chongqing University of Technology, majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College. Completed an exchange program at the National Institute for Excellent Engineers, Chongqing University, with a graduation project…</description>
       <pubDate>Thu, 06 Aug 2026 01:59:36 +0800</pubDate>
-    </item>
-    <item>
-      <title>Cognition</title>
-      <link>https://dengcz.cn/code/cognition/</link>
-      <guid isPermaLink="false">1f9122cf665119fae81fafa2daa00e9dce131fa8</guid>
-      <description>这里是我的认知笔记。</description>
-      <pubDate>Wed, 05 Aug 2026 03:26:13 +0800</pubDate>
     </item>
     <item>
       <title>西方哲学</title>
@@ -56,32 +71,9 @@
       <guid isPermaLink="false">b2785becae0d6e4c881b760cdde4e4abc7d6d008</guid>
       <description>水井，是一种人工挖掘或钻凿的取水设施</description>
       <category>地理</category>
-      <category>水资源</category>
-      <category>水利工程</category>
-      <category>工程技术</category>
+      <category>水</category>
       <category>建筑</category>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
-    </item>
-    <item>
-      <title>Solutions</title>
-      <link>https://dengcz.cn/code/solutions/</link>
-      <guid isPermaLink="false">ab750a0a9629c96501c2505bc25bc94690d3c7d5</guid>
-      <description>这里是实践区。这针对某一特定的需求或者问题穿插起来，运用到了比较广的知识，是一道“综合题”。</description>
-      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
-    </item>
-    <item>
-      <title>Languages</title>
-      <link>https://dengcz.cn/code/languages/</link>
-      <guid isPermaLink="false">ee8f1b73ab509c391af251524bb94b775c4ad074</guid>
-      <description>这里是我的编程语言笔记区，记录了结构化的编程指令、代码，是我的知识库索引区。 这里的东西可能并不全面，但留下来的都是我经常用到的内容。</description>
-      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
-    </item>
-    <item>
-      <title>Code</title>
-      <link>https://dengcz.cn/code/</link>
-      <guid isPermaLink="false">6e518c9d0dde2e68a2b681c0c8c830e324973ded</guid>
-      <description>这里是我的技术区，主要分为两类。 这里是编程语言笔记区。记录了结构化的编程指令、代码，是我的知识库索引区。 这里的东西可能并不全面，但留下来的都是我经常用到的内容。 这里是实践区。这针对某一特定的需求或者问题穿插起来，运用到了比较广的知识，是一道“综合题”。</description>
-      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
     </item>
     <item>
       <title>About This Site</title>
@@ -89,6 +81,31 @@
       <guid isPermaLink="false">9438b586b14e375152471b77b46539050f0d69d1</guid>
       <description>Basic Information 网站架构 本站基于materialX架构搭建。 网站部署 本站部署在Github Pages上。 隐私政策 纯静态网站，不采集任何信息。 联系方式 Why this site exists 本站建立的初衷，是想要当做技术笔记，因为反复查找一些重复性问题是一个很麻烦的过程。 主要是方便自己。如果能给别人帮助，当然更好。 但随着大语言模型的发展，AI越来越智能，记录一份这样的技术笔记似乎变得不那么有必要了——遇到问题问AI就好。 所以本站的定位也逐渐发生了变化。 人很容易忘记一些事情。 我想在忘记之前，把它们记下来。…</description>
       <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
+    </item>
+    <item>
+      <title>Python 常用标准库</title>
+      <link>https://dengcz.cn/world/2026/python/</link>
+      <guid isPermaLink="false">93fa3911b335994cdfd90a6eace7458b8fe7ce7e</guid>
+      <description>Python 文件处理、数据读写、命令行、时间、日志与数据类常用写法。</description>
+      <category>编程</category>
+      <category>编程语法</category>
+      <category>Python</category>
+      <category>标准库</category>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>Linux 系统下离线安装 PyTorch</title>
+      <link>https://dengcz.cn/world/2026/install-torch-offline/</link>
+      <guid isPermaLink="false">fce9784462897e358b05db6fbdb8450a6ff338f5</guid>
+      <description>从 Python 环境开始，在离线 Linux 主机上安装 PyTorch 及其依赖。</description>
+      <category>编程</category>
+      <category>编程实践</category>
+      <category>Linux</category>
+      <category>Python</category>
+      <category>PyTorch</category>
+      <category>Conda</category>
+      <category>离线安装</category>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0800</pubDate>
     </item>
   </channel>
 </rss>
