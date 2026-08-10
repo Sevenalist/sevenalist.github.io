@@ -24,7 +24,7 @@
         
         
         
-          <link rel="icon" href="../../../../img/favicon.ico">
+          <link rel="icon" href="/assets/favicon.ico">
         
       
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
@@ -132,7 +132,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="Sevenalist" class="md-header__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -401,7 +401,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Sevenalist" class="md-nav__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     Sevenalist
@@ -2699,10 +2699,10 @@
 <h2 id="3-ollama">3 下载安装Ollama<a class="headerlink" href="#3-ollama" title="Permanent link">¶</a></h2>
 <p>Ollama是一个开源Ollama 是一个开源的本地大语言模型运行框架，专为在本地机器上便捷部署和运行大型语言模型（LLM）而设计。它支持多种流行的大模型，如 Llama、DeepSeek-R1、Qwen 等。</p>
 <p>为了能够部署运行Deepseek-R1，我们首先需要下载软件Ollama，直接前往<a href="https://ollama.com" target="_blank">官网</a>下载即可。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/1.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/1.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_1.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_1.png"></a></p>
 <p>下载完成后，运行安装即可。Ollama会自动安装到C盘，没有选择的余地。不过不用担心，我们后面可以通过设置环境变量来更改模型的保存位置。</p>
 <p>安装完成后，进入<a href="http://127.0.0.1:11434" target="_blank">127.0.0.1:11434</a>，如果网站显示<strong>Ollama is running</strong>就表示安装好了。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/2.png" data-desc-position="bottom"><img alt="" class="center" src="../../../../img/Blog/ollama/2.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_2.png" data-desc-position="bottom"><img alt="" class="center" src="../../../../assets/illustration/code_solutions_ollama_2.png"></a></p>
 <h2 id="4-ollama">4 配置Ollama环境变量<a class="headerlink" href="#4-ollama" title="Permanent link">¶</a></h2>
 <h3 id="41-11434">4.1 打开11434端口<a class="headerlink" href="#41-11434" title="Permanent link">¶</a></h3>
 <p>安装好Ollama之后，本机可以在浏览器直接通过端口11434进行访问，看到<strong>Ollama is running</strong>的字样，但是对于局域网内的其他设备是无法通过<code>[ip]:[11434]</code>进行访问的（此处的ip指安装了Ollama主机的局域网ip）。为了实现其他设备的访问，我们需要在环境变量中添加如下内容：</p>
@@ -2711,7 +2711,7 @@
 <div class="highlight"><span class="filename">变量值</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>0.0.0.0:11434
 </code></pre></div>
 <p>如下所示：</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/3.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_3.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_3.png"></a></p>
 <p>保存配置，重启Ollama，即可在局域网内的所有设备通过<code>[ip]:[11434]</code>进行访问。</p>
 <h3 id="42">4.2 修改模型默认保存位置<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
 <p>Ollama模型默认下载位置在C盘，如果要修改保存位置，请在环境变量中添加如下内容：</p>
@@ -2720,13 +2720,13 @@
 <div class="highlight"><span class="filename">变量值</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>[想要保存的模型目录]
 </code></pre></div>
 <p>此处我是把C盘设置为保存路径：</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/4.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/4.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_4.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_4.png"></a></p>
 <p>配置完成后，需要重启Ollama，配置即可生效。</p>
 <h2 id="5-deepseek-r1">5 下载Deepseek-R1模型<a class="headerlink" href="#5-deepseek-r1" title="Permanent link">¶</a></h2>
 <p>进入<a href="https://ollama.com/library/deepseek-r1" target="_blank">官网的Deepseek-R1模型下载区</a>，进行如下操作。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/5.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/5.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_5.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_5.png"></a></p>
 <p>打开本机电脑的CMD终端，将复制的指令粘贴运行，等待下载完成之后会自动进入对话模式。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/6.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/6.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_6.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_6.png"></a></p>
 <p>可以使用<code>ollama --help</code>指令可以查看Ollama常用指令：</p>
 <div class="highlight"><span class="filename">CMD</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>ollama --help
 </code></pre></div>
@@ -2758,10 +2758,10 @@
 </code></pre></div>
 <h2 id="6">6 对话工具推荐<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
 <p>Ollama进行的是终端的交互，为了保存历史记录，推荐在Chrome浏览器中使用插件<a href="https://chromewebstore.google.com/detail/page-assist-%E6%9C%AC%E5%9C%B0-ai-%E6%A8%A1%E5%9E%8B%E7%9A%84-web/jfgfiigpkhlkbnfnbobbkinehhfdhndo" target="_blank">Page Assist</a>进行对话，该插件可以直接调用本地的模型，数据也保存在本地。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/ollama/7.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/ollama/7.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_ollama_7.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_ollama_7.png"></a></p>
 <p>此外，<a href="https://cherry-ai.com/">CherryStudio</a>也是不错的本地对话应用，但没有Page Assist轻量化。</p>
 <h2 id="_1">参考资料<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-07-10T16:41:26+00:00">2026-07-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="../../../../img/s.png" data-email=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-10T13:04:37+00:00">2026-08-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="../../../../assets/s.png" data-email=""></a></div></div></div></div></div>
 
 <div class="footnote">
 <hr>

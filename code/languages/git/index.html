@@ -24,7 +24,7 @@
         
         
         
-          <link rel="icon" href="../../../img/favicon.ico">
+          <link rel="icon" href="/assets/favicon.ico">
         
       
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
@@ -132,7 +132,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="Sevenalist" class="md-header__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -401,7 +401,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Sevenalist" class="md-nav__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     Sevenalist
@@ -1271,6 +1271,17 @@
     <span class="md-ellipsis">
       
         3 远程仓库
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 版本回滚
       
     </span>
   </a>
@@ -2520,6 +2531,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 版本回滚
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2641,7 +2663,43 @@
 </div>
 </div>
 </div>
-<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../img/s.png" data-email=""></div></div></div></div></div>
+<h2 id="4">4 版本回滚<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<div class="steps">
+<ol>
+<li>回滚本地git</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">将历史版本作为新的commit</label><label for="__tabbed_4_2">删除commit至历史版本</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos="1 "></span></a>git revert &lt;commit_id&gt;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><a href="#__codelineno-18-1"><span class="linenos" data-linenos="1 "></span></a>git reset --hard &lt;commit_id&gt;
+</code></pre></div>
+<code>--hard</code>指令会让暂存区和工作区的文件也回滚，<code>--soft</code>则会保留。<p></p>
+</div>
+</div>
+</div>
+<ol>
+<li>推送到远程仓库（如github）</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">将历史版本作为新的commit</label><label for="__tabbed_5_2">删除commit至历史版本</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a>git push
+</code></pre></div>
+该指令只允许向前推进，无法删除commit。<p></p>
+</div>
+<div class="tabbed-block">
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos="1 "></span></a>git push --force
+</code></pre></div>
+强制远程和本地同步，可删除远程仓库的commit。<p></p>
+</div>
+</div>
+</div>
+</div>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-10T13:04:37+00:00">2026-08-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/s.png" data-email=""></div></div></div></div></div>
 
 
 

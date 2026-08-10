@@ -6,10 +6,10 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Mon, 10 Aug 2026 00:43:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 21:05:36 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
-      <url>https://dengcz.cn/img/avatar.png</url>
+      <url>https://dengcz.cn/assets/avatar.png</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
@@ -31,7 +31,7 @@
       <title>西方哲学</title>
       <link>https://dengcz.cn/lines/western-philosophy/</link>
       <guid isPermaLink="false">476edaf0870dd722eb27a5b66cacd517f9c1f463</guid>
-      <description>本时间线参考赵敦华的《西方哲学简史（修订版）》，并由ChatGPT 5.6 Sol 提炼整理知识，DeepSeek对知识文件进行时间线格式适配。 未标注年代（不在时间轴中）的哲学家包括：留基波（生卒年代不详）；斯拉西马库（书中未注明）；希庇阿斯（书中未注明）；安提丰（书中未注明）；塞克斯都·恩披里克（书中未注明）；高尼罗（书中未注明）；托麦达（书中未注明）；詹姆斯·奥斯瓦尔德（？—1793年）；大卫·弗里德里希·斯特劳斯（书中未注明）；阿诺德·卢格（书中未注明）；布鲁诺·鲍威尔（书中未注明）；马克斯·施蒂纳（书中未注明）。…</description>
+      <description>本时间线参考赵敦华的《西方哲学简史（修订版）》，并由ChatGPT 5.6 Sol 提炼整理知识，DeepSeek对知识文件进行时间线格式适配。 未标注年代（不在时间轴中）的哲学家包括：留基波（Leucippus，生卒年代不详）；斯拉西马库（Thrasymachus，书中未注明）；希庇阿斯（Hippias，书中未注明）；安提丰（Antiphon，书中未注明）；塞克斯都·恩披里克（Sextus Empiricus，书中未注明）；高尼罗（Gaunilo，书中未注明）；托麦达（Anselm Turmeda，书中未注明）；詹姆斯·奥斯瓦尔德（James…</description>
       <category>西方哲学</category>
       <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
     </item>

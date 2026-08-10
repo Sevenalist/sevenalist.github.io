@@ -24,7 +24,7 @@
         
         
         
-          <link rel="icon" href="../../../../img/favicon.ico">
+          <link rel="icon" href="/assets/favicon.ico">
         
       
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
@@ -132,7 +132,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="Sevenalist" class="md-header__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -401,7 +401,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Sevenalist" class="md-nav__button md-logo" aria-label="Sevenalist" data-md-component="logo">
       
-  <img src="../../../../img/avatar.png" alt="logo">
+  <img src="/assets/avatar.png" alt="logo">
 
     </a>
     Sevenalist
@@ -2829,21 +2829,21 @@
 <p class="admonition-title">注意</p>
 <p><strong>不要</strong>下载<code>Cudy TR3000 v1 (OpenWrt U-Boot layout)</code>的版本！这个版本是给OpenWrt的U-BOOT准备的，但是本教程并没有刷Cudy的U-BOOT！反之，如果之前已经刷为了OpenWrt的U-BOOT，请选择该版本。</p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/immortalwrt1.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/immortalwrt1.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/immortalwrt2.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/immortalwrt2.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_1.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_1.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_2.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_2.png"></a></p>
 <p>最后，请准备好一个<strong>好心态</strong>。</p>
 <p><strong>好戏开场。</strong></p>
 <h2 id="3-cudy-tr3000">3 给Cudy TR3000刷过渡固件<a class="headerlink" href="#3-cudy-tr3000" title="Permanent link">¶</a></h2>
 <p>进入TR3000的管理界面，在路由器下面有管理地址，<code>192.168.10.1</code>。Cudy后台第一次进入的时候会设置一些东西，全部默认即可，后面会刷机覆盖，这些设置不会影响到后续使用。</p>
 <p>打开固件升级页面，选择中间固件<code>cudy_tr3000-v1-sysupgrade.bin</code>进行升级。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/3.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/3.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/4.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/4.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_3.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_4.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_4.png"></a></p>
 <h2 id="4-cudy-tr3000immortalwrt">4 给Cudy TR3000刷ImmortalWrt<a class="headerlink" href="#4-cudy-tr3000immortalwrt" title="Permanent link">¶</a></h2>
 <p>升级到中间固件后，路由器默认地址发生变化，此时请使用<code>192.168.1.1</code>访问OpenWrt的原生界面。初始密码未设置，直接回车或者点击登录即可。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/5.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/5.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_5.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_5.png"></a></p>
 <p>登录后，在当前界面中选择系统 -&gt; 备份与升级，在“刷写新的固件”选项中，上传之前下载的ImmortalWrt固件（即<code>immortalwrt-24.10.0-mediatek-filogic-cudy_tr3000-v1-squashfs-sysupgrade.bin</code>）。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/6.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/6.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/7.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/7.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_6.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_6.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_7.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_7.png"></a></p>
 <p>取消勾选 <strong>“保留当前配置”</strong> ，点击 <strong>“继续”</strong> ，等待刷写完成。升级完成后，页面会自动刷新，同样没有密码，回车即可进入界面，进入界面后再设置需要的管理密码和其他功能。</p>
 <h2 id="5-wifi">5 设置WIFI密码<a class="headerlink" href="#5-wifi" title="Permanent link">¶</a></h2>
 <p>在主界面中进入<strong>网络 -&gt; 无线</strong>，对要进行设置的无线网络点击<strong>编辑</strong>，进入<strong>接口配置 -&gt; 无线安全</strong>，<strong>加密</strong>选择<strong>WPA2-PSK/WPA3-SAEMixedMode</strong>，在<strong>密钥</strong>中设置WIFI密码，<strong>保存 -&gt; 保存并应用</strong>即可。</p>
@@ -2853,22 +2853,22 @@
 </blockquote>
 <h3 id="61-homeproxy">6.1 安装Homeproxy<a class="headerlink" href="#61-homeproxy" title="Permanent link">¶</a></h3>
 <p>进入ImmortalWrt管理后台，进入<strong>系统 -&gt; 软件包</strong>，点击<strong>更新列表</strong>。等待更新完成，并在过滤器中搜索<strong>homeproxy</strong>，点击安装。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/8.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/8.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_8.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_8.png"></a></p>
 <h3 id="62-homeproxy">6.2 配置Homeproxy<a class="headerlink" href="#62-homeproxy" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>如果还没有节点，可以<a href="https://赔钱.com/#/register?code=KdICLjqe" target="_blank">在此</a>选购。</p>
 </blockquote>
 <p>安装完成之后刷新页面，此时顶部会多出<strong>服务</strong>选项，进入<strong>服务 -&gt; HomeProxy</strong>，在<strong>节点设置</strong>中点击<strong>订阅</strong>，<strong>订阅地址</strong>中输入订阅的节点，依次点击<strong>保存当前设置</strong>，<strong>更新订阅</strong>。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/9.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/9.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/10.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/10.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/11.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/11.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_9.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_9.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_10.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_10.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_11.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_11.png"></a></p>
 <p>更新完节点之后，回到<strong>客户端设置</strong>，在<strong>主节点</strong>中选择要连接的节点，点击<strong>保存并应用</strong>，即可上网。</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../img/Blog/tr3000/12.png" data-desc-position="bottom"><img alt="" src="../../../../img/Blog/tr3000/12.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../assets/illustration/code_solutions_tr3000_12.png" data-desc-position="bottom"><img alt="" src="../../../../assets/illustration/code_solutions_tr3000_12.png"></a></p>
 <p>如果想要关闭，主节点选择<strong>禁用</strong>即可。</p>
 <p>Homeproxy的代理监听端口为5330。</p>
 <p>如果觉得这篇文章对你有帮助，请帮我的<a href="https://github.com/Sevenalist/sevenalist.github.io">Github仓库</a>点一个Star⭐吧~</p>
 <h2 id="7">7 参考资料<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
-<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-07-10T16:41:26+00:00">2026-07-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="../../../../img/s.png" data-email=""></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-07-10"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-07-10T15:52:27+00:00">2026-07-10</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-10T13:04:37+00:00">2026-08-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="../../../../assets/s.png" data-email=""></a></div></div></div></div></div>
 
 <div class="footnote">
 <hr>
