@@ -1,5 +1,9 @@
+:root {
+  --site-page-bg-color: #e0e3e6;
+}
+
 body {
-  background-color: #e0e3e6;
+  background-color: var(--site-page-bg-color);
 }
   
 

@@ -2035,7 +2035,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-08-11 01:10:06+08:00" class="md-ellipsis">2026年8月11日</time>
+                          <time datetime="2026-08-11 13:38:56+08:00" class="md-ellipsis">2026年8月11日</time>
                         </div>
                       </li>
                     
@@ -2114,7 +2114,7 @@
     
       <li class="md-meta__item">
         更新于
-        <time datetime="2026-08-11 01:10:06+08:00">2026年8月11日</time>
+        <time datetime="2026-08-11 13:38:56+08:00">2026年8月11日</time>
       </li>
     
     
@@ -2138,18 +2138,26 @@
 <h1 id="_1">大语言模型概念速览<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <p>大语言模型不仅是一个聊天框。围绕模型，还有分词器、上下文、检索、工具、Agent运行循环、安全边界和评测系统。<!-- more -->很多新名词描述的其实是不同层次：有些属于模型内部，有些属于训练方法，有些只是模型之外的工程系统。</p>
 <p>可以先用下面这条链路建立整体认识：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>训练数据
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>  ↓ Tokenizer
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>Token序列
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>  ↓ 预训练
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>Base Model
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>  ↓ 指令微调与偏好对齐
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>Instruction Model
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>  ↓ Prompt + Context + Tools
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>LLM应用 / Agent
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>  ↓ Harness负责运行、权限、状态与评测
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>可实际完成任务的AI系统
-</code></pre></div>
+<pre class="mermaid"><code>---
+config:
+  block:
+    padding: 14
+---
+block
+  columns 3
+  A("训练数据") space B("Token序列")
+  space:3
+  space:3
+  D("Instruction Model") space C("Base Model")
+  space:3
+  space:3
+  E("LLM应用 / Agent") space F("可实际完成任务的AI系统")
+
+  A -- "Tokenizer" --&gt; B
+  B -- "预训练" --&gt; C
+  C -- "指令微调与&lt;br/&gt;偏好对齐" --&gt; D
+  D -- "Prompt + Context + Tools" --&gt; E
+  E -- "Harness负责运行、权限、&lt;br/&gt;状态与评测" --&gt; F</code></pre>
 <div class="admonition note">
 <p class="admonition-title">先区分三个层次</p>
 <p><strong>模型</strong>负责根据输入预测输出，<strong>Agent</strong>让模型在循环中选择工具和下一步行动，<strong>Harness</strong>负责把模型、上下文、工具、权限、状态和运行环境组织起来。模型能力很重要，但最终系统的可靠性并不只由模型决定。</p>
@@ -2157,7 +2165,7 @@
 <h2 id="1-llm">1 LLM<a class="headerlink" href="#1-llm" title="Permanent link">¶</a></h2>
 <p>LLM是Large Language Model，即大语言模型。它通过大规模文本和代码学习语言中的统计规律，并根据已有Token预测后续Token。</p>
 <p>从数学上看，模型每一步输出的不是一句完整答案，而是“下一个Token可能是什么”的概率分布。生成一个Token后，模型把它加入已有序列，再预测下一个，直到遇到停止标记或达到长度限制。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>输入Token → 预测下一个Token → 将结果加入输入 → 再次预测 → ……
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>输入Token → 预测下一个Token → 将结果加入输入 → 再次预测 → ……
 </code></pre></div>
 <p>这种机制能够产生连贯文本、代码和推理过程，但也意味着模型首先在学习“什么文本最可能接在后面”，而不是直接查询一个绝对可靠的事实数据库。</p>
 <h3 id="11-base-modelinstruction-model">1.1 Base Model与Instruction Model<a class="headerlink" href="#11-base-modelinstruction-model" title="Permanent link">¶</a></h3>
@@ -2189,7 +2197,7 @@
 <p>多模态模型并不是简单地把图片“转成一句话”。常见做法是先用对应的编码器将图像、音频等内容转换为模型能够处理的表示，再与文本Token一起参与计算。</p>
 <h2 id="2-tokentokenizer">2 Token与Tokenizer<a class="headerlink" href="#2-tokentokenizer" title="Permanent link">¶</a></h2>
 <p>Token是模型处理信息的基本单位。它可能是一个汉字、一个单词、单词的一部分、标点、空格或者代码片段。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>文本 → Tokenizer → Token ID序列 → 模型
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>文本 → Tokenizer → Token ID序列 → 模型
 </code></pre></div>
 <p>Tokenizer是分词器，负责在文本和Token ID之间转换。常见算法包括BPE、WordPiece和SentencePiece。子词分词能够用有限词表组合出大量词语，也能处理生僻词和新词。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <div class="admonition example">
@@ -2207,12 +2215,12 @@
 <p>Vocabulary即词表，是Tokenizer能够直接识别的Token集合。词表越大，常见文本可能需要的Token越少，但模型的输入输出层也会更大。不同Tokenizer之间的Token ID没有通用对应关系。</p>
 <h3 id="22-special-token">2.2 Special Token<a class="headerlink" href="#22-special-token" title="Permanent link">¶</a></h3>
 <p>Special Token用于表示文本之外的控制信息，例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>&lt;BOS&gt;      序列开始
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>&lt;EOS&gt;      序列结束
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>&lt;PAD&gt;      批处理时补齐长度
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a>&lt;SYSTEM&gt;   系统消息
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a>&lt;USER&gt;     用户消息
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>&lt;ASSISTANT&gt;助手消息
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>&lt;BOS&gt;      序列开始
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>&lt;EOS&gt;      序列结束
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>&lt;PAD&gt;      批处理时补齐长度
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>&lt;SYSTEM&gt;   系统消息
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a>&lt;USER&gt;     用户消息
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a>&lt;ASSISTANT&gt;助手消息
 </code></pre></div>
 <p>真实名称由模型的Chat Template决定，不能随意假设所有模型都使用相同格式。</p>
 <h2 id="3-parameterweightcheckpoint">3 Parameter、Weight与Checkpoint<a class="headerlink" href="#3-parameterweightcheckpoint" title="Permanent link">¶</a></h2>
@@ -2227,9 +2235,9 @@
 <p>Transformer是现代LLM最常见的基础架构。它用Attention机制建模序列中不同Token之间的关系，并能高效并行训练。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <h3 id="41-self-attention">4.1 Self-Attention<a class="headerlink" href="#41-self-attention" title="Permanent link">¶</a></h3>
 <p>Self-Attention让每个Token根据当前任务关注序列中的其他Token。简化来看，每个Token会生成Query、Key和Value：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>Query：我正在寻找什么信息？
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>Key：我包含什么可匹配的信息？
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>Value：如果被关注，我要提供什么内容？
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>Query：我正在寻找什么信息？
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>Key：我包含什么可匹配的信息？
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>Value：如果被关注，我要提供什么内容？
 </code></pre></div>
 <p>Query与Key计算相关性，再对Value加权汇总。多个Attention Head可以学习不同类型的关系，例如语法、指代、位置或代码依赖。</p>
 <h3 id="42-causal-attention">4.2 Causal Attention<a class="headerlink" href="#42-causal-attention" title="Permanent link">¶</a></h3>
@@ -2243,7 +2251,7 @@
 <p>Dense Model每次推理通常都会使用大部分参数。MoE，即Mixture of Experts，会通过路由器只激活部分“专家”网络，因此总参数量可以很大，但每个Token实际使用的参数较少。MoE能够提高计算效率，也会引入路由、负载均衡和跨设备通信等复杂度。<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
 <h2 id="5-context-window">5 Context Window<a class="headerlink" href="#5-context-window" title="Permanent link">¶</a></h2>
 <p>Context Window是单次推理中模型能够接收和处理的Token范围，通常包括：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>系统指令 + 用户消息 + 历史对话 + 检索内容 + 工具定义 + 工具结果 + 模型输出
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>系统指令 + 用户消息 + 历史对话 + 检索内容 + 工具定义 + 工具结果 + 模型输出
 </code></pre></div>
 <p>上下文窗口是有限资源。输入太长时，系统必须截断、压缩或丢弃部分内容。</p>
 <div class="admonition warning">
@@ -2265,8 +2273,8 @@
 <h2 id="6">6 模型是怎样训练出来的<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
 <h3 id="61-pre-training">6.1 Pre-training<a class="headerlink" href="#61-pre-training" title="Permanent link">¶</a></h3>
 <p>Pre-training即预训练。模型在大规模文本、代码和其他数据上学习预测后续Token：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>输入：法国的首都是
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a>目标：巴黎
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>输入：法国的首都是
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a>目标：巴黎
 </code></pre></div>
 <p>通过海量类似样本，模型学习语言、事实、代码模式和部分问题求解能力。完成预训练后得到Base Model。</p>
 <h3 id="62-sftinstruction-tuning">6.2 SFT与Instruction Tuning<a class="headerlink" href="#62-sftinstruction-tuning" title="Permanent link">¶</a></h3>
@@ -2448,9 +2456,9 @@
 <h2 id="9-rag">9 RAG<a class="headerlink" href="#9-rag" title="Permanent link">¶</a></h2>
 <p>RAG是Retrieval-Augmented Generation，即检索增强生成。它在模型回答前从外部知识库检索相关内容，再将结果加入上下文。<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
 <p>典型流程如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>文档 → 清洗与分块 → Embedding → 向量索引
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>                              ↑
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a>用户问题 → 查询Embedding → 召回 → Rerank → 放入Context → LLM回答
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a>文档 → 清洗与分块 → Embedding → 向量索引
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a>                              ↑
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a>用户问题 → 查询Embedding → 召回 → Rerank → 放入Context → LLM回答
 </code></pre></div>
 <h3 id="91-chunking">9.1 Chunking<a class="headerlink" href="#91-chunking" title="Permanent link">¶</a></h3>
 <p>Chunking是将长文档切成较小文本块。块太大容易混入无关内容，块太小又会丢失上下文。常见策略包括固定长度、按标题切分、按段落切分和滑动窗口重叠。</p>
@@ -2480,11 +2488,11 @@
 <li>操作浏览器。</li>
 </ul>
 <p>Function Calling或Tool Calling通常采用以下过程：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>1. Harness把工具名称、用途和参数结构告诉模型
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>2. 模型输出要调用的工具和参数
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a>3. Harness验证权限并执行工具
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>4. 工具结果返回上下文
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a>5. 模型根据结果继续回答或调用下一个工具
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>1. Harness把工具名称、用途和参数结构告诉模型
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>2. 模型输出要调用的工具和参数
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a>3. Harness验证权限并执行工具
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a>4. 工具结果返回上下文
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos="5 "></span></a>5. 模型根据结果继续回答或调用下一个工具
 </code></pre></div>
 <p>模型本身通常不会直接执行函数。它只生成结构化的调用请求，真正的执行、超时、重试、鉴权和错误处理由模型外部的程序完成。</p>
 <h3 id="101-structured-output">10.1 Structured Output<a class="headerlink" href="#101-structured-output" title="Permanent link">¶</a></h3>
@@ -2516,17 +2524,17 @@
 <p>MCP解决的是“如何用统一接口接入能力”，并不自动解决Agent规划、权限策略、结果正确性或安全问题。</p>
 <h2 id="11-agent">11 Agent<a class="headerlink" href="#11-agent" title="Permanent link">¶</a></h2>
 <p>Agent是由模型驱动、能够在循环中观察环境、选择工具并调整下一步行动的系统。常见循环可以概括为：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a>目标
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos=" 2 "></span></a> ↓
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos=" 3 "></span></a>观察当前状态
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos=" 4 "></span></a> ↓
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos=" 5 "></span></a>规划或选择下一步
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos=" 6 "></span></a> ↓
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a>调用工具执行动作
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a> ↓
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos=" 9 "></span></a>读取结果并更新状态
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a><a href="#__codelineno-9-10"><span class="linenos" data-linenos="10 "></span></a> ↓
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a><a href="#__codelineno-9-11"><span class="linenos" data-linenos="11 "></span></a>完成 / 继续 / 请求人工输入
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos=" 1 "></span></a>目标
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos=" 2 "></span></a> ↓
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos=" 3 "></span></a>观察当前状态
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos=" 4 "></span></a> ↓
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos=" 5 "></span></a>规划或选择下一步
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos=" 6 "></span></a> ↓
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos=" 7 "></span></a>调用工具执行动作
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos=" 8 "></span></a> ↓
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos=" 9 "></span></a>读取结果并更新状态
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><a href="#__codelineno-8-10"><span class="linenos" data-linenos="10 "></span></a> ↓
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><a href="#__codelineno-8-11"><span class="linenos" data-linenos="11 "></span></a>完成 / 继续 / 请求人工输入
 </code></pre></div>
 <p>ReAct将Reasoning与Acting交错进行，是理解现代Agent循环的重要范式。<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
 <h3 id="111-workflowagent">11.1 Workflow与Agent<a class="headerlink" href="#111-workflowagent" title="Permanent link">¶</a></h3>
@@ -2823,18 +2831,18 @@
 <p>模型部署还涉及Batching、并发调度、KV Cache管理、显存分配和请求队列。单次请求最快的配置，不一定具有最高总体吞吐量。</p>
 <h2 id="19">19 最后：不要把系统能力都归因于模型<a class="headerlink" href="#19" title="Permanent link">¶</a></h2>
 <p>同一个模型放在不同系统中，表现可能差异很大：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>最终能力
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a>= 模型能力
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a>+ 上下文质量
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a>+ 工具与数据质量
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos="5 "></span></a>+ Agent策略
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><a href="#__codelineno-10-6"><span class="linenos" data-linenos="6 "></span></a>+ Harness可靠性
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><a href="#__codelineno-10-7"><span class="linenos" data-linenos="7 "></span></a>+ 权限与安全设计
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><a href="#__codelineno-10-8"><span class="linenos" data-linenos="8 "></span></a>+ 评测和反馈闭环
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a>最终能力
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a>= 模型能力
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a>+ 上下文质量
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a>+ 工具与数据质量
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a>+ Agent策略
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos="6 "></span></a>+ Harness可靠性
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos="7 "></span></a>+ 权限与安全设计
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos="8 "></span></a>+ 评测和反馈闭环
 </code></pre></div>
 <p>理解大语言模型时，最重要的不是记住每个新名词，而是先判断它属于哪一层：它是在改变模型权重，改变本次上下文，连接外部能力，还是负责整个系统如何运行。这样面对新的框架和产品时，就不容易被换了一套名字的相同概念迷惑。</p>
 <h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-11"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-08-11T00:00:00+00:00">2026-08-11</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-10"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-10T17:10:06+00:00">2026-08-10</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/s.png" data-email=""></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-11"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-08-11T00:00:00+00:00">2026-08-11</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-11"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-11T05:38:56+00:00">2026-08-11</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/s.png" data-email=""></div></div></div></div></div>
 
 <div class="footnote">
 <hr>

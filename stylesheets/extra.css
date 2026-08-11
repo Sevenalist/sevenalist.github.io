@@ -770,6 +770,15 @@ body:has(.page-hero) .md-content__inner::before {
   }
 }
 
+/* Match labels to the page, center diagrams, and keep oversized SVGs scrollable. */
+.md-typeset div.mermaid {
+  --md-mermaid-label-bg-color: var(--site-page-bg-color, #e0e3e6);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
 /* Material blog excerpts on World index, archive, category and tag pages */
 .md-content__inner .md-post--excerpt {
   position: relative;
