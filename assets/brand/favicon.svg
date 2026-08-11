@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sevenalist</title>
+  <desc id="desc">Blue rounded code chevrons forming an S on a transparent background.</desc>
+  <g fill="none" stroke="#119DCC" stroke-width="72" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M372 60 112 155 372 250"/>
+    <path d="M140 262 400 357 140 452"/>
+  </g>
+</svg>

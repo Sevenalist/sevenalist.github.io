@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 80" role="img" aria-labelledby="title desc">
+  <title id="title">SEVENALIST</title>
+  <desc id="desc">The Sevenalist name in blue Ubuntu Medium lettering on a transparent background.</desc>
+  <defs>
+    <!-- Same Ubuntu Medium outlines and tracking used by promo-logo-vertical.svg. -->
+    <path id="letter-s" d="M251 94Q319 94 350 117Q381 140 381 182Q381 207 370.5 225Q360 243 340.5 257.5Q321 272 293 284.5Q265 297 229 309Q193 322 159.5 337.5Q126 353 100.5 376Q75 399 59.5 431Q44 463 44 508Q44 602 109 655.5Q174 709 286 709Q351 709 401.5 694.5Q452 680 481 663L442 561Q408 580 367.5 590Q327 600 284 600Q233 600 204.5 579Q176 558 176 520Q176 497 185.5 480.5Q195 464 212.5 451Q230 438 253.5 427Q277 416 305 406Q354 388 392.5 369.5Q431 351 457.5 325.5Q484 300 498 265.5Q512 231 512 182Q512 88 445.5 36.5Q379 -15 251 -15Q208 -15 172.5 -9.5Q137 -4 109.5 4Q82 12 62 20.5Q42 29 30 36L67 139Q94 124 140 109Q186 94 251 94Z"/>
+    <path id="letter-e" d="M83 0V693H528V586H209V415H493V310H209V107H552V0Z"/>
+    <path id="letter-v" d="M281 0Q206 162 136.5 339Q67 516 7 693H146Q170 623 195 550Q220 477 245 406.5Q270 336 295 270Q320 204 344 149Q367 204 392 269.5Q417 335 442.5 406Q468 477 493 550Q518 623 541 693H676Q615 516 546 339Q477 162 402 0Z"/>
+    <path id="letter-n" d="M550 0Q516 57 474 122.5Q432 188 387 254.5Q342 321 295.5 383.5Q249 446 207 496V0H83V693H186Q226 651 272 593.5Q318 536 364.5 474Q411 412 454.5 349.5Q498 287 532 233V693H657V0Z"/>
+    <path id="letter-a" d="M543 0Q529 41 514 81Q499 121 485 163H193Q179 121 164.5 80.5Q150 40 136 0H5Q44 111 79 205Q114 299 147.5 383Q181 467 214 543Q247 619 282 693H401Q436 619 469 543Q502 467 535.5 383Q569 299 604.5 205Q640 111 679 0ZM339 559Q316 506 286.5 430Q257 354 225 265H453Q421 354 391 431Q361 508 339 559Z"/>
+    <path id="letter-l" d="M521 109V0H83V693H209V109Z"/>
+    <path id="letter-i" d="M83 693H209V0H83Z"/>
+    <path id="letter-t" d="M566 693V584H353V0H226V584H13V693Z"/>
+  </defs>
+  <g fill="#119DCC" transform="translate(23.7 66) scale(.075 -.075)">
+    <use href="#letter-s"/>
+    <use href="#letter-e" transform="translate(583)"/>
+    <use href="#letter-v" transform="translate(1212)"/>
+    <use href="#letter-e" transform="translate(1938)"/>
+    <use href="#letter-n" transform="translate(2567)"/>
+    <use href="#letter-a" transform="translate(3350)"/>
+    <use href="#letter-l" transform="translate(4077)"/>
+    <use href="#letter-i" transform="translate(4654)"/>
+    <use href="#letter-s" transform="translate(4989)"/>
+    <use href="#letter-t" transform="translate(5572)"/>
+  </g>
+</svg>

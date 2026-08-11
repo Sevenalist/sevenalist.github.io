@@ -1597,6 +1597,143 @@ body:has(.home-shell) .md-main__inner {
   font-size: 1.45rem;
 }
 
+/* About: Sevenalist visual identity */
+.brand-story {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.45fr);
+  gap: clamp(1.25rem, 4vw, 2.6rem);
+  align-items: center;
+  margin: 0 0 1.25rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 16% 18%, color-mix(in srgb, #119dcc 8%, transparent), transparent 42%),
+    color-mix(in srgb, var(--md-default-bg-color) 92%, var(--md-default-fg-color) 8%);
+  box-shadow: 0 0.8rem 2.2rem color-mix(in srgb, var(--md-default-fg-color) 5%, transparent);
+}
+
+.brand-story__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 15rem;
+}
+
+.brand-story__mark {
+  display: block;
+  width: min(11rem, 72%);
+  height: auto;
+}
+
+.brand-story__wordmark {
+  display: block;
+  width: min(13rem, 88%);
+  height: auto;
+}
+
+.brand-story__copy p {
+  margin: 0;
+  color: color-mix(in srgb, var(--md-default-fg-color) 78%, transparent);
+  line-height: 1.85;
+}
+
+.brand-story__copy p + p {
+  margin-top: 0.8rem;
+}
+
+.brand-story__copy strong {
+  color: var(--md-default-fg-color);
+}
+
+.brand-story__copy code {
+  color: #087b9f;
+}
+
+.brand-variants {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 0 0 2.25rem;
+}
+
+.brand-variant {
+  min-width: 0;
+  margin: 0;
+  padding: 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 9%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--md-default-bg-color) 94%, var(--md-default-fg-color) 6%);
+}
+
+.brand-variant__canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.25rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+.brand-variant__canvas--light {
+  background: color-mix(in srgb, var(--md-default-bg-color) 89%, var(--md-default-fg-color) 11%);
+}
+
+.brand-variant__canvas--topbar {
+  background: #607680;
+}
+
+.brand-variant__canvas img {
+  display: block;
+  width: auto;
+  max-width: 76%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.brand-variant--wide .brand-variant__canvas img {
+  height: 82%;
+}
+
+.brand-variant figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.65rem 0.35rem 0.3rem;
+  line-height: 1.45;
+}
+
+.brand-variant figcaption strong {
+  font-size: 0.86rem;
+}
+
+.brand-variant figcaption span {
+  color: color-mix(in srgb, var(--md-default-fg-color) 62%, transparent);
+  font-size: 0.72rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .brand-variants {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .brand-story {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-story__visual {
+    min-height: 12rem;
+  }
+
+  .brand-variants {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Grid button: Apple-style frosted glass tiles extending MaterialX's grid cards */
 .md-typeset .grid.buttons {
   gap: 1rem;
