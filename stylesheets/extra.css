@@ -1597,6 +1597,58 @@ body:has(.home-shell) .md-main__inner {
   font-size: 1.45rem;
 }
 
+/* Recent Git activity on the homepage */
+.md-typeset .recent-updates {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0;
+  border-top: 1px solid rgba(80, 100, 115, 0.13);
+  list-style: none;
+}
+
+.md-typeset .recent-update {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.82rem 0.15rem;
+  border-bottom: 1px solid rgba(80, 100, 115, 0.13);
+}
+
+.recent-update__marker {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: rgba(17, 157, 204, 0.72);
+}
+
+.recent-update__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+}
+
+.md-typeset .recent-update__message {
+  margin: 0;
+  color: rgba(24, 33, 42, 0.88);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.md-typeset .recent-update__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0;
+  color: rgba(80, 90, 100, 0.68);
+  font-size: 0.68rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 /* About: Sevenalist visual identity */
 .brand-story {
   display: grid;
@@ -1881,6 +1933,18 @@ body:has(.home-shell) .md-main__inner {
 
   .home-section {
     padding-top: 1rem;
+  }
+
+  .md-typeset .recent-updates {
+    margin-bottom: 1.6rem;
+  }
+
+  .recent-update__body {
+    display: block;
+  }
+
+  .md-typeset .recent-update__meta {
+    margin-top: 0.25rem;
   }
 
 }

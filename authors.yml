@@ -1,7 +1,7 @@
 authors:
   sevenalist: &sevenalist
     name: Sevenalist
-    avatar: /assets/s.png
+    avatar: /assets/authors/avatar.png
     url: https://github.com/Sevenalist
   Douglas: *sevenalist
   gpt: 
