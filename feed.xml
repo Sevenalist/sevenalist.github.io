@@ -6,13 +6,21 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Thu, 13 Aug 2026 01:02:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:49:03 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>科学哲学</title>
+      <link>https://dengcz.cn/lines/science-philosophy/</link>
+      <guid isPermaLink="false">457247a66f3732615bce7061d9d0c6e3cf3f9db3</guid>
+      <description>本时间线根据 A. F. 查尔默斯《科学究竟是什么？》2013 年英文第四版、商务印书馆 2018 年中文“最新增补本”及《科学究竟是什么？思想谱系整理》制作，按人物生卒年呈现科学哲学主要思想的历史分布；时代条目放在轴线左侧，用于标示思想背景。 阅读线索：经验主义与归纳问题 → 观察渗透理论 → 证伪主义 → 范式与研究纲领 → 反方法论 → 贝叶斯主义与新实验主义 → 自然定律本体论 → 实在论、反实在论与结构实在论 → 原子论案例中的独立证据、近似真理与多层实在。 仍在世人物：时间线不填写 end，依当前组件规则显示为点状条目；start 表示出生年，并非思想首次提出的年份。…</description>
+      <category>科学哲学</category>
+      <pubDate>Thu, 13 Aug 2026 11:48:20 +0800</pubDate>
+    </item>
     <item>
       <title>大语言模型概念速览</title>
       <link>https://dengcz.cn/world/2026/ai/</link>
@@ -90,19 +98,6 @@
       <category>编程语法</category>
       <category>Python</category>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0800</pubDate>
-    </item>
-    <item>
-      <title>Linux 系统下离线安装 PyTorch</title>
-      <link>https://dengcz.cn/world/2026/install-torch-offline/</link>
-      <guid isPermaLink="false">fce9784462897e358b05db6fbdb8450a6ff338f5</guid>
-      <description>从 Python 环境开始，在离线 Linux 主机上安装 PyTorch 及其依赖。</description>
-      <category>编程</category>
-      <category>编程实践</category>
-      <category>Linux</category>
-      <category>Python</category>
-      <category>PyTorch</category>
-      <category>Conda</category>
-      <pubDate>Wed, 08 Apr 2026 00:00:00 +0800</pubDate>
     </item>
   </channel>
 </rss>

@@ -179,6 +179,7 @@
       this.connectorSvg.style.display = 'none';
 
       const rows = this.collectRows();
+      this.track.classList.toggle('is-empty', rows.length === 0);
       if (rows.length === 0) {
         const empty = document.createElement('p');
         empty.className = 'tl-empty';

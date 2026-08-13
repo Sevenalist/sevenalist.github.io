@@ -114,6 +114,10 @@
   background: color-mix(in srgb, var(--md-default-fg-color) 18%, transparent);
 }
 
+.tl-track.is-empty::before {
+  display: none;
+}
+
 .tl-row {
   position: relative;
   z-index: 2;

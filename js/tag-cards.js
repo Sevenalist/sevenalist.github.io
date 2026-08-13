@@ -55,7 +55,7 @@ const initTagCards = () => {
     return `${base}--${token}`;
   };
 
-  items.forEach(({ heading, list, links }, index) => {
+  items.forEach(({ heading, list, links }) => {
     const card = document.createElement('article');
     const count = links.length;
     const tagName = heading.querySelector('.md-tag')?.textContent?.trim()
@@ -68,8 +68,7 @@ const initTagCards = () => {
     const meta = document.createElement('div');
     const countLabel = document.createElement('span');
 
-    card.className = 'tag-card';
-    card.style.setProperty('--tag-order', index);
+    card.className = 'tag-card is-visible';
     card.style.setProperty('--tag-weight', `${Math.max((count / maxCount) * 100, 8)}%`);
 
     heading.classList.add('tag-card-title');
@@ -109,24 +108,6 @@ const initTagCards = () => {
   shell.append(grid);
   shell.querySelector('[data-tags-count]').textContent = String(items.length);
   shell.querySelector('[data-tag-posts-count]').textContent = String(uniquePosts.size);
-
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion || !('IntersectionObserver' in window)) {
-    grid.querySelectorAll('.tag-card').forEach((card) => card.classList.add('is-visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const order = Number(entry.target.style.getPropertyValue('--tag-order')) || 0;
-        window.setTimeout(() => entry.target.classList.add('is-visible'), order * 45);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  grid.querySelectorAll('.tag-card').forEach((card) => observer.observe(card));
 };
 
 if (document.readyState === 'loading') {
