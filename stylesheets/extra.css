@@ -137,6 +137,29 @@ body:has(.library-post-marker) .md-content__inner {
   margin-bottom: 30px;
 }
 
+/* 文章行内强调：==内容== 默认渲染为柔和主题色、加粗和波浪下划线。 */
+.md-typeset mark {
+  color: var(--md-default-fg-color);
+  color: color-mix(
+    in srgb,
+    var(--md-accent-fg-color) 22%,
+    var(--md-default-fg-color)
+  );
+  background: transparent;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--md-accent-fg-color);
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--md-accent-fg-color) 72%,
+    var(--md-default-fg-color)
+  );
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+}
+
 /* 设置md文档中图片居中样式 */
 /* 使用方式为![](){: .center}, 且在mkdocs.yml中添加`- attr_list` */
 .center {
@@ -157,6 +180,13 @@ body:has(.library-post-marker) .md-content__inner {
 /* 设置内容宽度 */
 .md-grid {
   max-width: 66rem; /* 改成你想要的 */
+}
+
+/* Preserve a shared safety margin for desktop sidebars as the viewport narrows. */
+@media screen and (min-width: 76.25em) {
+  .md-main__inner.md-grid {
+    width: calc(100% - 2rem);
+  }
 }
 
 .md-content {

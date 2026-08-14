@@ -6,7 +6,7 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Fri, 14 Aug 2026 01:02:21 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 13:47:57 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
@@ -66,7 +66,7 @@
       <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
     </item>
     <item>
-      <title>Index</title>
+      <title>Lines</title>
       <link>https://dengcz.cn/lines/</link>
       <guid isPermaLink="false">2fdd82255526797706a1e23105912d4587343399</guid>
       <description>Timelines 这里的每一篇文档都是一条时间线：朝代更迭、思想流派、个人轨迹……并且全部时间线在此处汇总在同一根轴上，点击标签即可筛选想要查看的线条，点击条目可以展开它的起止跨度。 本栏目灵感来源于fuXes的个人博客网站。</description>

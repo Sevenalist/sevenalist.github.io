@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sevenalist square avatar</title>
+  <desc id="desc">White rounded code chevrons forming an S on a blue square background without rounded corners.</desc>
+  <rect width="512" height="512" fill="#119DCC"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M353 84 130 166 353 248"/>
+    <path d="M159 264 382 346 159 428"/>
+  </g>
+</svg>

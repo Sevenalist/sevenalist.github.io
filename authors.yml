@@ -1,14 +1,18 @@
 authors:
   sevenalist: &sevenalist
     name: Sevenalist
+    description: Never Stop Thinking.
     avatar: /assets/authors/avatar.png
     url: https://github.com/Sevenalist
   Douglas: *sevenalist
+  douglas: *sevenalist
   gpt: 
     name: ChatGPT
+    description: OpenAI 的人工智能助手
     avatar: /assets/authors/chatgpt.png
     url: https://openai.com/
   ds:
     name: DeepSeek
+    description: DeepSeek 的人工智能助手
     avatar: /assets/authors/ds.png
     url: https://www.deepseek.com/
