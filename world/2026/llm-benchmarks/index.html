@@ -1,0 +1,2443 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="用最通俗的方式解释 MMLU、MMLU-Pro、GSM8K、HumanEval、SWE-bench、DeepSWE 等评测基准是什么、怎么来的、在考什么。">
+      
+      
+      
+        <link rel="canonical" href="https://dengcz.cn/world/2026/llm-benchmarks/">
+      
+      
+        <link rel="prev" href="../ai/">
+      
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="/assets/brand/favicon.svg">
+        
+      
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.2.0">
+    
+    
+      
+        <title>大模型也要考试：从 MMLU 到 DeepSWE 看懂 AI 评测 - Sevenalist</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7aee198.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css?v=5">
+    
+      <link rel="stylesheet" href="../../../stylesheets/bg.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/timeline.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&amp;display=swap">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+        </style><link rel="alternate" type="application/rss+xml" title="Sevenalist" href="https://dengcz.cn/feed.xml" /></head>
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo" data-mx-topbar="primary">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mmlu-deepswe-ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Sevenalist" class="md-header__button md-logo" aria-label="Sevenalist" data-md-component="logo">
+      
+  <img src="/assets/brand/logo-inverse.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sevenalist
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              大模型也要考试：从 MMLU 到 DeepSWE 看懂 AI 评测
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Sevenalist/sevenalist.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.62 7.62 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+  </div>
+  <div class="md-source__repository">
+    sevenalist.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+  
+    
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM240 320h32c26.5 0 48 21.5 48 48v96H192v-96c0-26.5 21.5-48 48-48"></path></svg>
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+      <svg t="1783666292611" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6282" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M227.072 254.549333A390.485333 390.485333 0 0 1 307.2 187.136a191.274667 191.274667 0 0 0-36.010667-6.698667c-24.405333-1.834667-35.114667 3.968-39.68 8.533334-4.522667 4.522667-10.325333 15.232-8.533333 39.68 0.64 7.808 2.005333 16.469333 4.138667 25.898666z m657.237333 351.786667c2.602667 5.248 5.12 10.453333 7.552 15.616 20.309333 43.52 33.749333 86.058667 36.650667 124.288 2.858667 38.058667-4.522667 77.653333-33.28 106.453333-28.757333 28.757333-68.394667 36.138667-106.453333 33.28-33.28-2.56-69.845333-13.056-107.52-29.141333h-0.128a565.674667 565.674667 0 0 1-19.669334-8.832c-86.741333-41.088-186.026667-113.237333-279.168-206.421333-93.056-93.056-165.205333-192.213333-206.293333-278.869334-3.114667-6.613333-6.101333-13.226667-8.917333-19.754666l0.042666-0.085334c-16.170667-37.76-26.709333-74.453333-29.226666-107.818666-2.901333-38.058667 4.48-77.653333 33.28-106.453334 28.714667-28.757333 68.352-36.138667 106.410666-33.28 38.229333 2.901333 80.725333 16.341333 124.288 36.693334 5.290667 2.432 10.581333 4.992 15.914667 7.68a383.829333 383.829333 0 0 1 365.738667 100.778666 383.829333 383.829333 0 0 1 100.778666 365.866667z m-47.488 110.634667a385.28 385.28 0 0 1-67.242666 79.829333c9.301333 2.133333 17.877333 3.498667 25.6 4.053333 24.448 1.834667 35.157333-3.925333 39.68-8.533333 4.608-4.522667 10.410667-15.232 8.533333-39.68a190.634667 190.634667 0 0 0-6.570667-35.669333z m-596.352 66.56a383.701333 383.701333 0 0 1-103.125333-355.925334c46.165333 84.522667 115.413333 174.933333 199.68 259.242667 84.352 84.352 174.848 153.6 259.413333 199.808a383.701333 383.701333 0 0 1-355.968-103.125333z" fill="#ffffff" p-id="6283"></path></svg>
+    
+  
+  World
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../webs/" class="md-tabs__link">
+          
+  
+  
+    
+      <!--?xml version="1.0" standalone="no"?--><svg t="1785160029984" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12509" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M853.333 170.667v683.52c0 19.114-6.528 37.632-18.517 52.565a85.93 85.93 0 0 1-119.893 13.61L512 768 309.077 920.32c-15.104 11.947-33.792 18.347-53.077 18.347-47.147 0-85.333-37.803-85.333-84.48v-683.52c0-46.635 38.186-85.334 85.333-85.334h512c47.147 0 85.333 38.699 85.333 85.334z" p-id="12510"></path></svg>
+    
+  
+  Webs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lines/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12c0 1.11-.89 2-2 2a2 2 0 1 1 2-2M4 2v6H2V2zM2 22v-6h2v6zM24 6v12c0 1.11-.89 2-2 2H10a2 2 0 0 1-2-2v-4l-2-2 2-2V6a2 2 0 0 1 2-2h12c1.11 0 2 .89 2 2m-2 0H10v4.83L8.83 12 10 13.17V18h12zM12 9h8v2h-8zm0 4h6v2h-6z"></path></svg>
+    
+  
+  Lines
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg t="1783665423813" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5122" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 32C247.04 32 32 247.04 32 512s215.04 480 480 480 480-215.04 480-480S776.96 32 512 32z m58.56 725.76c0 25.92-21.12 47.04-47.04 47.04h-23.52c-25.92 0-47.04-21.12-47.04-47.04V476.96c0-25.92 21.12-47.04 47.04-47.04h23.52c25.92 0 47.04 21.12 47.04 47.04v280.8zM512 359.84c-32.16 0-58.56-26.4-58.56-58.56 0-32.16 26.4-58.56 58.56-58.56s58.56 26.4 58.56 58.56c0 32.16-26.4 58.56-58.56 58.56z" p-id="5123" fill="#ffffff"></path></svg>
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+  
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sevenalist" class="md-nav__button md-logo" aria-label="Sevenalist" data-md-component="logo">
+      
+  <img src="/assets/brand/logo-inverse.svg" alt="logo">
+
+    </a>
+    Sevenalist
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Sevenalist/sevenalist.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.62 7.62 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+  </div>
+  <div class="md-source__repository">
+    sevenalist.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM240 320h32c26.5 0 48 21.5 48 48v96H192v-96c0-26.5 21.5-48 48-48"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+    <svg t="1783666292611" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6282" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M227.072 254.549333A390.485333 390.485333 0 0 1 307.2 187.136a191.274667 191.274667 0 0 0-36.010667-6.698667c-24.405333-1.834667-35.114667 3.968-39.68 8.533334-4.522667 4.522667-10.325333 15.232-8.533333 39.68 0.64 7.808 2.005333 16.469333 4.138667 25.898666z m657.237333 351.786667c2.602667 5.248 5.12 10.453333 7.552 15.616 20.309333 43.52 33.749333 86.058667 36.650667 124.288 2.858667 38.058667-4.522667 77.653333-33.28 106.453333-28.757333 28.757333-68.394667 36.138667-106.453333 33.28-33.28-2.56-69.845333-13.056-107.52-29.141333h-0.128a565.674667 565.674667 0 0 1-19.669334-8.832c-86.741333-41.088-186.026667-113.237333-279.168-206.421333-93.056-93.056-165.205333-192.213333-206.293333-278.869334-3.114667-6.613333-6.101333-13.226667-8.917333-19.754666l0.042666-0.085334c-16.170667-37.76-26.709333-74.453333-29.226666-107.818666-2.901333-38.058667 4.48-77.653333 33.28-106.453334 28.714667-28.757333 68.352-36.138667 106.410666-33.28 38.229333 2.901333 80.725333 16.341333 124.288 36.693334 5.290667 2.432 10.581333 4.992 15.914667 7.68a383.829333 383.829333 0 0 1 365.738667 100.778666 383.829333 383.829333 0 0 1 100.778666 365.866667z m-47.488 110.634667a385.28 385.28 0 0 1-67.242666 79.829333c9.301333 2.133333 17.877333 3.498667 25.6 4.053333 24.448 1.834667 35.157333-3.925333 39.68-8.533333 4.608-4.522667 10.410667-15.232 8.533333-39.68a190.634667 190.634667 0 0 0-6.570667-35.669333z m-596.352 66.56a383.701333 383.701333 0 0 1-103.125333-355.925334c46.165333 84.522667 115.413333 174.933333 199.68 259.242667 84.352 84.352 174.848 153.6 259.413333 199.808a383.701333 383.701333 0 0 1-355.968-103.125333z" fill="#ffffff" p-id="6283"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    World
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    World
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 10C7.3 10 8 9.3 8 8.5S7.3 7 6.5 7 5 7.7 5 8.5 5.7 10 6.5 10M9 6l7 7-5 5-7-7V6zm0-2H4c-1.1 0-2 .9-2 2v5c0 .6.2 1.1.6 1.4l7 7c.3.4.8.6 1.4.6s1.1-.2 1.4-.6l5-5c.4-.4.6-.9.6-1.4 0-.6-.2-1.1-.6-1.4l-7-7C10.1 4.2 9.6 4 9 4m4.5 1.7 1-1 6.9 6.9c.4.4.6.9.6 1.4s-.2 1.1-.6 1.4L16 19.8l-1-1 5.7-5.8z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026年
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025年
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024年
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023年
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2020年
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Category
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Category
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    人工智能
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topic/%E5%9C%B0%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topic/%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topic/%E8%97%8F%E4%B9%A6%E6%A5%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    藏书楼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../webs/" class="md-nav__link ">
+              
+  
+  
+    <!--?xml version="1.0" standalone="no"?--><svg t="1785160029984" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12509" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M853.333 170.667v683.52c0 19.114-6.528 37.632-18.517 52.565a85.93 85.93 0 0 1-119.893 13.61L512 768 309.077 920.32c-15.104 11.947-33.792 18.347-53.077 18.347-47.147 0-85.333-37.803-85.333-84.48v-683.52c0-46.635 38.186-85.334 85.333-85.334h512c47.147 0 85.333 38.699 85.333 85.334z" p-id="12510"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Webs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Webs
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lines/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12c0 1.11-.89 2-2 2a2 2 0 1 1 2-2M4 2v6H2V2zM2 22v-6h2v6zM24 6v12c0 1.11-.89 2-2 2H10a2 2 0 0 1-2-2v-4l-2-2 2-2V6a2 2 0 0 1 2-2h12c1.11 0 2 .89 2 2m-2 0H10v4.83L8.83 12 10 13.17V18h12zM12 9h8v2h-8zm0 4h6v2h-6z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Lines
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lines
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lines/chinese-dynasties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国朝代
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lines/western-philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    西方哲学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lines/science-philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科学哲学
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+    <svg t="1783665423813" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5122" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M512 32C247.04 32 32 247.04 32 512s215.04 480 480 480 480-215.04 480-480S776.96 32 512 32z m58.56 725.76c0 25.92-21.12 47.04-47.04 47.04h-23.52c-25.92 0-47.04-21.12-47.04-47.04V476.96c0-25.92 21.12-47.04 47.04-47.04h23.52c25.92 0 47.04 21.12 47.04 47.04v280.8zM512 359.84c-32.16 0-58.56-26.4-58.56-58.56 0-32.16 26.4-58.56 58.56-58.56s58.56 26.4 58.56 58.56c0 32.16-26.4 58.56-58.56 58.56z" p-id="5123" fill="#ffffff"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/me/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M22.462 11.035l2.88 7.097c1.204 2.968 3.558 5.322 6.526 6.526l7.097 2.88c1.312.533 1.312 2.391 0 2.923l-7.097 2.88c-2.968 1.204-5.322 3.558-6.526 6.526l-2.88 7.097c-.533 1.312-2.391 1.312-2.923 0l-2.88-7.097c-1.204-2.968-3.558-5.322-6.526-6.526l-7.097-2.88c-1.312-.533-1.312-2.391 0-2.923l7.097-2.88c2.968-1.204 5.322-3.558 6.526-6.526l2.88-7.097C20.071 9.723 21.929 9.723 22.462 11.035zM39.945 2.701l.842 2.428c.664 1.915 2.169 3.42 4.084 4.084l2.428.842c.896.311.896 1.578 0 1.889l-2.428.842c-1.915.664-3.42 2.169-4.084 4.084l-.842 2.428c-.311.896-1.578.896-1.889 0l-.842-2.428c-.664-1.915-2.169-3.42-4.084-4.084l-2.428-.842c-.896-.311-.896-1.578 0-1.889l2.428-.842c1.915-.664 3.42-2.169 4.084-4.084l.842-2.428C38.366 1.805 39.634 1.805 39.945 2.701z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 考卷地图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 考卷地图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 为什么要给大模型考试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 常见的“题型”和“分数”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 考卷存在的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 知识广度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 知识广度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-mmlu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 MMLU：大模型的“文理综合高考”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mmlu-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 MMLU-Pro：从四选一到十选一
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 数学与推理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 数学与推理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gsm8k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 GSM8K：小学数学，却曾难倒大模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 MATH：竞赛数学题库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-aime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 AIME：被借来当考卷的数学竞赛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-gpqa-diamond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 GPQA Diamond：连搜索都救不了的题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 代码能力
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 代码能力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-humaneval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 HumanEval：写对一个函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-mbpp-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 MBPP：基础 Python 百题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-livecodebench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 LiveCodeBench：不断更新，防止背题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 真实软件工程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 真实软件工程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-swe-bench-github-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 SWE-bench：让模型去修 GitHub Issue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-swe-bench-verified-500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 SWE-bench Verified：把脏题洗干净的 500 道
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-swe-bench-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 SWE-bench Pro：把任务拉长到企业级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-deepswe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 DeepSWE：为什么还要一张新卷子
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 其他值得认识的评测速查
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 怎么读懂一张“成绩单”
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 名词对照表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 结语
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+                  <span class="md-ellipsis">
+                    回到主页
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="/assets/authors/avatar.png" alt="Sevenalist">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/Sevenalist">Sevenalist</a>
+                        
+                      </strong>
+                      <br>
+                      Never Stop Thinking.
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="/assets/authors/ds.png" alt="DeepSeek">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://www.deepseek.com/">DeepSeek</a>
+                        
+                      </strong>
+                      <br>
+                      DeepSeek 的人工智能助手
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    元数据
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
+                        <time datetime="2026-08-19 00:00:00+00:00" class="md-ellipsis">2026年8月19日</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
+                          <time datetime="2026-08-19 23:16:57+08:00" class="md-ellipsis">2026年8月19日</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"></path></svg>
+                          <span class="md-ellipsis">
+                            分类于
+                            
+                              <a href="../../topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
+                          <span class="md-ellipsis">
+                            
+                              阅读时长 13 分钟
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    <article class="md-content__inner md-typeset" data-pagefind-body="">
+      
+        
+  
+
+
+  <nav class="md-tags">
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:benchmark" class="md-tag md-tag-icon">Benchmark</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:llm" class="md-tag md-tag-icon">LLM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:科普" class="md-tag md-tag-icon">科普</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+
+  <div class="sevenalist-post-meta-mobile md-post__meta md-meta" aria-label="元数据">
+  <ul class="md-meta__list">
+    <li class="md-meta__item">
+      发布于
+      <time datetime="2026-08-19 00:00:00+00:00">2026年8月19日</time>
+    </li>
+    
+      <li class="md-meta__item">
+        更新于
+        <time datetime="2026-08-19 23:16:57+08:00">2026年8月19日</time>
+      </li>
+    
+    
+      <li class="md-meta__item">
+        分类于
+        
+          <a href="../../topic/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="md-meta__link">人工智能</a></li>
+    
+    
+      
+      <li class="md-meta__item">
+        
+          阅读时长 13 分钟
+        
+      </li>
+    
+  </ul>
+</div>
+
+
+<h1 id="mmlu-deepswe-ai">大模型也要考试：从 MMLU 到 DeepSWE 看懂 AI 评测<a class="headerlink" href="#mmlu-deepswe-ai" title="Permanent link">¶</a></h1>
+<p>每次有新的旗舰大模型发布，厂商都会晒出一张类似这样的“成绩单”：MMLU-Pro 87%、AIME 95%、SWE-bench Verified 80%、DeepSWE 70%……这些缩写是什么？它们是同一张考卷吗？分数更高就一定更聪明吗？<!-- more --></p>
+<p>这篇文章把大模型评测当成一套“考试系统”来拆解：每个著名基准的全称是什么、什么时候出现的、为什么出现，以及它真正在考模型哪种能力。</p>
+<div class="admonition note">
+<p class="admonition-title">阅读提示</p>
+<p>这篇文章假设你只是普通用户，不需要懂机器学习。只需要记住一个类比：<strong>评测基准就是给大模型准备的标准考试</strong>——有人出题、有人规定答题方式、有人批改打分，最后把分数公开。不同考试就像语文、数学、编程的不同科目，不能直接比较分数高低。</p>
+</div>
+<h2 id="1">1 考卷地图<a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<h3 id="11">1.1 为什么要给大模型考试<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<p>或许我们经常会听说：现在的AI大模型很强，能干的事情有很多。但大模型的能力究竟有多强？事情究竟能干到什么程度？不同大模型的好坏又该怎么比较？</p>
+<p>为了解决这些问题，我们需要一套<strong>固定题目 + 固定评分规则</strong>的系统，把所有大模型拉到同一张卷子上公平较量。</p>
+<p>这种系统就叫 <strong>Benchmark</strong>（基准测试，也常译为“评测基准”）。</p>
+<p>一套完整的评测基准通常由四部分组成：</p>
+<table>
+<thead>
+<tr>
+<th>组成部分</th>
+<th>作用</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>题目集</td>
+<td>决定“考什么”</td>
+<td>MMLU 的选择题、DeepSWE 的仓库任务</td>
+</tr>
+<tr>
+<td>作答规则</td>
+<td>规定模型怎么答题</td>
+<td>直接作答、给几个例题（few-shot）、先写推理过程（CoT）</td>
+</tr>
+<tr>
+<td>判分器</td>
+<td>决定“怎么算对”</td>
+<td>对答案、跑单元测试、在容器里运行代码</td>
+</tr>
+<tr>
+<td>运行环境</td>
+<td>保证过程可复现</td>
+<td>Docker 沙箱、隔离的仓库副本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 常见的“题型”和“分数”<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<p>大模型评测主要有三类题型：</p>
+<ul>
+<li><strong>选择题</strong>：好判分，但模型可能靠猜。MMLU 是四选一，纯猜也有 25% 正确率；MMLU-Pro 是十选一，纯猜只剩 10%。</li>
+<li><strong>开放题</strong>：例如数学题直接输出一个数字或表达式，评分器检查是否与标准答案等价。难度更高，但判分复杂。</li>
+<li><strong>执行题</strong>：让模型写代码或修改项目，然后真正运行测试。最接近“动手能力”，但最贵、最慢。</li>
+</ul>
+<p>常见的分数含义：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy（准确率）</td>
+<td>答对的题目数 ÷ 总题目数，适合选择题和数学题</td>
+</tr>
+<tr>
+<td>pass@k</td>
+<td>允许模型尝试 k 次，只要有一次通过测试就算会做。pass@1 是“一次过”，最严格</td>
+</tr>
+<tr>
+<td>Resolved rate（解决率）</td>
+<td>SWE 类基准专用：修改后的代码能让“原本失败的测试通过、原本通过的测试不坏”的任务比例</td>
+</tr>
+</tbody>
+</table>
+<p>常见的考察方式：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero-shot</td>
+<td>不给例题，直接问</td>
+</tr>
+<tr>
+<td>Few-shot</td>
+<td>在问题前塞几道“题目 + 标准答案”作示范</td>
+</tr>
+<tr>
+<td>CoT（Chain of Thought）</td>
+<td>要求模型“先把推理步骤写出来，再给答案”。同一张卷子用不同作答方式，分数可能差很多，所以看成绩单时要注意评测设置。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 考卷存在的问题<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Contamination（数据污染）</strong>：模型在训练时已经“见过”考题和答案。这就像考试前已经背下了真题，考高分只能说明记忆力强，解题能力却未必强。老考题、公开题库都容易中招。</li>
+<li><strong>Saturation（饱和）</strong>：当顶尖模型都考到 95 分以上，这张卷子就“没有区分度”了，大家看起来都差不多，评测也就失去了意义。</li>
+</ul>
+<p>评测发展的主线，就是和这两种问题作斗争：<strong>题目变难、选项变多、考题保密、动态更新，或者干脆写一批从没被公开过答案的新题</strong>。下面要介绍的每一个基准，几乎都是为了解决上一张考卷的某个问题而诞生的。</p>
+<h2 id="2">2 知识广度<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h3 id="21-mmlu">2.1 MMLU：大模型的“文理综合高考”<a class="headerlink" href="#21-mmlu" title="Permanent link">¶</a></h3>
+<p><strong>MMLU</strong> 的全称是 <strong>Massive Multitask Language Understanding</strong>，直译为“<strong>大规模多任务语言理解</strong>”。</p>
+<p>它由 Dan Hendrycks 等人于 2020 年 9 月发布，论文后来被 ICLR 2021 接收，题目来自教材、考试和百科等公开资料。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> MMLU 一共整理出约 <strong>1.5 万道四选一选择题</strong>，覆盖 <strong>57 个学科</strong>，从基础数学、美国历史、计算机科学、法律，到营养学、宗教学都有，再归入人文、社科、STEM 和其他四大类。</p>
+<div class="admonition note">
+<p class="admonition-title">MMLU 在考什么</p>
+<p>它的关键词是<strong>“广而不深”</strong>：不要求模型写长答案，而是看模型是否拥有像受过良好通识教育的人那样的知识面和基本理解力。比如“下列哪个概念属于经济学中的机会成本”“这段程序的时间复杂度是多少”这类题。</p>
+</div>
+<p>刚发布时，GPT-3（175B）在 few-shot 设置下也只有约 44% 的正确率，只比随机猜测（25%）好一些。后来大模型能力快速提升，到 2024 年前后，前沿模型普遍考到 85% 以上，MMLU 逐渐“饱和”。同时，它的题目在网上流传多年，污染问题越来越严重，于是人们开始设计更难的升级版。</p>
+<h3 id="22-mmlu-pro">2.2 MMLU-Pro：从四选一到十选一<a class="headerlink" href="#22-mmlu-pro" title="Permanent link">¶</a></h3>
+<p><strong>MMLU-Pro</strong> 的论文全称是 <strong>A More Robust and Challenging Multi-Task Language Understanding Benchmark</strong>，即“<strong>一个更稳健、更具挑战性的多任务语言理解基准</strong>”。</p>
+<p>它由 TIGER-Lab（滑铁卢大学）等团队于 2024 年 6 月发布，入选 NeurIPS 2024，可以理解为 MMLU 的“加强版考卷”。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 主要做了四件事：</p>
+<ol>
+<li><strong>学科重组</strong>：把原来细碎的 57 个学科合并成 14 个大类，包括生物、商科、化学、计算机、经济、工程、健康、历史、法律、数学、哲学、物理、心理学等。</li>
+<li><strong>删掉简单题</strong>：用 8 个小型模型筛题，凡是多数小模型都能答对的题（共 5,886 道）直接淘汰。</li>
+<li><strong>补充难题</strong>：从 STEM 网站、TheoremQA、SciBench 等来源加入更难的题目，最终得到 <strong>12,032 道题</strong>。</li>
+<li><strong>选项从 4 个增加到 10 个</strong>：新增的干扰项由 GPT-4-Turbo 生成并经过人工检查，很多干扰项“看起来都对”，必须靠细致推理才能排除。</li>
+</ol>
+<p>效果很明显：模型在 MMLU-Pro 上的准确率比原版 MMLU 普遍<strong>下降 16% 到 33%</strong>；更换 24 种提示词风格时，分数波动从原版的 4%-5% 降到了 <strong>2%</strong>，说明这张卷子更稳定；而且思维链（CoT）在 MMLU-Pro 上有明显帮助，说明它考的已经不只是“知不知道”，还有<strong>“能不能推理着选出来”</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>MMLU</th>
+<th>MMLU-Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>题量</td>
+<td>约 1.5 万道</td>
+<td>12,032 道</td>
+</tr>
+<tr>
+<td>学科</td>
+<td>57 个细类</td>
+<td>14 个大类</td>
+</tr>
+<tr>
+<td>选项数</td>
+<td>4 个</td>
+<td>10 个</td>
+</tr>
+<tr>
+<td>随机猜对概率</td>
+<td>25%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>主要问题</td>
+<td>偏简单、易污染、对提示词敏感</td>
+<td>难度和稳定性更好，但仍是静态题库</td>
+</tr>
+<tr>
+<td>侧重能力</td>
+<td>通识知识广度</td>
+<td>专业知识 + 选项辨析式推理</td>
+</tr>
+</tbody>
+</table>
+<p>今天看新模型发布时，MMLU 和 MMLU-Pro 常常同时出现：前者看“基本盘”，后者看“拉开差距的硬知识”。不过 MMLU-Pro 也是静态公开题库，使用几年后同样会积累污染，所以前沿实验室还会配合内部保密考题使用。</p>
+<h2 id="3">3 数学与推理<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
+<h3 id="31-gsm8k">3.1 GSM8K：小学数学，却曾难倒大模型<a class="headerlink" href="#31-gsm8k" title="Permanent link">¶</a></h3>
+<p><strong>GSM8K</strong> 全称是 <strong>Grade School Math 8K</strong>，即“<strong>小学数学 8K</strong>”。</p>
+<p>它由 OpenAI 于 2021 年发布，包含约 <strong>8,500 道小学数学应用题</strong>，题目虽然只需要小学知识，但通常要 <strong>2 到 8 步运算</strong>才能解出来。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 例如“小明有 5 个苹果，给了小红 2 个，又买了 3 袋每袋 4 个……”这类题，关键不在于单步计算，而在于<strong>能不能把文字转化成多步计划</strong>。</p>
+<p>GSM8K 在历史上还有个重要贡献：2022 年的“思维链”论文用它证明了“让模型先写过程再给答案”能大幅提高正确率，CoT 从此成为主流答题方式。到今天，前沿模型在 GSM8K 上普遍接近满分，它已经饱和，更多被用来训练小型模型或做基础检验。</p>
+<h3 id="32-math">3.2 MATH：竞赛数学题库<a class="headerlink" href="#32-math" title="Permanent link">¶</a></h3>
+<p><strong>MATH</strong> 不是缩写，就是“数学”的意思，全称 <strong>Measuring Mathematical Problem Solving With the MATH Dataset</strong>（“用 MATH 数据集衡量数学问题求解”）。</p>
+<p>它由 Hendrycks 等人于 2021 年发布，包含 <strong>12,500 道竞赛数学题</strong>，覆盖代数、几何、数论、概率等 7 个主题，难度分 5 档，并附有完整的逐步解答。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> 与 GSM8K 不同，它考的是<strong>正式的数学能力</strong>：符号运算、公式变形、几何证明思路等。刚发布时，最强的大模型也只能答对很小一部分；现在前沿模型已经能拿到 90 分以上，但仍是数学能力的重要参照。</p>
+<h3 id="33-aime">3.3 AIME：被借来当考卷的数学竞赛<a class="headerlink" href="#33-aime" title="Permanent link">¶</a></h3>
+<p><strong>AIME</strong> 全称是 <strong>American Invitational Mathematics Examination</strong>，即“<strong>美国数学邀请赛</strong>”。</p>
+<p>它原本是美国数学协会为中学生举办的竞赛，不是为 AI 设计的：每场 <strong>15 道题、3 小时</strong>，答案是 <strong>0 到 999 之间的整数</strong>，没有选项可以猜。由于题目难、答案客观、容易自动判分，AI 公司从 2024 年前后开始普遍把 AIME 当作旗舰模型的数学成绩单。</p>
+<p>它也有明显缺点：历年真题都是公开的，模型可能在训练时背过。所以各实验室越来越多地用<strong>最新一年的 AIME</strong>或<strong>内部新出的竞赛题</strong>来减少污染。</p>
+<h3 id="34-gpqa-diamond">3.4 GPQA Diamond：连搜索都救不了的题<a class="headerlink" href="#34-gpqa-diamond" title="Permanent link">¶</a></h3>
+<p><strong>GPQA</strong> 全称是 <strong>Graduate-Level Google-Proof Q&amp;A</strong>，即“<strong>研究生级、防谷歌搜索的问答</strong>”。</p>
+<p>它于 2023 年发布，由专家编写了 <strong>448 道生物、物理、化学领域的研究生级别选择题</strong>，其中 <strong>GPQA Diamond</strong> 是最难的 198 道子集，要求至少两位专家独立确认答案。<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 论文里的一个数字很能说明难度：相关领域的博士专家正确率约 <strong>65%</strong>，而熟练的非专家即使<strong>允许上网搜索</strong>，正确率也只有 <strong>34%</strong>——所以叫“Google-proof”（搜也搜不出来）。GPT-4 当年只拿到 39%。</p>
+<p>它考的是<strong>前沿科学推理</strong>：模型必须真正理解专业概念并推导，而不是查资料或凭常识蒙。如今 GPQA Diamond 已成为旗舰模型发布时的标配指标。</p>
+<h2 id="4">4 代码能力<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<h3 id="41-humaneval">4.1 HumanEval：写对一个函数<a class="headerlink" href="#41-humaneval" title="Permanent link">¶</a></h3>
+<p><strong>HumanEval</strong> 可以理解为 <strong>Human Evaluation</strong>（人工评测），因为题目是<strong>人工手写的</strong>，而不是从网上爬的。</p>
+<p>它由 OpenAI 在 2021 年的 Codex 论文中发布，共 <strong>164 道 Python 编程题</strong>，每道题给一个函数签名和文档字符串，要求模型补全函数体，然后用隐藏的单元测试判分（平均每道题约 7.7 个测试）。<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 它考的是最基础的<strong>“把一句需求翻译成一段正确代码”</strong>的能力。</p>
+<p>HumanEval 还推广了 <strong>pass@k</strong> 评分：pass@1 表示第一次生成就通过测试；pass@10 表示允许生成 10 次，只要有 1 次通过就算会。今天前沿模型的 pass@1 已经超过 95%，这张卷子基本考穿了，但因为它便宜、易跑，仍是社区最常用的“入门体检”。</p>
+<h3 id="42-mbpp-python">4.2 MBPP：基础 Python 百题<a class="headerlink" href="#42-mbpp-python" title="Permanent link">¶</a></h3>
+<p><strong>MBPP</strong> 全称是 <strong>Mostly Basic Python Problems</strong>，即“<strong>大多是基础 Python 问题</strong>”。</p>
+<p>它由 Google 于 2021 年发布，包含 <strong>974 道入门级 Python 编程任务</strong>，目标对象是“刚入门的程序员”。<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> 它和 HumanEval 考的能力类似，但题目更生活化（处理字符串、列表、日期等）。两者如今都已饱和，主要用于快速回归测试，而不是区分顶尖模型。</p>
+<h3 id="43-livecodebench">4.3 LiveCodeBench：不断更新，防止背题<a class="headerlink" href="#43-livecodebench" title="Permanent link">¶</a></h3>
+<p><strong>LiveCodeBench</strong> 即“<strong>活的代码基准</strong>”。</p>
+<p>它于 2024 年发布，思路很简单：<strong>持续收集 LeetCode、AtCoder、Codeforces 等平台上的新竞赛题</strong>，并按照模型训练截止日期划分时间窗口，只统计模型“没见过的那批题”的成绩。<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 这样既能保持题目新鲜、抵抗污染，又能不断补充难度。除了代码生成，它还考自我修复（代码错了自己改）、代码执行预测和测试输出预测等更完整的能力。</p>
+<p>从 HumanEval 到 LiveCodeBench，代码评测的进化方向是：<strong>题目从手写小函数，变成不断滚动更新的算法竞赛题</strong>。</p>
+<h2 id="5">5 真实软件工程<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
+<p>如果说 HumanEval 是“默写一个函数”，那么下面这些基准就是“<strong>接手一个陌生项目，独立完成一个真实需求</strong>”。</p>
+<pre class="mermaid"><code>flowchart LR
+  A["2021&lt;br/&gt;HumanEval / MBPP&lt;br/&gt;写一个函数"] --&gt; B["2023&lt;br/&gt;SWE-bench&lt;br/&gt;修真实 GitHub Issue"]
+  B --&gt; C["2024&lt;br/&gt;SWE-bench Verified&lt;br/&gt;精选 500 道干净题"]
+  C --&gt; D["2025&lt;br/&gt;SWE-bench Pro&lt;br/&gt;更长更难的企业级任务"]
+  D --&gt; E["2026&lt;br/&gt;DeepSWE&lt;br/&gt;原创长周期任务 + 行为判题"]</code></pre>
+<h3 id="51-swe-bench-github-issue">5.1 SWE-bench：让模型去修 GitHub Issue<a class="headerlink" href="#51-swe-bench-github-issue" title="Permanent link">¶</a></h3>
+<p><strong>SWE-bench</strong> 里的 <strong>SWE</strong> 是 <strong>Software Engineering</strong>（软件工程）的缩写，因此可译为“<strong>软件工程基准</strong>”。</p>
+<p>它由普林斯顿大学等团队于 2023 年发布，论文标题是《语言模型能解决真实世界的 GitHub Issue 吗？》，入选 ICLR 2024 口头报告。<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 数据集包含 <strong>2,294 个任务实例</strong>，来自 <strong>12 个热门 Python 开源项目</strong>（如 Django、Flask、SymPy、Matplotlib）。每个任务给模型三样东西：</p>
+<ol>
+<li>某个历史版本的完整代码仓库；</li>
+<li>一条真实的 GitHub Issue（用户报告的 bug 或功能请求）；</li>
+<li>运行环境和测试工具。</li>
+</ol>
+<p>模型必须自己读代码、定位问题、修改一个或多个文件，生成补丁。判分非常工程化：</p>
+<ul>
+<li><strong>FAIL_TO_PASS</strong>：那些原本失败、修好后应当通过的测试，必须通过；</li>
+<li><strong>PASS_TO_PASS</strong>：那些原本就通过的测试，不能被改坏；</li>
+<li>两者都满足，这个任务才算 <strong>Resolved</strong>（已解决）。</li>
+</ul>
+<p>发布之初，表现最好的 Claude 2 只解决了 <strong>1.96%</strong> 的任务；到 2025 年，顶尖编码智能体在 SWE-bench Verified 上的解决率已经超过七成。这个变化也说明，<strong>“能聊天”和“能在真实代码库里干活”之间的距离，曾经极其遥远</strong>。SWE-bench 考的是仓库级代码理解、长上下文处理、多文件协同修改和自主调试。</p>
+<h3 id="52-swe-bench-verified-500">5.2 SWE-bench Verified：把脏题洗干净的 500 道<a class="headerlink" href="#52-swe-bench-verified-500" title="Permanent link">¶</a></h3>
+<p>原版 SWE-bench 的 issue 是自动采集的，有些问题描述不清、缺少必要信息，甚至根本无法解决，导致分数有噪声。</p>
+<p>2024 年 8 月，OpenAI 与 SWE-bench 作者合作发布了 <strong>SWE-bench Verified</strong>：请人类工程师逐题验证，最终筛出 <strong>500 道确认可解的干净题目</strong>。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 它没有改变题型，而是提高了“考卷质量”。从此，新模型的软件工程成绩单一般默认报告 Verified 版本，它也成为最流行的编码智能体公开基准之一。</p>
+<h3 id="53-swe-bench-pro">5.3 SWE-bench Pro：把任务拉长到企业级<a class="headerlink" href="#53-swe-bench-pro" title="Permanent link">¶</a></h3>
+<p><strong>SWE-bench Pro</strong> 由 Scale AI 于 2025 年 9 月发布，包含 <strong>1,865 道长周期软件工程任务</strong>，来自 41 个活跃仓库，并分为公开、隐藏和商业合作三部分。<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p>它的特点是把任务从“修一个小 bug”升级到<strong>可能需要工程师花几小时甚至几天完成的需求</strong>：跨多个文件、改动大量代码、涉及真实业务系统。隐藏题库不容易被背到，商业题库更是完全不公开。它考的是专业级、长周期、端到端的工程交付能力。</p>
+<h3 id="54-deepswe">5.4 DeepSWE：为什么还要一张新卷子<a class="headerlink" href="#54-deepswe" title="Permanent link">¶</a></h3>
+<p><strong>DeepSWE</strong> 中的 <strong>SWE</strong> 仍是 Software Engineering，<strong>Deep</strong> 强调的是“<strong>更深、更长周期</strong>”的工程任务。它由 DataCurve 于 2026 年 5 月发布，是本文写作时最受关注的编码智能体新基准之一。<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>它指出此前 SWE 类基准有两个“先天缺陷”：</p>
+<ol>
+<li><strong>答案可能早就被模型背过</strong>：任务是从公开仓库里挖出的历史 issue 和补丁，这些内容很可能已经进入模型的预训练数据。高分可能来自“回忆”，而不是“解决”。</li>
+<li><strong>判题测试可能只认“标准答案的形状”</strong>：原测试是维护者为自己的补丁写的，可能拒绝另一种同样正确的写法（误杀），也可能放行不完整的实现（漏判）。</li>
+</ol>
+<p>DeepSWE 的应对方式是<strong>从源头重新出题</strong>：</p>
+<ul>
+<li>组织作者在 <strong>91 个活跃开源仓库</strong>中从零编写 <strong>113 个原创任务</strong>，覆盖 TypeScript、Go、Python、JavaScript、Rust 五种语言；</li>
+<li>参考解法<strong>从不合并回上游仓库</strong>，因此不会进入公开训练数据；</li>
+<li>每个任务配一个<strong>手写的“行为判题器”</strong>：只检查题目要求的功能是否真的实现，不要求内部符号、函数名和标准答案一致；同时跑回归测试，保证没有改坏其他功能；</li>
+<li>判题器要连跑三次确认稳定，任务还要经过人工和 LLM 双重审核，最后在<strong>全新容器</strong>里独立评分，防止模型“骗过”自己的环境。</li>
+</ul>
+<p>效果是题更难了，而且更真实：DeepSWE 的平均提示词只有约 2,100 个字符，远短于 SWE-bench Pro 的约 4,600 个字符；但参考答案平均要<strong>新增约 668 行代码</strong>（SWE-bench Pro 约 120 行、Verified 约 10 行），平均改动 <strong>7 个文件</strong>。用独立 LLM 法官复查评分结果时，DeepSWE 判题器的分歧率只有 <strong>1.4%</strong>，而 SWE-bench Pro 继承的测试分歧率高达 <strong>32.4%</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">DeepSWE 发布时的成绩单（节选）</p>
+<p>官方 2026 年 5 月排行榜：GPT-5.5 约 70%，GPT-5.4 约 56%，Claude Opus 4.7 约 54%，Claude Sonnet 4.6 约 32%，Gemini 3.5 Flash 约 28%，DeepSeek V4 Pro 约 8%。同一批模型在传统榜单上分数接近，在 DeepSWE 上却被明显拉开——这正是它“区分度”更高的体现。分数会随时间变化，最新榜单请以<a href="https://deepswe.datacurve.ai/" target="_blank">官方网站</a>为准。</p>
+</div>
+<p>当然，DeepSWE 也不是完美考卷：113 道题样本量还不大，仓库以英文项目为主，而且随着时间推移，题目本身也可能被污染。它的意义在于展示了下一代评测的方向——<strong>用原创任务、行为判题和隔离环境，尽量贴近“一个工程师接需求、写代码、交差”的真实过程</strong>。</p>
+<h2 id="6">6 其他值得认识的评测速查<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>全称 / 含义</th>
+<th>主要考什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARC-AGI-2</td>
+<td>Abstraction and Reasoning Corpus for Artificial General Intelligence</td>
+<td>抽象图形规律推理，2025 年推出的加难版</td>
+</tr>
+<tr>
+<td>HLE</td>
+<td>Humanity's Last Exam，人类最后一场考试</td>
+<td>各学科专家出的前沿题，2025 年发布，顶尖模型最初得分也很低 <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup></td>
+</tr>
+<tr>
+<td>SimpleQA</td>
+<td>OpenAI 的事实问答集</td>
+<td>事实准确性，以及“不知道时敢不敢说不知道”</td>
+</tr>
+<tr>
+<td>IFEval</td>
+<td>Instruction-Following Eval</td>
+<td>遵守格式、字数、关键词等具体指令</td>
+</tr>
+<tr>
+<td>MMMLU</td>
+<td>Multilingual MMLU</td>
+<td>MMLU 的多语言版本</td>
+</tr>
+<tr>
+<td>GAIA</td>
+<td>General AI Assistants</td>
+<td>综合使用工具、网页和文件完成日常助手任务</td>
+</tr>
+<tr>
+<td>Terminal-Bench</td>
+<td>终端操作基准</td>
+<td>在命令行里安装、配置、排查问题</td>
+</tr>
+<tr>
+<td>Aider Polyglot</td>
+<td>Aider 多语言编程基准</td>
+<td>6 种语言的基础编程练习</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7 怎么读懂一张“成绩单”<a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
+<p>最后，把本文的要点浓缩成几条实战建议：</p>
+<ol>
+<li><strong>先看是不是同一张卷子</strong>。MMLU 和 DeepSWE 没有可比性，前者是知识选择题，后者是仓库实战；不同基准的随机得分基线也不同。</li>
+<li><strong>警惕“背过真题”</strong>。题目公开多年、网上到处都是答案的基准，高分含金量会打折；动态更新、隐藏题库、原创任务的基准更可信。</li>
+<li><strong>警惕“满分考卷”</strong>。如果所有模型都在 95 分以上，说明这张卷子已经没有区分度，看新卷子更有意义。</li>
+<li><strong>注意答题设置和误差</strong>。zero-shot 还是 CoT、pass@1 还是 pass@10，都会影响分数；认真一点的榜单会标注多次运行的波动区间（例如 ±3%）。</li>
+<li><strong>按使用场景选指标</strong>。日常问答看 MMLU-Pro、GPQA、SimpleQA；数学看 MATH 和最新 AIME；写代码片段看 LiveCodeBench；让智能体维护真实项目看 SWE-bench Verified 或 DeepSWE。</li>
+<li><strong>记住古德哈特定律</strong>：当一个指标成为目标时，它就不再是好指标。厂商可能针对公开考卷做优化，所以最可信的是<strong>保密、新鲜、行为导向</strong>的评测。</li>
+</ol>
+<h2 id="8">8 名词对照表<a class="headerlink" href="#8" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>英文全称</th>
+<th>中文直译</th>
+<th>一句话解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM</td>
+<td>Large Language Model</td>
+<td>大语言模型</td>
+<td>本文所有考试的“考生”</td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td>Benchmark</td>
+<td>基准测试</td>
+<td>固定题目加固定判分规则的标准考试</td>
+</tr>
+<tr>
+<td>MMLU</td>
+<td>Massive Multitask Language Understanding</td>
+<td>大规模多任务语言理解</td>
+<td>57 个学科的四选一通识考试</td>
+</tr>
+<tr>
+<td>MMLU-Pro</td>
+<td>A More Robust and Challenging Multi-Task Language Understanding Benchmark</td>
+<td>更稳健、更具挑战性的多任务语言理解基准</td>
+<td>14 个领域、每题十选的加强版 MMLU</td>
+</tr>
+<tr>
+<td>GSM8K</td>
+<td>Grade School Math 8K</td>
+<td>小学数学 8K</td>
+<td>约 8,500 道多步应用题</td>
+</tr>
+<tr>
+<td>MATH</td>
+<td>Measuring Mathematical Problem Solving With the MATH Dataset</td>
+<td>用 MATH 数据集衡量数学问题求解</td>
+<td>12,500 道竞赛数学题</td>
+</tr>
+<tr>
+<td>AIME</td>
+<td>American Invitational Mathematics Examination</td>
+<td>美国数学邀请赛</td>
+<td>15 道整数答案的竞赛题，常被用作数学能力标尺</td>
+</tr>
+<tr>
+<td>GPQA</td>
+<td>Graduate-Level Google-Proof Q&amp;A</td>
+<td>研究生级防搜索问答</td>
+<td>连上网搜都不容易答对的科学推理题</td>
+</tr>
+<tr>
+<td>HumanEval</td>
+<td>Human Evaluation</td>
+<td>人工评测集</td>
+<td>164 道手写 Python 函数题</td>
+</tr>
+<tr>
+<td>MBPP</td>
+<td>Mostly Basic Python Problems</td>
+<td>大多是基础 Python 问题</td>
+<td>974 道入门编程题</td>
+</tr>
+<tr>
+<td>LiveCodeBench</td>
+<td>Live Code Benchmark</td>
+<td>活的代码基准</td>
+<td>持续收集新竞赛题，防背题</td>
+</tr>
+<tr>
+<td>SWE-bench</td>
+<td>Software Engineering Benchmark</td>
+<td>软件工程基准</td>
+<td>给真实开源仓库修 GitHub Issue</td>
+</tr>
+<tr>
+<td>SWE-bench Verified</td>
+<td>同上（验证子集）</td>
+<td>验证版软件工程基准</td>
+<td>经人工确认可解的 500 道</td>
+</tr>
+<tr>
+<td>DeepSWE</td>
+<td>Deep Software Engineering</td>
+<td>深度软件工程</td>
+<td>113 道原创长周期工程任务，行为判题、答案保密</td>
+</tr>
+<tr>
+<td>pass@k</td>
+<td>pass at k</td>
+<td>k 次尝试内通过</td>
+<td>允许尝试 k 次，有一次通过即算会</td>
+</tr>
+<tr>
+<td>Contamination</td>
+<td>Data Contamination</td>
+<td>数据污染</td>
+<td>模型在训练时见过考题答案</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>Benchmark Saturation</td>
+<td>基准饱和</td>
+<td>大家都考高分，卷子失去区分度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9 结语<a class="headerlink" href="#9" title="Permanent link">¶</a></h2>
+<p>评测基准的发展，本质上是一场“出题人”和“考生”的军备竞赛：模型越来越强，考卷就必须越来越难、越来越真、越来越防作弊。从 MMLU 的四选一，到 SWE-bench 的修仓库，再到 DeepSWE 的原创长周期任务，评价方式已经从“考知识”走向“考工作”。</p>
+<p>所以下次看到新模型发布，不必被一串百分比吓到。只要问三个问题就够了：<strong>这张卷子考什么能力？题目有没有被训练数据见过？同场考试里，它比别人高多少？</strong> 看懂这三点，你就能像看球赛一样看懂 AI 成绩单。</p>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-19"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-08-19T00:00:00+00:00">2026-08-19</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-19"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-19T15:16:57+00:00">2026-08-19</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_authors"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/avatar.png" data-email=""></div><div class="avatar-wrapper" data-name="DeepSeek" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://www.deepseek.com/&quot; target=&quot;_blank&quot;&gt;DeepSeek&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/ds.png" data-email=""></div></div></div></div></div>
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://arxiv.org/abs/2009.03300" target="_blank">Measuring Massive Multitask Language Understanding（MMLU 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://github.com/TIGER-AI-Lab/MMLU-Pro" target="_blank">MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark（论文与代码）</a>&nbsp;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://arxiv.org/abs/2110.14168" target="_blank">Training Verifiers to Solve Math Word Problems（GSM8K 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://arxiv.org/abs/2103.03874" target="_blank">Measuring Mathematical Problem Solving With the MATH Dataset（MATH 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://arxiv.org/abs/2311.12022" target="_blank">GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark（GPQA 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://github.com/openai/human-eval" target="_blank">openai/human-eval（HumanEval 官方仓库）</a>&nbsp;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://arxiv.org/abs/2108.07732" target="_blank">Program Synthesis with Large Language Models（MBPP 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://livecodebench.github.io/" target="_blank">LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code</a>&nbsp;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://arxiv.org/abs/2310.06770" target="_blank">SWE-bench: Can Language Models Resolve Real-World GitHub Issues?（SWE-bench 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">↩</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://openai.com/index/introducing-swe-bench-verified/" target="_blank">Introducing SWE-bench Verified（OpenAI 官方介绍）</a>&nbsp;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://arxiv.org/abs/2509.16941" target="_blank">SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?（论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">↩</a></p>
+</li>
+<li id="fn:12">
+<p><a href="https://deepswe.datacurve.ai/blog/deepswe" target="_blank">DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering Tasks（官方博客与榜单）</a>&nbsp;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://arxiv.org/abs/2501.14249" target="_blank">Humanity's Last Exam（HLE 论文）</a>&nbsp;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden="">
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+      <span>回到页面顶部</span>
+    </button>
+    
+      
+      
+        
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M15 3v18"></path></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 - 2026 Sevenalist
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed.xml" target="_blank" rel="noopener" title="RSS" class="md-social__link">
+      <!--?xml version="1.0" standalone="no"?--><svg t="1785087891458" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7419" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M724.4 304.4C566.6 144 374.8 66.3 151.4 66.3c-21.9 0-41.2 7.2-58.2 24.2-14.6 17.1-24.4 34.1-21.9 58.4-2.4 21.9 7.2 43.7 21.9 58.2 17 14.5 36.4 24.2 58.2 24.2 179.7 0 330.3 63.1 456.6 189.4 126.2 124 189.3 274.5 189.3 454.2-2.4 21.9 7.2 41.4 21.9 58.4 17 14.6 36.5 24.2 58.2 24.2 24.2 0 43.7-9.7 58.4-24.2 17-17 24.2-36.4 24.2-58.4 0.1-225.7-77.6-415.1-235.6-570.5z m-573 51c145.7 0 267.2 51 369.1 150.6 99.6 102 150.6 223.4 150.6 369.1 0 21.9-7.2 41.4-21.9 58.4-17 14.6-36.5 24.2-58.2 24.2-24.2 0-43.7-9.7-58.2-24.2-17-17-24.2-36.4-24.2-58.4 0-99.6-36.5-182.1-104.5-252.6-70.5-68-153-104.3-252.6-104.3-21.9 0-41.2-7.2-58.2-21.9-14.6-17-24.2-36.5-21.9-58.4-2.5-24.2 7.2-43.7 21.9-58.4 16.8-16.9 36.2-24.1 58.1-24.1z m58.3 308.4c38.9 0 75.2 14.5 102 41.2 26.7 29.1 43.7 63.1 43.7 104.5 0 38.9-17 75.2-43.7 102-26.7 29.1-63.1 43.7-102 43.7-41.2 0-75.4-14.6-104.5-43.7-26.7-26.8-41.2-63.2-41.2-102 0-41.4 14.5-75.4 41.2-104.5 29.1-26.7 60.7-41.2 99.6-41.2h4.9z" p-id="7420"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://gitee.com/Sevenalist" target="_blank" rel="noopener" title="Gitee" class="md-social__link">
+      <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Sevenalist" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.62 7.62 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:dengcz.cn@gmail.com" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg t="1740653239865" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1493" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M875.8 201H149.9c-28.6 0-51.9 23.2-51.9 51.9v518.5c0 28.6 23.2 51.9 51.9 51.9h725.9c28.6 0 51.9-23.2 51.9-51.9V252.9c0-28.7-23.3-51.9-51.9-51.9z m0 155.6L636.2 493.8 875.8 631v51.9L590.9 519.7 513.6 564l-77.7-44.3-286 163.1V631l240.6-137.2-240.6-137.2v-51.9l286 163.1 76.9 38.9 78.1-38.9 284.9-163.1v51.9z" p-id="1494"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "code": null, "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "header.autohide", "content.code.copy", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.indexes"], "search": {"options": {"baseUrl": "../../..", "bundleUrl": "../../../search/", "highlight": false, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "code.collapse": "\u6536\u8d77", "code.download": "\u4e0b\u8f7d", "code.expand": "\u5c55\u5f00\u5269\u4f59 # \u884c", "code.select": "\u5207\u6362\u884c\u9009\u62e9", "search.offline": "\u79bb\u7ebf\u641c\u7d22\u8bf7\u5207\u6362\u5230 Lunr", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.44453a05.min.js"></script>
+      
+        <script src="../../../js/tag-cards.js?v=4"></script>
+      
+        <script src="../../../js/world-filter.js?v=5"></script>
+      
+        <script src="../../../js/timeline.js"></script>
+      
+        <script src="../../../js/page-transitions.js"></script>
+      
+        <script src="../../../js/post-meta-mobile.js"></script>
+      
+        <script src="../../../js/post-back.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/md5.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../../assets/document_dates/core/core.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

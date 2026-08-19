@@ -6,13 +6,24 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Wed, 19 Aug 2026 00:38:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 23:17:37 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>大模型也要考试：从 MMLU 到 DeepSWE 看懂 AI 评测</title>
+      <link>https://dengcz.cn/world/2026/llm-benchmarks/</link>
+      <guid isPermaLink="false">e902d0e053e193df09b583fda9c6cd21a820bae3</guid>
+      <description>用最通俗的方式解释 MMLU、MMLU-Pro、GSM8K、HumanEval、SWE-bench、DeepSWE 等评测基准是什么、怎么来的、在考什么。</description>
+      <category>人工智能</category>
+      <category>科普</category>
+      <category>LLM</category>
+      <category>Benchmark</category>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0800</pubDate>
+    </item>
     <item>
       <title>科学哲学</title>
       <link>https://dengcz.cn/lines/science-philosophy/</link>
@@ -27,7 +38,7 @@
       <guid isPermaLink="false">dd922c8a6cba86096f49a2eaa248b534589801c2</guid>
       <description>Token、RAG、Agent、Skill、Harness……</description>
       <category>人工智能</category>
-      <category>概念</category>
+      <category>科普</category>
       <category>LLM</category>
       <pubDate>Tue, 11 Aug 2026 00:00:00 +0800</pubDate>
     </item>
@@ -88,16 +99,6 @@
       <guid isPermaLink="false">9438b586b14e375152471b77b46539050f0d69d1</guid>
       <description>Basic Information 网站架构 本站基于materialX架构搭建。 网站部署 本站部署在Github Pages上。 隐私政策 纯静态网站，不采集任何信息。 联系方式 Visual Identity 站徽由一枚 &lt; 和一枚 &gt; 上下错位排列组成。它们既是代码中最直观的符号， 也分别指向输入与输出，回应本站从技术笔记出发的背景。 两枚符号共同勾勒出字母 S，代表站名 Sevenalist。 &lt; 略向左上，&gt; 略向右下，让视觉重心沿一条连续的斜线展开， 也像思考在输入、处理与输出之间流动。 新版站徽使用圆头等线笔画，以柔和的转折替代旧版尖角；主色为…</description>
       <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
-    </item>
-    <item>
-      <title>Python 常用标准库</title>
-      <link>https://dengcz.cn/world/2026/python/</link>
-      <guid isPermaLink="false">93fa3911b335994cdfd90a6eace7458b8fe7ce7e</guid>
-      <description>Python 文件处理、数据读写、命令行、时间、日志与数据类常用写法。</description>
-      <category>编程</category>
-      <category>编程语法</category>
-      <category>Python</category>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 +0800</pubDate>
     </item>
   </channel>
 </rss>
