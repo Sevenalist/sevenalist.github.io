@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64b5f6" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="200" height="200" rx="22" ry="22" fill="url(#bgGradient)" />
+
+  <text 
+    x="100" 
+    y="118" 
+    font-family="Arial, 'Microsoft YaHei', sans-serif" 
+    font-size="75" 
+    font-weight="bold" 
+    text-anchor="middle" 
+    fill="#ffffff"
+  >
+    968T
+  </text>
+
+  <line 
+    x1="50" 
+    y1="148" 
+    x2="150" 
+    y2="148" 
+    stroke="#ffffff" 
+    stroke-width="2" 
+    stroke-opacity="0.6"
+  />
+</svg>
