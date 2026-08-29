@@ -6,13 +6,24 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Sat, 29 Aug 2026 08:30:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 23:56:08 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型</title>
+      <link>https://dengcz.cn/world/2026/nvidia-gpus/</link>
+      <guid isPermaLink="false">1bca1049a97ccefc6a88d5476fd23c71b162ba37</guid>
+      <description>4090、5090、6000、A100、H100 都是显卡，但分工完全不同。用产品线地图、命名密码和显存测算公式，一次讲清英伟达显卡的定位与部署能力。</description>
+      <category>人工智能</category>
+      <category>科普</category>
+      <category>GPU</category>
+      <category>Nvidia</category>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0800</pubDate>
+    </item>
     <item>
       <title>大模型也要考试：从 MMLU 到 DeepSWE 看懂 AI 评测</title>
       <link>https://dengcz.cn/world/2026/llm-benchmarks/</link>
@@ -92,13 +103,6 @@
       <category>水</category>
       <category>建筑</category>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
-    </item>
-    <item>
-      <title>About This Site</title>
-      <link>https://dengcz.cn/about/</link>
-      <guid isPermaLink="false">9438b586b14e375152471b77b46539050f0d69d1</guid>
-      <description>Basic Information 网站架构 本站基于materialX架构搭建。 网站部署 本站部署在Github Pages上。 隐私政策 纯静态网站，不采集任何信息。 联系方式 Visual Identity 站徽由一枚 &lt; 和一枚 &gt; 上下错位排列组成。它们既是代码中最直观的符号， 也分别指向输入与输出，回应本站从技术笔记出发的背景。 两枚符号共同勾勒出字母 S，代表站名 Sevenalist。 &lt; 略向左上，&gt; 略向右下，让视觉重心沿一条连续的斜线展开， 也像思考在输入、处理与输出之间流动。 新版站徽使用圆头等线笔画，以柔和的转折替代旧版尖角；主色为…</description>
-      <pubDate>Fri, 10 Jul 2026 23:52:27 +0800</pubDate>
     </item>
   </channel>
 </rss>

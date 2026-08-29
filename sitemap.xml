@@ -71,6 +71,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://dengcz.cn/world/2026/nvidia-gpus/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://dengcz.cn/world/2026/believe-or-not/</loc>
         <lastmod>2026-08-14</lastmod>
         <changefreq>daily</changefreq>
@@ -262,6 +267,16 @@
     </url>
     <url>
         <loc>https://dengcz.cn/world/tags/benchmark/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://dengcz.cn/world/tags/gpu/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://dengcz.cn/world/tags/nvidia/</loc>
         <lastmod>2026-08-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
