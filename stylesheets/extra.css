@@ -2076,6 +2076,23 @@ body:has(.home-shell) .md-main__inner {
     line-height: 1.6;
   }
 
+  .sevenalist-post-authors-mobile {
+    gap: 0.5rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .sevenalist-post-authors-mobile .md-post__profile {
+    font-size: 0.7rem;
+  }
+
+  .sevenalist-post-authors-mobile .md-profile__description a {
+    color: var(--md-default-fg-color);
+  }
+
+  .sevenalist-post-authors-mobile .md-profile__description a:hover {
+    color: var(--md-accent-fg-color);
+  }
+
   .sevenalist-post-meta-mobile .md-meta__list {
     display: flex;
     flex-wrap: wrap;
@@ -2096,6 +2113,14 @@ body:has(.home-shell) .md-main__inner {
   }
 
   .md-sidebar--post .md-nav--primary > ul.md-post__meta:first-of-type {
+    display: none;
+  }
+
+  .md-sidebar--post .md-post__authors {
+    display: none;
+  }
+
+  .document-dates-bottom .dd-right {
     display: none;
   }
 }

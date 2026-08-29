@@ -101,6 +101,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://dengcz.cn/world/2026/wirite-with-ai/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://dengcz.cn/world/2026/conda/</loc>
         <lastmod>2026-08-11</lastmod>
         <changefreq>daily</changefreq>
@@ -226,6 +231,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://dengcz.cn/world/topic/%E8%97%8F%E4%B9%A6%E6%A5%BC/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://dengcz.cn/world/topic/%E7%BC%96%E7%A8%8B/</loc>
         <lastmod>2026-08-29</lastmod>
         <changefreq>daily</changefreq>
@@ -236,17 +246,17 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://dengcz.cn/world/topic/%E8%97%8F%E4%B9%A6%E6%A5%BC/</loc>
-        <lastmod>2026-08-29</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://dengcz.cn/world/page/2/</loc>
         <lastmod>2026-08-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://dengcz.cn/world/page/3/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://dengcz.cn/world/archive/2026/page/2/</loc>
         <lastmod>2026-08-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
