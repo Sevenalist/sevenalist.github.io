@@ -6,13 +6,24 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Sat, 29 Aug 2026 23:56:08 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 00:57:26 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>英伟达三十年：一张显卡如何长成 AI 的基础设施</title>
+      <link>https://dengcz.cn/world/2026/nvidia-history/</link>
+      <guid isPermaLink="false">af2d118be6c60d03d7333482b530db93dbb45ef9</guid>
+      <description>从 1993 年三个人的工作室到 2026 年的超级算力：英伟达每一代 GPU 都回应了当时最贵的问题。顺着它的发展历史看 GPU、看 AI 的演变，再对照 AMD、英特尔与自研芯片阵营，就能理解今天算力格局的由来。</description>
+      <category>人工智能</category>
+      <category>科普</category>
+      <category>GPU</category>
+      <category>英伟达</category>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0800</pubDate>
+    </item>
     <item>
       <title>看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型</title>
       <link>https://dengcz.cn/world/2026/nvidia-gpus/</link>
@@ -93,16 +104,6 @@
       <guid isPermaLink="false">2fdd82255526797706a1e23105912d4587343399</guid>
       <description>Timelines 这里的每一篇文档都是一条时间线：朝代更迭、思想流派、个人轨迹……并且全部时间线在此处汇总在同一根轴上，点击标签即可筛选想要查看的线条，点击条目可以展开它的起止跨度。 本栏目灵感来源于fuXes的个人博客网站。</description>
       <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
-    </item>
-    <item>
-      <title>水井</title>
-      <link>https://dengcz.cn/world/2026/well/</link>
-      <guid isPermaLink="false">b2785becae0d6e4c881b760cdde4e4abc7d6d008</guid>
-      <description>水井，是一种人工挖掘或钻凿的取水设施</description>
-      <category>地理</category>
-      <category>水</category>
-      <category>建筑</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0800</pubDate>
     </item>
   </channel>
 </rss>

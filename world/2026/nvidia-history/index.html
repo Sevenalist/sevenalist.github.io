@@ -3,17 +3,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="4090、5090、6000、A100、H100 都是显卡，但分工完全不同。用产品线地图、命名密码和显存测算公式，一次讲清英伟达显卡的定位与部署能力。">
+        <meta name="description" content="从 1993 年三个人的工作室到 2026 年的超级算力：英伟达每一代 GPU 都回应了当时最贵的问题。顺着它的发展历史看 GPU、看 AI 的演变，再对照 AMD、英特尔与自研芯片阵营，就能理解今天算力格局的由来。">
       
       
       
-        <link rel="canonical" href="https://dengcz.cn/world/2026/nvidia-gpus/">
+        <link rel="canonical" href="https://dengcz.cn/world/2026/nvidia-history/">
       
       
-        <link rel="prev" href="../llm-benchmarks/">
+        <link rel="prev" href="../nvidia-gpus/">
       
-      
-        <link rel="next" href="../nvidia-history/">
       
       
         
@@ -31,7 +29,7 @@
     
     
       
-        <title>看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型 - Sevenalist</title>
+        <title>英伟达三十年：一张显卡如何长成 AI 的基础设施 - Sevenalist</title>
       
     
     
@@ -110,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4060-h100" class="md-skip">
+        <a href="#ai" class="md-skip">
           跳转至
         </a>
       
@@ -143,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型
+              英伟达三十年：一张显卡如何长成 AI 的基础设施
             
           </span>
         </div>
@@ -1325,10 +1323,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#1-ai" class="md-nav__link">
+  <a href="#0" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 显卡为什么成了 AI 的主角
+        0 先看一张时间线
       
     </span>
   </a>
@@ -1336,255 +1334,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#1-19931999" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2 显卡的“铁人三项”：显存、带宽、算力
+        1 1993–1999：三个人的赌局，和一次差点致命的失败
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2 显卡的“铁人三项”：显存、带宽、算力">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-19992006" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 1999–2006：可编程，是显卡命运的分岔口
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-20092012fermi-alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 2009–2012：Fermi 的学费，AlexNet 的闪电
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-20132017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 2013–2017：把公司押在“深度学习会赢”上
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-20182022ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 2018–2022：AI 军火商的炼成
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-20222026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 2022–2026：从卖卡到卖机房
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-amd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 竞争对手：AMD、英特尔，和“自己造芯片的人”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 竞争对手：AMD、英特尔，和“自己造芯片的人”">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#71-amd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 显存容量：第一道硬门槛
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 显存带宽：决定生成速度
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.3 算力：训练阶段才真正重要
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 英伟达的三种生意
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3 英伟达的三种生意">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-geforce-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 GeForce：性价比最高的 AI 卡
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-rtx-pro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 RTX PRO：面向工作站的“认证”卡
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 数据中心卡：云厂商的核心基础设施
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4 型号命名：字母标世代，数字定档位
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4 型号命名：字母标世代，数字定档位">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 数据中心卡：字母即架构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 消费级：数字定档位，后缀看变体
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-pro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 专业级：看到 PRO 字样即切换到“专业逻辑”
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4 数据中心卡：后缀同样承载信息
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5 一算就懂：模型到底占用多少显存
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6 速查表：什么卡能跑什么模型
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6 速查表：什么卡能跑什么模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-24gb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.1 24GB：一道值得注意的分水岭
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-70b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.2 70B 级别：真正的门槛
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-deepseek-r1-671b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.3 DeepSeek-R1 这类 671B 模型：不必强求
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.4 图像与视频模型：显存要求有所不同
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-4090-a100" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7 “4090 比 A100 强”为什么是错觉
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7 “4090 比 A100 强”为什么是错觉">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#71" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7.1 单卡推理：游戏卡更具性价比
+        7.1 AMD：从千年老二到正面挑战者
       
     </span>
   </a>
@@ -1595,7 +1426,29 @@
   <a href="#72" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.2 训练：这是团队的比赛
+        7.2 英特尔：输掉的那十年
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 “自己造芯片的人”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 竞争的实质
       
     </span>
   </a>
@@ -1611,7 +1464,7 @@
   <a href="#8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8 常见问题速答
+        8 展望：算力的下一站
       
     </span>
   </a>
@@ -1622,18 +1475,7 @@
   <a href="#9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9 选购建议：按用途选择，而非按参数攀比
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10 写在最后
+        9 写在最后
       
     </span>
   </a>
@@ -1722,14 +1564,14 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"></path></svg>
-                        <time datetime="2026-08-29 00:00:00+00:00" class="md-ellipsis">2026年8月29日</time>
+                        <time datetime="2026-08-30 00:00:00+00:00" class="md-ellipsis">2026年8月30日</time>
                       </div>
                     </li>
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"></path></svg>
-                          <time datetime="2026-08-30 00:52:38+08:00" class="md-ellipsis">2026年8月30日</time>
+                          <time datetime="2026-08-30 00:54:41+08:00" class="md-ellipsis">2026年8月30日</time>
                         </div>
                       </li>
                     
@@ -1751,7 +1593,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"></path></svg>
                           <span class="md-ellipsis">
                             
-                              阅读时长 10 分钟
+                              阅读时长 9 分钟
                             
                           </span>
                         </div>
@@ -1788,14 +1630,14 @@
       
       
       
-        <a href="../../tags/#tag:nvidia" class="md-tag md-tag-icon">Nvidia</a>
+        <a href="../../tags/#tag:科普" class="md-tag md-tag-icon">科普</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:科普" class="md-tag md-tag-icon">科普</a>
+        <a href="../../tags/#tag:英伟达" class="md-tag md-tag-icon">英伟达</a>
       
     
   </nav>
@@ -1810,12 +1652,12 @@
   <ul class="md-meta__list">
     <li class="md-meta__item">
       发布于
-      <time datetime="2026-08-29 00:00:00+00:00">2026年8月29日</time>
+      <time datetime="2026-08-30 00:00:00+00:00">2026年8月30日</time>
     </li>
     
       <li class="md-meta__item">
         更新于
-        <time datetime="2026-08-30 00:52:38+08:00">2026年8月30日</time>
+        <time datetime="2026-08-30 00:54:41+08:00">2026年8月30日</time>
       </li>
     
     
@@ -1828,7 +1670,7 @@
       
       <li class="md-meta__item">
         
-          阅读时长 10 分钟
+          阅读时长 9 分钟
         
       </li>
     
@@ -1836,485 +1678,210 @@
 </div>
 
 
-<h1 id="4060-h100">看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型<a class="headerlink" href="#4060-h100" title="Permanent link">¶</a></h1>
-<p>初次接触英伟达显卡型号的人，大概都有过类似的困惑：4090、5090、6000、A100、H100……这些型号究竟是什么意思？到底有什么不同？该怎么选？<!-- more --></p>
-<p>这些型号其实分属英伟达的三条产品线：面向游戏玩家的、面向工作站的专业卡，以及面向数据中心的加速卡。</p>
-<p>本文旨在讲清这三条线的分工、型号命名的规则，以及：以手中现有的显卡，究竟能部署多大的模型。</p>
+<h1 id="ai">英伟达三十年：一张显卡如何长成 AI 的基础设施<a class="headerlink" href="#ai" title="Permanent link">¶</a></h1>
+<p>今天人们把 H100、B200 挂在嘴边时，很少有人知道，英伟达的第一块芯片曾差点让这家公司破产。从 1993 年三个人的工作室，到 2026 年牵动全球 AI 基建的巨头，三十余年间英伟达的每一代 GPU，其实都是对“当时最贵的问题”的一次回答。这篇文章顺着时间线，讲清楚每一代产品背后的问题与赌注——GPU 如何从“画图的卡”变成“算数的基础设施”，以及这条路上，AMD、英特尔和“自己造芯片的人”各自走到了哪里。<!-- more --></p>
 <div class="admonition note">
-<p class="admonition-title">适用读者</p>
-<p>本文面向希望快速建立认知的读者：AI 应用开发者、本地部署爱好者，或者只想弄清楚“该买哪张卡”的普通用户。阅读不需要任何机器学习基础。</p>
+<p class="admonition-title">另一篇选型文章的定位</p>
+<p>本文讲“为什么会有这些卡”，属于历史与逻辑；具体到“某张卡能跑什么模型”的选型指南，见同栏目另一篇<a href="../nvidia-gpus/">《看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型》</a>。</p>
 </div>
-<h2 id="1-ai">1 显卡为什么成了 AI 的主角<a class="headerlink" href="#1-ai" title="Permanent link">¶</a></h2>
-<p>GPU之所以这么重要，靠的是<strong>通过矩阵运算加快计算速度</strong>。</p>
-<p>CPU 像一支人数不多但全能的小队，什么任务都能处理；显卡则是一支规模庞大的流水线——每个单元只做“相乘再相加”，虽然单一，但能够同时处理海量的同类计算。而很巧的是，神经网络从训练到推理，绝大部分计算恰好就是这样的矩阵乘法。</p>
-<p>变化始于 2018 年：图灵（Turing）架构开始，英伟达在游戏卡中也加入了张量核心（Tensor Core），专门加速矩阵运算。所以今天任何一张游戏卡都能运行大模型——这并非巧合，而是英伟达当年就有意为之的布局。</p>
-<p>值得一提的是，RTX 5090、RTX PRO 6000 Blackwell 乃至部分数据中心卡，芯片本质上属于同一代架构。这些不同的硬件的真正的差异来自显存、互联、供电与驱动定位这些外围配置。</p>
-<h2 id="2">2 显卡的“铁人三项”：显存、带宽、算力<a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
-<p>不必过分在意评测网站上的跑分数据。若要在本地运行模型，应先关注三项参数，建议的判断顺序是：显存容量 &gt; 显存带宽 &gt; 算力。</p>
+<h2 id="0">0 先看一张时间线<a class="headerlink" href="#0" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
-<th>指标</th>
-<th>比喻</th>
-<th>决定什么</th>
-<th>常见单位</th>
+<th>年份</th>
+<th>标志性产品</th>
+<th>当时要解决的问题</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>显存容量</td>
-<td>仓库大小</td>
-<td>模型装不装得下</td>
-<td>GB</td>
+<td>1995</td>
+<td>NV1</td>
+<td>PC 游戏 3D 加速从无到有（一次失败的尝试）</td>
 </tr>
 <tr>
-<td>显存带宽</td>
-<td>传送带速度</td>
-<td>生成速度（tokens/s）</td>
-<td>GB/s</td>
+<td>1997</td>
+<td>RIVA 128</td>
+<td>做出一块玩家买得起、性能能打的 3D 芯片</td>
 </tr>
 <tr>
-<td>算力</td>
-<td>搬砖工人数</td>
-<td>计算能有多快，训练更看重它</td>
-<td>TFLOPS / TOPS</td>
-</tr>
-</tbody>
-</table>
-<h3 id="21">2.1 显存容量：第一道硬门槛<a class="headerlink" href="#21" title="Permanent link">¶</a></h3>
-<p>推理时，模型权重必须完整驻留在显存中。一旦装不下，系统只能将部分权重转移到系统内存（Offload），生成速度随即大幅下降。因此显存容量是硬性约束，算力再强也无法弥补容量的不足。</p>
-<h3 id="22">2.2 显存带宽：决定生成速度<a class="headerlink" href="#22" title="Permanent link">¶</a></h3>
-<p>大模型逐 Token 生成，每生成一个 Token 都要将全部权重从显存中重新读取。据此可以粗略估算单卡推理速度：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>理论速度 (tokens/s) ≈ 显存带宽 ÷ 模型权重大小
-</code></pre></div>
-<p>以 RTX 4090 为例：带宽约 1.0 TB/s，运行 8B 模型的 4-bit 量化版（权重约 5GB），理论上限约 200 tokens/s，实际约为理论值的一半。同一模型改用 H200（4.8 TB/s）后，速度可提升近 5 倍——推理快慢主要取决于显存带宽，而非宣传中常见的算力数字。<sup id="fnref:h200"><a class="footnote-ref" href="#fn:h200">1</a></sup></p>
-<h3 id="23">2.3 算力：训练阶段才真正重要<a class="headerlink" href="#23" title="Permanent link">¶</a></h3>
-<p>算力决定“乘加运算能算多快”，微调与训练更依赖它。值得注意的是，RTX 4090 的 FP16 算力（约 330 TFLOPS）甚至略高于 A100 80GB（约 312 TFLOPS）——那么 A100 的价值从何而来？下文会详细说明。<sup id="fnref:a100"><a class="footnote-ref" href="#fn:a100">2</a></sup></p>
-<div class="admonition warning">
-<p class="admonition-title">算力不等于全部：“4090 吊打 A100”的误读</p>
-<p>算力恰恰是 A100 最不值一提的优点。它真正的价值在于 80GB HBM 显存、2 TB/s 带宽、NVLink 互联与 ECC。这些才是数据中心卡的根基。</p>
-</div>
-<h2 id="3">3 英伟达的三种生意<a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
-<p>英伟达有三条产品线：面向玩家的 GeForce、面向工作站的 RTX PRO、面向数据中心的加速卡。</p>
-<pre class="mermaid"><code>flowchart LR
-  subgraph gc["GeForce 游戏卡（消费级）"]
-    A["RTX 4060 · 8GB"]
-    B["RTX 5070 · 12GB"]
-    C["RTX 5090 · 32GB"]
-  end
-  subgraph wp["RTX PRO 专业卡（工作站）"]
-    D["RTX PRO 4000/5000 中端"]
-    E["RTX 6000 Ada · 48GB"]
-    F["RTX PRO 6000 Blackwell · 96GB"]
-  end
-  subgraph dc["数据中心加速卡（训练/云服务）"]
-    G["A100 · 80GB"]
-    H["H100/H200 · 80/141GB"]
-    I["B200/B300 · 192/288GB"]
-  end</code></pre>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>GeForce</th>
-<th>RTX PRO</th>
-<th>数据中心加速卡</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>典型用户</td>
-<td>玩家、个人本地部署</td>
-<td>工作站、中小企业、商用部署</td>
-<td>云厂商、训练集群</td>
+<td>1999</td>
+<td>GeForce 256</td>
+<td>把几何变换与光照从 CPU 接管，首次定义“GPU”</td>
 </tr>
 <tr>
-<td>显存</td>
-<td>GDDR，8–32GB</td>
-<td>GDDR，16–96GB</td>
-<td>HBM，40–288GB</td>
+<td>2001</td>
+<td>GeForce 3</td>
+<td>可编程着色器：显卡开始由软件定义</td>
 </tr>
 <tr>
-<td>显存带宽</td>
-<td>0.27–1.79 TB/s</td>
-<td>0.6–1.9 TB/s</td>
-<td>1.2–8 TB/s</td>
+<td>2006</td>
+<td>G80 与 CUDA</td>
+<td>统一着色器架构，并向通用计算开放</td>
 </tr>
 <tr>
-<td>互联</td>
-<td>仅 PCIe（无 NVLink）</td>
-<td>PCIe，部分支持 NVLink 桥接</td>
-<td>NVLink/NVSwitch，可整柜组网</td>
+<td>2009</td>
+<td>Fermi</td>
+<td>让显卡认真做科学计算：双精度、ECC、缓存重构</td>
 </tr>
 <tr>
-<td>单卡价格</td>
-<td>约 ¥2 千–1.7 万</td>
-<td>约 ¥3 万–8 万</td>
-<td>约 ¥6 万起，旗舰可超 ¥20 万</td>
+<td>2012</td>
+<td>GTX 580</td>
+<td>它跑出了 AlexNet，深度学习由此爆发</td>
 </tr>
 <tr>
-<td>显示输出</td>
-<td>有</td>
-<td>有</td>
-<td>无（纯计算卡）</td>
+<td>2016</td>
+<td>P100 与 DGX-1</td>
+<td>多卡训练亟需 NVLink；客户不想自己攒机器</td>
 </tr>
 <tr>
-<td>ECC / vGPU / 认证驱动</td>
-<td>无</td>
-<td>有</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">价格说明</p>
-<p>按 2026 年国内市场行情估算，波动较大，仅用于感知不同产品线的量级差异。</p>
-</div>
-<h3 id="31-geforce-ai">3.1 GeForce：性价比最高的 AI 卡<a class="headerlink" href="#31-geforce-ai" title="Permanent link">¶</a></h3>
-<p>游戏卡的核心优势在于价格。RTX 5090 提供了 32GB 显存与 1.79 TB/s 带宽，足以支撑本地聊天、生图与 LoRA 微调等常见场景。<sup id="fnref:rtx-50"><a class="footnote-ref" href="#fn:rtx-50">3</a></sup> 局限同样明显：没有 ECC、没有 NVLink（RTX 40/50 系均无），驱动面向游戏优化。</p>
-<p>还需提醒一点：英伟达的 GeForce 驱动许可不允许将游戏卡大规模部署在数据中心。个人自用没有问题，商用则应使用专业或数据中心产品线。</p>
-<h3 id="32-rtx-pro">3.2 RTX PRO：面向工作站的“认证”卡<a class="headerlink" href="#32-rtx-pro" title="Permanent link">¶</a></h3>
-<p>RTX PRO 与游戏卡芯片同源，定位却是专业应用：显存可达 96GB，支持 ECC，驱动经过 ISV 认证（CAD、建模、渲染等软件兼容性更有保障），并可通过 vGPU 拆分多租户使用。</p>
-<p>适合三类需求：商用交付、单卡全速运行 70B 量化模型、以及不愿在驱动稳定性上投入精力的工作室。代表型号为 RTX 6000 Ada（48GB）与 RTX PRO 6000 Blackwell（96GB）。<sup id="fnref:rtx-pro"><a class="footnote-ref" href="#fn:rtx-pro">4</a></sup> <sup id="fnref:rtx-pro-blackwell"><a class="footnote-ref" href="#fn:rtx-pro-blackwell">5</a></sup></p>
-<h3 id="33">3.3 数据中心卡：云厂商的核心基础设施<a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
-<p>这类卡没有显示接口、没有独立风扇（SXM 版依靠服务器风道），采用高带宽 HBM 显存，并配备 NVLink 高速互联，整柜显卡可协同计算。从 V100、A100、H100、H200 到 B200/B300，大模型训练几乎全部依赖它们。</p>
-<p>普通用户与这类卡的交集，多半在于“租用”：云端按小时出租的 H100，正是它们。<sup id="fnref:h100"><a class="footnote-ref" href="#fn:h100">6</a></sup></p>
-<h2 id="4">4 型号命名：字母标世代，数字定档位<a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
-<h3 id="41">4.1 数据中心卡：字母即架构<a class="headerlink" href="#41" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>代号</th>
-<th>架构（发布年）</th>
-<th>显存</th>
-<th>带宽</th>
-<th>一句话定位</th>
-</tr>
-</thead>
-<tbody>
-<tr>
+<td>2017</td>
 <td>V100</td>
-<td>Volta（2017）</td>
-<td>32GB HBM2</td>
-<td>0.9 TB/s</td>
-<td>大模型训练时代的起点</td>
+<td>张量核心：为深度学习专门制造的计算单元</td>
 </tr>
 <tr>
+<td>2018</td>
+<td>RTX 2080</td>
+<td>实时光线追踪，以及进入消费级的张量核心</td>
+</tr>
+<tr>
+<td>2020</td>
 <td>A100</td>
-<td>Ampere（2020）</td>
-<td>40/80GB HBM2e</td>
-<td>1.2/2.0 TB/s</td>
-<td>经受住时间考验的经典款</td>
+<td>训练与推理一体，一张卡可弹性拆分</td>
 </tr>
 <tr>
+<td>2022</td>
 <td>H100</td>
-<td>Hopper（2022）</td>
-<td>80GB HBM3</td>
-<td>3.35 TB/s</td>
-<td>标杆：让 LLM 训练成为现实</td>
+<td>大模型训练规格，随后变成“一卡难求”</td>
 </tr>
 <tr>
-<td>H200</td>
-<td>Hopper 换显存（2024）</td>
-<td>141GB HBM3e</td>
-<td>4.8 TB/s</td>
-<td>大显存推理的主力</td>
+<td>2024</td>
+<td>GB200 NVL72</td>
+<td>把 72 张卡做成一台“巨型 GPU”</td>
 </tr>
 <tr>
-<td>B200</td>
-<td>Blackwell（2024/25）</td>
-<td>192GB HBM3e</td>
-<td>8.0 TB/s</td>
-<td>新一代旗舰</td>
-</tr>
-<tr>
-<td>B300</td>
-<td>Blackwell Ultra（2025）</td>
-<td>288GB HBM3e</td>
-<td>8.0 TB/s</td>
-<td>主打 FP4 推理</td>
-</tr>
-<tr>
-<td>Rubin</td>
-<td>下一代（2026 起量产）</td>
-<td>更大</td>
-<td>更快</td>
-<td>2026 年开始出货，路线图仍在推进</td>
+<td>2026</td>
+<td>Vera Rubin</td>
+<td>全面投产：算力竞争进入下一轮</td>
 </tr>
 </tbody>
 </table>
-<p>此外还有一位服役多年的老将 T4（Turing，16GB GDDR6）：2018 年以后云端常见的“便宜推理卡”，至今在不少 GPU 云上仍能见到。<sup id="fnref2:a100"><a class="footnote-ref" href="#fn:a100">2</a></sup> <sup id="fnref:blackwell"><a class="footnote-ref" href="#fn:blackwell">7</a></sup> <sup id="fnref:b300"><a class="footnote-ref" href="#fn:b300">8</a></sup></p>
-<h3 id="42">4.2 消费级：数字定档位，后缀看变体<a class="headerlink" href="#42" title="Permanent link">¶</a></h3>
-<p>GeForce RTX 50 系列延续了多年的规则：<strong>50 入门、60 主流、70 中坚、80 次旗舰、90 旗舰</strong>。后缀各有含义：</p>
+<h2 id="1-19931999">1 1993–1999：三个人的赌局，和一次差点致命的失败<a class="headerlink" href="#1-19931999" title="Permanent link">¶</a></h2>
+<p>1993 年，黄仁勋、克里斯·马拉乔夫斯基与柯蒂斯·普里姆三人在一家快餐店定下了创业方向：做 PC 游戏的 3D 加速芯片。当时的背景很简单——PC 游戏正在爆发，但 3D 图形只能靠 CPU 硬算，速度惨不忍睹，一台专门干这活的显卡是行业痛点。</p>
+<p>不过第一块芯片 NV1 走偏了：英伟达把它做成了“万能卡”，显卡、声卡、游戏手柄接口全塞进去，连渲染方式都采用了当时非主流的四边形管线，与主流 API 不兼容。结果是市场毫无反应，公司的钱很快烧完，濒临倒闭。</p>
+<p>救命的是一纸合同：世嘉为委托开发的主机芯片预付了 500 万美元，芯片虽然最终被取消，但这笔钱让英伟达活了下来。它也由此学会了最重要的一课——<strong>不要逆着行业标准做事</strong>。</p>
+<p>1997 年的 RIVA 128 是转折点：低价、快、兼容主流 API，一战成名。1999 年 8 月，GeForce 256 问世，英伟达第一次在宣传中使用了“GPU”这个词——它号称能独立完成几何变换、光照与光栅化，把原本 CPU 的活儿抢了过来。同年，公司上市。所谓“GPU”，从一开始就不是“图形芯片”的意思，而是“抢走 CPU 一部分工作的并行处理器”。<sup id="fnref:nvidia-timeline"><a class="footnote-ref" href="#fn:nvidia-timeline">1</a></sup> <sup id="fnref:geforce-256"><a class="footnote-ref" href="#fn:geforce-256">2</a></sup></p>
+<h2 id="2-19992006">2 1999–2006：可编程，是显卡命运的分岔口<a class="headerlink" href="#2-19992006" title="Permanent link">¶</a></h2>
+<p>GeForce 3（2001）意义深远：它引入了可编程着色器，显卡第一次允许开发者用代码定义“怎么渲染”，而不再是一套固定的电路逻辑。图形学研究者从此获得自由，也为日后“显卡能做通用计算”埋下了伏笔——毕竟，一块能被软件定义的芯片，最终会被软件定义成任何东西。</p>
+<p>2000 年，英伟达收购了曾一度称霸市场的 3dfx——后者因产品迭代失败而破产。<sup id="fnref2:nvidia-timeline"><a class="footnote-ref" href="#fn:nvidia-timeline">1</a></sup>到 2006 年，G80（GeForce 8800 GTX）用统一着色器架构取代了分离的顶点/像素管线，让所有计算单元自由分工。同年，英伟达悄悄发布了 CUDA：一套让程序员用 C 语言在显卡上写通用程序的工具链。<sup id="fnref:cuda"><a class="footnote-ref" href="#fn:cuda">3</a></sup></p>
+<p>当时几乎没人觉得 CUDA 有用。普通开发者的问题是：为什么要在一块显卡上算数？图形要的像素算完了，剩下几块算力能干嘛？答案当时只有学术圈和超级计算圈感兴趣：流体、分子动力学、天体物理。英伟达内部也有人认为这是不务正业。但在“摩尔定律在 GPU 上跑得比 CPU 快”这条曲线上，这家公司看到了别人没看到的东西——显卡迟早会算得比 CPU 快得多，而那一天需要有人提前铺好“让软件能用起来”的路。</p>
+<h2 id="3-20092012fermi-alexnet">3 2009–2012：Fermi 的学费，AlexNet 的闪电<a class="headerlink" href="#3-20092012fermi-alexnet" title="Permanent link">¶</a></h2>
+<p>2009 年发布的 Fermi 架构是英伟达的第二次豪赌：为“计算”重新设计了整块芯片——加入双精度浮点、ECC 内存纠错、重构缓存体系，性能对标的是超级计算机，而不是游戏。当时的买主只有超算中心：天体物理模拟、石油勘探这类科学计算场景，愿意为“一块能插进服务器机房的显卡”掏钱。</p>
+<p>这是在为第二战场交学费，而回报来得比任何人预料的都快。2012 年，AlexNet 凭借两块 GTX 580 完成训练，在 ImageNet 图像识别竞赛中将错误率从上一年的约 26% 大幅降到 15% 左右，一战成名——深度学习时代自那一天开始。<sup id="fnref:alexnet"><a class="footnote-ref" href="#fn:alexnet">4</a></sup></p>
+<p>英伟达的“意外”其实早就准备好了：CUDA 已经打磨了五年，之后的 cuDNN（2014）进一步把深度学习算子变成开箱即用的库。深度学习研究者不需要显卡画图，只需要它算数——GPU 的第二职业，就此转正。</p>
+<h2 id="4-20132017">4 2013–2017：把公司押在“深度学习会赢”上<a class="headerlink" href="#4-20132017" title="Permanent link">¶</a></h2>
+<p>2016 年的 P100 是分水岭：16nm 工艺、HBM2 高带宽显存，更重要的是首次引入 NVLink——GPU 与 GPU 之间直接高速互联，绕过 PCIe 总线。<sup id="fnref:p100"><a class="footnote-ref" href="#fn:p100">5</a></sup>它的设计目标只有一个：让多块显卡像一块卡一样协同训练模型。同年，英伟达推出整机 DGX-1（8 张 P100 预装调试），标价 12.9 万美元，并把第一台亲手送到了当时只有几十人的 OpenAI。客户不要自己攒机，英伟达就卖整机。<sup id="fnref:dgx-1"><a class="footnote-ref" href="#fn:dgx-1">6</a></sup></p>
+<p>2017 年的 V100（Volta 架构）则更进一步：张量核心（Tensor Core）首次亮相，一个专门做矩阵乘法的专用单元，吞吐是普通 CUDA 核心的倍数级。<sup id="fnref:v100"><a class="footnote-ref" href="#fn:v100">7</a></sup>至此，“AI 芯片”这个称谓名副其实——它不再是为图形优化的芯片顺带算点矩阵，而是为矩阵运算设计的芯片。</p>
+<p>同一时期还有一条容易忽略的产品线：2014 年的 Jetson TK1 把 CUDA 塞进了巴掌大的嵌入式模块，随后是 TX1、TX2、Xavier——服务无人机、机器人、自动驾驶。2017 年，任天堂 Switch 使用的正是英伟达的 Tegra 芯片。这些产品的逻辑一以贯之：<strong>数据中心之外的设备同样需要算力，但它们要的是能效比，不是绝对性能。</strong> 这一支线延续到今天，就是 2025 年发布的 Jetson Thor——基于 Blackwell 架构，面向通用机器人与边缘 AI 的实时推理。<sup id="fnref:jetson-thor"><a class="footnote-ref" href="#fn:jetson-thor">8</a></sup></p>
+<p>……当然，转型并非一帆风顺。2018 年加密货币泡沫破裂叠加游戏显卡需求下滑，英伟达股价一度腰斩。回头看，那只是大时代前的阵痛。</p>
+<h2 id="5-20182022ai">5 2018–2022：AI 军火商的炼成<a class="headerlink" href="#5-20182022ai" title="Permanent link">¶</a></h2>
+<p>2018 年，Turing 架构把实时光线追踪和 Tensor Core 一起带进消费级游戏卡：RTX 2080 首销被抢购一空。光线追踪解决“游戏画面逼近电影”的巨额计算量，而 Tensor Core 则顺手催生了 DLSS——用 AI 把低分辨率画面放大成高分辨率，游戏卡开始“买画图送算力”。</p>
+<p>2019 年，英伟达宣布收购 Mellanox。当时许多人看不懂：一家显卡公司买网络设备公司做什么？答案是：当 GPU 数量达到几千片上万片时，芯片之间的通信就是最大的瓶颈。此后 NVSwitch、InfiniBand、BlueField DPU 进入产品矩阵，英伟达从“卖芯片”变成“卖整个数据中心”。</p>
+<p>2020 年的 A100 把这种思路推向成熟：支持 MIG 弹性切分（一张卡拆成多个独立实例给不同租户）、80GB HBM2e、训练推理通吃。<sup id="fnref:a100"><a class="footnote-ref" href="#fn:a100">9</a></sup>同一年的另一面是显卡被加密货币矿工抢购一空，游戏玩家怨声载道——那是算力第一次以“资源”的身份进入大众视野。</p>
+<p>2022 年，Hopper 架构的 H100 发布：80GB HBM3、3.35 TB/s 带宽、FP8 精度，规格直指 GPT-4 这一级别的训练。同年 11 月，ChatGPT 发布。接下来的故事尽人皆知：全世界的云厂商都在抢 H100，英伟达的市值从 2024 年起登上全球之巅。<sup id="fnref:h100"><a class="footnote-ref" href="#fn:h100">10</a></sup></p>
+<h2 id="6-20222026">6 2022–2026：从卖卡到卖机房<a class="headerlink" href="#6-20222026" title="Permanent link">¶</a></h2>
+<p>2024 年的 GB200 NVL72 定义了一种新形态：72 张 Blackwell 通过 NVSwitch 组成一个整柜“超级 GPU”，对外就是一台机器。<sup id="fnref:blackwell"><a class="footnote-ref" href="#fn:blackwell">11</a></sup> 2025 年，Blackwell Ultra（B300）把单卡显存推到 288GB。<sup id="fnref:b300"><a class="footnote-ref" href="#fn:b300">12</a></sup> 2026 年，下一代 Vera Rubin 已在 CES 上宣布全面投产。<sup id="fnref:rubin"><a class="footnote-ref" href="#fn:rubin">13</a></sup></p>
+<p>伴随硬件的还有故事的另一半：市值。2024 年英伟达一度成为全球市值最高的公司，2025 年率先突破 4 万亿美元，到 2026 年，市场讨论的焦点已经变成“谁先到 10 万亿美元”以及随之而来的泡沫之争。<sup id="fnref:market-cap"><a class="footnote-ref" href="#fn:market-cap">14</a></sup></p>
+<p>而在“机房”的另一端，Jetson Thor 代表的边缘算力同样在生长：通用机器人需要把推理放到现场，而不是每次请求都绕道云端。从云端巨兽到终端大脑，英伟达的产品版图已经覆盖了“算力产生、传输、消费”的整条链路。</p>
+<h2 id="7-amd">7 竞争对手：AMD、英特尔，和“自己造芯片的人”<a class="headerlink" href="#7-amd" title="Permanent link">¶</a></h2>
+<h3 id="71-amd">7.1 AMD：从千年老二到正面挑战者<a class="headerlink" href="#71-amd" title="Permanent link">¶</a></h3>
+<p>AMD 在 2006 年收购 ATI 获得显卡业务，此后与英伟达在游戏市场拉锯了十几年，始终是“性能相近、价格更低、生态吃亏”的千年老二。转折发生在 AI 时代：Instinct MI250X（2021）支撑了当时世界最强的超算 Frontier；MI300X（2023）以 192GB HBM3 单卡内存直追数据中心卡规格；<sup id="fnref:amd-mi300x"><a class="footnote-ref" href="#fn:amd-mi300x">15</a></sup>2025 年的 MI355X 与 2026 年的 MI400/Helios 整柜，目标直指与 Vera Rubin NVL72 一档。<sup id="fnref:amd-mi400"><a class="footnote-ref" href="#fn:amd-mi400">16</a></sup> <sup id="fnref:amd-helios"><a class="footnote-ref" href="#fn:amd-helios">17</a></sup></p>
+<p>AMD 的软肋从来不是硬件，而是软件：CUDA 积累了近二十年，而 ROCm 的兼容层与工具链至今仍在追赶。不过差距在收窄——2026 年，AMD 与 OpenAI 宣布展开覆盖全栈的深度合作，这是此前难以想象的局面。<sup id="fnref:amd-openai"><a class="footnote-ref" href="#fn:amd-openai">18</a></sup></p>
+<h3 id="72">7.2 英特尔：输掉的那十年<a class="headerlink" href="#72" title="Permanent link">¶</a></h3>
+<p>英特尔在 AI 加速卡上的经历堪称反面教材。2007 年启动的 Larrabee 想用 x86 核堆出一块通用显卡，结果在工程量级与软件适配的双重压力下流产；随后 Xeon Phi 昙花一现；2019 年收购 Habana Labs 得到 Gaudi 训练芯片；2022 年 Arc 消费显卡与 Ponte Vecchio 超算卡姗姗来迟，市场存在感始终有限。2025 年，英特尔宣布放弃大肆宣传的 Falcon Shores 大芯片，2026 年把全部筹码押到机架级 Jaguar Shores 上——业界普遍认为，这将是英特尔的最后机会。<sup id="fnref:intel"><a class="footnote-ref" href="#fn:intel">19</a></sup></p>
+<h3 id="73">7.3 “自己造芯片的人”<a class="headerlink" href="#73" title="Permanent link">¶</a></h3>
+<p>还有一类竞争对手不那么出名，却被英伟达视为长期威胁：云厂商的自研芯片。谷歌 TPU（2015 年起内部部署）、亚马逊 Trainium/Inferentia、Meta MTIA、微软 Maia——自研的动机很朴素：成本可控、供给自主、针对自家负载优化。代价是通用性差、迭代慢。英伟达的应对是向“系统”延伸：把网络、交换、机柜一起卖，让自研者难以在“生态便利”上匹敌。<sup id="fnref:tpu"><a class="footnote-ref" href="#fn:tpu">20</a></sup></p>
+<p>此外还有一个无法回避的变量：出口管制。A100、H100 及其继任者被限制向中国出口，客观上催生了华为昇腾等国产算力生态，世界正在形成两个并行演进的算力市场。</p>
+<h3 id="74">7.4 竞争的实质<a class="headerlink" href="#74" title="Permanent link">¶</a></h3>
+<p>把各方放到一起看，竞争的维度早已不是“谁的芯片大”。桌面、机房、终端、网络、软件、产能、能源——这是一场全栈竞赛，而英伟达的领先，多半要归功于它同时对“芯片、互联、软件、系统”四个层面下了注。</p>
+<h2 id="8">8 展望：算力的下一站<a class="headerlink" href="#8" title="Permanent link">¶</a></h2>
+<p>站在 2026 年回望，可以预期四条主线：</p>
 <ul>
-<li><code>Ti</code> / <code>Super</code>：加强版（如 5070 Ti、4080 Super）；</li>
-<li><code>D</code>：中国特供版。以 RTX 5090D 为例，为符合出口管制削减了约两成多的 AI 算力（游戏性能基本不受影响），购买前应明确自身用途。<sup id="fnref:rtx-5090d"><a class="footnote-ref" href="#fn:rtx-5090d">9</a></sup></li>
+<li><strong>推理成本取代训练成本成为主战场。</strong> 模型训练一次花费巨大，但推理是每时每刻都在花钱的。未来竞争的核心是“每一百万 Token 的价格”，低精度专用推理芯片与集群调度优化的价值将凸显。</li>
+<li><strong>边缘与云的分工更加清晰。</strong> 云端训练、混合部署推理、终端常驻小模型——Jetson Thor 这类边缘算力将与数据中心形成互补，而非替代关系。</li>
+<li><strong>能源成为新的天花板。</strong> 一个 GB200 机柜的功耗已达上百千瓦，液冷成为标配。算力竞赛的物理上限正在逼近，效率曲线决定下一轮定价权，未来数据中心的位置很可能取决于“哪里有电”。</li>
+<li><strong>软件开放的呼声渐起。</strong> 谷歌、AMD 等推动的 UALink 等开放互联标准，以及业界对单一 CUDA 依赖的警惕，都在给封闭生态施压。但二十余年积累的开发者惯性，短期难被撼动。</li>
 </ul>
-<h3 id="43-pro">4.3 专业级：看到 PRO 字样即切换到“专业逻辑”<a class="headerlink" href="#43-pro" title="Permanent link">¶</a></h3>
-<p>RTX PRO 系列数字越大档位越高：4000/5000 为中端，6000 为旗舰。旧命名中的 “RTX 6000 Ada” 则是“世代名 + 档位”，Ada 即架构名称。看到 PRO、Ada、Hopper 这类字样，应理解为专业应用定位，与同代的游戏卡并非同一逻辑。</p>
-<h3 id="44">4.4 数据中心卡：后缀同样承载信息<a class="headerlink" href="#44" title="Permanent link">¶</a></h3>
-<ul>
-<li><code>SXM</code>：服务器机架专用插槽，供电与互联更强；<code>PCIe</code>：通用插槽，兼容普通服务器，功耗略低；</li>
-<li><code>NVL</code>：带 NVLink 的版本（如 H200 NVL 141GB）；</li>
-<li><code>GB200</code>：Grace CPU + Blackwell GPU 的组合整机；<code>NVL72</code>：72 张 Blackwell 通过 NVSwitch 组成的整柜超级计算机。</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">示例速览</p>
-<ul>
-<li><code>RTX PRO 6000 Blackwell</code>：专业线、旗舰档、Blackwell 世代 → 96GB 大显存，工作站顶配。</li>
-<li><code>H200 NVL 141GB</code>：Hopper 架构高代号、带 NVLink、141GB 显存 → 数据中心高端推理卡。</li>
-<li>掌握“<strong>产品线 + 世代 + 档位</strong>”这三点，新出的型号基本都能快速定位。</li>
-</ul>
-</div>
-<h2 id="5">5 一算就懂：模型到底占用多少显存<a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
-<p>部署模型的核心计算只有一条：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>权重显存 ≈ 参数量 × 每参数字节数
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>FP16/BF16：2 字节/参数；INT8：1 字节；INT4（4-bit 量化）：约 0.5–0.6 字节
-</code></pre></div>
-<p>算完之后还需为 KV 缓存与推理框架留出余量，建议在权重之外再预留 20%–40%。上下文越长，KV 缓存的占用越大，这一机制的细节在<a href="../ai/">大语言模型概念速览</a>中有更完整的说明。</p>
-<p>常见模型的显存占用参考（约值）：</p>
-<table>
-<thead>
-<tr>
-<th>模型（参数量）</th>
-<th>FP16</th>
-<th>INT8</th>
-<th>INT4（4-bit）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>7–8B（Qwen2.5-7B、Llama-3-8B）</td>
-<td>~16 GB</td>
-<td>~8 GB</td>
-<td>~5 GB</td>
-</tr>
-<tr>
-<td>14B（Qwen2.5-14B）</td>
-<td>~28 GB</td>
-<td>~14 GB</td>
-<td>~9 GB</td>
-</tr>
-<tr>
-<td>32B（Qwen2.5-32B、DeepSeek-R1-Distill 32B）</td>
-<td>~65 GB</td>
-<td>~32 GB</td>
-<td>~20 GB</td>
-</tr>
-<tr>
-<td>70–72B（Llama-3-70B、Qwen2.5-72B）</td>
-<td>~140 GB</td>
-<td>~70 GB</td>
-<td>~40 GB</td>
-</tr>
-<tr>
-<td>671B MoE（DeepSeek-R1 / V3）</td>
-<td>~1300 GB</td>
-<td>~700 GB</td>
-<td>~400 GB</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">为什么主流方案偏爱 4-bit 量化</p>
-<p>70B 模型经 INT4 量化后，权重从 140GB 降至约 40GB，一张 48GB 的 RTX 6000 Ada 即可完整容纳。精度损失在多数任务中几乎不可察觉，本地部署最常用的 Ollama 默认即采用 4-bit 量化，日常使用完全足够。<sup id="fnref:ollama"><a class="footnote-ref" href="#fn:ollama">10</a></sup></p>
-</div>
-<p>量化与推理的更多原理，可参考<a href="../ai/">大语言模型概念速览</a>；具体的部署步骤，建议阅读<a href="../../2025/ollama/">Ollama 部署本地大模型</a>。</p>
-<h2 id="6">6 速查表：什么卡能跑什么模型<a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">读表说明</p>
-<p>按<strong>单卡</strong>估算，以主流开源大模型为例：FP16 表示全精度权重，Q4 表示 4-bit 量化。速度反映实际聊天体验，随量化方案、上下文长度与推理框架差异较大，仅供参考。</p>
-</div>
-<table>
-<thead>
-<tr>
-<th>显存</th>
-<th>代表显卡</th>
-<th>能跑的模型</th>
-<th>典型用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>8GB</td>
-<td>RTX 4060 / 5060</td>
-<td>3B 全精度；7–8B Q4；SD 1.5</td>
-<td>轻量聊天、语音转文字、个人 RAG</td>
-</tr>
-<tr>
-<td>12GB</td>
-<td>RTX 4070 / 5070</td>
-<td>3–4B 全精度；7–8B Q4 很舒服；14B Q4 勉强</td>
-<td>日常聊天、SDXL 生图</td>
-</tr>
-<tr>
-<td>16GB</td>
-<td>RTX 4080 Super / 5080 / 5070 Ti</td>
-<td>7–8B FP16；14B Q4；32B Q4 放不下（需 Offload）</td>
-<td>高质量聊天、代码助手、7B LoRA 微调</td>
-</tr>
-<tr>
-<td>24GB</td>
-<td>RTX 3090 / 4090</td>
-<td>14B FP16；32B Q4 可行；FLUX 全精度生图</td>
-<td>本地全能：大模型 + 生图 + 小规模微调</td>
-</tr>
-<tr>
-<td>32GB</td>
-<td>RTX 5090</td>
-<td>32B Q4 全速；32B FP16 / 70B Q4 需 Offload 或多卡</td>
-<td>个人顶配、视频生成入门</td>
-</tr>
-<tr>
-<td>48GB</td>
-<td>RTX 6000 Ada</td>
-<td>70B Q4 全速（约 44GB）；32B INT8；14B 长上下文</td>
-<td>商用单卡部署 70B 级模型</td>
-</tr>
-<tr>
-<td>96GB</td>
-<td>RTX PRO 6000 Blackwell</td>
-<td>70B INT8 全速；120B Q4；70B FP16 需 Offload</td>
-<td>工作站顶配、单卡大模型全速</td>
-</tr>
-<tr>
-<td>141GB</td>
-<td>H200</td>
-<td>70B FP16 单卡全速</td>
-<td>云上“大模型公寓”，多租户推理</td>
-</tr>
-<tr>
-<td>192GB+</td>
-<td>B200 / B300</td>
-<td>超大模型单卡即可容纳，真正价值在集群</td>
-<td>训练与大规模推理</td>
-</tr>
-</tbody>
-</table>
-<h3 id="61-24gb">6.1 24GB：一道值得注意的分水岭<a class="headerlink" href="#61-24gb" title="Permanent link">¶</a></h3>
-<p>32B 模型的 Q4 量化（约 20GB）、FLUX 全精度生图、7B 模型的 LoRA 微调，恰好都落在 24GB 这条线上。这也是 3090/4090 一直被称为“国民卡”的原因——即便二手 RTX 3090，至今仍是许多人的选择。</p>
-<h3 id="62-70b">6.2 70B 级别：真正的门槛<a class="headerlink" href="#62-70b" title="Permanent link">¶</a></h3>
-<p>70B 模型即便 Q4 量化也需约 40GB，单卡至少 48GB 起步；全精度则需 140GB，对应 H200 或更大规格。两张 5090 通过 PCIe 组合运行 70B Q4 并非不可行，但通信会成为瓶颈，实际速度通常只有单卡的 1.5 倍上下——显存容量不能简单线性叠加。</p>
-<h3 id="63-deepseek-r1-671b">6.3 DeepSeek-R1 这类 671B 模型：不必强求<a class="headerlink" href="#63-deepseek-r1-671b" title="Permanent link">¶</a></h3>
-<p>DeepSeek-R1 / V3 是 671B 参数的 MoE 模型，4-bit 量化仍需约 400GB，官方推荐 8×H100 或 4×B200 级别的部署阵容。<sup id="fnref:deepseek-gguf"><a class="footnote-ref" href="#fn:deepseek-gguf">11</a></sup> 个人用户希望本地体验，可运行其 32B 蒸馏版本；全量版本建议直接调用 API，综合成本更低。</p>
-<h3 id="64">6.4 图像与视频模型：显存要求有所不同<a class="headerlink" href="#64" title="Permanent link">¶</a></h3>
-<ul>
-<li>SD 1.5（约 2GB）→ 8GB 即可运行；</li>
-<li>SDXL（约 7GB）→ 建议 12GB 以上；</li>
-<li>FLUX.1 dev（约 24GB FP16）→ 24GB 为宜，16GB 需 Offload；<sup id="fnref:flux"><a class="footnote-ref" href="#fn:flux">12</a></sup></li>
-<li>视频模型（Wan 2.1 14B 等，约 28GB FP16）→ 建议 32GB 起步。</li>
-</ul>
-<h2 id="7-4090-a100">7 “4090 比 A100 强”为什么是错觉<a class="headerlink" href="#7-4090-a100" title="Permanent link">¶</a></h2>
-<h3 id="71">7.1 单卡推理：游戏卡更具性价比<a class="headerlink" href="#71" title="Permanent link">¶</a></h3>
-<p>推理属于“内存密集”型任务，主要依赖单卡表现。同一款 14B 模型，A100 的带宽是 4090 的两倍，速度相应接近两倍，但价格高出数倍——就“每单位预算获得的性能”而言，4090/5090 反而占优。然而 A100 能够容纳 70B INT8（70GB），4090 连门都无法进入，差距正在于此。</p>
-<h3 id="72">7.2 训练：这是团队的比赛<a class="headerlink" href="#72" title="Permanent link">¶</a></h3>
-<p>训练需要“同步”：每次更新参数，所有显卡都必须汇总梯度，通信速度决定整体效率。NVLink 双向带宽约 900 GB/s（B200 更达 1.8 TB/s），而 PCIe 5.0 x16 仅约 64 GB/s——差距达一个数量级。RTX 40/50 系没有 NVLink，多卡训练只能受限于 PCIe，规模与效率都难以提升。这正是训练集群必须采用 A100/H100/B200 的原因：</p>
-<ul>
-<li>HBM 显存的可靠性与 ECC 纠错；</li>
-<li>NVLink/NVSwitch 高速互联；</li>
-<li>vGPU 虚拟化、企业支持与认证驱动；</li>
-<li>服务器级的散热与功耗设计。</li>
-</ul>
-<p>结论：个人微调，RTX 4090/5090 已足够；企业级训练，应选择数据中心产品线。</p>
-<h2 id="8">8 常见问题速答<a class="headerlink" href="#8" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th>问题</th>
-<th>简要回答</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4090 是不是比 A100 强？</td>
-<td>单看 FP16 算力略胜；但显存（24 vs 80GB）、带宽（1.0 vs 2.0 TB/s）、互联与 ECC 均差一个量级。推理与训练场景 A100 更强，4090 的优势在于性价比。</td>
-</tr>
-<tr>
-<td>一张 4090 能跑 DeepSeek-R1 吗？</td>
-<td>不能。671B 的 MoE 模型，Q4 量化仍需约 400GB，官方推荐 8×H100 或 4×B200。普通用户使用 API 更合适。</td>
-</tr>
-<tr>
-<td>8GB 显卡是不是“玩不了 AI”？</td>
-<td>可以运行。7B 模型量化版聊天、语音识别、轻量生图都没有问题；不行的是 30B 以上的大模型与训练任务。</td>
-</tr>
-<tr>
-<td>显存不够能借用内存吗？</td>
-<td>可以（Offload），但速度可能降至十分之一以下，属于“能运行”而非“好用”。</td>
-</tr>
-<tr>
-<td>游戏卡商用算违规吗？</td>
-<td>个人自用没有问题；GeForce 驱动许可限制的是数据中心的大规模部署。商用交付建议选择 RTX PRO 或数据中心产品线。</td>
-</tr>
-<tr>
-<td>两块 4060 等于一张 4090 吗？</td>
-<td>不等于。多卡需要拆分模型且通信存在瓶颈，推理场景中“大显存单卡”通常优于“多卡组合”。</td>
-</tr>
-<tr>
-<td>苹果 M 系列和 AMD 显卡呢？</td>
-<td>苹果统一内存“容量大、带宽低”（最高 128GB，但带宽数百 GB/s），能运行大模型但速度有限；其他厂商显卡还需关注 CUDA 兼容性这一生态壁垒。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="9">9 选购建议：按用途选择，而非按参数攀比<a class="headerlink" href="#9" title="Permanent link">¶</a></h2>
-<p>从实践来看，预算应优先投入显存，而不是追求跑分米数上的小幅领先。以下为常见用途的参考选择，具体可结合自身情况调整：</p>
-<ul>
-<li><strong>只想本地聊天 + 轻度 RAG</strong>：16GB 档（RTX 5080 / 5070 Ti），性价比最高；</li>
-<li><strong>想跑 32B、FLUX 生图、偶尔微调</strong>：32GB（RTX 5090）或 48GB（RTX 6000 Ada）；</li>
-<li><strong>想全速跑 70B Q4 / 做商用交付</strong>：RTX PRO 6000 Blackwell（96GB），一步到位；</li>
-<li><strong>大规模训练 / AI 服务</strong>：不必急于购置硬件，可先按小时租用 H100（约 2–5 美元/小时）验证需求，再决定是否自建集群；</li>
-<li><strong>一条原则</strong>：显存 &gt; 带宽 &gt; 算力。预算有限时，宁可选大显存的中端卡，也不要小显存的旗舰卡。</li>
-</ul>
-<h2 id="10">10 写在最后<a class="headerlink" href="#10" title="Permanent link">¶</a></h2>
-<p>上述内容可以归结为三点：</p>
-<ul>
-<li><strong>三条产品线</strong>：GeForce（游戏/个人）、RTX PRO（工作站/商用）、数据中心加速卡（训练/云）；</li>
-<li><strong>两个线索</strong>：架构字母（V/A/H/B/R）标世代，数字标档位；</li>
-<li><strong>一条算账方式</strong>：模型权重必须驻留显存，“参数量 × 每参数字节”即可估算出所需容量。</li>
-</ul>
-<p>显卡只是“跑得动”的前提。若想搭建一个真正可用的 AI 应用，模型之外还涉及上下文工程、RAG、工具调用等系统性问题——这些内容在<a href="../ai/">大语言模型概念速览</a>中有完整的脉络梳理，建议一并阅读。</p>
-<p>至于这些产品线为何如此分工、每代 GPU 当年要解决什么问题，背后是一段三十年的公司史——见同栏目另一篇<a href="../nvidia-history/">《英伟达三十年：一张显卡如何长成 AI 的基础设施》</a>。</p>
+<p>至于更远的问题——“专用 AI 芯片会不会终结 GPU”“推理会不会便宜到完全不值得自建”——答案都取决于同一件事：谁能在“更少的电力里算出更多的智能”。英伟达过去三十年的每一次赌注，本质上都在提前回答这个问题。</p>
+<h2 id="9">9 写在最后<a class="headerlink" href="#9" title="Permanent link">¶</a></h2>
+<p>从濒临倒闭的三人工作室，到如今 AI 基建的代名词，英伟达的历史可以被浓缩成这样一句话：<strong>它总是去解决当时最贵的问题</strong>——先是“怎样把 3D 游戏画出来”，再是“怎样让显卡算科学家要算的东西”，然后是“怎样让一万张卡像一块卡那样工作”，最后是“怎样把一整间机房变成一台机器”。</p>
+<p>理解这条脉络之后，再回看今天琳琅满目的显卡型号，从游戏卡、Jetson 到数据中心卡，每一档位都对应着一个真实的需求层次。具体的“什么卡能部署什么模型”，可以参考同栏目另一篇<a href="../nvidia-gpus/">《看懂英伟达显卡：从 4060 到 H100，一张卡能跑什么模型》</a>。</p>
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p><em>著录格式参考 GB/T 7714 电子资源条目：[责任者]. 题名[EB/OL]. 发布年份[访问日期]. 网址. 所引内容。</em></p>
-<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-29"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-08-29T00:00:00+00:00">2026-08-29</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-29"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-29T16:52:38+00:00">2026-08-29</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_authors"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/avatar.png" data-email=""></div><div class="avatar-wrapper" data-name="DeepSeek" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://www.deepseek.com/&quot; target=&quot;_blank&quot;&gt;DeepSeek&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/ds.png" data-email=""></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-bottom"><div class="document-dates-plugin" locale="zh_CN"><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-30"><span class="material-icons" data-icon="doc_created"></span><time datetime="2026-08-30T00:00:00+00:00">2026-08-30</time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-08-29"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-08-29T16:54:41+00:00">2026-08-29</time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_authors"></span><div class="author-group"><div class="avatar-wrapper" data-name="Sevenalist" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://github.com/Sevenalist&quot; target=&quot;_blank&quot;&gt;Sevenalist&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/avatar.png" data-email=""></div><div class="avatar-wrapper" data-name="DeepSeek" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;https://www.deepseek.com/&quot; target=&quot;_blank&quot;&gt;DeepSeek&lt;/a&gt;"><span class="avatar-text"></span><img class="avatar" data-src="../../../assets/authors/ds.png" data-email=""></div></div></div></div></div>
 
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn:h200">
-<p>NVIDIA. NVIDIA H200 Tensor Core GPU[EB/OL]. 2024[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/h200/">https://www.nvidia.com/en-us/data-center/h200/</a>. 规格载明 141GB HBM3e、约 4.8 TB/s 带宽。&nbsp;<a class="footnote-backref" href="#fnref:h200" title="Jump back to footnote 1 in the text">↩</a></p>
+<li id="fn:nvidia-timeline">
+<p>NVIDIA. NVIDIA Company History: Innovations Over the Years[EB/OL]. [2026-08-29]. <a href="https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/">https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/</a>. 公司年表按年份记载 RIVA 128、GeForce 256、上市、收购 3dfx、CUDA 等节点，为本文年份线索的官方口径。&nbsp;<a class="footnote-backref" href="#fnref:nvidia-timeline" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:nvidia-timeline" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:geforce-256">
+<p>GeForce 256 — The World's First GPU[EB/OL]. Wikipedia. 1999[2026-08-29]. <a href="https://en.wikipedia.org/wiki/GeForce_256">https://en.wikipedia.org/wiki/GeForce_256</a>. 记载 1999 年 GeForce 256 发布时以“世界首款 GPU”宣传，并独立完成几何变换与光照（T&amp;L）。&nbsp;<a class="footnote-backref" href="#fnref:geforce-256" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:cuda">
+<p>NVIDIA. About CUDA[EB/OL]. 2006[2026-08-29]. <a href="https://developer.nvidia.com/about-cuda">https://developer.nvidia.com/about-cuda</a>. 将 CUDA 定义为通用并行计算平台与编程模型，支持用 C 语言在 GPU 上编写通用程序。&nbsp;<a class="footnote-backref" href="#fnref:cuda" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:alexnet">
+<p>Krizhevsky A., Sutskever I., Hinton G. E. ImageNet Classification with Deep Convolutional Neural Networks[EB/OL]. NeurIPS 2012. 2012[2026-08-29]. <a href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html</a>. 论文载明 ImageNet 2012 竞赛 top-5 错误率 15.3%（前届约 26%），训练使用两块 GTX 580 3GB 显卡。&nbsp;<a class="footnote-backref" href="#fnref:alexnet" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:p100">
+<p>WCCFTech. NVIDIA Unveils Pascal Tesla P100 With Over 20 TFLOPS of FP16 Performance[EB/OL]. 2016[2026-08-29]. <a href="https://wccftech.com/nvidia-pascal-gpu-gtc-2016/">https://wccftech.com/nvidia-pascal-gpu-gtc-2016/</a>. 列明 P100（GP100）采用 16nm FinFET 与 HBM2，并首次引入 NVLink GPU 直连。&nbsp;<a class="footnote-backref" href="#fnref:p100" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:dgx-1">
+<p>Top500. NVIDIA Delivers DGX-1 Supercomputer in a Box to OpenAI[EB/OL]. 2016[2026-08-29]. <a href="https://www.top500.org/news/nvidia-delivers-dgx-1-supercomputer-in-a-box-to-openai/">https://www.top500.org/news/nvidia-delivers-dgx-1-supercomputer-in-a-box-to-openai/</a>. 记载 2016 年首台 DGX-1（8×P100 整机，发布售价 12.9 万美元）交付 OpenAI。&nbsp;<a class="footnote-backref" href="#fnref:dgx-1" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:v100">
+<p>NVIDIA. NVIDIA V100[EB/OL]. 2017[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/v100/">https://www.nvidia.com/en-us/data-center/v100/</a>. “Tensor Cores”一节说明 V100 为深度学习训练引入矩阵乘加专用硬件，吞吐数倍于普通 FP16 核心。&nbsp;<a class="footnote-backref" href="#fnref:v100" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:jetson-thor">
+<p>NVIDIA Blog. NVIDIA Jetson Thor Unlocks Real-Time Reasoning for General Robotics and Physical AI[EB/OL]. 2025[2026-08-29]. <a href="https://blogs.nvidia.com/blog/jetson-thor-physical-ai-edge/">https://blogs.nvidia.com/blog/jetson-thor-physical-ai-edge/</a>. 说明 Jetson Thor 基于 Blackwell 架构，面向通用机器人与物理 AI 的实时推理。&nbsp;<a class="footnote-backref" href="#fnref:jetson-thor" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:a100">
-<p>NVIDIA. NVIDIA A100 Tensor Core GPU[EB/OL]. 2020[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/a100/">https://www.nvidia.com/en-us/data-center/a100/</a>. 规格载明 80GB 版带宽约 2 TB/s、FP16 张量算力约 312 TFLOPS。&nbsp;<a class="footnote-backref" href="#fnref:a100" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:a100" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:rtx-50">
-<p>NVIDIA. NVIDIA GeForce RTX 50 Series[EB/OL]. 2025[2026-08-29]. <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/">https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/</a>. 载明 RTX 5090 为 32GB GDDR7、约 1.79 TB/s 带宽。&nbsp;<a class="footnote-backref" href="#fnref:rtx-50" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:rtx-pro">
-<p>NVIDIA. NVIDIA RTX PRO Series[EB/OL]. 2025[2026-08-29]. <a href="https://www.nvidia.com/en-us/design-visualization/rtx-pro/">https://www.nvidia.com/en-us/design-visualization/rtx-pro/</a>. 载明工作站专业卡定位：最高 96GB 显存、ECC 与 vGPU 等特性。&nbsp;<a class="footnote-backref" href="#fnref:rtx-pro" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:rtx-pro-blackwell">
-<p>快科技. NVIDIA 发布 12 款 RTX PRO Blackwell 专业显卡[EB/OL]. 2025[2026-08-29]. <a href="https://m.mydrivers.com/newsview/1036685.html">https://m.mydrivers.com/newsview/1036685.html</a>. 载明一次性推出 12 款新卡、旗舰 96GB 大显存。&nbsp;<a class="footnote-backref" href="#fnref:rtx-pro-blackwell" title="Jump back to footnote 5 in the text">↩</a></p>
+<p>NVIDIA. NVIDIA A100 Tensor Core GPU[EB/OL]. 2020[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/a100/">https://www.nvidia.com/en-us/data-center/a100/</a>. 载明 MIG 弹性切分（单卡最多 7 个独立实例）与 HBM2e 显存规格。&nbsp;<a class="footnote-backref" href="#fnref:a100" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:h100">
-<p>NVIDIA. NVIDIA H100 Tensor Core GPU[EB/OL]. 2022[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/h100/">https://www.nvidia.com/en-us/data-center/h100/</a>. 规格表载明 80GB HBM3、3.35 TB/s 带宽。&nbsp;<a class="footnote-backref" href="#fnref:h100" title="Jump back to footnote 6 in the text">↩</a></p>
+<p>NVIDIA. NVIDIA H100 Tensor Core GPU[EB/OL]. 2022[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/h100/">https://www.nvidia.com/en-us/data-center/h100/</a>. 规格表载明 80GB HBM3、3.35 TB/s 带宽，支持 FP8。&nbsp;<a class="footnote-backref" href="#fnref:h100" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:blackwell">
-<p>NVIDIA. NVIDIA Blackwell Data Center[EB/OL]. 2024[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/blackwell/">https://www.nvidia.com/en-us/data-center/blackwell/</a>. 载明 B200 配备 192GB HBM3e、约 8 TB/s 带宽。&nbsp;<a class="footnote-backref" href="#fnref:blackwell" title="Jump back to footnote 7 in the text">↩</a></p>
+<p>NVIDIA. NVIDIA Blackwell Data Center[EB/OL]. 2024[2026-08-29]. <a href="https://www.nvidia.com/en-us/data-center/blackwell/">https://www.nvidia.com/en-us/data-center/blackwell/</a>. GB200 NVL72 一节说明 72 张 Blackwell GPU 经 NVSwitch 全互联，可作单一 GPU 使用。&nbsp;<a class="footnote-backref" href="#fnref:blackwell" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 <li id="fn:b300">
-<p>Vast.ai. Everything You Need to Know About the NVIDIA Blackwell Ultra B300[EB/OL]. 2025[2026-08-29]. <a href="https://vast.ai/article/everything-you-need-to-know-about-the-nvidia-blackwell-ultra-b300">https://vast.ai/article/everything-you-need-to-know-about-the-nvidia-blackwell-ultra-b300</a>. 详解 B300 的 288GB HBM3e 与 GB300 NVL72 规格。&nbsp;<a class="footnote-backref" href="#fnref:b300" title="Jump back to footnote 8 in the text">↩</a></p>
+<p>WCCFTech. NVIDIA Blackwell Ultra “B300” Unleashing In 2H 2025 — 1.1 Exaflops of FP4 Compute, 288 GB HBM3e[EB/OL]. 2025[2026-08-29]. <a href="https://wccftech.com/nvidia-blackwell-ultra-b300-2h-2025-1-1-exaflops-fp4-ai-288-gb-hbm3e-memory-50-percent-faster-than-gb200/">https://wccftech.com/nvidia-blackwell-ultra-b300-2h-2025-1-1-exaflops-fp4-ai-288-gb-hbm3e-memory-50-percent-faster-than-gb200/</a>. 载明 B300 配备 288GB HBM3e，2025 年下半年推出。&nbsp;<a class="footnote-backref" href="#fnref:b300" title="Jump back to footnote 12 in the text">↩</a></p>
 </li>
-<li id="fn:rtx-5090d">
-<p>Tom's Hardware. Nvidia Cuts Down the China-Specific RTX 5090D's AI TOPS Performance by Almost 23 Percent to Meet US Export Guidelines[EB/OL]. 2025[2026-08-29]. <a href="https://www.tomshardware.com/pc-components/gpus/nvidia-cuts-down-the-china-specific-rtx-5090d-ai-tops-performance-by-almost-23-percent-to-meet-us-export-guidelines">https://www.tomshardware.com/pc-components/gpus/nvidia-cuts-down-the-china-specific-rtx-5090d-ai-tops-performance-by-almost-23-percent-to-meet-us-export-guidelines</a>. 标题即主张：5090D 的 AI TOPS 削减约 23%。&nbsp;<a class="footnote-backref" href="#fnref:rtx-5090d" title="Jump back to footnote 9 in the text">↩</a></p>
+<li id="fn:rubin">
+<p>introl. NVIDIA Rubin Enters Full Production[EB/OL]. 2026[2026-08-29]. <a href="https://introl.com/blog/nvidia-rubin-full-production-ces-2026-ai-infrastructure">https://introl.com/blog/nvidia-rubin-full-production-ces-2026-ai-infrastructure</a>. 标题即主张：Vera Rubin 全面投产，2026 年 CES 期间披露。&nbsp;<a class="footnote-backref" href="#fnref:rubin" title="Jump back to footnote 13 in the text">↩</a></p>
 </li>
-<li id="fn:ollama">
-<p>Ollama. Ollama Library[EB/OL]. [2026-08-29]. <a href="https://ollama.com/library">https://ollama.com/library</a>. 列明各模型默认量化档位（主流为 4-bit）与模型体积。&nbsp;<a class="footnote-backref" href="#fnref:ollama" title="Jump back to footnote 10 in the text">↩</a></p>
+<li id="fn:market-cap">
+<p>Nasdaq. The Race to $10 Trillion: Nvidia vs. Alphabet[EB/OL]. 2026[2026-08-29]. <a href="https://www.nasdaq.com/articles/race-10-trillion-nvidia-vs-alphabet">https://www.nasdaq.com/articles/race-10-trillion-nvidia-vs-alphabet</a>. 讨论英伟达与 Alphabet 争夺十万亿美元市值的竞赛，回顾 2024 年登顶与 2025 年率先突破 4 万亿美元。&nbsp;<a class="footnote-backref" href="#fnref:market-cap" title="Jump back to footnote 14 in the text">↩</a></p>
 </li>
-<li id="fn:deepseek-gguf">
-<p>Unsloth. DeepSeek-R1-GGUF[EB/OL]. [2026-08-29]. <a href="https://huggingface.co/unsloth/DeepSeek-R1-GGUF">https://huggingface.co/unsloth/DeepSeek-R1-GGUF</a>. 列明 671B 模型各量化档位文件大小，Q4_K_M 约 404GB。&nbsp;<a class="footnote-backref" href="#fnref:deepseek-gguf" title="Jump back to footnote 11 in the text">↩</a></p>
+<li id="fn:amd-mi300x">
+<p>AMD. AMD Instinct MI300X Accelerators[EB/OL]. 2023[2026-08-29]. <a href="https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html">https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html</a>. 官方产品页注明 MI300X 配备 192GB HBM3 显存。&nbsp;<a class="footnote-backref" href="#fnref:amd-mi300x" title="Jump back to footnote 15 in the text">↩</a></p>
 </li>
-<li id="fn:flux">
-<p>Black Forest Labs. FLUX.1[EB/OL]. 2024[2026-08-29]. <a href="https://github.com/black-forest-labs/flux">https://github.com/black-forest-labs/flux</a>. 说明 FLUX.1 dev 版 FP16 权重约 24GB 及显存需求。&nbsp;<a class="footnote-backref" href="#fnref:flux" title="Jump back to footnote 12 in the text">↩</a></p>
+<li id="fn:amd-mi400">
+<p>Guru3D. AMD Instinct MI400 GPUs Target Frontier AI and FP64 HPC[EB/OL]. 2026[2026-08-29]. <a href="https://www.guru3d.com/story/422d25a541d3ebc4cc4a513c44e496172ceec25a/">https://www.guru3d.com/story/422d25a541d3ebc4cc4a513c44e496172ceec25a/</a>. 列明 MI400 与 MI355X 为新一代 Instinct 加速卡，面向前沿 AI 与 FP64 HPC。&nbsp;<a class="footnote-backref" href="#fnref:amd-mi400" title="Jump back to footnote 16 in the text">↩</a></p>
+</li>
+<li id="fn:amd-helios">
+<p>Futurum Group. AMD Helios Reaches Parity with Vera Rubin NVL72: Can Open Standards Outflank NVIDIA?[EB/OL]. 2026[2026-08-29]. <a href="https://futurumgroup.com/insights/amd-helios-reaches-parity-with-vera-rubin-nvl72-can-open-standards-outflank-nvidia/">https://futurumgroup.com/insights/amd-helios-reaches-parity-with-vera-rubin-nvl72-can-open-standards-outflank-nvidia/</a>. 标题即主张：Helios 整柜与 Vera Rubin NVL72 同级。&nbsp;<a class="footnote-backref" href="#fnref:amd-helios" title="Jump back to footnote 17 in the text">↩</a></p>
+</li>
+<li id="fn:amd-openai">
+<p>AMD Newsroom. AMD and OpenAI: Collaborating Across Every Layer of the Stack[EB/OL]. 2026[2026-08-29]. <a href="https://newsroom.amd.com/news/aai-2026-openai-update/">https://newsroom.amd.com/news/aai-2026-openai-update/</a>. 标题即主张：AMD 与 OpenAI 的全栈深度合作。&nbsp;<a class="footnote-backref" href="#fnref:amd-openai" title="Jump back to footnote 18 in the text">↩</a></p>
+</li>
+<li id="fn:intel">
+<p>XFastest. Intel 放弃大肆宣传的 Falcon Shores AI GPU，将重点转向 Jaguar Shores[EB/OL]. 2026[2026-08-29]. <a href="https://www.xfastest.com/thread-296799-1-105.html">https://www.xfastest.com/thread-296799-1-105.html</a>. 标题即主张：放弃 Falcon Shores 大芯片，转投机架级 Jaguar Shores。&nbsp;<a class="footnote-backref" href="#fnref:intel" title="Jump back to footnote 19 in the text">↩</a></p>
+</li>
+<li id="fn:tpu">
+<p>Google Cloud. Cloud TPU[EB/OL]. [2026-08-29]. <a href="https://cloud.google.com/tpu">https://cloud.google.com/tpu</a>. 说明 TPU 自 2015 年起部署于其数据中心，用于深度学习的训练与推理。&nbsp;<a class="footnote-backref" href="#fnref:tpu" title="Jump back to footnote 20 in the text">↩</a></p>
 </li>
 </ol>
 </div>

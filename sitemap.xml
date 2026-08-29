@@ -76,6 +76,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://dengcz.cn/world/2026/nvidia-history/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://dengcz.cn/world/2026/believe-or-not/</loc>
         <lastmod>2026-08-14</lastmod>
         <changefreq>daily</changefreq>
@@ -277,6 +282,11 @@
     </url>
     <url>
         <loc>https://dengcz.cn/world/tags/nvidia/</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://dengcz.cn/world/tags/%E8%8B%B1%E4%BC%9F%E8%BE%BE/</loc>
         <lastmod>2026-08-29</lastmod>
         <changefreq>daily</changefreq>
     </url>
