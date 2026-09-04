@@ -1686,17 +1686,17 @@
 <style>
     .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, 100px);
         gap: 20px;
-        justify-content: center;   /* 整体居中 */
-        justify-items: center;      /* 每个 item 居中 */
+        justify-content: start;
+        justify-items: start;
         padding: 20px;
     }
 
     .item {
         display: flex;
         flex-direction: column;
-        text-align: center; /* 文字水平居中，但好像图片也居中了 */
+        text-align: center;
         justify-content: center;  /* 垂直居中*/
         width: 100px; /* 容器宽度 */
         height: 100px;
@@ -1719,6 +1719,10 @@
         margin: 0 auto;
         border-radius: 10px; /* 图片圆角 */
     }
+    .item a:hover,
+    .item a:focus {
+        text-decoration: none;
+    }
     .item p {
         margin: 6px 0 0;
         font-size: 16px;
@@ -1728,7 +1732,7 @@
     @media (max-width: 768px) {
     /* 调整手机端也能够2列展示，1列太空 */
     .container {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(auto-fill, 100px);
         padding: 10px;
     }
 }

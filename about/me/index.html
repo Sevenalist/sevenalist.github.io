@@ -1470,22 +1470,21 @@
         <article class="content-container">
             <div class="contact-header">
                 <h2 class="profile-name-en" style="margin-top:0.2rem;line-height:1;">Deng Chaozhong</h2>
-                <h2 class="profile-name-zh" style="margin-top:0.2rem;line-height:1;">邓朝钟</h2>
                 <a href="mailto:dengcz.cn@gmail.com" class="email-link" rel="noopener">
-                    <span class="sr-only">Email</span>✉️
-                    <span class="email-text">dengcz.cn@gmail.com</span>
+                    <span class="email-text"><strong>dengcz.cn@gmail.com</strong></span>
                 </a>
             </div>
+            <br><br>
             <!-- 个人简介 -->
-                <section class="education-section">
-                    <p class="education-status"><strong>College Graduate</strong></p>
-                    <p>
-                        Graduated from <a href="https://www.cqut.edu.cn/" target="_blank" rel="noopener">Chongqing University of Technology</a>, majoring in Intelligent Science and Technology at the <a href="https://ai.cqut.edu.cn/" target="_blank" rel="noopener">Liangjiang Artificial Intelligence College</a>.
-                    </p>
-                    <p>
-                        Completed an exchange program at the <a href="https://eie.cqu.edu.cn/" target="_blank" rel="noopener">National Institute for Excellent Engineers</a>, <a href="https://www.cqu.edu.cn/" target="_blank" rel="noopener">Chongqing University</a>, with a graduation project focused on large language model security.
-                    </p>
-                </section>
+            <section class="education-section">
+                <p class="education-status"><strong>College Graduate</strong></p>
+                <p>
+                    Graduated from <a href="https://www.cqut.edu.cn/" target="_blank" rel="noopener">Chongqing University of Technology</a>, majoring in Intelligent Science and Technology at the <a href="https://ai.cqut.edu.cn/" target="_blank" rel="noopener">Liangjiang Artificial Intelligence College</a>.
+                </p>
+                <p>
+                    Completed an exchange program at the <a href="https://eie.cqu.edu.cn/" target="_blank" rel="noopener">National Institute for Excellent Engineers</a>, <a href="https://www.cqu.edu.cn/" target="_blank" rel="noopener">Chongqing University</a>, with a graduation project focused on large language model security.
+                </p>
+            </section>
         </article>
     </section>
 </main>
@@ -1622,12 +1621,15 @@
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 0px;
-    gap: 0.3rem;
+    gap: 0;
+    color: #000;
 }
 
 .profile-name-en {
     margin-top: 0;
+    margin-bottom: 0.35rem;
     line-height: 1;
+    color: #000;
 }
 
 .profile-name-zh {
@@ -1635,13 +1637,23 @@
     line-height: 1;
 }
 
-.email-link {
+.md-typeset .email-link,
+.md-typeset .email-link:hover,
+.md-typeset .email-link:focus,
+.md-typeset .email-link:visited {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
     text-decoration: none;
-    color: inherit;
+    color: #000;
     line-height: 1.1;
+}
+
+.education-section .education-status {
+    margin-top: 0.45rem;
+    margin-bottom: 0.75rem;
+    color: #000;
+    line-height: 1.2;
 }
 
 .sr-only {
@@ -1657,33 +1669,16 @@
 
 /* 时间轴样式 */
 .timeline-section {
-    margin-top: 2rem;
+    margin-top: 0.7rem;
 }
 
 .timeline-list {
     padding-top: 1px;
-    padding-left: 1rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0;
     position: relative;
     border-left: none;
     z-index: 0;
-}
-
-.timeline-list::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(
-        90deg,
-        rgba(168, 180, 191, 0.12) 0%,
-        rgba(168, 180, 191, 0.05) 60%,
-        rgba(168, 180, 191, 0) 100%
-    );
-    border-radius: 20px;
-    pointer-events: none;
-    z-index: -1;
 }
 
 .timeline-item {
@@ -1693,32 +1688,64 @@
     align-items: flex-start;
 }
 
+.timeline-item + .timeline-item {
+    margin-top: 2rem;
+}
+
 .timeline-media {
     flex-shrink: 0;
     width: 80px;
     height: 80px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     background: transparent;
     border-radius: 12px;
-    padding: 5px;
+    padding: 0;
 }
 
-.timeline-img {
+.md-typeset .timeline-media a {
+    display: block;
+    line-height: 0;
+}
+
+.md-typeset .timeline-img {
+    display: block;
     width: 100%;
     height: 100%;
+    margin: 0;
     object-fit: contain;
+    object-position: top left;
 }
 
 .timeline-info {
     flex: 1;
+    min-width: 0;
+    text-align: left;
 }
 
-.timeline-date {
-    font-weight: 600;
+.md-typeset .timeline-date {
+    font-size: 1rem;
+    font-weight: 700;
     color: #2c3e50;
     margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.md-typeset .timeline-date::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    margin-top: 0.35rem;
+    border-top: 3.5px solid rgba(44, 62, 80, 0.9);
+}
+
+.md-typeset dd.timeline-content {
+    margin: 0;
+    margin-inline-start: 0;
+    margin-left: 0;
+    text-align: left;
 }
 
 /* 响应式布局 */
@@ -1756,7 +1783,10 @@
     .timeline-item {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+    }
+
+    .timeline-info {
+        width: 100%;
     }
 }
 
