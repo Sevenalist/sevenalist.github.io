@@ -104,8 +104,8 @@
    链接基色用 primary 主色，悬停/强调用其亮色变体，保留悬停反馈。
    选择器须落在 body 的 scheme 属性上，才能胜过主题按 data-md-color-accent 注入的值。 */
 [data-md-color-scheme="default"] {
-  --md-typeset-a-color: #546d78;
-  --md-accent-fg-color: #607c8a;
+  --md-typeset-a-color: #166dba;
+  --md-accent-fg-color: #7aa8d1;
 }
 
 ::selection {
