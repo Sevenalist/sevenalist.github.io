@@ -100,6 +100,14 @@
   --world-blog-card-height-mobile: 8.5rem;          /* Archive / Category / Tag 文章卡片 */
 }
 
+/* 主题强调色统一为 blue grey（覆盖 MaterialX 默认的 accent=indigo）：
+   链接基色用 primary 主色，悬停/强调用其亮色变体，保留悬停反馈。
+   选择器须落在 body 的 scheme 属性上，才能胜过主题按 data-md-color-accent 注入的值。 */
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: #546d78;
+  --md-accent-fg-color: #607c8a;
+}
+
 ::selection {
   color: var(--site-selection-fg);
   background-color: var(--site-selection-bg);
@@ -2206,27 +2214,6 @@ body:has(.home-shell) .md-main__inner {
   padding: 0 1em;
 }
 
-/* ===== 首页“大语言模型”板块：AI Release Tracker Top 3 ===== */
-.ai-releases {
-  margin: .6rem 0 1.2rem;
-}
-
-.md-typeset .ai-release-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.ai-releases .ai-releases-meta {
-  margin: .6rem 0 0;
-  font-size: .75rem;
-  color: var(--md-default-fg-color--lighter);
-}
-
-@media (max-width: 768px) {
-  .md-typeset .ai-release-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ===== 文章摘录横向卡片（quote-carousel）=====
    原生 HTML/CSS/JS 实现的横向滚动卡片组：
    - 桌面约显示 2.3 张，手机约显示 1.08 张（通过 --quote-card-width 调整）
@@ -2237,6 +2224,7 @@ body:has(.home-shell) .md-main__inner {
 .md-typeset .quote-carousel {
   --quote-card-width: 42.5%;
   --quote-card-gap: 1rem;
+  --quote-card-inset: 0.6rem; /* 标题组与正文统一的左右内缩量 */
   --quote-card-radius: 20px;
   --quote-card-border: color-mix(in srgb, var(--md-default-fg-color) 13%, transparent);
   --quote-card-bg:
@@ -2253,13 +2241,9 @@ body:has(.home-shell) .md-main__inner {
   --quote-card-shadow:
     inset 0 1px 0 color-mix(in srgb, var(--md-default-bg-color) 32%, transparent),
     0 12px 32px color-mix(in srgb, var(--md-default-fg-color) 8%, transparent);
-  --quote-card-hover-border: color-mix(in srgb, var(--md-accent-fg-color) 38%, transparent);
-  --quote-card-hover-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--md-default-bg-color) 38%, transparent),
-    0 18px 38px color-mix(in srgb, var(--md-default-fg-color) 11%, transparent);
   /* 引号装饰参数：后续想微调时只改这里即可 */
   --quote-card-height: 15rem;                          /* 卡片基准高度 */
-  --quote-card-mark-font-size: 8rem; /* 引号约占卡片高度的 1/3 */
+  --quote-card-mark-size: 5rem;                        /* 引号水印宽度，高度按 SVG 原始宽高比 */
   --quote-card-mark-opacity: 0.15;                      /* 引号透明度 */
 
   margin: 1.6rem 0;
@@ -2374,25 +2358,7 @@ body:has(.home-shell) .md-main__inner {
   overflow: hidden;
   isolation: isolate;
   transform-origin: center center;
-  transition:
-    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    border-color 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.quote-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent),
-    transparent 55%
-  );
-  opacity: 0;
-  transition: opacity 320ms ease;
-  pointer-events: none;
-  z-index: 0;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .md-typeset .quote-card:hover,
@@ -2400,15 +2366,7 @@ body:has(.home-shell) .md-main__inner {
 .md-typeset .quote-card.focus-visible {
   color: var(--md-typeset-color);
   text-decoration: none;
-  transform: translateY(-4px) scale(1.012);
-  border-color: var(--quote-card-hover-border);
-  box-shadow: var(--quote-card-hover-shadow);
-}
-
-.md-typeset .quote-card:hover::before,
-.md-typeset .quote-card:focus-visible::before,
-.md-typeset .quote-card.focus-visible::before {
-  opacity: 0.7;
+  transform: translateY(-4px) scale(1.02);  /* 与 grid-button 卡片一致的低调放大 */
 }
 
 .quote-card__quote,
@@ -2421,12 +2379,20 @@ body:has(.home-shell) .md-main__inner {
 
 .quote-card__mark {
   position: absolute;
-  top: 1.5rem;
-  left: -2.5rem;
-  font-family: "Noto Serif SC", "Ubuntu", serif;
-  font-size: var(--quote-card-mark-font-size);
-  line-height: 0.85;
-  color: var(--md-accent-fg-color);
+  top: 2.4rem;              /* 略高于标题文字上缘（基准 3rem 为精确对齐值，此值再上提 0.3rem；想调整高低只改这里） */
+  right: 1.8rem;            /* 与正文右缘对齐：卡片右内边距 1.2rem + 正文右 margin（--quote-card-inset 0.6rem） */
+  width: var(--quote-card-mark-size);
+  aspect-ratio: 1518 / 1024;
+  /* 用 mask 引用 SVG 并以主题色填充，深浅色主题自动适配（SVG 自带的 fill 不参与着色） */
+  background-color: var(--md-accent-fg-color);
+  -webkit-mask-image: url("../assets/icons/mark.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("../assets/icons/mark.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   opacity: var(--quote-card-mark-opacity);
   user-select: none;
   pointer-events: none;
@@ -2434,19 +2400,16 @@ body:has(.home-shell) .md-main__inner {
 }
 
 .quote-card__quote {
-  margin: auto 0;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin: 1.5rem var(--quote-card-inset) 0;  /* 与上方标题组拉开距离；左右内缩，与边框留出呼吸空间 */
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
   min-height: 0;
   overflow: hidden;
   flex: 1 1 auto;
   font-size: 0.92rem;
   line-height: 1.7;
-  text-align: left;
+  text-align: justify;
   color: var(--md-default-fg-color--light);
 }
 
@@ -2460,21 +2423,23 @@ body:has(.home-shell) .md-main__inner {
 }
 
 .quote-card__title {
-  margin-bottom: 0.55rem;   /* 标题与下方正文的间距 */
+  margin-bottom: 0.55rem;   /* 标题与下方 meta 的间距 */
   margin-top: 1rem;
+  margin-left: var(--quote-card-inset);
   padding-right: 1.6rem;    /* 右侧留白，避免和右上角箭头重叠 */
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.4;
   color: var(--md-typeset-color);
-  text-align: center; 
+  text-align: left;
 }
 
 .quote-card__meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0.6rem;
+  margin-left: var(--quote-card-inset);
   font-size: 0.76rem;
   color: var(--md-default-fg-color--light);
 }
@@ -2525,6 +2490,7 @@ body:has(.home-shell) .md-main__inner {
     --quote-card-width: 90%;
     --quote-card-gap: 0.75rem;
     --quote-card-height: 16rem; /* 手机端加高，给长摘要更多显示行 */
+    --quote-card-inset: 0.5rem;
   }
 
   .quote-carousel__button {
@@ -2541,9 +2507,14 @@ body:has(.home-shell) .md-main__inner {
     padding: 1rem 1.05rem 0.9rem;
   }
 
+  .quote-card__mark {
+    top: 2.55rem;   /* 略高于标题墨迹上缘（基准 2.85rem 为精确对齐值，上提 0.3rem） */
+    right: 1.55rem; /* 对齐正文右缘：手机端右内边距 1.05rem + 正文右 margin 0.5rem */
+  }
+
   .quote-card__quote {
-    /* 手机端：引文四周留 0.2rem，并占满中间空间 */
-    margin: 0.2rem;
+    /* 手机端：与标题组保持间距并左右内缩，占满剩余空间 */
+    margin: 1.2rem var(--quote-card-inset) 0;
     flex: 1 1 auto;
   }
 
@@ -2555,7 +2526,6 @@ body:has(.home-shell) .md-main__inner {
 
 @media (prefers-reduced-motion: reduce) {
   .quote-card,
-  .quote-card::before,
   .quote-card__arrow,
   .quote-carousel__button {
     transition: none !important;
