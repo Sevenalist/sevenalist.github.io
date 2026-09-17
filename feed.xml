@@ -6,13 +6,29 @@
     <description>Never Stop Thinking.</description>
     <atom:link href="https://dengcz.cn/feed.xml" rel="self" type="application/rss+xml" />
     <language>zh</language>
-    <lastBuildDate>Sun, 06 Sep 2026 02:50:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 20:27:32 +0800</lastBuildDate>
     <generator>mkdocs-feed</generator>
     <image>
       <url>https://dengcz.cn/assets/brand/logo-inverse.svg</url>
       <title>Sevenalist</title>
       <link>https://dengcz.cn/</link>
     </image>
+    <item>
+      <title>第二次世界大战</title>
+      <link>https://dengcz.cn/lines/world-war-ii/</link>
+      <guid isPermaLink="false">5effb4ec1eda79c7d83733d4884522057c9a6f58</guid>
+      <description>本时间线把 1931 年日本侵占中国东北、1937 年全面侵华列为亚洲战场前奏，以 1939—1945 年的全球战争为主轴。事件与日期参考 美国大屠杀纪念馆的二战关键日期和 The National WWII Museum 的时间线资料，并兼顾中国、欧洲、北非、大西洋与太平洋战场。</description>
+      <category>第二次世界大战</category>
+      <pubDate>Thu, 17 Sep 2026 20:19:00 +0800</pubDate>
+    </item>
+    <item>
+      <title>第一次世界大战</title>
+      <link>https://dengcz.cn/lines/world-war-i/</link>
+      <guid isPermaLink="false">19be3d2386796e1b43eaf870d9b9610a17b00d56</guid>
+      <description>本时间线以 1914—1918 年的战争进程为主轴，并延伸至 1919—1920 年的和平安排。事件与日期参考 National WWI Museum and Memorial 的关键日期和 National WWI Museum and Memorial 的交互时间线，内容按全球战局与关键转折提炼。</description>
+      <category>第一次世界大战</category>
+      <pubDate>Thu, 17 Sep 2026 20:19:00 +0800</pubDate>
+    </item>
     <item>
       <title>我为什么用AI写科普</title>
       <link>https://dengcz.cn/world/2026/wirite-with-ai/</link>
@@ -91,22 +107,6 @@
       <guid isPermaLink="false">3af55290ff461aa8eec550c62d25bae5921dc0fc</guid>
       <description>College Graduate Graduated from Chongqing University of Technology, majoring in Intelligent Science and Technology at the Liangjiang Artificial Intelligence College. Completed an exchange program at the National Institute for Excellent Engineers, Chongqing University, with a graduation project…</description>
       <pubDate>Thu, 06 Aug 2026 01:59:36 +0800</pubDate>
-    </item>
-    <item>
-      <title>西方哲学</title>
-      <link>https://dengcz.cn/lines/western-philosophy/</link>
-      <guid isPermaLink="false">476edaf0870dd722eb27a5b66cacd517f9c1f463</guid>
-      <description>本时间线参考赵敦华的《西方哲学简史（修订版）》，并由ChatGPT 5.6 Sol 提炼整理知识，DeepSeek对知识文件进行时间线格式适配。 未标注年代（不在时间轴中）的哲学家包括：留基波（Leucippus，生卒年代不详）；斯拉西马库（Thrasymachus，书中未注明）；希庇阿斯（Hippias，书中未注明）；安提丰（Antiphon，书中未注明）；塞克斯都·恩披里克（Sextus Empiricus，书中未注明）；高尼罗（Gaunilo，书中未注明）；托麦达（Anselm Turmeda，书中未注明）；詹姆斯·奥斯瓦尔德（James…</description>
-      <category>西方哲学</category>
-      <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
-    </item>
-    <item>
-      <title>中国朝代</title>
-      <link>https://dengcz.cn/lines/chinese-dynasties/</link>
-      <guid isPermaLink="false">b1dcd641ed79f4a3fb66dde5fd3df886e05104a1</guid>
-      <description>本时间线的朝代和对应时间由ChatGPT生成，仅供参考。</description>
-      <category>中国朝代</category>
-      <pubDate>Tue, 04 Aug 2026 23:14:38 +0800</pubDate>
     </item>
   </channel>
 </rss>
